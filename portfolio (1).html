@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NY Lenses — Nahom Yacob</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --bg: #f0ece6;
+  --card: #ffffff;
+  --black: #111010;
+  --warm: #b8773a;
+  --warm-light: #f5ede3;
+  --muted: #8a8278;
+  --border: #e2dcd4;
+}
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--black); overflow-x:hidden; cursor:none; }
+
+.cursor { position:fixed; width:10px; height:10px; background:var(--warm); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+.cursor-ring { position:fixed; width:36px; height:36px; border:1px solid rgba(184,119,58,0.5); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .3s,height .3s,border-color .3s; }
+.cursor.expand { width:6px; height:6px; }
+.cursor-ring.expand { width:60px; height:60px; border-color:var(--warm); }
+
+/* NAV */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:24px 48px; background:rgba(240,236,230,0.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+.nav-logo { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:3px; color:var(--black); text-decoration:none; }
+.nav-links { display:flex; gap:36px; list-style:none; }
+.nav-links a { color:var(--muted); text-decoration:none; font-size:11px; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+.nav-links a:hover { color:var(--black); }
+
+/* HERO */
+.hero { height:100vh; display:flex; align-items:flex-end; padding:0 48px 72px; position:relative; overflow:hidden; }
+.hero-img {
+  position:absolute; inset:0; z-index:0;
+  /* ADD YOUR PHOTO: uncomment below and replace filename */
+  /* background-image:url('images/YOUR_PHOTO.jpg'); */
+  background-size:cover;
+  background-position:center;
+  background-color:#c8b89a; /* fallback color until photo added */
+}
+.hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(15,12,8,0.15) 0%, rgba(15,12,8,0.65) 100%); }
+.hero-content { position:relative; z-index:2; }
+.hero-eyebrow { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:16px; }
+.hero-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(80px,13vw,180px); line-height:.88; letter-spacing:2px; color:#fff; margin-bottom:28px; }
+.hero-title em { font-family:'Instrument Serif',serif; font-style:italic; color:rgba(255,255,255,0.55); }
+.hero-sub { font-size:14px; color:rgba(255,255,255,0.6); max-width:380px; line-height:1.8; }
+.hero-cta { display:inline-block; margin-top:32px; padding:14px 32px; background:#fff; color:var(--black); font-size:11px; letter-spacing:2px; text-transform:uppercase; text-decoration:none; font-weight:500; transition:background .2s, color .2s; }
+.hero-cta:hover { background:var(--warm); color:#fff; }
+.hero-scroll { position:absolute; right:48px; bottom:72px; z-index:2; writing-mode:vertical-rl; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.4); display:flex; flex-direction:column; align-items:center; gap:12px; }
+.hero-scroll::after { content:''; width:1px; height:50px; background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent); animation:scrollLine 1.5s ease-in-out infinite; }
+@keyframes scrollLine { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+/* SECTIONS */
+section { padding:100px 48px; }
+.section-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--warm); margin-bottom:12px; display:flex; align-items:center; gap:12px; }
+.section-label::before { content:''; width:28px; height:1px; background:var(--warm); }
+.section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(48px,6vw,72px); letter-spacing:2px; line-height:1; color:var(--black); margin-bottom:16px; }
+
+/* PRICING — FRONT AND CENTER */
+#pricing { background:var(--bg); padding-top:120px; }
+.pricing-intro { max-width:560px; margin-bottom:64px; }
+.pricing-intro p { font-size:15px; color:var(--muted); line-height:1.8; margin-top:12px; }
+
+/* Sport cards */
+.sport-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2px; margin-bottom:2px; }
+.sport-card { background:var(--card); padding:40px 36px; border:1px solid var(--border); position:relative; overflow:hidden; transition:box-shadow .3s, transform .3s; }
+.sport-card:hover { box-shadow:0 8px 40px rgba(0,0,0,0.08); transform:translateY(-3px); }
+.sport-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--warm); transform:scaleX(0); transform-origin:left; transition:transform .4s; }
+.sport-card:hover::before { transform:scaleX(1); }
+.sport-icon { font-size:32px; margin-bottom:16px; }
+.sport-name { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:2px; color:var(--black); margin-bottom:4px; }
+.sport-note { font-size:11px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:24px; }
+
+/* Tier rows */
+.tier-rows { border-top:1px solid var(--border); padding-top:20px; display:flex; flex-direction:column; gap:0; }
+.tier-row { display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid #f0ece6; }
+.tier-row:last-child { border-bottom:none; }
+.tier-label { font-size:13px; color:var(--black); }
+.tier-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+.tier-price { font-family:'Instrument Serif',serif; font-style:italic; font-size:26px; color:var(--warm); }
+.tier-price.best { color:var(--black); }
+.tier-badge { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; background:var(--warm); color:#fff; padding:3px 8px; border-radius:20px; margin-left:8px; vertical-align:middle; }
+
+/* Non-sport pricing */
+.other-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.other-card { background:var(--card); padding:36px 32px; border:1px solid var(--border); transition:box-shadow .3s, transform .3s; position:relative; overflow:hidden; }
+.other-card:hover { box-shadow:0 8px 40px rgba(0,0,0,0.08); transform:translateY(-3px); }
+.other-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--warm); transform:scaleX(0); transform-origin:left; transition:transform .4s; }
+.other-card:hover::before { transform:scaleX(1); }
+.other-icon { font-size:28px; margin-bottom:14px; }
+.other-name { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:2px; margin-bottom:4px; }
+.other-price { font-family:'Instrument Serif',serif; font-style:italic; font-size:36px; color:var(--warm); margin-bottom:16px; }
+.other-desc { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:20px; }
+.other-includes { list-style:none; }
+.other-includes li { font-size:12px; color:var(--black); padding:6px 0; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.other-includes li:last-child { border-bottom:none; }
+.other-includes li::before { content:'—'; color:var(--warm); font-size:10px; }
+
+.pricing-divider { font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:4px; color:var(--muted); text-transform:uppercase; padding:40px 0 24px; }
+
+.book-btn { display:inline-block; margin-top:20px; padding:12px 28px; background:var(--black); color:#fff; font-size:11px; letter-spacing:2px; text-transform:uppercase; text-decoration:none; transition:background .2s; }
+.book-btn:hover { background:var(--warm); }
+
+/* GALLERY */
+#portfolio { background:#e8e2da; }
+.filter-tabs { display:flex; gap:0; margin-bottom:40px; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+.filter-tab { background:none; border:none; color:var(--muted); font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; padding:12px 24px; cursor:none; transition:color .2s; border-bottom:2px solid transparent; margin-bottom:-1px; }
+.filter-tab:first-child { padding-left:0; }
+.filter-tab.active { color:var(--black); border-bottom-color:var(--warm); }
+.filter-tab:hover { color:var(--black); }
+.gallery-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:8px; }
+.gallery-item { overflow:hidden; position:relative; background:#ccc; }
+.gallery-item.hidden { display:none; }
+.gallery-item::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.4) 0%,transparent 50%); opacity:0; transition:opacity .4s; }
+.gallery-item:hover::after { opacity:1; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.25,.46,.45,.94); }
+.gallery-item:hover img { transform:scale(1.04); }
+.g1{grid-column:1/8;grid-row:1;aspect-ratio:16/10}
+.g2{grid-column:8/13;grid-row:1;aspect-ratio:3/4}
+.g3{grid-column:1/5;grid-row:2;aspect-ratio:3/4}
+.g4{grid-column:5/9;grid-row:2;aspect-ratio:3/4}
+.g5{grid-column:9/13;grid-row:2;aspect-ratio:3/4}
+.g6{grid-column:1/6;grid-row:3;aspect-ratio:16/10}
+.g7{grid-column:6/9;grid-row:3;aspect-ratio:3/4}
+.g8{grid-column:9/13;grid-row:3;aspect-ratio:3/4}
+.photo-label { position:absolute; bottom:14px; left:14px; z-index:2; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.8); opacity:0; transform:translateY(6px); transition:opacity .3s,transform .3s; }
+.gallery-item:hover .photo-label { opacity:1; transform:translateY(0); }
+
+/* CONTACT */
+#contact { background:var(--black); text-align:center; padding:120px 48px; }
+#contact .section-label { justify-content:center; color:rgba(255,255,255,0.4); }
+#contact .section-label::before { display:none; }
+.contact-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(56px,9vw,110px); line-height:.9; letter-spacing:2px; color:#fff; margin-bottom:20px; }
+.contact-title em { font-family:'Instrument Serif',serif; font-style:italic; color:var(--warm); }
+.contact-sub { font-size:14px; color:rgba(255,255,255,0.45); margin-bottom:56px; line-height:1.8; }
+.contact-links { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:60px; }
+.contact-btn { display:inline-flex; align-items:center; gap:10px; padding:15px 28px; border:1px solid rgba(255,255,255,0.15); text-decoration:none; color:#fff; font-size:11px; letter-spacing:2px; text-transform:uppercase; transition:border-color .3s,background .3s; }
+.contact-btn:hover { border-color:var(--warm); background:var(--warm); }
+.contact-btn.primary { background:var(--warm); border-color:var(--warm); }
+.contact-btn.primary:hover { background:transparent; }
+.contact-form { max-width:520px; margin:0 auto; text-align:left; }
+.form-group { margin-bottom:16px; }
+.form-group label { display:block; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:8px; }
+.form-group input,.form-group textarea,.form-group select { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:13px 16px; color:#fff; font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition:border-color .3s; appearance:none; }
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus { border-color:var(--warm); }
+.form-group textarea { height:110px; resize:none; }
+.form-group select option { background:#1a1a1a; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.submit-btn { width:100%; padding:16px; background:var(--warm); border:none; color:#fff; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:3px; text-transform:uppercase; cursor:none; transition:background .3s; margin-top:8px; }
+.submit-btn:hover { background:#a0662a; }
+
+footer { background:#0a0a0a; padding:32px 48px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(255,255,255,0.06); }
+.footer-logo { font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:4px; color:#fff; }
+.footer-copy { font-size:11px; color:#444; }
+.footer-social { display:flex; gap:20px; }
+.footer-social a { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#444; text-decoration:none; transition:color .2s; }
+.footer-social a:hover { color:var(--warm); }
+
+.reveal { opacity:0; transform:translateY(32px); transition:opacity .7s ease,transform .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media(max-width:900px){
+  nav{padding:20px 24px} .nav-links{display:none}
+  section{padding:72px 24px} .hero{padding:0 24px 56px} .hero-scroll{display:none}
+  .gallery-grid{grid-template-columns:1fr 1fr;gap:6px}
+  .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8{grid-column:auto;grid-row:auto;aspect-ratio:1}
+  .sport-grid{grid-template-columns:1fr}
+  .other-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:16px;text-align:center}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="#" class="nav-logo">NY Lenses</a>
+  <ul class="nav-links">
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-img"></div>
+  <!-- TO ADD YOUR BACKGROUND PHOTO:
+       1. Upload photo to your GitHub repo's "images" folder
+       2. Find .hero-img in the CSS above
+       3. Uncomment: background-image:url('images/YOUR_PHOTO.jpg');
+  -->
+  <div class="hero-content">
+    <div class="hero-eyebrow">Photography · Garland, TX</div>
+    <h1 class="hero-title">NY<br><em>Lenses</em></h1>
+    <p class="hero-sub">Sports. Portraits. Graduations. Parties. Capturing DFW one frame at a time.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;">
+      <a href="#pricing" class="hero-cta">View Pricing</a>
+      <a href="#portfolio" class="hero-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.5);color:#fff;">View Portfolio</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="pricing-intro">
+    <div class="section-label reveal">Book a Shoot</div>
+    <h2 class="section-title reveal">PRICING</h2>
+    <p class="reveal">Solo or squad — the more people that book together, the cheaper it gets for everyone. Prices drop as your group grows, down to the floor price for each sport.</p>
+  </div>
+
+  <!-- SPORTS WITH GROUP DISCOUNTS -->
+  <div class="pricing-divider reveal">⚡ Sports — Group Discount Pricing</div>
+  <div class="sport-grid reveal">
+
+    <!-- Baseball / Track / Basketball / General -->
+    <div class="sport-card">
+      <div class="sport-icon">⚾</div>
+      <div class="sport-name">Baseball & Softball</div>
+      <div class="sport-note">Floor price: $15/person</div>
+      <div class="tier-rows">
+        <div class="tier-row">
+          <div><div class="tier-label">1 person</div><div class="tier-sub">Solo booking</div></div>
+          <div class="tier-price">$20</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">2+ people</div><div class="tier-sub">Best deal</div></div>
+          <div style="display:flex;align-items:center"><div class="tier-price best">$15</div><span class="tier-badge">Floor</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+
+        <a href="#contact" class="book-btn">Book Now</a>
+
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+
+      </div>
+    </div>
+
+    <div class="sport-card">
+      <div class="sport-icon">🏃</div>
+      <div class="sport-name">Track & Field</div>
+      <div class="sport-note">Floor price: $15/person</div>
+      <div class="tier-rows">
+        <div class="tier-row">
+          <div><div class="tier-label">1 person</div><div class="tier-sub">Solo booking</div></div>
+          <div class="tier-price">$25</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">2 people</div><div class="tier-sub">$20 each</div></div>
+          <div class="tier-price">$20</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">3 people</div><div class="tier-sub">$17 each</div></div>
+          <div class="tier-price">$17</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">4+ people</div><div class="tier-sub">Best deal</div></div>
+          <div style="display:flex;align-items:center"><div class="tier-price best">$15</div><span class="tier-badge">Floor</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+
+        <a href="#contact" class="book-btn">Book Now</a>
+
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+
+      </div>
+    </div>
+
+    <div class="sport-card">
+      <div class="sport-icon">⚽</div>
+      <div class="sport-name">Soccer</div>
+      <div class="sport-note">Floor price: $20/person</div>
+      <div class="tier-rows">
+        <div class="tier-row">
+          <div><div class="tier-label">1 person</div><div class="tier-sub">Solo booking</div></div>
+          <div class="tier-price">$25</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">2 people</div><div class="tier-sub">$23 each</div></div>
+          <div class="tier-price">$23</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">3+ people</div><div class="tier-sub">Best deal</div></div>
+          <div style="display:flex;align-items:center"><div class="tier-price best">$20</div><span class="tier-badge">Floor</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+
+        <a href="#contact" class="book-btn">Book Now</a>
+
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+
+      </div>
+    </div>
+
+    <div class="sport-card">
+      <div class="sport-icon">🏈</div>
+      <div class="sport-name">Football</div>
+      <div class="sport-note">Floor price: $20/person</div>
+      <div class="tier-rows">
+        <div class="tier-row">
+          <div><div class="tier-label">1 person</div><div class="tier-sub">Solo booking</div></div>
+          <div class="tier-price">$25</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">2 people</div><div class="tier-sub">$23 each</div></div>
+          <div class="tier-price">$23</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">3+ people</div><div class="tier-sub">Best deal</div></div>
+          <div style="display:flex;align-items:center"><div class="tier-price best">$20</div><span class="tier-badge">Floor</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+
+        <a href="#contact" class="book-btn">Book Now</a>
+
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+
+      </div>
+    </div>
+
+    <div class="sport-card">
+      <div class="sport-icon">🏀</div>
+      <div class="sport-name">Basketball</div>
+      <div class="sport-note">Floor price: $15/person</div>
+      <div class="tier-rows">
+        <div class="tier-row">
+          <div><div class="tier-label">1 person</div><div class="tier-sub">Solo booking</div></div>
+          <div class="tier-price">$25</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">2 people</div><div class="tier-sub">$20 each</div></div>
+          <div class="tier-price">$20</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">3 people</div><div class="tier-sub">$17 each</div></div>
+          <div class="tier-price">$17</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">4+ people</div><div class="tier-sub">Best deal</div></div>
+          <div style="display:flex;align-items:center"><div class="tier-price best">$15</div><span class="tier-badge">Floor</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+
+        <a href="#contact" class="book-btn">Book Now</a>
+
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+
+      </div>
+    </div>
+
+    <div class="sport-card">
+      <div class="sport-icon">🏅</div>
+      <div class="sport-name">Other Sports</div>
+      <div class="sport-note">Wrestling, volleyball, swimming & more · Floor: $15/person</div>
+      <div class="tier-rows">
+        <div class="tier-row">
+          <div><div class="tier-label">1 person</div><div class="tier-sub">Solo booking</div></div>
+          <div class="tier-price">$25</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">2 people</div><div class="tier-sub">$20 each</div></div>
+          <div class="tier-price">$20</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">3 people</div><div class="tier-sub">$17 each</div></div>
+          <div class="tier-price">$17</div>
+        </div>
+        <div class="tier-row">
+          <div><div class="tier-label">4+ people</div><div class="tier-sub">Best deal</div></div>
+          <div style="display:flex;align-items:center"><div class="tier-price best">$15</div><span class="tier-badge">Floor</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="#contact" class="book-btn">Book Now</a>
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- OTHER SESSIONS -->
+  <div class="pricing-divider reveal">📸 Other Sessions</div>
+  <div class="other-grid reveal">
+    <div class="other-card">
+      <div class="other-icon">🎓</div>
+      <div class="other-name">Graduations</div>
+      <div class="other-price">$50–$75</div>
+      <p class="other-desc">Cap & gown sessions at a location of your choice. A milestone worth capturing right.</p>
+      <ul class="other-includes">
+        <li>30–45 min session</li>
+        <li>Multiple locations</li>
+        <li>Edited digital delivery</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="#contact" class="book-btn">Book Now</a>
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+      </div>
+    </div>
+    <div class="other-card">
+      <div class="other-icon">🎭</div>
+      <div class="other-name">Portraits</div>
+      <div class="other-price">$50–$80</div>
+      <p class="other-desc">Individual or small group portraits. Outdoor, indoor, or on location — styled to you.</p>
+      <ul class="other-includes">
+        <li>30–45 min session</li>
+        <li>Multiple looks/outfits</li>
+        <li>Edited digital delivery</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="#contact" class="book-btn">Book Now</a>
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+      </div>
+    </div>
+    <div class="other-card">
+      <div class="other-icon">🎉</div>
+      <div class="other-name">Parties & Events</div>
+      <div class="other-price">$60–$80</div>
+      <p class="other-desc">Birthdays, quinceañeras, get-togethers — candid and posed coverage for your event.</p>
+      <ul class="other-includes">
+        <li>1–2 hours coverage</li>
+        <li>Candid + posed shots</li>
+        <li>Edited digital delivery</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="#contact" class="book-btn">Book Now</a>
+        <a href="#portfolio" class="book-btn" style="background:transparent;border:1px solid var(--border);color:var(--black);">Portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="portfolio">
+  <div class="section-label reveal">Selected Work</div>
+  <h2 class="section-title reveal">THE GALLERY</h2>
+  <div class="filter-tabs reveal">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="sports">Sports</button>
+    <button class="filter-tab" data-filter="portraits">Portraits</button>
+    <button class="filter-tab" data-filter="graduations">Graduations</button>
+    <button class="filter-tab" data-filter="parties">Parties</button>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item g1" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#c8b49a,#a89070);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC06049.jpg</span></div>
+      <span class="photo-label">Track · Sunset</span>
+    </div>
+    <div class="gallery-item g2" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#b0a090,#c8b49a);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03299.jpg</span></div>
+      <span class="photo-label">Baseball · Portrait</span>
+    </div>
+    <div class="gallery-item g3" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#a09080,#b8a490);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03360.jpg</span></div>
+      <span class="photo-label">Baseball · Action</span>
+    </div>
+    <div class="gallery-item g4" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#b8a890,#a09478);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03379.jpg</span></div>
+      <span class="photo-label">Baseball · Swing</span>
+    </div>
+    <div class="gallery-item g5" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#c0a888,#a89070);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03455.jpg</span></div>
+      <span class="photo-label">Baseball · Golden Hour</span>
+    </div>
+    <div class="gallery-item g6" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#a89880,#b8a890);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03482.jpg</span></div>
+      <span class="photo-label">Baseball · Dugout</span>
+    </div>
+    <div class="gallery-item g7" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#b0a088,#c0b09a);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03599.jpg</span></div>
+      <span class="photo-label">Baseball · Sunset</span>
+    </div>
+    <div class="gallery-item g8" data-cat="sports">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#c8b49a,#a89070);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03618.jpg</span></div>
+      <span class="photo-label">Baseball · Silhouette</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="contact-title reveal">LET'S WORK<br><em>Together</em></h2>
+  <p class="contact-sub reveal">Based in Garland, TX — serving all of DFW.<br>Text me or fill out the form below to lock in your shoot.</p>
+  <div class="contact-links reveal">
+    <a href="tel:2142837683" class="contact-btn primary">📱 Text Me — (214) 283-7683</a>
+    <a href="mailto:ny.lenses1@gmail.com" class="contact-btn">✉️ Email</a>
+    <a href="https://www.instagram.com/ny_.lenses/" target="_blank" class="contact-btn">📸 Instagram</a>
+  </div>
+  <div class="contact-form reveal">
+    <div class="form-row">
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="John Smith"></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="john@email.com"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Type of Shoot</label>
+        <select>
+          <option value="">Select...</option>
+          <option>Baseball / Softball</option>
+          <option>Track & Field</option>
+          <option>Soccer</option>
+          <option>Football</option>
+          <option>Other Sport</option>
+          <option>Graduations ($50–$75)</option>
+          <option>Portraits ($40–$60)</option>
+          <option>Party / Event ($60–$80)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>How many people booking?</label>
+        <select>
+          <option value="">Select...</option>
+          <option>Just me (1)</option>
+          <option>2 people</option>
+          <option>3 people</option>
+          <option>4+ people</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group"><label>Message</label><textarea placeholder="Event date, location, any details..."></textarea></div>
+    <button class="submit-btn" onclick="alert('Thanks! I\'ll get back to you soon. You can also text me at (214) 283-7683.')">Send Message</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">NY Lenses</div>
+  <div class="footer-copy">© 2025 Nahom Yacob · Garland, TX</div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/ny_.lenses/" target="_blank">Instagram</a>
+    <a href="mailto:ny.lenses1@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mouseX=0,mouseY=0,ringX=0,ringY=0;
+document.addEventListener('mousemove',e=>{ mouseX=e.clientX; mouseY=e.clientY; cursor.style.left=mouseX+'px'; cursor.style.top=mouseY+'px'; });
+function animateRing(){ ringX+=(mouseX-ringX)*0.12; ringY+=(mouseY-ringY)*0.12; ring.style.left=ringX+'px'; ring.style.top=ringY+'px'; requestAnimationFrame(animateRing); }
+animateRing();
+document.querySelectorAll('a,button,.gallery-item,.sport-card,.other-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cursor.classList.add('expand'); ring.classList.add('expand'); });
+  el.addEventListener('mouseleave',()=>{ cursor.classList.remove('expand'); ring.classList.remove('expand'); });
+});
+document.querySelectorAll('.filter-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const f=tab.dataset.filter;
+    document.querySelectorAll('.gallery-item').forEach(item=>{
+      item.classList.toggle('hidden', f!=='all' && item.dataset.cat!==f);
+    });
+  });
+});
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{ if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*60); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
