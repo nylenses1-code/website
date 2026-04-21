@@ -159,6 +159,20 @@ footer { background:#0a0a0a; padding:32px 48px; display:flex; align-items:center
 .footer-social a { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#444; text-decoration:none; transition:color .2s; }
 .footer-social a:hover { color:var(--warm); }
 
+.tab-section { display:none; }
+.tab-section.active { display:block; }
+.cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.cat-item { position:relative; aspect-ratio:4/5; overflow:hidden; background:#d4ccc2; }
+.cat-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.25,.46,.45,.94); }
+.cat-item:hover img { transform:scale(1.05); }
+.cat-item::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%); opacity:0; transition:opacity .3s; }
+.cat-item:hover::after { opacity:1; }
+.cat-item .photo-label { position:absolute; bottom:14px; left:14px; z-index:2; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.85); opacity:0; transform:translateY(6px); transition:opacity .3s,transform .3s; }
+.cat-item:hover .photo-label { opacity:1; transform:translateY(0); }
+.cat-item.placeholder { display:flex; align-items:center; justify-content:center; background:#e2dcd4; border:1px dashed #c8c0b4; }
+.ph-text { font-size:12px; color:var(--muted); text-align:center; letter-spacing:1px; line-height:1.6; }
+.ph-text small { font-size:10px; opacity:.6; font-family:monospace; }
+.cat-item::before { content:'NY Lenses'; position:absolute; bottom:10px; right:12px; z-index:4; font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px; color:rgba(255,255,255,0.6); text-shadow:0 1px 6px rgba(0,0,0,0.5); pointer-events:none; user-select:none; }
 .reveal { opacity:0; transform:translateY(32px); transition:opacity .7s ease,transform .7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
@@ -445,47 +459,88 @@ footer { background:#0a0a0a; padding:32px 48px; display:flex; align-items:center
 <section id="portfolio">
   <div class="section-label reveal">Selected Work</div>
   <h2 class="section-title reveal">THE GALLERY</h2>
+
   <div class="filter-tabs reveal">
-    <button class="filter-tab active" data-filter="all">All</button>
-    <button class="filter-tab" data-filter="sports">Sports</button>
-    <button class="filter-tab" data-filter="portraits">Portraits</button>
-    <button class="filter-tab" data-filter="graduations">Graduations</button>
-    <button class="filter-tab" data-filter="parties">Parties</button>
+    <button class="filter-tab active" data-tab="sports">Sports</button>
+    <button class="filter-tab" data-tab="portraits">Portraits</button>
+    <button class="filter-tab" data-tab="graduations">Graduations</button>
+    <button class="filter-tab" data-tab="parties">Parties</button>
   </div>
-  <div class="gallery-grid">
-    <div class="gallery-item g1" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#c8b49a,#a89070);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC06049.jpg</span></div>
-      <span class="photo-label">Track · Sunset</span>
-    </div>
-    <div class="gallery-item g2" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#b0a090,#c8b49a);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03299.jpg</span></div>
-      <span class="photo-label">Baseball · Portrait</span>
-    </div>
-    <div class="gallery-item g3" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#a09080,#b8a490);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03360.jpg</span></div>
-      <span class="photo-label">Baseball · Action</span>
-    </div>
-    <div class="gallery-item g4" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#b8a890,#a09478);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03379.jpg</span></div>
-      <span class="photo-label">Baseball · Swing</span>
-    </div>
-    <div class="gallery-item g5" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#c0a888,#a89070);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03455.jpg</span></div>
-      <span class="photo-label">Baseball · Golden Hour</span>
-    </div>
-    <div class="gallery-item g6" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#a89880,#b8a890);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03482.jpg</span></div>
-      <span class="photo-label">Baseball · Dugout</span>
-    </div>
-    <div class="gallery-item g7" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#b0a088,#c0b09a);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03599.jpg</span></div>
-      <span class="photo-label">Baseball · Sunset</span>
-    </div>
-    <div class="gallery-item g8" data-cat="sports">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#c8b49a,#a89070);display:flex;align-items:center;justify-content:center;"><span style="font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.4);">DSC03618.jpg</span></div>
-      <span class="photo-label">Baseball · Silhouette</span>
+
+  <!-- SPORTS -->
+  <div class="tab-section active" id="tab-sports">
+    <div class="cat-grid">
+      <div class="cat-item">
+        <img src="images/DSC06049.jpg" alt="Track Sunset" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Track · Sunset</span>
+        
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03299.jpg" alt="Baseball" onerror="this.parentElement.style.background='#b0a090';this.style.display='none'">
+        <span class="photo-label">Baseball</span>
+        
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03360.jpg" alt="Baseball Action" onerror="this.parentElement.style.background='#a09080';this.style.display='none'">
+        <span class="photo-label">Baseball · Action</span>
+        
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03379.jpg" alt="Baseball Swing" onerror="this.parentElement.style.background='#b8a890';this.style.display='none'">
+        <span class="photo-label">Baseball · Swing</span>
+        
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03455.jpg" alt="Baseball Golden Hour" onerror="this.parentElement.style.background='#c0a888';this.style.display='none'">
+        <span class="photo-label">Baseball · Golden Hour</span>
+        
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03482.jpg" alt="Baseball Dugout" onerror="this.parentElement.style.background='#a89880';this.style.display='none'">
+        <span class="photo-label">Baseball · Dugout</span>
+        
+      </div>
+      <!-- Add more sports photos: copy a cat-item block and change the image src -->
     </div>
   </div>
+
+  <!-- PORTRAITS -->
+  <div class="tab-section" id="tab-portraits">
+    <div class="cat-grid">
+      <!-- Replace src with your portrait photo filenames -->
+      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 1<br><small>Add: images/portrait1.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 2<br><small>Add: images/portrait2.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 3<br><small>Add: images/portrait3.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 4<br><small>Add: images/portrait4.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 5<br><small>Add: images/portrait5.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 6<br><small>Add: images/portrait6.jpg</small></span></div>
+    </div>
+  </div>
+
+  <!-- GRADUATIONS -->
+  <div class="tab-section" id="tab-graduations">
+    <div class="cat-grid">
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 1<br><small>Add: images/grad1.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 2<br><small>Add: images/grad2.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 3<br><small>Add: images/grad3.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 4<br><small>Add: images/grad4.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 5<br><small>Add: images/grad5.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 6<br><small>Add: images/grad6.jpg</small></span></div>
+    </div>
+  </div>
+
+  <!-- PARTIES -->
+  <div class="tab-section" id="tab-parties">
+    <div class="cat-grid">
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 1<br><small>Add: images/party1.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 2<br><small>Add: images/party2.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 3<br><small>Add: images/party3.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 4<br><small>Add: images/party4.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 5<br><small>Add: images/party5.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 6<br><small>Add: images/party6.jpg</small></span></div>
+    </div>
+  </div>
+
 </section>
 
 <!-- CONTACT -->
@@ -556,11 +611,9 @@ document.querySelectorAll('a,button,.gallery-item,.sport-card,.other-card').forE
 document.querySelectorAll('.filter-tab').forEach(tab=>{
   tab.addEventListener('click',()=>{
     document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab-section').forEach(s=>s.classList.remove('active'));
     tab.classList.add('active');
-    const f=tab.dataset.filter;
-    document.querySelectorAll('.gallery-item').forEach(item=>{
-      item.classList.toggle('hidden', f!=='all' && item.dataset.cat!==f);
-    });
+    document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
   });
 });
 const obs=new IntersectionObserver((entries)=>{
