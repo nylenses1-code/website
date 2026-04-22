@@ -159,10 +159,10 @@ footer { background:#0a0a0a; padding:32px 48px; display:flex; align-items:center
 .footer-social a { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#444; text-decoration:none; transition:color .2s; }
 .footer-social a:hover { color:var(--warm); }
 
-.tab-section { display:none; }
-.tab-section.active { display:block; }
-.cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-.cat-item { position:relative; aspect-ratio:4/5; overflow:hidden; background:#d4ccc2; }
+.tab-section { display:none; width:100%; }
+.tab-section.active { display:block; width:100%; overflow:visible; }
+.cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:100%; }
+.cat-item { position:relative; aspect-ratio:4/5; overflow:hidden; background:#d4ccc2; width:100%; }
 .cat-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.25,.46,.45,.94); }
 .cat-item:hover img { transform:scale(1.05); }
 .cat-item::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%); opacity:0; transition:opacity .3s; }
@@ -471,73 +471,139 @@ footer { background:#0a0a0a; padding:32px 48px; display:flex; align-items:center
   <div class="tab-section active" id="tab-sports">
     <div class="cat-grid">
       <div class="cat-item">
-        <img src="images/DSC06049.jpg" alt="Track Sunset" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
-        <span class="photo-label">Track · Sunset</span>
-        
+        <img src="images/677934452_1288462600016209_392935494494135362_n.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
       </div>
       <div class="cat-item">
-        <img src="images/DSC03299.jpg" alt="Baseball" onerror="this.parentElement.style.background='#b0a090';this.style.display='none'">
-        <span class="photo-label">Baseball</span>
-        
+        <img src="images/76-DSC04243.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
       </div>
       <div class="cat-item">
-        <img src="images/DSC03360.jpg" alt="Baseball Action" onerror="this.parentElement.style.background='#a09080';this.style.display='none'">
-        <span class="photo-label">Baseball · Action</span>
-        
+        <img src="images/27-DSC04666.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
       </div>
       <div class="cat-item">
-        <img src="images/DSC03379.jpg" alt="Baseball Swing" onerror="this.parentElement.style.background='#b8a890';this.style.display='none'">
-        <span class="photo-label">Baseball · Swing</span>
-        
+        <img src="images/38-DSC04524.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
       </div>
       <div class="cat-item">
-        <img src="images/DSC03455.jpg" alt="Baseball Golden Hour" onerror="this.parentElement.style.background='#c0a888';this.style.display='none'">
-        <span class="photo-label">Baseball · Golden Hour</span>
-        
+        <img src="images/44-DSC04462.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
       </div>
       <div class="cat-item">
-        <img src="images/DSC03482.jpg" alt="Baseball Dugout" onerror="this.parentElement.style.background='#a89880';this.style.display='none'">
-        <span class="photo-label">Baseball · Dugout</span>
-        
+        <img src="images/49-DSC04444.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
       </div>
-      <!-- Add more sports photos: copy a cat-item block and change the image src -->
+      <div class="cat-item">
+        <img src="images/80-DSC03821.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/4-DSC04170.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03354.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03455.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC03605.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC06961.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC06968.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC06988.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC06995.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC07003.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC07007.jpg" alt="Sports" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Sports</span>
+      </div>
     </div>
   </div>
 
   <!-- PORTRAITS -->
   <div class="tab-section" id="tab-portraits">
     <div class="cat-grid">
-      <!-- Replace src with your portrait photo filenames -->
-      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 1<br><small>Add: images/portrait1.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 2<br><small>Add: images/portrait2.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 3<br><small>Add: images/portrait3.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 4<br><small>Add: images/portrait4.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 5<br><small>Add: images/portrait5.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Portrait photo 6<br><small>Add: images/portrait6.jpg</small></span></div>
+      <div class="cat-item">
+        <img src="images/DSC06149.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC06091.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC06073.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC05982.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC05656.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC06048.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC05873.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/DSC05526.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
+      <div class="cat-item">
+        <img src="images/photo.jpg" alt="Portrait" onerror="this.parentElement.style.background='#c8b49a';this.style.display='none'">
+        <span class="photo-label">Portrait</span>
+      </div>
     </div>
   </div>
 
   <!-- GRADUATIONS -->
   <div class="tab-section" id="tab-graduations">
     <div class="cat-grid">
-      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 1<br><small>Add: images/grad1.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 2<br><small>Add: images/grad2.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 3<br><small>Add: images/grad3.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 4<br><small>Add: images/grad4.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 5<br><small>Add: images/grad5.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 6<br><small>Add: images/grad6.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 1<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 2<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 3<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 4<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 5<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Graduation photo 6<br><small>Coming soon</small></span></div>
     </div>
   </div>
 
   <!-- PARTIES -->
   <div class="tab-section" id="tab-parties">
     <div class="cat-grid">
-      <div class="cat-item placeholder"><span class="ph-text">Party photo 1<br><small>Add: images/party1.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Party photo 2<br><small>Add: images/party2.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Party photo 3<br><small>Add: images/party3.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Party photo 4<br><small>Add: images/party4.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Party photo 5<br><small>Add: images/party5.jpg</small></span></div>
-      <div class="cat-item placeholder"><span class="ph-text">Party photo 6<br><small>Add: images/party6.jpg</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 1<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 2<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 3<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 4<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 5<br><small>Coming soon</small></span></div>
+      <div class="cat-item placeholder"><span class="ph-text">Party photo 6<br><small>Coming soon</small></span></div>
     </div>
   </div>
 
