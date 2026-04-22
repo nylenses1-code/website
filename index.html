@@ -42,18 +42,28 @@
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
-    display: flex; flex-direction: column; line-height: 1; text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem; text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+  }
+  .nav-logo-text {
+    display: flex; flex-direction: column; line-height: 1;
   }
   .nav-logo-main {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem; font-weight: 600; color: var(--warm2);
-    letter-spacing: 0.06em;
+    font-size: 1.5rem; font-weight: 600; color: var(--warm2);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .nav-logo-rule {
+    width: 100%; height: 1px; background: var(--warm); margin: 3px 0;
   }
   .nav-logo-sub {
-    font-size: 0.58rem; letter-spacing: 0.28em;
-    text-transform: uppercase; color: var(--warm);
-    font-weight: 400; margin-top: 1px;
+    font-size: 0.48rem; letter-spacing: 0.32em;
+    text-transform: uppercase; color: var(--muted);
+    font-weight: 400; font-family: 'DM Sans', sans-serif;
   }
+  .hero-logo svg { height: clamp(120px, 22vw, 240px); width: auto; max-width: 90vw; }
   .nav-links { display: flex; gap: 2.4rem; list-style: none; }
   .nav-links a {
     color: var(--warm2); text-decoration: none;
@@ -78,13 +88,8 @@
     text-transform: uppercase; color: var(--warm);
     margin-bottom: 1.4rem;
   }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4.5rem, 12vw, 9rem);
-    font-weight: 600; line-height: 1;
-    letter-spacing: 0.04em; color: var(--warm2);
-    margin-bottom: 1rem;
-  }
+  .hero-logo { margin-bottom: 0.5rem; }
+  .hero-logo svg { height: clamp(120px, 22vw, 240px); width: auto; max-width: 90vw; }
   .hero-desc {
     font-size: 0.75rem; letter-spacing: 0.22em;
     text-transform: uppercase; color: var(--muted);
@@ -197,6 +202,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 10px;
+  }
+  /* Portrait photos are vertical — use narrower columns so they appear larger */
+  .g-grid.portrait-mode {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
   .g-item {
     position: relative;
@@ -356,7 +365,6 @@
     .nav-links { gap: 1.2rem; }
   }
   @media (max-width: 600px) {
-    .nav-logo-main { font-size: 1.35rem; }
     .g-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 6px; }
     .pricing-grid { grid-template-columns: 1fr; }
   }
@@ -366,9 +374,27 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">
-    <span class="nav-logo-main">NY Lenses</span>
-    <span class="nav-logo-sub">Garland, TX · DFW Area</span>
+  <a href="#" class="nav-logo" aria-label="NY Lenses home">
+    <!-- Camera aperture icon -->
+    <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="16" stroke="#e2c98a" stroke-width="1.5"/>
+      <circle cx="18" cy="18" r="7" stroke="#e2c98a" stroke-width="1.5"/>
+      <line x1="18" y1="2"  x2="13" y2="11" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="18" y1="2"  x2="23" y2="11" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="32.8" y1="10" x2="23" y2="11" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="32.8" y1="10" x2="28" y2="19" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="27" y1="32" x2="28" y2="22" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="27" y1="32" x2="18" y2="27" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="9"  y1="32" x2="18" y2="27" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="9"  y1="32" x2="8"  y2="22" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="3.2" y1="10" x2="8"  y2="19" stroke="#e2c98a" stroke-width="1.2"/>
+      <line x1="3.2" y1="10" x2="13" y2="11" stroke="#e2c98a" stroke-width="1.2"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">NY Lenses</span>
+      <div class="nav-logo-rule"></div>
+      <span class="nav-logo-sub">Garland, TX &nbsp;·&nbsp; DFW Area</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#pricing">Pricing</a></li>
@@ -380,7 +406,32 @@
 <!-- HERO -->
 <section class="hero">
   <span class="hero-eyebrow">Garland, TX · DFW Area</span>
-  <h1>NY Lenses</h1>
+  <div class="hero-logo">
+    <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg" aria-label="NY Lenses">
+      <defs>
+        <clipPath id="hero-oval-clip">
+          <ellipse cx="390" cy="100" rx="372" ry="92"/>
+        </clipPath>
+      </defs>
+      <!-- Oval fills -->
+      <ellipse cx="390" cy="100" rx="372" ry="92" fill="#e2c98a"/>
+      <ellipse cx="390" cy="100" rx="356" ry="76" fill="#0d0d0d"/>
+      <!-- Warped letters — small at edges, huge in center -->
+      <g clip-path="url(#hero-oval-clip)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
+        <text x="68"  y="103" font-size="58">N</text>
+        <text x="145" y="100" font-size="78">Y</text>
+        <text x="232" y="97"  font-size="96">L</text>
+        <text x="313" y="96"  font-size="106">E</text>
+        <text x="402" y="96"  font-size="106">N</text>
+        <text x="492" y="97"  font-size="96">S</text>
+        <text x="580" y="100" font-size="78">E</text>
+        <text x="656" y="103" font-size="58">S</text>
+      </g>
+      <!-- Border ovals -->
+      <ellipse cx="390" cy="100" rx="372" ry="92" fill="none" stroke="#e2c98a" stroke-width="7"/>
+      <ellipse cx="390" cy="100" rx="356" ry="76" fill="none" stroke="#e2c98a" stroke-width="2.5"/>
+    </svg>
+  </div>
   <p class="hero-desc">Sports &nbsp;·&nbsp; Portraits &nbsp;·&nbsp; Graduations &nbsp;·&nbsp; Parties</p>
   <div class="hero-cta">
     <a href="#contact" class="btn btn-fill">Book a Shoot</a>
@@ -610,7 +661,6 @@ const BASE = 'https://nylenses1-code.github.io/website/';
 
 const photos = {
   sports: [
-    '677934452_1288462600016209_392935494494135362_n.jpg',
     'DSC03299.jpg',
     'DSC03354.jpg',
     'DSC03455.jpg',
@@ -627,12 +677,12 @@ const photos = {
     'DSC07007.jpg',
   ],
   portraits: [
+    'DSC03482.jpg',
     'DSC05884.jpg',
     'DSC05982.jpg',
     'DSC06048.jpg',
     'DSC06073.jpg',
     'DSC06148.jpg',
-    'DSC03482.jpg',
     'photo.jpg',
   ],
   graduations: [],
@@ -643,7 +693,7 @@ let activeCat  = 'sports';
 let activeList = [];
 let lbIndex    = 0;
 
-// IntersectionObserver for lazy loading — much smoother than browser lazy
+// IntersectionObserver for lazy loading
 const imgObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -655,11 +705,10 @@ const imgObserver = new IntersectionObserver((entries, obs) => {
       obs.unobserve(img);
     }
   });
-}, { rootMargin: '200px' });
+}, { rootMargin: '400px' });
 
 function renderGallery(cat) {
   const grid = document.getElementById('gGrid');
-  // Build fragment off-DOM for speed
   const frag = document.createDocumentFragment();
   const list = photos[cat] || [];
   activeList = list;
@@ -682,16 +731,17 @@ function renderGallery(cat) {
     wrap.onclick = () => openLB(idx);
 
     const img = document.createElement('img');
-    // First 4 load immediately, rest lazy via observer
-    if (idx < 4) {
+    if (idx < 6) {
       img.src = BASE + file;
+      img.fetchPriority = idx < 3 ? 'high' : 'auto';
     } else {
       img.dataset.src = BASE + file;
-      img.src = '';
+      img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
       imgObserver.observe(img);
     }
-    img.alt = 'NY Lenses — ' + cat;
+    img.alt = 'NY Lenses';
     img.decoding = 'async';
+    img.style.minHeight = '160px';
 
     const ov = document.createElement('div');
     ov.className = 'g-overlay';
@@ -715,6 +765,12 @@ document.querySelectorAll('.g-tab').forEach(t => {
     document.querySelectorAll('.g-tab').forEach(x => x.classList.remove('active'));
     t.classList.add('active');
     activeCat = t.dataset.cat;
+    const grid = document.getElementById('gGrid');
+    if (activeCat === 'portraits') {
+      grid.classList.add('portrait-mode');
+    } else {
+      grid.classList.remove('portrait-mode');
+    }
     renderGallery(activeCat);
   });
 });
