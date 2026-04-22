@@ -66,43 +66,31 @@
   /* ── HERO ─────────────────────────────────── */
   .hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 6rem 3rem 4rem;
-    gap: 4rem;
-    background:
-      radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,169,110,0.07) 0%, transparent 65%),
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 7rem 2rem 5rem;
+    background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(200,169,110,0.07) 0%, transparent 70%),
       var(--cream);
   }
-  .hero-text { padding-left: 2rem; }
   .hero-eyebrow {
-    font-size: 0.65rem; letter-spacing: 0.3em;
+    font-size: 0.68rem; letter-spacing: 0.28em;
     text-transform: uppercase; color: var(--warm);
-    display: flex; align-items: center; gap: 0.8rem;
-    margin-bottom: 1.6rem;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block; width: 2.5rem; height: 1px;
-    background: var(--warm);
+    margin-bottom: 1.4rem;
   }
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4rem, 7vw, 6.5rem);
-    font-weight: 300; line-height: 0.95;
-    letter-spacing: -0.01em; color: var(--warm2);
-    margin-bottom: 0.3rem;
-  }
-  .hero h1 em {
-    font-style: italic; color: var(--warm2);
+    font-size: clamp(4.5rem, 12vw, 9rem);
+    font-weight: 600; line-height: 1;
+    letter-spacing: 0.04em; color: var(--warm2);
+    margin-bottom: 1rem;
   }
   .hero-desc {
-    font-size: 0.82rem; letter-spacing: 0.14em;
+    font-size: 0.75rem; letter-spacing: 0.22em;
     text-transform: uppercase; color: var(--muted);
-    margin: 1.4rem 0 2.4rem;
-    line-height: 2;
+    margin-bottom: 2.8rem;
   }
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
   .btn {
     display: inline-block; padding: 0.85rem 2.2rem;
     text-decoration: none; font-size: 0.7rem;
@@ -112,34 +100,8 @@
   }
   .btn-fill { background: var(--warm); color: #0d0d0d; border: 1.5px solid var(--warm); }
   .btn-fill:hover { background: var(--warm2); border-color: var(--warm2); }
-  .btn-outline { border: 1.5px solid rgba(255,255,255,0.3); color: var(--ink); background: transparent; }
+  .btn-outline { border: 1.5px solid rgba(255,255,255,0.25); color: var(--ink); background: transparent; }
   .btn-outline:hover { border-color: var(--warm); color: var(--warm); }
-
-  /* Hero right: stacked photo collage */
-  .hero-visual {
-    position: relative; height: 600px;
-  }
-  .hero-photo {
-    position: absolute;
-    overflow: hidden;
-    box-shadow: 0 12px 40px var(--shadow);
-  }
-  .hero-photo img {
-    width: 100%; height: 100%;
-    object-fit: cover; display: block;
-    filter: sepia(8%) contrast(1.05);
-  }
-  .hp1 { width: 62%; height: 70%; top: 0; right: 0; }
-  .hp2 { width: 45%; height: 48%; bottom: 0; left: 0; }
-  .hp3 { width: 36%; height: 36%; bottom: 12%; right: 5%; border: 3px solid #0d0d0d; }
-  .hero-badge {
-    position: absolute; bottom: 14%; left: 44%;
-    background: var(--warm); color: var(--cream);
-    padding: 0.9rem 1.2rem; font-size: 0.62rem;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    font-weight: 500; white-space: nowrap;
-    box-shadow: 0 6px 20px rgba(139,108,66,0.35);
-  }
 
   /* ── SECTION COMMON ───────────────────────── */
   .sec-wrap {
@@ -388,14 +350,6 @@
   /* ── RESPONSIVE ───────────────────────────── */
   @media (max-width: 900px) {
     nav { padding: 0.9rem 1.5rem; }
-    .hero { grid-template-columns: 1fr; min-height: auto; padding: 6rem 1.5rem 3rem; gap: 3rem; }
-    .hero-text { padding-left: 0; text-align: center; }
-    .hero-eyebrow { justify-content: center; }
-    .hero-cta { justify-content: center; }
-    .hero-visual { height: 360px; }
-    .hp1 { width: 65%; height: 72%; }
-    .hp2 { width: 48%; height: 50%; }
-    .hp3 { display: none; }
     .sec-wrap { padding: 5rem 1.5rem; }
     .c-grid { grid-template-columns: 1fr; gap: 3rem; }
     .f-row { grid-template-columns: 1fr; }
@@ -425,26 +379,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <h1>NY<br><em>Lenses</em></h1>
-    <p class="hero-desc">
-      Sports &nbsp;·&nbsp; Portraits &nbsp;·&nbsp; Graduations &nbsp;·&nbsp; Parties
-    </p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-fill">Book a Shoot</a>
-      <a href="#gallery" class="btn btn-outline">View Portfolio</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="hero-photo hp1">
-      <img src="https://nylenses1-code.github.io/website/DSC07007.jpg" alt="Photo" loading="eager">
-    </div>
-    <div class="hero-photo hp2">
-      <img src="https://nylenses1-code.github.io/website/DSC06073.jpg" alt="Photo" loading="eager">
-    </div>
-    <div class="hero-photo hp3">
-      <img src="https://nylenses1-code.github.io/website/DSC03714.jpg" alt="Photo" loading="eager">
-    </div>
+  <span class="hero-eyebrow">Garland, TX · DFW Area</span>
+  <h1>NY Lenses</h1>
+  <p class="hero-desc">Sports &nbsp;·&nbsp; Portraits &nbsp;·&nbsp; Graduations &nbsp;·&nbsp; Parties</p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn btn-fill">Book a Shoot</a>
+    <a href="#gallery" class="btn btn-outline">View Portfolio</a>
   </div>
 </section>
 
