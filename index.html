@@ -170,7 +170,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 10px;
   }
-  .g-grid.portrait-mode { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .g-grid.portrait-mode { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   .g-item {
     position: relative; overflow: hidden; cursor: pointer;
     background: var(--cream3); border: 1px solid var(--border);
@@ -572,8 +572,8 @@ const photos = {
     'DSC05656.jpg','DSC03482.jpg','DSC03299.jpg','DSC03455.jpg',
     'DSC03354.jpg','photo.jpg','49-DSC04444.jpg','45-DSC04463.jpg',
     '76-DSC04243 (1).jpg','76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg',
-    'DSC05526.jpg','DSC05884.jpg','DSC05872.jpg','DSC05980.jpg',
-    'DSC09197 (1).jpg','DSC06048.jpg','DSC06073.jpg','DSC03714.jpg',
+    'DSC05526.jpg','DSC05884.jpg','DSC05872.jpg',
+    'DSC06048.jpg','DSC06073.jpg','DSC03714.jpg',
     'DSC03600.jpg','DSC06525.jpg','DSC06564-2.jpg','DSC06553.jpg',
     '4-DSC04170.jpg'
   ],
@@ -629,7 +629,7 @@ function renderGallery(cat) {
     img.alt = 'NY Lenses'; img.decoding = 'async'; img.style.minHeight = '160px';
     const ov = document.createElement('div'); ov.className = 'g-overlay';
     const zoom = document.createElement('span'); zoom.className = 'g-zoom'; zoom.textContent = '⊕';
-    const wm = document.createElement('span'); wm.className = 'g-watermark'; wm.textContent = '00a9 NY Lenses'; ov.appendChild(zoom); wrap.appendChild(img); wrap.appendChild(ov); wrap.appendChild(wm); frag.appendChild(wrap);
+    const wm = document.createElement('span'); wm.className = 'g-watermark'; wm.textContent = '© NY Lenses'; ov.appendChild(zoom); wrap.appendChild(img); wrap.appendChild(ov); wrap.appendChild(wm); frag.appendChild(wrap);
   });
   grid.innerHTML = ''; grid.appendChild(frag);
 }
