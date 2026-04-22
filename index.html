@@ -329,6 +329,8 @@
 
 <section class="hero">
   <span class="hero-eyebrow">Garland, TX · DFW Area</span>
+
+  <!-- FIXED LOGO: uniform font size, perfectly centered text in oval -->
   <div class="hero-logo">
     <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg" aria-label="NY Lenses">
       <defs>
@@ -336,22 +338,30 @@
           <ellipse cx="390" cy="100" rx="372" ry="92"/>
         </clipPath>
       </defs>
+      <!-- Outer oval fill -->
       <ellipse cx="390" cy="100" rx="372" ry="92" fill="#e2c98a"/>
+      <!-- Inner oval (background cutout) -->
       <ellipse cx="390" cy="100" rx="356" ry="76" fill="#0d0d0d"/>
-      <g clip-path="url(#hero-oval-clip)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
-        <text x="88"  y="102" font-size="44">N</text>
-        <text x="160" y="100" font-size="58">Y</text>
-        <text x="238" y="98"  font-size="72">L</text>
-        <text x="314" y="97"  font-size="80">E</text>
-        <text x="390" y="97"  font-size="80">N</text>
-        <text x="466" y="97"  font-size="72">S</text>
-        <text x="542" y="100" font-size="58">E</text>
-        <text x="614" y="102" font-size="44">S</text>
-      </g>
+      <!-- Text perfectly centered using textLength to fill the inner oval -->
+      <text
+        x="390" y="100"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="80"
+        fill="#e2c98a"
+        text-anchor="middle"
+        dominant-baseline="central"
+        textLength="620"
+        lengthAdjust="spacing"
+        clip-path="url(#hero-oval-clip)"
+      >NY LENSES</text>
+      <!-- Outer oval border -->
       <ellipse cx="390" cy="100" rx="372" ry="92" fill="none" stroke="#e2c98a" stroke-width="7"/>
+      <!-- Inner oval border -->
       <ellipse cx="390" cy="100" rx="356" ry="76" fill="none" stroke="#e2c98a" stroke-width="2.5"/>
     </svg>
   </div>
+
   <p class="hero-desc">Sports &nbsp;·&nbsp; Portraits &nbsp;·&nbsp; Graduations &nbsp;·&nbsp; Parties</p>
   <div class="hero-cta">
     <a href="#contact" class="btn btn-fill">Book a Shoot</a>
@@ -547,13 +557,16 @@
 </footer>
 
 <script>
+// ─── GALLERY DATA ───────────────────────────────────────────────────────────
 const photos = {
   sports: [
-    'DSC03299.jpg','DSC03354.jpg','DSC03482.jpg',
-    'DSC03599.jpg','DSC03600.jpg','DSC03705.jpg','DSC03714.jpg',
-    'DSC05018.jpg','DSC05884.jpg','DSC05982.jpg','DSC06048.jpg',
-    'DSC06073.jpg','DSC06148.jpg','photo.jpg',
-    'DSC06525.jpg','DSC06564-2.jpg'
+    'DSC05656.jpg','DSC03482.jpg','DSC03299.jpg','DSC03455.jpg',
+    'DSC03354.jpg','photo.jpg','49-DSC04444.jpg','45-DSC04463.jpg',
+    '76-DSC04243__1_.jpg','76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg',
+    'DSC05526.jpg','DSC05884.jpg','DSC05872.jpg','DSC05980.jpg',
+    'DSC09197__1_.jpg','DSC06048.jpg','DSC06073.jpg','DSC03714.jpg',
+    'DSC03600.jpg','DSC06525.jpg','DSC06564-2.jpg','DSC06553.jpg',
+    '4-DSC04170.jpg'
   ],
   portraits: [
     'DSC06961.jpg','DSC06968.jpg','DSC06988.jpg','DSC06995.jpg',
@@ -563,6 +576,7 @@ const photos = {
   parties: []
 };
 
+// ─── GALLERY RENDER WITH LAZY LOADING ───────────────────────────────────────
 let activeCat = 'sports', activeList = [], lbIndex = 0;
 
 const imgObserver = new IntersectionObserver((entries, obs) => {
@@ -623,6 +637,7 @@ document.querySelectorAll('.g-tab').forEach(t => {
 
 renderGallery('sports');
 
+// ─── LIGHTBOX ────────────────────────────────────────────────────────────────
 function openLB(idx) {
   lbIndex = idx;
   document.getElementById('lb-img').src = activeList[idx];
@@ -647,25 +662,64 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') nextLB();
 });
 
-function sendForm() {
-  const name = document.getElementById('f-name').value.trim();
-  const email = document.getElementById('f-email').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
+// ─── CONTACT FORM — FORMSPREE ─────────────────────────────────────────────
+// IMPORTANT: Replace YOUR_FORMSPREE_ID below with the ID from formspree.io
+// Example: if your endpoint is https://formspree.io/f/xpwzgkna  →  put  xpwzgkna
+const FORMSPREE_ID = 'xjgjpegp';
+
+async function sendForm() {
+  const name    = document.getElementById('f-name').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
   const session = document.getElementById('f-session').value;
-  const people = document.getElementById('f-people').value;
-  const msg = document.getElementById('f-msg').value.trim();
+  const people  = document.getElementById('f-people').value;
+  const msg     = document.getElementById('f-msg').value.trim();
+
   if (!name) { showSt('err', 'Please enter your name.'); return; }
   if (!email && !phone) { showSt('err', 'Please enter an email or phone so I can reach you.'); return; }
-  const subject = encodeURIComponent('NY Lenses Booking — ' + (session || 'General Inquiry'));
-  const body = encodeURIComponent('Name: '+name+'\nEmail: '+(email||'N/A')+'\nPhone: '+(phone||'N/A')+'\nSession: '+(session||'Not selected')+'\nGroup size: '+(people||'Not selected')+'\n\nMessage:\n'+(msg||'(none)'));
-  window.location.href = 'mailto:ny.lenses1@gmail.com?subject='+subject+'&body='+body;
-  showSt('ok', '✓ Your email app is opening with everything pre-filled — just hit Send!');
+
+  if (FORMSPREE_ID === 'YOUR_FORMSPREE_ID') {
+    showSt('err', 'Form not configured yet — contact me directly at ny.lenses1@gmail.com');
+    return;
+  }
+
   const btn = document.getElementById('f-btn');
-  btn.disabled = true; setTimeout(() => { btn.disabled = false; }, 5000);
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name, email, phone,
+        session: session || 'Not selected',
+        group_size: people || 'Not selected',
+        message: msg || '(no message)'
+      })
+    });
+
+    if (res.ok) {
+      showSt('ok', '✓ Message sent! I\'ll get back to you soon.');
+      // Clear form
+      ['f-name','f-email','f-phone','f-msg'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('f-session').value = '';
+      document.getElementById('f-people').value = '';
+    } else {
+      const data = await res.json();
+      showSt('err', data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.');
+    }
+  } catch (err) {
+    showSt('err', 'Network error. Please email me directly at ny.lenses1@gmail.com');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
 }
+
 function showSt(type, text) {
   const s = document.getElementById('f-status');
-  s.textContent = text; s.className = 'f-status '+type; s.style.display = 'block';
+  s.textContent = text; s.className = 'f-status ' + type; s.style.display = 'block';
 }
 </script>
 </body>
