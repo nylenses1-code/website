@@ -32,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ─────────────────────────────────── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
     display: flex; align-items: center; justify-content: space-between;
@@ -41,29 +40,20 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo {
-    display: flex; align-items: center; gap: 0.75rem; text-decoration: none;
-  }
-  .nav-logo-icon {
-    width: 36px; height: 36px; flex-shrink: 0;
-  }
-  .nav-logo-text {
-    display: flex; flex-direction: column; line-height: 1;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .nav-logo-icon { width: 36px; height: 36px; flex-shrink: 0; }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
   .nav-logo-main {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.5rem; font-weight: 600; color: var(--warm2);
     letter-spacing: 0.12em; text-transform: uppercase;
   }
-  .nav-logo-rule {
-    width: 100%; height: 1px; background: var(--warm); margin: 3px 0;
-  }
+  .nav-logo-rule { width: 100%; height: 1px; background: var(--warm); margin: 3px 0; }
   .nav-logo-sub {
     font-size: 0.48rem; letter-spacing: 0.32em;
     text-transform: uppercase; color: var(--muted);
     font-weight: 400; font-family: 'DM Sans', sans-serif;
   }
-  .hero-logo svg { height: clamp(120px, 22vw, 240px); width: auto; max-width: 90vw; }
   .nav-links { display: flex; gap: 2.4rem; list-style: none; }
   .nav-links a {
     color: var(--warm2); text-decoration: none;
@@ -73,15 +63,13 @@
   }
   .nav-links a:hover { opacity: 1; color: var(--warm); }
 
-  /* ── HERO ─────────────────────────────────── */
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     text-align: center;
     padding: 7rem 2rem 5rem;
-    background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(200,169,110,0.07) 0%, transparent 70%),
-      var(--cream);
+    background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(200,169,110,0.07) 0%, transparent 70%), var(--cream);
   }
   .hero-eyebrow {
     font-size: 0.68rem; letter-spacing: 0.28em;
@@ -108,11 +96,7 @@
   .btn-outline { border: 1.5px solid rgba(255,255,255,0.25); color: var(--ink); background: transparent; }
   .btn-outline:hover { border-color: var(--warm); color: var(--warm); }
 
-  /* ── SECTION COMMON ───────────────────────── */
-  .sec-wrap {
-    padding: 7rem 3rem;
-    max-width: 1380px; margin: 0 auto;
-  }
+  .sec-wrap { padding: 7rem 3rem; max-width: 1380px; margin: 0 auto; }
   .sec-head { margin-bottom: 3.5rem; }
   .sec-label {
     font-size: 0.65rem; letter-spacing: 0.28em;
@@ -120,20 +104,14 @@
     display: flex; align-items: center; gap: 0.8rem;
     margin-bottom: 0.7rem;
   }
-  .sec-label::before {
-    content: ''; display: block; width: 2rem; height: 1px;
-    background: var(--warm);
-  }
+  .sec-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--warm); }
   .sec-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.4rem, 4vw, 3.4rem);
     font-weight: 300; color: var(--warm2); line-height: 1.1;
   }
-
-  /* ── DIVIDER ─────────────────────────────── */
   .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-  /* ── PRICING ─────────────────────────────── */
   #pricing { background: var(--cream2); }
   .pricing-grid {
     display: grid;
@@ -141,30 +119,22 @@
     gap: 1.5rem;
   }
   .p-card {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    padding: 1.8rem 1.6rem;
-    transition: box-shadow .2s, transform .2s;
+    background: var(--cream); border: 1px solid var(--border);
+    padding: 1.8rem 1.6rem; transition: box-shadow .2s, transform .2s;
   }
-  .p-card:hover {
-    box-shadow: 0 8px 28px var(--shadow);
-    transform: translateY(-2px);
-  }
+  .p-card:hover { box-shadow: 0 8px 28px var(--shadow); transform: translateY(-2px); }
   .p-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 400;
-    color: var(--warm2); margin-bottom: 0.2rem;
+    font-size: 1.3rem; font-weight: 400; color: var(--warm2); margin-bottom: 0.2rem;
   }
   .p-sub {
-    font-size: 0.65rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 1.2rem;
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 1.2rem;
     padding-bottom: 1rem; border-bottom: 1px solid var(--border);
   }
   .p-row {
     display: flex; justify-content: space-between;
-    padding: 0.36rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 0.36rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
     font-size: 0.84rem; color: var(--ink2);
   }
   .p-row:last-of-type { border: none; }
@@ -172,83 +142,62 @@
   .p-floor { font-size: 0.66rem; color: var(--muted); margin-top: 0.5rem; }
   .p-book {
     display: inline-block; margin-top: 1.1rem;
-    font-size: 0.66rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--warm);
-    text-decoration: none; border-bottom: 1px solid transparent;
-    transition: border-color .2s; font-weight: 500;
+    font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--warm); text-decoration: none;
+    border-bottom: 1px solid transparent; transition: border-color .2s; font-weight: 500;
   }
   .p-book:hover { border-color: var(--warm); }
 
-  /* ── GALLERY ─────────────────────────────── */
   .g-tabs {
-    display: flex; gap: 0; flex-wrap: wrap;
+    display: flex; flex-wrap: wrap;
     border-bottom: 1px solid var(--border); margin-bottom: 2.5rem;
   }
   .g-tab {
     background: none; border: none; cursor: pointer;
     padding: 0.7rem 1.6rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.7rem; letter-spacing: 0.14em;
-    text-transform: uppercase; font-weight: 400;
-    color: var(--muted);
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px; transition: all .2s;
+    font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 400; color: var(--muted);
+    border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .2s;
   }
   .g-tab.active { color: var(--warm); border-bottom-color: var(--warm); font-weight: 500; }
   .g-tab:hover { color: var(--ink); }
 
-  /* Masonry-style grid — images show fully */
   .g-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 10px;
   }
-  /* Portrait photos are vertical — use narrower columns so they appear larger */
-  .g-grid.portrait-mode {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
+  .g-grid.portrait-mode { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   .g-item {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    background: var(--cream3);
-    border: 1px solid var(--border);
-    /* Let image define height — no fixed aspect ratio */
+    position: relative; overflow: hidden; cursor: pointer;
+    background: var(--cream3); border: 1px solid var(--border);
   }
   .g-item img {
-    width: 100%;
-    height: auto;         /* FULL image visible — no crop */
-    display: block;
+    width: 100%; height: auto; display: block;
     transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .3s;
-    filter: sepia(6%) contrast(1.02);
-    will-change: transform;
+    filter: sepia(6%) contrast(1.02); will-change: transform;
   }
   .g-item:hover img { transform: scale(1.03); filter: sepia(0%) contrast(1.05); }
   .g-overlay {
-    position: absolute; inset: 0;
-    background: transparent;
+    position: absolute; inset: 0; background: transparent;
     display: flex; align-items: center; justify-content: center;
-    transition: background .3s;
-    pointer-events: none;
+    transition: background .3s; pointer-events: none;
   }
   .g-item:hover .g-overlay { background: rgba(0,0,0,0.25); }
   .g-zoom {
     color: rgba(245,240,232,0.95); font-size: 2rem;
     opacity: 0; transform: scale(0.7);
-    transition: opacity .3s, transform .3s;
-    font-weight: 300;
+    transition: opacity .3s, transform .3s; font-weight: 300;
   }
   .g-item:hover .g-zoom { opacity: 1; transform: scale(1); }
   .g-soon {
-    height: 220px;
-    background: var(--cream3);
+    height: 220px; background: var(--cream3);
     border: 1px dashed rgba(255,255,255,0.07);
     display: flex; align-items: center; justify-content: center;
-    font-size: 0.66rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--muted);
+    font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
   }
 
-  /* ── LIGHTBOX ────────────────────────────── */
   #lightbox {
     display: none; position: fixed; inset: 0; z-index: 500;
     background: rgba(0,0,0,0.97);
@@ -271,83 +220,59 @@
     position: fixed; top: 50%; transform: translateY(-50%);
     background: rgba(255,255,255,0.07); border: 1px solid var(--border);
     color: var(--ink); font-size: 1.8rem; padding: 0.9rem 1rem;
-    cursor: pointer; transition: background .2s; z-index: 501;
-    font-weight: 300;
+    cursor: pointer; transition: background .2s; z-index: 501; font-weight: 300;
   }
   .lb-arrow:hover { background: rgba(255,255,255,0.14); }
   #lb-prev { left: 0.8rem; }
   #lb-next { right: 0.8rem; }
 
-  /* ── CONTACT ─────────────────────────────── */
   #contact { background: var(--cream2); }
-  .c-grid {
-    display: grid; grid-template-columns: 1fr 1.6fr;
-    gap: 6rem; align-items: start;
-  }
+  .c-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
   .c-info h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem; font-weight: 400; margin-bottom: 1.4rem;
-    color: var(--warm2);
+    font-size: 1.5rem; font-weight: 400; margin-bottom: 1.4rem; color: var(--warm2);
   }
   .c-links { display: flex; flex-direction: column; gap: 1rem; }
   .c-link {
     display: flex; align-items: center; gap: 0.85rem;
     text-decoration: none; color: var(--ink2);
-    font-size: 0.88rem; opacity: 0.75;
-    transition: opacity .2s, color .2s;
+    font-size: 0.88rem; opacity: 0.75; transition: opacity .2s, color .2s;
   }
   .c-link:hover { opacity: 1; color: var(--warm); }
   .c-icon {
-    width: 2rem; height: 2rem;
-    background: var(--cream3);
+    width: 2rem; height: 2rem; background: var(--cream3);
     border: 1px solid var(--border);
     display: flex; align-items: center; justify-content: center;
     font-size: 0.85rem; flex-shrink: 0;
   }
 
-  /* Form */
   .f-group { margin-bottom: 1.1rem; }
   .f-group label {
-    display: block; font-size: 0.65rem;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 0.35rem;
+    display: block; font-size: 0.65rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem;
   }
-  .f-group input,
-  .f-group select,
-  .f-group textarea {
-    width: 100%; background: var(--cream);
-    border: 1px solid var(--border);
+  .f-group input, .f-group select, .f-group textarea {
+    width: 100%; background: var(--cream); border: 1px solid var(--border);
     color: var(--ink); padding: 0.78rem 0.95rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem; font-weight: 300;
-    outline: none; transition: border-color .2s;
-    appearance: none; border-radius: 0;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 300;
+    outline: none; transition: border-color .2s; appearance: none; border-radius: 0;
   }
-  .f-group input:focus,
-  .f-group select:focus,
-  .f-group textarea:focus { border-color: var(--warm); }
+  .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--warm); }
   .f-group select option { background: var(--cream); }
   .f-group textarea { min-height: 110px; resize: vertical; }
   .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .f-send {
-    width: 100%; padding: 0.95rem;
-    background: var(--warm); color: #0d0d0d;
-    border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase;
+    width: 100%; padding: 0.95rem; background: var(--warm); color: #0d0d0d;
+    border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
     transition: background .22s;
   }
   .f-send:hover { background: var(--warm2); }
   .f-send:disabled { opacity: 0.4; cursor: not-allowed; }
-  .f-status {
-    margin-top: 0.9rem; padding: 0.75rem 1rem;
-    font-size: 0.82rem; display: none;
-  }
+  .f-status { margin-top: 0.9rem; padding: 0.75rem 1rem; font-size: 0.82rem; display: none; }
   .f-status.ok  { background: rgba(80,160,80,0.08); color: #4a8a4a; border: 1px solid rgba(80,160,80,0.2); }
   .f-status.err { background: rgba(180,60,60,0.08); color: #a04040; border: 1px solid rgba(180,60,60,0.2); }
 
-  /* ── FOOTER ──────────────────────────────── */
   footer {
     text-align: center; padding: 2.5rem;
     border-top: 1px solid var(--border);
@@ -356,7 +281,6 @@
   }
   footer a { color: var(--warm); text-decoration: none; }
 
-  /* ── RESPONSIVE ───────────────────────────── */
   @media (max-width: 900px) {
     nav { padding: 0.9rem 1.5rem; }
     .sec-wrap { padding: 5rem 1.5rem; }
@@ -372,10 +296,8 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo" aria-label="NY Lenses home">
-    <!-- Camera aperture icon -->
     <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="18" cy="18" r="16" stroke="#e2c98a" stroke-width="1.5"/>
       <circle cx="18" cy="18" r="7" stroke="#e2c98a" stroke-width="1.5"/>
@@ -403,7 +325,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <span class="hero-eyebrow">Garland, TX · DFW Area</span>
   <div class="hero-logo">
@@ -413,10 +334,8 @@
           <ellipse cx="390" cy="100" rx="372" ry="92"/>
         </clipPath>
       </defs>
-      <!-- Oval fills -->
       <ellipse cx="390" cy="100" rx="372" ry="92" fill="#e2c98a"/>
       <ellipse cx="390" cy="100" rx="356" ry="76" fill="#0d0d0d"/>
-      <!-- Warped letters — small at edges, huge in center -->
       <g clip-path="url(#hero-oval-clip)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
         <text x="68"  y="103" font-size="58">N</text>
         <text x="145" y="100" font-size="78">Y</text>
@@ -427,7 +346,6 @@
         <text x="580" y="100" font-size="78">E</text>
         <text x="656" y="103" font-size="58">S</text>
       </g>
-      <!-- Border ovals -->
       <ellipse cx="390" cy="100" rx="372" ry="92" fill="none" stroke="#e2c98a" stroke-width="7"/>
       <ellipse cx="390" cy="100" rx="356" ry="76" fill="none" stroke="#e2c98a" stroke-width="2.5"/>
     </svg>
@@ -441,7 +359,6 @@
 
 <hr class="divider">
 
-<!-- PRICING -->
 <section id="pricing">
   <div class="sec-wrap">
     <div class="sec-head">
@@ -449,7 +366,6 @@
       <h2 class="sec-title">Pricing</h2>
     </div>
     <div class="pricing-grid">
-
       <div class="p-card">
         <h3>Baseball &amp; Softball</h3>
         <p class="p-sub">Action · Team · Individual</p>
@@ -459,7 +375,6 @@
         <p class="p-floor">Floor price: $15/person</p>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Football</h3>
         <p class="p-sub">Game Day · Action Shots</p>
@@ -469,7 +384,6 @@
         <p class="p-floor">Floor price: $20/person</p>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Soccer</h3>
         <p class="p-sub">Game Day · Action Shots</p>
@@ -479,7 +393,6 @@
         <p class="p-floor">Floor price: $20/person</p>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Track</h3>
         <p class="p-sub">Meet Day · Action Shots</p>
@@ -490,7 +403,6 @@
         <p class="p-floor">Floor price: $20/person</p>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Basketball</h3>
         <p class="p-sub">Game Day · Action Shots</p>
@@ -501,7 +413,6 @@
         <p class="p-floor">Floor price: $15/person</p>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Other Sports</h3>
         <p class="p-sub">Wrestling · Volleyball · Swimming &amp; more</p>
@@ -512,35 +423,30 @@
         <p class="p-floor">Floor price: $15/person</p>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Portraits</h3>
         <p class="p-sub">30–45 min · Edited photos delivered</p>
         <div class="p-row"><span>Session rate</span><span class="p-amt">$50–$80</span></div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Graduations</h3>
         <p class="p-sub">Cap &amp; gown · Multiple locations</p>
         <div class="p-row"><span>Session rate</span><span class="p-amt">$50–$75</span></div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
       <div class="p-card">
         <h3>Parties &amp; Events</h3>
         <p class="p-sub">1–2 hours of coverage</p>
         <div class="p-row"><span>Session rate</span><span class="p-amt">$60–$80</span></div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
-
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- GALLERY -->
 <section id="gallery">
   <div class="sec-wrap">
     <div class="sec-head">
@@ -557,7 +463,6 @@
   </div>
 </section>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" role="dialog" aria-label="Photo lightbox">
   <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
   <button class="lb-arrow" id="lb-prev" aria-label="Previous">‹</button>
@@ -567,7 +472,6 @@
 
 <hr class="divider">
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="sec-wrap">
     <div class="sec-head">
@@ -575,29 +479,15 @@
       <h2 class="sec-title">Book a Shoot</h2>
     </div>
     <div class="c-grid">
-
       <div class="c-info">
         <h3>Get in Touch</h3>
         <div class="c-links">
-          <a href="tel:2142837683" class="c-link">
-            <span class="c-icon">📱</span>
-            <span>(214) 283-7683</span>
-          </a>
-          <a href="mailto:ny.lenses1@gmail.com" class="c-link">
-            <span class="c-icon">✉️</span>
-            <span>ny.lenses1@gmail.com</span>
-          </a>
-          <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="c-link">
-            <span class="c-icon">📸</span>
-            <span>@ny_.lenses</span>
-          </a>
-          <a href="sms:2142837683" class="c-link">
-            <span class="c-icon">💬</span>
-            <span>Text to book</span>
-          </a>
+          <a href="tel:2142837683" class="c-link"><span class="c-icon">📱</span><span>(214) 283-7683</span></a>
+          <a href="mailto:ny.lenses1@gmail.com" class="c-link"><span class="c-icon">✉️</span><span>ny.lenses1@gmail.com</span></a>
+          <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="c-link"><span class="c-icon">📸</span><span>@ny_.lenses</span></a>
+          <a href="sms:2142837683" class="c-link"><span class="c-icon">💬</span><span>Text to book</span></a>
         </div>
       </div>
-
       <div>
         <div class="f-group">
           <label>Your Name *</label>
@@ -645,7 +535,6 @@
         <button class="f-send" id="f-btn" onclick="sendForm()">Send Message</button>
         <div class="f-status" id="f-status"></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -656,52 +545,28 @@
 </footer>
 
 <script>
-// ── PHOTO DATA ────────────────────────────────────────────────
-const BASE = 'https://nylenses1-code.github.io/website/';
-
 const photos = {
   sports: [
-    'DSC03299.jpg',
-    'DSC03354.jpg',
-    'DSC03455.jpg',
-    'DSC03599.jpg',
-    'DSC03600.jpg',
-    'DSC03705.jpg',
-    'DSC03714.jpg',
-    'DSC05018.jpg',
-    'DSC06961.jpg',
-    'DSC06968.jpg',
-    'DSC06988.jpg',
-    'DSC06995.jpg',
-    'DSC07003.jpg',
-    'DSC07007.jpg',
+    'DSC03299.jpg','DSC03354.jpg','DSC03455.jpg','DSC03599.jpg',
+    'DSC03600.jpg','DSC03705.jpg','DSC03714.jpg','DSC05018.jpg',
+    'DSC06961.jpg','DSC06968.jpg','DSC06988.jpg','DSC06995.jpg',
+    'DSC07003.jpg','DSC07007.jpg'
   ],
   portraits: [
-    'DSC03482.jpg',
-    'DSC05884.jpg',
-    'DSC05982.jpg',
-    'DSC06048.jpg',
-    'DSC06073.jpg',
-    'DSC06148.jpg',
-    'photo.jpg',
+    'DSC03482.jpg','DSC05884.jpg','DSC05982.jpg','DSC06048.jpg',
+    'DSC06073.jpg','DSC06148.jpg','photo.jpg'
   ],
   graduations: [],
   parties: []
 };
 
-let activeCat  = 'sports';
-let activeList = [];
-let lbIndex    = 0;
+let activeCat = 'sports', activeList = [], lbIndex = 0;
 
-// IntersectionObserver for lazy loading
 const imgObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       const img = e.target;
-      if (img.dataset.src) {
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-      }
+      if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
       obs.unobserve(img);
     }
   });
@@ -713,141 +578,91 @@ function renderGallery(cat) {
   const list = photos[cat] || [];
   activeList = list;
 
-  if (list.length === 0) {
+  if (!list.length) {
     for (let i = 0; i < 6; i++) {
       const d = document.createElement('div');
-      d.className = 'g-soon';
-      d.textContent = 'Coming Soon';
+      d.className = 'g-soon'; d.textContent = 'Coming Soon';
       frag.appendChild(d);
     }
-    grid.innerHTML = '';
-    grid.appendChild(frag);
-    return;
+    grid.innerHTML = ''; grid.appendChild(frag); return;
   }
 
   list.forEach((file, idx) => {
     const wrap = document.createElement('div');
     wrap.className = 'g-item';
     wrap.onclick = () => openLB(idx);
-
     const img = document.createElement('img');
     if (idx < 6) {
-      img.src = BASE + file;
+      img.src = file;
       img.fetchPriority = idx < 3 ? 'high' : 'auto';
     } else {
-      img.dataset.src = BASE + file;
+      img.dataset.src = file;
       img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
       imgObserver.observe(img);
     }
-    img.alt = 'NY Lenses';
-    img.decoding = 'async';
-    img.style.minHeight = '160px';
-
-    const ov = document.createElement('div');
-    ov.className = 'g-overlay';
-    const zoom = document.createElement('span');
-    zoom.className = 'g-zoom';
-    zoom.textContent = '⊕';
-    ov.appendChild(zoom);
-
-    wrap.appendChild(img);
-    wrap.appendChild(ov);
-    frag.appendChild(wrap);
+    img.alt = 'NY Lenses'; img.decoding = 'async'; img.style.minHeight = '160px';
+    const ov = document.createElement('div'); ov.className = 'g-overlay';
+    const zoom = document.createElement('span'); zoom.className = 'g-zoom'; zoom.textContent = '⊕';
+    ov.appendChild(zoom); wrap.appendChild(img); wrap.appendChild(ov); frag.appendChild(wrap);
   });
-
-  grid.innerHTML = '';
-  grid.appendChild(frag);
+  grid.innerHTML = ''; grid.appendChild(frag);
 }
 
-// Tab switching
 document.querySelectorAll('.g-tab').forEach(t => {
   t.addEventListener('click', () => {
     document.querySelectorAll('.g-tab').forEach(x => x.classList.remove('active'));
-    t.classList.add('active');
-    activeCat = t.dataset.cat;
+    t.classList.add('active'); activeCat = t.dataset.cat;
     const grid = document.getElementById('gGrid');
-    if (activeCat === 'portraits') {
-      grid.classList.add('portrait-mode');
-    } else {
-      grid.classList.remove('portrait-mode');
-    }
+    activeCat === 'portraits' ? grid.classList.add('portrait-mode') : grid.classList.remove('portrait-mode');
     renderGallery(activeCat);
   });
 });
 
 renderGallery('sports');
 
-// ── LIGHTBOX ──────────────────────────────────────────────────
 function openLB(idx) {
   lbIndex = idx;
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lb-img');
-  lbImg.src = BASE + activeList[idx];
-  lb.classList.add('open');
+  document.getElementById('lb-img').src = activeList[idx];
+  document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeLB() {
-  const lb = document.getElementById('lightbox');
-  lb.classList.remove('open');
-  // Small delay before clearing src so closing animation isn't jarring
+  document.getElementById('lightbox').classList.remove('open');
   setTimeout(() => { document.getElementById('lb-img').src = ''; }, 150);
   document.body.style.overflow = '';
 }
-function prevLB() {
-  lbIndex = (lbIndex - 1 + activeList.length) % activeList.length;
-  document.getElementById('lb-img').src = BASE + activeList[lbIndex];
-}
-function nextLB() {
-  lbIndex = (lbIndex + 1) % activeList.length;
-  document.getElementById('lb-img').src = BASE + activeList[lbIndex];
-}
+function prevLB() { lbIndex = (lbIndex - 1 + activeList.length) % activeList.length; document.getElementById('lb-img').src = activeList[lbIndex]; }
+function nextLB() { lbIndex = (lbIndex + 1) % activeList.length; document.getElementById('lb-img').src = activeList[lbIndex]; }
 document.getElementById('lbClose').onclick = closeLB;
-document.getElementById('lb-prev').onclick  = prevLB;
-document.getElementById('lb-next').onclick  = nextLB;
-document.getElementById('lightbox').addEventListener('click', e => {
-  if (e.target.id === 'lightbox') closeLB();
-});
+document.getElementById('lb-prev').onclick = prevLB;
+document.getElementById('lb-next').onclick = nextLB;
+document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLB(); });
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
-  if (e.key === 'Escape')     closeLB();
-  if (e.key === 'ArrowLeft')  prevLB();
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowLeft') prevLB();
   if (e.key === 'ArrowRight') nextLB();
 });
 
-// ── CONTACT FORM ──────────────────────────────────────────────
 function sendForm() {
-  const name    = document.getElementById('f-name').value.trim();
-  const email   = document.getElementById('f-email').value.trim();
-  const phone   = document.getElementById('f-phone').value.trim();
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
   const session = document.getElementById('f-session').value;
-  const people  = document.getElementById('f-people').value;
-  const msg     = document.getElementById('f-msg').value.trim();
-
-  if (!name)            { showSt('err', 'Please enter your name.'); return; }
+  const people = document.getElementById('f-people').value;
+  const msg = document.getElementById('f-msg').value.trim();
+  if (!name) { showSt('err', 'Please enter your name.'); return; }
   if (!email && !phone) { showSt('err', 'Please enter an email or phone so I can reach you.'); return; }
-
   const subject = encodeURIComponent('NY Lenses Booking — ' + (session || 'General Inquiry'));
-  const body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + (email || 'N/A') + '\n' +
-    'Phone: ' + (phone || 'N/A') + '\n' +
-    'Session: ' + (session || 'Not selected') + '\n' +
-    'Group size: ' + (people || 'Not selected') + '\n\n' +
-    'Message:\n' + (msg || '(none)')
-  );
-
-  window.location.href = 'mailto:ny.lenses1@gmail.com?subject=' + subject + '&body=' + body;
+  const body = encodeURIComponent('Name: '+name+'\nEmail: '+(email||'N/A')+'\nPhone: '+(phone||'N/A')+'\nSession: '+(session||'Not selected')+'\nGroup size: '+(people||'Not selected')+'\n\nMessage:\n'+(msg||'(none)'));
+  window.location.href = 'mailto:ny.lenses1@gmail.com?subject='+subject+'&body='+body;
   showSt('ok', '✓ Your email app is opening with everything pre-filled — just hit Send!');
   const btn = document.getElementById('f-btn');
-  btn.disabled = true;
-  setTimeout(() => { btn.disabled = false; }, 5000);
+  btn.disabled = true; setTimeout(() => { btn.disabled = false; }, 5000);
 }
-
 function showSt(type, text) {
   const s = document.getElementById('f-status');
-  s.textContent = text;
-  s.className = 'f-status ' + type;
-  s.style.display = 'block';
+  s.textContent = text; s.className = 'f-status '+type; s.style.display = 'block';
 }
 </script>
 </body>
