@@ -116,6 +116,19 @@ nav {
 .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
 #pricing { background: var(--cream2); content-visibility: auto; contain-intrinsic-size: 0 800px; }
+
+/* Section dividers within pricing */
+.pricing-section-label {
+  grid-column: 1 / -1;
+  font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--warm); display: flex; align-items: center; gap: 1rem;
+  margin-top: 1.5rem; margin-bottom: 0.25rem;
+}
+.pricing-section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.pricing-section-label:first-child { margin-top: 0; }
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -143,8 +156,9 @@ nav {
 .p-row:last-of-type { border: none; }
 .p-amt { color: var(--warm); font-weight: 500; }
 .p-floor { font-size: 0.66rem; color: var(--muted); margin-top: 0.5rem; }
+.p-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.6rem; line-height: 1.5; }
 
-/* ── BOOK NOW BUTTON (replaces old link style) ── */
+/* ── BOOK NOW BUTTON ── */
 .p-book {
   display: inline-block; margin-top: 1.4rem;
   padding: 0.55rem 1.3rem;
@@ -229,7 +243,6 @@ nav {
 }
 #lightbox.open { display: flex; }
 
-/* Lightbox image wrapper — positions watermark relative to the image */
 .lb-img-wrap {
   position: relative;
   display: inline-flex;
@@ -243,7 +256,6 @@ nav {
   object-fit: contain; display: block;
   box-shadow: 0 20px 80px rgba(0,0,0,0.8);
 }
-/* Watermark overlaid on lightbox image */
 .lb-watermark {
   position: absolute;
   bottom: 12px; right: 14px;
@@ -409,64 +421,15 @@ footer a { color: var(--warm); text-decoration: none; }
 <section id="pricing">
   <div class="sec-wrap">
     <div class="sec-head">
-      <p class="sec-label">Investment</p>
+
       <h2 class="sec-title">Pricing</h2>
     </div>
     <div class="pricing-grid">
 
-      <!-- BASEBALL — updated prices $25/$20/$15 -->
-      <div class="p-card">
-        <h3>Baseball &amp; Softball</h3>
-        <p class="p-sub">Action · Team · Individual</p>
-        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
-        <div class="p-row"><span>2 people</span><span class="p-amt">$20 each</span></div>
-        <div class="p-row"><span>3+ people</span><span class="p-amt">$15 each</span></div>
-        <p class="p-floor">Floor price: $15/person</p>
-        <a href="#contact" class="p-book">Book Now</a>
-      </div>
+      <!-- ── SPORTS ── -->
+      <div class="pricing-section-label">Sports</div>
 
-      <!-- VOLLEYBALL — new card, same prices as baseball -->
-      <div class="p-card">
-        <h3>Volleyball</h3>
-        <p class="p-sub">Game Day · Action Shots</p>
-        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
-        <div class="p-row"><span>2 people</span><span class="p-amt">$20 each</span></div>
-        <div class="p-row"><span>3+ people</span><span class="p-amt">$15 each</span></div>
-        <p class="p-floor">Floor price: $15/person</p>
-        <a href="#contact" class="p-book">Book Now</a>
-      </div>
-
-      <div class="p-card">
-        <h3>Football</h3>
-        <p class="p-sub">Game Day · Action Shots</p>
-        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
-        <div class="p-row"><span>2 people</span><span class="p-amt">$23 each</span></div>
-        <div class="p-row"><span>3+ people</span><span class="p-amt">$20 each</span></div>
-        <p class="p-floor">Floor price: $20/person</p>
-        <a href="#contact" class="p-book">Book Now</a>
-      </div>
-
-      <div class="p-card">
-        <h3>Soccer</h3>
-        <p class="p-sub">Game Day · Action Shots</p>
-        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
-        <div class="p-row"><span>2 people</span><span class="p-amt">$23 each</span></div>
-        <div class="p-row"><span>3+ people</span><span class="p-amt">$20 each</span></div>
-        <p class="p-floor">Floor price: $20/person</p>
-        <a href="#contact" class="p-book">Book Now</a>
-      </div>
-
-      <div class="p-card">
-        <h3>Track</h3>
-        <p class="p-sub">Meet Day · Action Shots</p>
-        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
-        <div class="p-row"><span>2 people</span><span class="p-amt">$23 each</span></div>
-        <div class="p-row"><span>3 people</span><span class="p-amt">$22 each</span></div>
-        <div class="p-row"><span>4+ people</span><span class="p-amt">$20 each</span></div>
-        <p class="p-floor">Floor price: $20/person</p>
-        <a href="#contact" class="p-book">Book Now</a>
-      </div>
-
+      <!-- BASKETBALL -->
       <div class="p-card">
         <h3>Basketball</h3>
         <p class="p-sub">Game Day · Action Shots</p>
@@ -478,6 +441,63 @@ footer a { color: var(--warm); text-decoration: none; }
         <a href="#contact" class="p-book">Book Now</a>
       </div>
 
+      <!-- BASEBALL & SOFTBALL -->
+      <div class="p-card">
+        <h3>Baseball &amp; Softball</h3>
+        <p class="p-sub">Action · Team · Individual</p>
+        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
+        <div class="p-row"><span>2 people</span><span class="p-amt">$20 each</span></div>
+        <div class="p-row"><span>3+ people</span><span class="p-amt">$15 each</span></div>
+        <p class="p-floor">Floor price: $15/person</p>
+        <a href="#contact" class="p-book">Book Now</a>
+      </div>
+
+      <!-- FOOTBALL -->
+      <div class="p-card">
+        <h3>Football</h3>
+        <p class="p-sub">Game Day · Action Shots</p>
+        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
+        <div class="p-row"><span>2 people</span><span class="p-amt">$23 each</span></div>
+        <div class="p-row"><span>3+ people</span><span class="p-amt">$20 each</span></div>
+        <p class="p-floor">Floor price: $20/person</p>
+        <a href="#contact" class="p-book">Book Now</a>
+      </div>
+
+      <!-- TRACK -->
+      <div class="p-card">
+        <h3>Track</h3>
+        <p class="p-sub">Meet Day · Action Shots</p>
+        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
+        <div class="p-row"><span>2 people</span><span class="p-amt">$23 each</span></div>
+        <div class="p-row"><span>3 people</span><span class="p-amt">$22 each</span></div>
+        <div class="p-row"><span>4+ people</span><span class="p-amt">$20 each</span></div>
+        <p class="p-floor">Floor price: $20/person</p>
+        <a href="#contact" class="p-book">Book Now</a>
+      </div>
+
+      <!-- SOCCER -->
+      <div class="p-card">
+        <h3>Soccer</h3>
+        <p class="p-sub">Game Day · Action Shots</p>
+        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
+        <div class="p-row"><span>2 people</span><span class="p-amt">$23 each</span></div>
+        <div class="p-row"><span>3+ people</span><span class="p-amt">$20 each</span></div>
+        <p class="p-floor">Floor price: $20/person</p>
+        <a href="#contact" class="p-book">Book Now</a>
+      </div>
+
+      <!-- VOLLEYBALL -->
+      <div class="p-card">
+        <h3>Volleyball</h3>
+        <p class="p-sub">Game Day · Action Shots</p>
+        <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
+        <div class="p-row"><span>2 people</span><span class="p-amt">$20 each</span></div>
+        <div class="p-row"><span>3+ people</span><span class="p-amt">$15 each</span></div>
+        <p class="p-floor">Floor price: $15/person</p>
+        <a href="#contact" class="p-book">Book Now</a>
+      </div>
+
+      <!-- OTHER SPORTS -->
       <div class="p-card">
         <h3>Other Sports</h3>
         <p class="p-sub">Wrestling · Swimming &amp; more</p>
@@ -489,31 +509,56 @@ footer a { color: var(--warm); text-decoration: none; }
         <a href="#contact" class="p-book">Book Now</a>
       </div>
 
+      <!-- ── PORTRAITS & LIFESTYLE ── -->
+      <div class="pricing-section-label">Portraits &amp; Lifestyle</div>
+
+      <!-- PORTRAITS -->
       <div class="p-card">
         <h3>Portraits</h3>
         <p class="p-sub">30–45 min · Edited photos delivered</p>
-        <div class="p-row"><span>Session rate</span><span class="p-amt">$50–$80</span></div>
+        <div class="p-row"><span>Solo session</span><span class="p-amt">$50</span></div>
+        <div class="p-row"><span>2 people</span><span class="p-amt">$65</span></div>
+        <div class="p-row"><span>3–4 people</span><span class="p-amt">$75</span></div>
+        <div class="p-row"><span>5+ people / family</span><span class="p-amt">$80</span></div>
+        <p class="p-note">Price includes editing & digital delivery</p>
         <a href="#contact" class="p-book">Book Now</a>
       </div>
 
+      <!-- GRADUATIONS -->
       <div class="p-card">
         <h3>Graduations</h3>
         <p class="p-sub">Cap &amp; gown · Multiple locations</p>
-        <div class="p-row"><span>Session rate</span><span class="p-amt">$50–$75</span></div>
+        <div class="p-row"><span>Graduate only</span><span class="p-amt">$50</span></div>
+        <div class="p-row"><span>Grad + 1</span><span class="p-amt">$60</span></div>
+        <div class="p-row"><span>Grad + small group</span><span class="p-amt">$65</span></div>
+        <div class="p-row"><span>Full family session</span><span class="p-amt">$75</span></div>
+        <p class="p-note">Add a second location for +$10</p>
         <a href="#contact" class="p-book">Book Now</a>
       </div>
 
+      <!-- ── EVENTS ── -->
+      <div class="pricing-section-label">Events</div>
+
+      <!-- PARTIES & EVENTS -->
       <div class="p-card">
         <h3>Parties &amp; Events</h3>
         <p class="p-sub">1–2 hours of coverage</p>
-        <div class="p-row"><span>Session rate</span><span class="p-amt">$60–$80</span></div>
+        <div class="p-row"><span>Up to 1 hour</span><span class="p-amt">$60</span></div>
+        <div class="p-row"><span>Up to 2 hours</span><span class="p-amt">$80</span></div>
+        <div class="p-row"><span>Each extra hour</span><span class="p-amt">+$25</span></div>
+        <p class="p-note">Birthdays, get-togethers, team celebrations & more</p>
         <a href="#contact" class="p-book">Book Now</a>
       </div>
 
+      <!-- QUINCEAÑERAS -->
       <div class="p-card">
         <h3>Quinceañeras</h3>
         <p class="p-sub">Full event coverage</p>
-        <div class="p-row"><span>Session rate</span><span class="p-amt">$60–$100</span></div>
+        <div class="p-row"><span>Ceremony only</span><span class="p-amt">$60</span></div>
+        <div class="p-row"><span>Ceremony + reception</span><span class="p-amt">$80</span></div>
+        <div class="p-row"><span>Full day (4+ hrs)</span><span class="p-amt">$100</span></div>
+        <div class="p-row"><span>Each extra hour</span><span class="p-amt">+$20</span></div>
+        <p class="p-note">Includes edited gallery delivered digitally</p>
         <a href="#contact" class="p-book">Book Now</a>
       </div>
 
@@ -540,7 +585,7 @@ footer a { color: var(--warm); text-decoration: none; }
   </div>
 </section>
 
-<!-- LIGHTBOX — watermark now inside the image wrapper -->
+<!-- LIGHTBOX -->
 <div id="lightbox" role="dialog" aria-label="Photo lightbox">
   <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
   <button class="lb-arrow" id="lb-prev" aria-label="Previous">‹</button>
@@ -588,17 +633,23 @@ footer a { color: var(--warm); text-decoration: none; }
           <label>Session Type</label>
           <select id="f-session">
             <option value="">Select a session type…</option>
-            <option>Baseball / Softball — from $15/person</option>
-            <option>Volleyball — from $15/person</option>
-            <option>Football — from $20/person</option>
-            <option>Soccer — from $20/person</option>
-            <option>Track — from $20/person</option>
-            <option>Basketball — from $15/person</option>
-            <option>Other Sport — from $15/person</option>
-            <option>Portraits — $50–$80</option>
-            <option>Graduations — $50–$75</option>
-            <option>Parties &amp; Events — $60–$80</option>
-            <option>Quinceañeras — $60–$100</option>
+            <optgroup label="Sports">
+              <option>Basketball — from $15/person</option>
+              <option>Baseball / Softball — from $15/person</option>
+              <option>Football — from $20/person</option>
+              <option>Track — from $20/person</option>
+              <option>Soccer — from $20/person</option>
+              <option>Volleyball — from $15/person</option>
+              <option>Other Sport — from $15/person</option>
+            </optgroup>
+            <optgroup label="Portraits & Lifestyle">
+              <option>Portraits — from $50</option>
+              <option>Graduations — from $50</option>
+            </optgroup>
+            <optgroup label="Events">
+              <option>Parties &amp; Events — from $60</option>
+              <option>Quinceañeras — from $60</option>
+            </optgroup>
           </select>
         </div>
         <div class="f-group">
@@ -608,7 +659,8 @@ footer a { color: var(--warm); text-decoration: none; }
             <option>Just me (1)</option>
             <option>2 people</option>
             <option>3 people</option>
-            <option>4+ people</option>
+            <option>4 people</option>
+            <option>5+ people</option>
           </select>
         </div>
         <div class="f-group">
