@@ -330,6 +330,56 @@ nav {
 .f-status.ok { background: rgba(80,160,80,0.08); color: #4a8a4a; border: 1px solid rgba(80,160,80,0.2); }
 .f-status.err { background: rgba(180,60,60,0.08); color: #a04040; border: 1px solid rgba(180,60,60,0.2); }
 
+/* ── FAQ ── */
+#faq { background: var(--cream); }
+.faq-grid { display: flex; flex-direction: column; gap: 0; margin-bottom: 3rem; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 0; text-align: left;
+  font-family: 'DM Sans', sans-serif; font-size: 0.92rem;
+  font-weight: 400; color: var(--ink); letter-spacing: 0.02em;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--warm); }
+.faq-arrow {
+  font-size: 1.4rem; font-weight: 300; color: var(--warm);
+  transition: transform .25s; flex-shrink: 0; margin-left: 1rem;
+  line-height: 1;
+}
+.faq-q.open .faq-arrow { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  font-size: 0.86rem; color: var(--ink2); line-height: 1.7;
+  transition: max-height .3s ease, padding .3s ease;
+  padding: 0;
+}
+.faq-a.open { max-height: 200px; padding-bottom: 1.2rem; }
+.faq-a strong { color: var(--warm2); font-weight: 500; }
+
+.faq-footer {
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  align-items: center; justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: var(--cream2); border: 1px solid var(--border);
+}
+.faq-pay { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.faq-pay-label {
+  font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-right: 0.25rem;
+}
+.faq-pay-method {
+  font-size: 0.8rem; color: var(--ink2);
+  background: var(--cream3); border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+}
+.faq-response {
+  font-size: 0.82rem; color: var(--ink2);
+}
+.faq-response strong { color: var(--warm2); }
+
 footer {
   text-align: center; padding: 2.5rem;
   border-top: 1px solid var(--border);
@@ -378,6 +428,7 @@ footer a { color: var(--warm); text-decoration: none; }
   <ul class="nav-links">
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -594,6 +645,87 @@ footer a { color: var(--warm); text-decoration: none; }
 
 <hr class="divider">
 
+<section id="faq">
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <p class="sec-label">Good to know</p>
+      <h2 class="sec-title">FAQ</h2>
+    </div>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I pay? <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <strong>Cash App, Apple Pay, or Cash.</strong> Pay before or day of the shoot and we're good.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How many photos do I get? <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          Somewhere between <strong>15–30 edited photos</strong> depending on the session. All of them are edited before they get sent.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you travel outside Garland? <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          Yeah, I shoot around the <strong>DFW area</strong>. Farther out might cost a little extra depending on where — just let me know when you reach out.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long until I get my photos? <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          Turnaround is typically <strong>2–5 days</strong> after the shoot. Photos are delivered as a digital download.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I book? <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          Fill out the contact form below, text <strong>(214) 283-7683</strong>, or DM <strong>@ny_.lenses</strong> on Instagram. I respond within 24 hours.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if my event gets cancelled? <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          Just reach out and we'll work out a new date. No issue at all.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-footer">
+      <div class="faq-pay">
+        <span class="faq-pay-label">Payment</span>
+        <span class="faq-pay-method">💵 Cash</span>
+        <span class="faq-pay-method">📱 Cash App</span>
+        <span class="faq-pay-method">🍎 Apple Pay</span>
+      </div>
+      <div class="faq-response">
+        Usually reply within <strong>24 hours</strong> — text or DM is fastest.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
 <section id="contact">
   <div class="sec-wrap">
     <div class="sec-head">
@@ -676,6 +808,16 @@ footer a { color: var(--warm); text-decoration: none; }
 </footer>
 
 <script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+  // open clicked if it wasn't open
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+
 // ─── GALLERY DATA ───────────────────────────────────────────────────────────
 const photos = {
   sports: [
