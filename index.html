@@ -171,13 +171,21 @@
   .p-amt { color: var(--warm); font-weight: 500; }
   .p-floor { font-size: 0.66rem; color: var(--muted); margin-top: 0.5rem; }
   .p-book {
-    display: inline-block; margin-top: 1.1rem;
-    font-size: 0.66rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--warm);
-    text-decoration: none; border-bottom: 1px solid transparent;
-    transition: border-color .2s; font-weight: 500;
+    display: inline-block; margin-top: 1.2rem;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.66rem; letter-spacing: 0.16em;
+    text-transform: uppercase; font-weight: 500;
+    color: #0d0d0d; background: var(--warm);
+    border: 1.5px solid var(--warm);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: background .2s, color .2s, border-color .2s;
   }
-  .p-book:hover { border-color: var(--warm); }
+  .p-book:hover {
+    background: transparent;
+    color: var(--warm);
+    border-color: var(--warm);
+  }
 
   /* ── GALLERY ─────────────────────────────── */
   .g-tabs {
@@ -661,36 +669,21 @@ const BASE = 'https://nylenses1-code.github.io/website/';
 
 const photos = {
   sports: [
-    'DSC03299.jpg',
-    'DSC03354.jpg',
-    'DSC03455.jpg',
-    'DSC03599.jpg',
-    'DSC03600.jpg',
-    'DSC03705.jpg',
-    'DSC03714.jpg',
-    'DSC05018.jpg',
-    'DSC06961.jpg',
-    'DSC06968.jpg',
-    'DSC06988.jpg',
-    'DSC06995.jpg',
-    'DSC07003.jpg',
-    'DSC07007.jpg',
-    'DSC07095-2.jpg',
-    'DSC07409.jpg',
-    'DSC07424.jpg',
-    'DSC08122.jpg',
+    'DSC05656.jpg','DSC03482.jpg','DSC03299.jpg','DSC03455.jpg',
+    'DSC03354.jpg','photo.jpg','49-DSC04444.jpg','45-DSC04463.jpg',
+    '76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg',
+    'DSC05526.jpg','DSC05884.jpg',
+    'DSC06048.jpg','DSC06073.jpg','DSC03714.jpg',
+    'DSC03600.jpg','DSC06525.jpg','DSC06564-2.jpg','DSC06553.jpg',
+    '4-DSC04170.jpg','DSC07095-2.jpg','DSC07409.jpg','DSC07424.jpg','DSC08122.jpg'
   ],
   portraits: [
-    'DSC03482.jpg',
-    'DSC05884.jpg',
-    'DSC05982.jpg',
-    'DSC06048.jpg',
-    'DSC06073.jpg',
-    'DSC06148.jpg',
-    'photo.jpg',
+    'DSC06961.jpg','DSC06968.jpg','DSC06988.jpg','DSC06995.jpg',
+    'DSC07003.jpg','DSC07007.jpg'
   ],
   graduations: [],
-  parties: []
+  parties: [],
+  quinceaneras: []
 };
 
 let activeCat  = 'sports';
