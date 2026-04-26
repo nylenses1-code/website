@@ -247,6 +247,15 @@
     font-weight: 300;
   }
   .g-item:hover .g-zoom { opacity: 1; transform: scale(1); }
+  .g-watermark {
+    position: absolute; bottom: 8px; right: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(226,201,138,0.7);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+    pointer-events: none; user-select: none;
+  }
   .g-soon {
     height: 220px;
     background: var(--cream3);
@@ -747,8 +756,13 @@ function renderGallery(cat) {
     zoom.textContent = '⊕';
     ov.appendChild(zoom);
 
+    const wm = document.createElement('span');
+    wm.className = 'g-watermark';
+    wm.textContent = '© NY Lenses';
+
     wrap.appendChild(img);
     wrap.appendChild(ov);
+    wrap.appendChild(wm);
     frag.appendChild(wrap);
   });
 
