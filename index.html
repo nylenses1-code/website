@@ -317,41 +317,61 @@
         </div>
       </div>
       <div>
-        <div class="f-group"><label>Your Name *</label><input type="text" id="f-name" placeholder="Full name"></div>
-        <div class="f-row">
-          <div class="f-group"><label>Email</label><input type="email" id="f-email" placeholder="your@email.com"></div>
-          <div class="f-group"><label>Phone</label><input type="tel" id="f-phone" placeholder="(555) 000-0000"></div>
+        <div data-fs-success style="display:none; margin-bottom:1rem; padding:0.75rem 1rem; background:rgba(80,160,80,0.08); color:#4a8a4a; border:1px solid rgba(80,160,80,0.2); font-size:0.82rem;">
+          ✓ Message sent! I'll get back to you soon.
         </div>
-        <div class="f-group">
-          <label>Session Type</label>
-          <select id="f-session">
-            <option value="">Select a session type…</option>
-            <option>Baseball / Softball — from $15/person</option>
-            <option>Football — from $20/person</option>
-            <option>Soccer — from $15/person</option>
-            <option>Track — from $20/person</option>
-            <option>Basketball — from $15/person</option>
-            <option>Other Sport — from $15/person</option>
-            <option>Portraits (Individual) — $40–$70</option>
-            <option>Portraits (Duo) — $50–$80</option>
-            <option>Portraits (Group) — $80–$120</option>
-            <option>Graduations — $50–$75</option>
-            <option>Parties &amp; Events — $60–$80</option>
-          </select>
-        </div>
-        <div class="f-group">
-          <label>How many people booking?</label>
-          <select id="f-people">
-            <option value="">Select…</option>
-            <option>Just me (1)</option>
-            <option>2 people</option>
-            <option>3 people</option>
-            <option>4+ people</option>
-          </select>
-        </div>
-        <div class="f-group"><label>Message</label><textarea id="f-msg" placeholder="Tell me about your event — date, location, anything else I should know."></textarea></div>
-        <button class="f-send" id="f-btn" onclick="sendForm()">Send Message</button>
-        <div class="f-status" id="f-status"></div>
+        <div data-fs-error style="display:none; margin-bottom:1rem; padding:0.75rem 1rem; background:rgba(180,60,60,0.08); color:#a04040; border:1px solid rgba(180,60,60,0.2); font-size:0.82rem;"></div>
+
+        <form id="booking-form">
+          <div class="f-group">
+            <label>Your Name *</label>
+            <input type="text" name="name" placeholder="Full name" data-fs-field required>
+            <span data-fs-error="name" style="font-size:0.72rem;color:#a04040;"></span>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="your@email.com" data-fs-field>
+              <span data-fs-error="email" style="font-size:0.72rem;color:#a04040;"></span>
+            </div>
+            <div class="f-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000">
+            </div>
+          </div>
+          <div class="f-group">
+            <label>Session Type</label>
+            <select name="session" data-fs-field>
+              <option value="">Select a session type…</option>
+              <option>Baseball / Softball — from $15/person</option>
+              <option>Football — from $20/person</option>
+              <option>Soccer — from $15/person</option>
+              <option>Track — from $20/person</option>
+              <option>Basketball — from $15/person</option>
+              <option>Other Sport — from $15/person</option>
+              <option>Portraits (Individual) — $40–$70</option>
+              <option>Portraits (Duo) — $50–$80</option>
+              <option>Portraits (Group) — $80–$120</option>
+              <option>Graduations — $50–$75</option>
+              <option>Parties &amp; Events — $60–$80</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>How many people booking?</label>
+            <select name="group_size" data-fs-field>
+              <option value="">Select…</option>
+              <option>Just me (1)</option>
+              <option>2 people</option>
+              <option>3 people</option>
+              <option>4+ people</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell me about your event — date, location, anything else I should know." data-fs-field></textarea>
+          </div>
+          <button type="submit" class="f-send" data-fs-submit-btn>Send Message</button>
+        </form>
       </div>
     </div>
   </div>
@@ -421,22 +441,12 @@ document.getElementById('lb-prev').onclick = prevLB;
 document.getElementById('lb-next').onclick = nextLB;
 document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLB(); });
 document.addEventListener('keydown', e => { if (!document.getElementById('lightbox').classList.contains('open')) return; if (e.key === 'Escape') closeLB(); if (e.key === 'ArrowLeft') prevLB(); if (e.key === 'ArrowRight') nextLB(); });
-function sendForm() {
-  const name = document.getElementById('f-name').value.trim();
-  const email = document.getElementById('f-email').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
-  const session = document.getElementById('f-session').value;
-  const people = document.getElementById('f-people').value;
-  const msg = document.getElementById('f-msg').value.trim();
-  if (!name) { showSt('err', 'Please enter your name.'); return; }
-  if (!email && !phone) { showSt('err', 'Please enter an email or phone so I can reach you.'); return; }
-  const subject = encodeURIComponent('NY Lenses Booking — ' + (session || 'General Inquiry'));
-  const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + (email||'N/A') + '\nPhone: ' + (phone||'N/A') + '\nSession: ' + (session||'Not selected') + '\nGroup size: ' + (people||'Not selected') + '\n\nMessage:\n' + (msg||'(none)'));
-  window.location.href = 'mailto:ny.lenses1@gmail.com?subject=' + subject + '&body=' + body;
-  showSt('ok', '✓ Your email app is opening with everything pre-filled — just hit Send!');
-  const btn = document.getElementById('f-btn'); btn.disabled = true; setTimeout(() => { btn.disabled = false; }, 5000);
-}
-function showSt(type, text) { const s = document.getElementById('f-status'); s.textContent = text; s.className = 'f-status ' + type; s.style.display = 'block'; }
+
+// Formspree Ajax
+window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+formspree('initForm', { formElement: '#booking-form', formId: 'mzdykadb' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
 </body>
 </html>
