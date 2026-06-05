@@ -71,20 +71,23 @@
   .g-tab { background: none; border: none; cursor: pointer; padding: 0.7rem 1.6rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .2s; }
   .g-tab.active { color: var(--warm); border-bottom-color: var(--warm); font-weight: 500; }
   .g-tab:hover { color: var(--ink); }
-  .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
-  .g-grid.portrait-mode { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-  .g-item { position: relative; overflow: hidden; cursor: pointer; background: var(--cream3); border: 1px solid var(--border); }
-  .g-item img { width: 100%; height: auto; display: block; transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .3s; filter: sepia(6%) contrast(1.02); will-change: transform; }
+  
+  /* Flex layout provides a clean layout for dynamically sized cropped images */
+  .g-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+  .g-item { position: relative; overflow: hidden; cursor: pointer; background: var(--cream3); border: 1px solid var(--border); flex-grow: 1; height: 320px; min-width: 150px; max-width: 100%; }
+  
+  /* Force images to fill their dynamically calculated grid box completely */
+  .g-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .3s; filter: sepia(6%) contrast(1.02); will-change: transform; }
   .g-item:hover img { transform: scale(1.03); filter: sepia(0%) contrast(1.05); }
   .g-overlay { position: absolute; inset: 0; background: transparent; display: flex; align-items: center; justify-content: center; transition: background .3s; pointer-events: none; }
   .g-item:hover .g-overlay { background: rgba(0,0,0,0.25); }
   .g-zoom { color: rgba(245,240,232,0.95); font-size: 2rem; opacity: 0; transform: scale(0.7); transition: opacity .3s, transform .3s; font-weight: 300; }
   .g-item:hover .g-zoom { opacity: 1; transform: scale(1); }
   .g-watermark { position: absolute; bottom: 8px; right: 10px; font-family: 'Cormorant Garamond', serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(226,201,138,0.7); text-shadow: 0 1px 4px rgba(0,0,0,0.8); pointer-events: none; user-select: none; }
-  .g-soon { height: 220px; background: var(--cream3); border: 1px dashed rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .g-soon { height: 220px; width: 100%; background: var(--cream3); border: 1px dashed rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
   @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
   .g-item { background: linear-gradient(90deg, #1a1a1a 25%, #222 50%, #1a1a1a 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
-  .g-item img { opacity: 0; transition: opacity .4s ease; min-height: 160px; }
+  .g-item img { opacity: 0; transition: opacity .4s ease; }
   .g-item img.loaded { opacity: 1; animation: none; }
 
   #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.97); align-items: center; justify-content: center; }
@@ -122,7 +125,7 @@
   footer a { color: var(--warm); text-decoration: none; }
 
   @media (max-width: 900px) { nav { padding: 0.9rem 1.5rem; } .sec-wrap { padding: 5rem 1.5rem; } .c-grid { grid-template-columns: 1fr; gap: 3rem; } .f-row { grid-template-columns: 1fr; } .nav-links { gap: 1.2rem; } }
-  @media (max-width: 600px) { .g-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 6px; } .pricing-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .g-item { height: 200px; min-width: 100px; } }
 </style>
 </head>
 <body>
@@ -279,6 +282,8 @@
     <p style="margin-top:2rem; font-size:0.75rem; color:var(--muted); letter-spacing:0.08em;">* All prices are estimates and may vary depending on the details of your event. Contact us for a custom quote.</p>
   </div>
 </section>
+
+<section id="gallery">
   <div class="sec-wrap">
     <div class="sec-head">
       <p class="sec-label">The work</p>
@@ -423,6 +428,7 @@ let activeCat = 'sports', activeList = [], lbIndex = 0;
 const imgObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(e => { if (e.isIntersecting) { const img = e.target; if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); } obs.unobserve(img); } });
 }, { rootMargin: '400px' });
+
 function renderGallery(cat) {
   const grid = document.getElementById('gGrid');
   const frag = document.createDocumentFragment();
@@ -435,16 +441,19 @@ function renderGallery(cat) {
   list.forEach((file, idx) => {
     const wrap = document.createElement('div'); wrap.className = 'g-item'; wrap.onclick = () => openLB(idx);
     const img = document.createElement('img');
+    
     img.addEventListener('load', function() {
       this.classList.add('loaded');
       wrap.style.animation = 'none';
-      if (this.naturalWidth > this.naturalHeight) {
-        wrap.style.gridColumn = 'span 2';
-      }
+      
+      // Calculate dynamic flex-basis based on real image aspect ratio
+      const aspect = this.naturalWidth / this.naturalHeight;
+      wrap.style.flexBasis = (320 * aspect) + 'px';
     });
+    
     if (idx < 6) { img.src = BASE + file; img.fetchPriority = idx < 3 ? 'high' : 'auto'; }
     else { img.dataset.src = BASE + file; img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; imgObserver.observe(img); }
-    img.alt = 'NY Lenses'; img.decoding = 'async'; img.style.minHeight = '160px';
+    img.alt = 'NY Lenses'; img.decoding = 'async';
     const ov = document.createElement('div'); ov.className = 'g-overlay';
     const zoom = document.createElement('span'); zoom.className = 'g-zoom'; zoom.textContent = '⊕'; ov.appendChild(zoom);
     const wm = document.createElement('span'); wm.className = 'g-watermark'; wm.textContent = '© NY Lenses';
@@ -456,8 +465,6 @@ document.querySelectorAll('.g-tab').forEach(t => {
   t.addEventListener('click', () => {
     document.querySelectorAll('.g-tab').forEach(x => x.classList.remove('active')); t.classList.add('active');
     activeCat = t.dataset.cat;
-    const grid = document.getElementById('gGrid');
-    activeCat === 'portraits' ? grid.classList.add('portrait-mode') : grid.classList.remove('portrait-mode');
     renderGallery(activeCat);
   });
 });
