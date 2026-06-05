@@ -72,9 +72,13 @@
   .g-tab.active { color: var(--warm); border-bottom-color: var(--warm); font-weight: 500; }
   .g-tab:hover { color: var(--ink); }
   
+  /* Flex wrap layout configuration */
   .g-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
   .g-item { position: relative; overflow: hidden; cursor: pointer; background: #141414; border: 1px solid var(--border); flex-grow: 1; height: 380px; min-width: 150px; max-width: 100%; }
   
+  /* Added class helper to handle elements that land cleanly alone on the last row */
+  .g-item.last-row-single { flex-grow: 0 !important; }
+
   .g-item img { width: 100%; height: 100%; display: block; object-fit: contain; transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .3s; filter: sepia(6%) contrast(1.02); will-change: transform; }
   .g-item:hover img { transform: scale(1.03); filter: sepia(0%) contrast(1.05); }
   
@@ -433,6 +437,13 @@ function renderGallery(cat) {
     for (let i = 0; i < 6; i++) { const d = document.createElement('div'); d.className = 'g-soon'; d.textContent = 'Coming Soon'; frag.appendChild(d); }
     grid.innerHTML = ''; grid.appendChild(frag); return;
   }
+  
+  // Calculate how many photos fit per row dynamically to isolate the bottom trailing layout items
+  const containerWidth = grid.clientWidth || window.innerWidth - 96; 
+  let currentWidthRow = 0;
+  let itemsInCurrentRow = [];
+  const processedItems = [];
+
   list.forEach((file, idx) => {
     const wrap = document.createElement('div'); wrap.className = 'g-item'; wrap.onclick = () => openLB(idx);
     const img = document.createElement('img');
@@ -458,7 +469,22 @@ function renderGallery(cat) {
     const zoom = document.createElement('span'); zoom.className = 'g-zoom'; zoom.textContent = '⊕'; ov.appendChild(zoom);
     const wm = document.createElement('span'); wm.className = 'g-watermark'; wm.textContent = '© NY Lenses';
     wrap.appendChild(img); wrap.appendChild(ov); wrap.appendChild(wm); frag.appendChild(wrap);
+    
+    // Track items to check row completions
+    processedItems.push({ element: wrap, filename: file });
   });
+
+  // Safe fallback constraint rule: if the remaining items at the very end don't hit a 3-item density threshold, prevent stretching
+  if (processedItems.length > 0) {
+    const itemsOnLastRowCount = processedItems.length % 4;
+    if (itemsOnLastRowCount > 0 && itemsOnLastRowCount < 3) {
+      for (let i = processedItems.length - itemsOnLastRowCount; i < processedItems.length; i++) {
+        processedItems[i].element.classList.add('last-row-single');
+        processedItems[i].element.style.maxWidth = '300px';
+      }
+    }
+  }
+
   grid.innerHTML = ''; grid.appendChild(frag);
 }
 document.querySelectorAll('.g-tab').forEach(t => {
@@ -469,6 +495,8 @@ document.querySelectorAll('.g-tab').forEach(t => {
   });
 });
 renderGallery('sports');
+window.addEventListener('resize', () => renderGallery(activeCat));
+
 function openLB(idx) { lbIndex = idx; document.getElementById('lb-img').src = BASE + activeList[idx]; document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeLB() { document.getElementById('lightbox').classList.remove('open'); setTimeout(() => { document.getElementById('lb-img').src = ''; }, 150); document.body.style.overflow = ''; }
 function prevLB() { lbIndex = (lbIndex - 1 + activeList.length) % activeList.length; document.getElementById('lb-img').src = BASE + activeList[lbIndex]; }
