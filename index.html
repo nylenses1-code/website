@@ -72,10 +72,13 @@
   .g-tab.active { color: var(--warm); border-bottom-color: var(--warm); font-weight: 500; }
   .g-tab:hover { color: var(--ink); }
   
-  .g-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+  .g-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
   .g-item { position: relative; overflow: hidden; cursor: pointer; background: #141414; border: 1px solid var(--border); flex-grow: 1; height: 380px; min-width: 150px; max-width: 100%; }
-  .g-item img { width: 100%; height: 100%; display: block; object-fit: contain; transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .3s; filter: sepia(6%) contrast(1.02); will-change: transform; }
-  .g-item:hover img { transform: scale(1.03); filter: sepia(0%) contrast(1.05); }
+  
+  /* Updated to cover the box completely while centering faces safely */
+  .g-item img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 25%; transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .3s; filter: sepia(6%) contrast(1.02); will-change: transform; }
+  .g-item:hover img { transform: scale(1.04); filter: sepia(0%) contrast(1.05); }
+  
   .g-overlay { position: absolute; inset: 0; background: transparent; display: flex; align-items: center; justify-content: center; transition: background .3s; pointer-events: none; }
   .g-item:hover .g-overlay { background: rgba(0,0,0,0.25); }
   .g-zoom { color: rgba(245,240,232,0.95); font-size: 2rem; opacity: 0; transform: scale(0.7); transition: opacity .3s, transform .3s; font-weight: 300; }
@@ -87,6 +90,7 @@
   .g-item img { opacity: 0; transition: opacity .4s ease; }
   .g-item img.loaded { opacity: 1; animation: none; }
 
+  /* Lightbox will still display the uncropped, complete photo cleanly */
   #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.97); align-items: center; justify-content: center; }
   #lightbox.open { display: flex; }
   #lb-img { max-width: 90vw; max-height: 88vh; object-fit: contain; display: block; box-shadow: 0 20px 80px rgba(0,0,0,0.8); }
@@ -440,7 +444,6 @@ function renderGallery(cat) {
       this.classList.add('loaded');
       wrap.style.animation = 'none';
       const aspect = this.naturalWidth / this.naturalHeight;
-      // Fixed: matches the 380px container height perfectly to ensure clean rendering logic
       wrap.style.flexBasis = (380 * aspect) + 'px';
     });
     
