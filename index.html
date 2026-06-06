@@ -1,132 +1,49 @@
-<section class="portal-section">
+<!-- ========================= -->
+<!-- PIXIESET CLIENT PORTAL -->
+<!-- REPLACE YOUR ENTIRE OLD PORTAL SECTION WITH THIS -->
+<!-- ========================= -->
 
-  <h2 class="portal-title">
-    Client Portal
-  </h2>
+<section id="proofing-portal">
+  <div class="sec-wrap">
+    <div class="portal-container">
 
-  <p class="portal-subtitle">
-    Enter your gallery code to access your photos
-  </p>
+      <div class="sec-head" style="text-align:center;">
+        <p class="sec-label" style="justify-content:center;">
+          Secure Access
+        </p>
 
-  <div class="portal-box">
+        <h2 class="sec-title">
+          Client Proofing Portal
+        </h2>
+      </div>
 
-    <input
-      type="text"
-      id="portalCode"
-      placeholder="Enter Your Gallery Code"
-      autocomplete="off"
-    />
+      <p class="portal-desc">
+        Enter your gallery name below to access your photos.
+      </p>
 
-    <button onclick="checkPortalCode()">
-      Access Gallery
-    </button>
+      <div class="portal-box">
 
+        <input
+          type="text"
+          id="portalCode"
+          class="portal-input"
+          placeholder="Enter Gallery Name..."
+          autocomplete="off"
+        >
+
+        <button
+          type="button"
+          class="portal-btn"
+          onclick="checkPortalCode()"
+        >
+          Access Gallery →
+        </button>
+
+      </div>
+
+    </div>
   </div>
-
 </section>
-
-<style>
-
-.portal-section {
-  width: 100%;
-  padding: 120px 20px;
-  background: #0f0f0f;
-  text-align: center;
-}
-
-.portal-title {
-  font-size: 42px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.portal-subtitle {
-  color: rgba(255,255,255,0.7);
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-
-.portal-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-#portalCode {
-  width: 320px;
-  max-width: 90vw;
-
-  padding: 16px 20px;
-
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.15);
-
-  background: rgba(255,255,255,0.06);
-
-  color: white;
-
-  font-size: 16px;
-
-  outline: none;
-
-  transition: 0.25s ease;
-}
-
-#portalCode:focus {
-  border-color: white;
-  background: rgba(255,255,255,0.09);
-}
-
-#portalCode::placeholder {
-  color: rgba(255,255,255,0.45);
-}
-
-.portal-box button {
-  padding: 16px 28px;
-
-  border: none;
-  border-radius: 14px;
-
-  background: white;
-  color: black;
-
-  font-size: 15px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.25s ease;
-}
-
-.portal-box button:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-@media (max-width: 640px) {
-
-  .portal-title {
-    font-size: 34px;
-  }
-
-  .portal-box {
-    flex-direction: column;
-  }
-
-  #portalCode {
-    width: 100%;
-  }
-
-  .portal-box button {
-    width: 100%;
-  }
-
-}
-
-</style>
 
 <script>
 
