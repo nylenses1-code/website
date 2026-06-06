@@ -19,7 +19,7 @@
     --muted:   #6e6e66;
     --border:  rgba(255,255,255,0.06);
     --shadow:  rgba(0,0,0,0.6);
-    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -63,6 +63,7 @@
     background: transparent; 
     border-bottom: 1px solid transparent; 
     transition: var(--transition);
+    will-change: padding, background;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
@@ -101,24 +102,11 @@
   .btn-outline { border: 1px solid rgba(255,255,255,0.18); color: var(--ink); background: transparent; }
   .btn-outline:hover { border-color: var(--warm); color: var(--warm2); transform: translateY(-3px); background: rgba(255,255,255,0.02); box-shadow: 0 10px 25px rgba(255,255,255,0.03); }
 
-  /* Feature 2: Premium Interactive Before/After Split Slider Component */
-  .slider-section { background: var(--cream2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .slider-frame { position: relative; width: 100%; max-width: 950px; margin: 0 auto; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 30px 60px rgba(0,0,0,0.4); user-select: none; -webkit-user-select: none; }
-  .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-  .slider-before { z-index: 1; filter: grayscale(80%) contrast(0.85) brightness(0.9); }
-  .slider-after { z-index: 2; width: 50%; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  .slider-bar { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: var(--warm); z-index: 3; pointer-events: none; transform: translateX(-50%); }
-  .slider-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: #0a0a0a; border: 2px solid var(--warm); rounded-corners: 50%; border-radius: 50%; z-index: 4; display: flex; align-items: center; justify-content: center; color: var(--warm2); font-size: 0.8rem; cursor: ew-resize; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-  .slider-label { position: absolute; bottom: 20px; z-index: 5; background: rgba(10,10,10,0.75); padding: 0.4rem 1rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--border); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); pointer-events: none; }
-  .label-before { left: 20px; }
-  .label-after { right: 20px; color: var(--warm2); border-color: rgba(200,169,110,0.3); }
-
   .sec-wrap { padding: 9.5rem 4rem; max-width: 1440px; margin: 0 auto; }
   .sec-head { margin-bottom: 5.5rem; text-align: left; }
   .sec-label { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm); display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-weight: 400; }
   .sec-label::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--warm); opacity: 0.6; }
   .sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.15; letter-spacing: -0.01em; }
-  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
   #pricing { background: var(--cream2); }
   .pricing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
@@ -140,12 +128,13 @@
   .g-tab.active { color: var(--warm2); border-bottom-color: var(--warm); font-weight: 500; }
   .g-tab:hover { color: var(--ink); }
   
-  .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
-  .g-item { position: relative; overflow: hidden; cursor: pointer; background: #121212; border: 1px solid var(--border); aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+  .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; min-height: 450px; }
+  .g-item { position: relative; overflow: hidden; cursor: pointer; background: var(--cream3); border: 1px solid var(--border); aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
   .g-item:hover { border-color: rgba(226,201,138,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.75); }
   
-  .g-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: sepia(4%) contrast(1.01); will-change: transform; }
-  .g-item:hover img { transform: scale(1.05); filter: sepia(0%) contrast(1.04); }
+  .g-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); filter: sepia(4%) contrast(1.01); will-change: transform; opacity: 0; }
+  .g-item img.loaded { opacity: 1; }
+  .g-item:hover img { transform: scale(1.03); filter: sepia(0%) contrast(1.04); }
   
   .g-overlay { position: absolute; inset: 0; background: transparent; display: flex; align-items: center; justify-content: center; transition: var(--transition); pointer-events: none; }
   .g-item:hover .g-overlay { background: rgba(0,0,0,0.4); }
@@ -156,16 +145,10 @@
   .g-item:hover .g-watermark { color: var(--warm2); }
   
   .g-soon { height: 280px; width: 100%; background: var(--cream3); border: 1px dashed rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-  
-  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-  .g-item { background: linear-gradient(90deg, #121212 25%, #1c1c1a 50%, #121212 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite linear; }
-  .g-item img { opacity: 0; transition: opacity 0.5s ease; }
-  .g-item img.loaded { opacity: 1; }
 
-  /* Feature 1: Live Instagram Integration Showcase Block CSS Framework */
   #instagram-feed { background: var(--cream3); border-top: 1px solid var(--border); }
   .ig-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
-  .ig-item { position: relative; block-size: auto; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid var(--border); background: var(--cream); text-decoration: none; display: block; }
+  .ig-item { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid var(--border); background: var(--cream); text-decoration: none; display: block; }
   .ig-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); opacity: 0.85; }
   .ig-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.85); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); padding: 1rem; text-align: center; }
   .ig-item:hover img { transform: scale(1.04); opacity: 1; }
@@ -173,11 +156,11 @@
   .ig-icon { font-size: 1.2rem; color: var(--warm2); margin-bottom: 0.5rem; }
   .ig-caption { font-size: 0.7rem; color: var(--ink2); letter-spacing: 0.05em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
 
-  #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(5,5,5,0.99); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(5,5,5,0.99); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
   #lightbox.open { display: flex; opacity: 1; }
-  #lb-img { max-width: 92vw; max-height: 85vh; aspect-ratio: auto; object-fit: contain; display: block; box-shadow: 0 30px 100px rgba(0,0,0,0.95); transform: scale(0.96); opacity: 0; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease; }
+  #lb-img { max-width: 92vw; max-height: 85vh; aspect-ratio: auto; object-fit: contain; display: block; box-shadow: 0 30px 100px rgba(0,0,0,0.95); transform: scale(0.96); opacity: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease; will-change: transform, opacity; }
   #lightbox.open #lb-img { transform: scale(1); opacity: 1; }
-  #lb-img.switching { transform: scale(0.98); opacity: 0.2; }
+  #lb-img.switching { transform: scale(0.99); opacity: 0.3; }
 
   .lb-close { position: fixed; top: 1.5rem; right: 2rem; background: none; border: none; color: var(--ink); font-size: 2.2rem; cursor: pointer; opacity: 0.4; transition: var(--transition); z-index: 501; font-weight: 300; padding: 0.5rem; }
   .lb-close:hover { opacity: 1; transform: rotate(90deg); }
@@ -189,7 +172,7 @@
 
   #testimonials { background: var(--cream); border-top: 1px solid var(--border); }
   .t-container { max-width: 950px; margin: 0 auto; text-align: center; position: relative; height: 260px; }
-  .t-slide { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -40%); opacity: 0; transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; width: 100%; }
+  .t-slide { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -40%); opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; pointer-events: none; width: 100%; }
   .t-slide.active { opacity: 1; transform: translate(-50%, -50%); pointer-events: auto; }
   .t-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.8vw, 2.3rem); font-weight: 300; font-style: italic; color: var(--ink); line-height: 1.5; margin-bottom: 2rem; }
   .t-author { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm); font-weight: 500; }
@@ -203,6 +186,19 @@
   .c-icon { width: 2.2rem; height: 2.2rem; background: var(--cream3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; transition: var(--transition); }
   .c-link:hover .c-icon { border-color: var(--warm); background: #1e1e1a; }
   
+  .calendar-box { background: var(--cream); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; }
+  .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .calendar-month { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm2); }
+  .calendar-nav-btn { background: none; border: none; color: var(--ink); font-size: 1.1rem; cursor: pointer; padding: 0.2rem 0.6rem; transition: var(--transition); }
+  .calendar-nav-btn:hover { color: var(--warm); }
+  .calendar-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 0.6rem; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+  .calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+  .calendar-day { padding: 0.5rem 0; font-size: 0.75rem; color: var(--ink2); cursor: pointer; transition: var(--transition); border: 1px solid transparent; }
+  .calendar-day:hover:not(.empty):not(.disabled) { border-color: var(--warm); color: var(--warm2); }
+  .calendar-day.selected { background: var(--warm); color: #0a0a0a !important; font-weight: 600; }
+  .calendar-day.disabled { opacity: 0.2; cursor: not-allowed; }
+  .calendar-day.empty { cursor: default; }
+
   .f-group { margin-bottom: 1.5rem; }
   .f-group label { display: block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; font-weight: 500; }
   
@@ -220,7 +216,6 @@
     appearance: none; 
     -webkit-appearance: none; 
     border-radius: 0; 
-    opacity: 1; 
   }
   .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--warm); background: #0c0c0b; box-shadow: 0 0 0 1px rgba(200,169,110,0.15); }
   
@@ -230,16 +225,16 @@
   .f-group textarea { min-height: 140px; resize: vertical; }
   .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   
-  .f-send { width: 100%; padding: 1.15rem; background: var(--warm); color: #0a0a0a; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: var(--transition); margin-top: 0.5rem; -webkit-appearance: none; appearance: none; }
+  .f-send { width: 100%; padding: 1.15rem; background: var(--warm); color: #0a0a0a; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: var(--transition); margin-top: 0.5rem; }
   .f-send:hover { background: var(--warm2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,110,0.2); }
-  .f-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
 
   footer { text-align: center; padding: 4.5rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; background: var(--cream); font-weight: 400; }
   footer a { color: var(--warm); text-decoration: none; transition: var(--transition); }
   footer a:hover { color: var(--warm2); }
 
   @media (max-width: 1024px) { 
-    nav, nav.scrolled { padding: 1.2rem 2.5rem; } 
+    nav { padding: 1.2rem 2.5rem; }
+    nav.scrolled { padding: 1.1rem 2.5rem; } 
     .sec-wrap { padding: 7.5rem 2.5rem; } 
     .c-grid { grid-template-columns: 1fr; gap: 4rem; } 
     .ig-grid { grid-template-columns: repeat(2, 1fr); }
@@ -260,7 +255,6 @@
     #lb-prev { left: 0.5rem; } 
     #lb-next { right: 0.5rem; } 
     .t-container { height: 380px; } 
-    .slider-frame { aspect-ratio: 1 / 1; }
   }
 </style>
 </head>
@@ -325,25 +319,6 @@
   <div class="hero-cta">
     <a href="#contact" class="btn btn-fill">Book a Shoot</a>
     <a href="#gallery" class="btn btn-outline">View Portfolio</a>
-  </div>
-</section>
-
-<section class="slider-section">
-  <div class="sec-wrap">
-    <div class="sec-head">
-      <p class="sec-label">The Editing Standard</p>
-      <h2 class="sec-title">Premium Enhancements</h2>
-    </div>
-    <div class="slider-frame" id="beforeAfterSlider">
-      <img src="https://nylenses1-code.github.io/website/DSC05656.jpg" class="slider-img slider-before" alt="Raw unedited photograph capture view">
-      <div class="slider-after" id="sliderAfterLayer">
-        <img src="https://nylenses1-code.github.io/website/DSC05656.jpg" class="slider-img" alt="Final luxury polished edit masterpiece">
-      </div>
-      <div class="slider-bar" id="sliderBar"></div>
-      <div class="slider-handle" id="sliderHandle">↔</div>
-      <span class="slider-label label-before">Camera Raw</span>
-      <span class="slider-label label-after">NY Gold Edit</span>
-    </div>
   </div>
 </section>
 
@@ -486,28 +461,28 @@
     </div>
     <div class="ig-grid">
       <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
-        <img src="https://nylenses1-code.github.io/website/DSC03482.jpg" alt="Instagram athletic portfolio thumbnail frame">
+        <img src="https://nylenses1-code.github.io/website/DSC03482.jpg" alt="Instagram athletic portfolio thumbnail frame" loading="lazy">
         <div class="ig-overlay">
           <span class="ig-icon">📸</span>
           <p class="ig-caption">Game nights under the stadium lighting structures. Hit the link to find more action shots.</p>
         </div>
       </a>
       <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
-        <img src="https://nylenses1-code.github.io/website/DSC00957.jpg" alt="Instagram portrait session asset feature block">
+        <img src="https://nylenses1-code.github.io/website/DSC00957.jpg" alt="Instagram portrait session asset feature block" loading="lazy">
         <div class="ig-overlay">
           <span class="ig-icon">📸</span>
           <p class="ig-caption">Golden hour closeups and editorial portrait frame selections. Book your slot today!</p>
         </div>
       </a>
       <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
-        <img src="https://nylenses1-code.github.io/website/DSC03299.jpg" alt="Instagram fast paced sports capture capture look">
+        <img src="https://nylenses1-code.github.io/website/DSC03299.jpg" alt="Instagram fast paced sports capture look" loading="lazy">
         <div class="ig-overlay">
           <span class="ig-icon">📸</span>
           <p class="ig-caption">Precision timing and high frame-rate coverage across the DFW competitive circuit.</p>
         </div>
       </a>
       <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
-        <img src="https://nylenses1-code.github.io/website/DSC00827.jpg" alt="Instagram grad photoshoot gallery preview card">
+        <img src="https://nylenses1-code.github.io/website/DSC00827.jpg" alt="Instagram grad photoshoot gallery preview card" loading="lazy">
         <div class="ig-overlay">
           <span class="ig-icon">📸</span>
           <p class="ig-caption">Celebrating excellence and future pathways. Customized packages for all local graduates.</p>
@@ -562,19 +537,34 @@
           <div class="f-group">
             <label>Your Name *</label>
             <input type="text" name="name" placeholder="Full name" data-fs-field required>
-            <span data-fs-error="name" style="font-size:0.75rem;color:#ba5252;display:block;margin-top:0.3rem;"></span>
           </div>
           <div class="f-row">
             <div class="f-group">
               <label>Email Address</label>
               <input type="email" name="email" placeholder="name@domain.com" data-fs-field>
-              <span data-fs-error="email" style="font-size:0.75rem;color:#ba5252;display:block;margin-top:0.3rem;"></span>
             </div>
             <div class="f-group">
               <label>Phone Number</label>
               <input type="tel" name="phone" placeholder="(555) 000-0000">
             </div>
           </div>
+          
+          <div class="f-group">
+            <label>Select Shoot Date *</label>
+            <input type="hidden" name="selected_date" id="selectedDateInput" required>
+            <div class="calendar-box">
+              <div class="calendar-header">
+                <button type="button" class="calendar-nav-btn" id="prevMonthBtn">‹</button>
+                <div class="calendar-month" id="calendarMonthTitle">June 2026</div>
+                <button type="button" class="calendar-nav-btn" id="nextMonthBtn">›</button>
+              </div>
+              <div class="calendar-weekdays">
+                <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+              </div>
+              <div class="calendar-days" id="calendarDaysGrid"></div>
+            </div>
+          </div>
+
           <div class="f-group">
             <label>Session Framework Selection</label>
             <select name="session" data-fs-field>
@@ -606,7 +596,7 @@
             <label>Shoot Vision &amp; Consultation Notes</label>
             <textarea name="message" placeholder="Tell me about your project — dates, preferred location coordinates, or general stylistic notes." data-fs-field></textarea>
           </div>
-          <button type="submit" class="f-send" data-fs-submit-btn>Send Message</button>
+          <button type="submit" class="f-send">Send Message</button>
         </form>
       </div>
     </div>
@@ -620,17 +610,18 @@
 
 <script>
 const BASE = 'https://nylenses1-code.github.io/website/';
+
+// Modified image sorting array to bring fresh sports pictures to the top
 const photos = {
   sports: [
-    'DSC05656.jpg','DSC03482.jpg','DSC03299.jpg','DSC03455.jpg',
-    'DSC03354.jpg','photo.jpg','49-DSC04444.jpg','45-DSC04463.jpg',
-    '76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg',
+    'DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg',
+    'DSC09802 (1).jpg','DSC09873 (1).jpg','DSC05656.jpg','DSC03482.jpg',
+    'DSC03299.jpg','DSC03455.jpg','DSC03354.jpg','photo.jpg','49-DSC04444.jpg',
+    '45-DSC04463.jpg','76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg',
     'DSC05526.jpg','DSC05884.jpg','DSC06048.jpg','DSC06073.jpg','DSC03714.jpg',
     'DSC03600.jpg','DSC06525.jpg','DSC06564-2.jpg','DSC06553.jpg',
-    '4-DSC04170.jpg','DSC07095-2.jpg','Untitled Project.jpg','DSC07424.jpg','DSC08122.jpg',
-    '82737.png','DSC08688.jpg','DSC08743.jpg','DSC08767.jpg','DSC08787.jpg',
-    'DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg',
-    'DSC09802 (1).jpg','DSC09873 (1).jpg'
+    '4-DSC04170.jpg','DSC07095-2.jpg','Untitled Project.jpg','DSC07424.jpg',
+    'DSC08122.jpg','82737.png','DSC08688.jpg','DSC08743.jpg','DSC08767.jpg','DSC08787.jpg'
   ],
   portraits: [
     'DSC00957.jpg','DSC00827.jpg','DSC00760.jpg','DSC00745.jpg',
@@ -655,6 +646,7 @@ const photos = {
 
 let activeCat = 'sports', activeList = [], lbIndex = 0;
 
+// Upgraded Intersection Observer configurations for smoother hardware graphics scroll acceleration
 const imgObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -666,45 +658,75 @@ const imgObserver = new IntersectionObserver((entries, obs) => {
       obs.unobserve(img);
     }
   });
-}, { rootMargin: '500px' });
+}, { rootMargin: '350px 0px', threshold: 0.01 });
 
+let scrollingTicking = false;
 window.addEventListener('scroll', () => {
-  const nav = document.getElementById('siteNav');
-  if (window.scrollY > 40) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-});
-
-// Feature 2 Script Execution Layer: Before/After Slider Handling Focus 
-const sliderFrame = document.getElementById('beforeAfterSlider');
-const sliderAfterLayer = document.getElementById('sliderAfterLayer');
-const sliderBar = document.getElementById('sliderBar');
-const sliderHandle = document.getElementById('sliderHandle');
-
-function executeSliderMove(clientX) {
-  const rect = sliderFrame.getBoundingClientRect();
-  const positionX = clientX - rect.left;
-  let calculationPercentage = (positionX / rect.width) * 100;
-  
-  if (calculationPercentage < 0) calculationPercentage = 0;
-  if (calculationPercentage > 100) calculationPercentage = 100;
-  
-  sliderAfterLayer.style.width = `${calculationPercentage}%`;
-  sliderBar.style.left = `${calculationPercentage}%`;
-  sliderHandle.style.left = `${calculationPercentage}%`;
-}
-
-sliderFrame.addEventListener('mousemove', (e) => {
-  executeSliderMove(e.clientX);
-});
-
-sliderFrame.addEventListener('touchmove', (e) => {
-  if(e.touches.length > 0) {
-    executeSliderMove(e.touches[0].clientX);
+  if (!scrollingTicking) {
+    window.requestAnimationFrame(() => {
+      const nav = document.getElementById('siteNav');
+      if (window.scrollY > 40) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      scrollingTicking = false;
+    });
+    scrollingTicking = true;
   }
 }, { passive: true });
+
+let calendarDate = new Date();
+let chosenDateString = "";
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function buildCalendar() {
+  const currentYear = calendarDate.getFullYear();
+  const currentMonth = calendarDate.getMonth();
+  document.getElementById('calendarMonthTitle').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+  
+  const initialDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+  const totalDaysCount = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const daysGridContainer = document.getElementById('calendarDaysGrid');
+  daysGridContainer.innerHTML = '';
+  
+  for (let i = 0; i < initialDayIndex; i++) {
+    const spaceBlock = document.createElement('div');
+    spaceBlock.className = 'calendar-day empty';
+    daysGridContainer.appendChild(spaceBlock);
+  }
+  
+  const realTimeToday = new Date();
+  for (let dayNum = 1; dayNum <= totalDaysCount; dayNum++) {
+    const dayCell = document.createElement('div');
+    dayCell.className = 'calendar-day';
+    dayCell.textContent = dayNum;
+    
+    const evaluationDate = new Date(currentYear, currentMonth, dayNum);
+    evaluationDate.setHours(23,59,59,999);
+    
+    if (evaluationDate < realTimeToday) {
+      dayCell.classList.add('disabled');
+    } else {
+      const standardFormatStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+      if (standardFormatStr === chosenDateString) {
+        dayCell.classList.add('selected');
+      }
+      
+      dayCell.onclick = () => {
+        document.querySelectorAll('.calendar-day').forEach(cell => cell.classList.remove('selected'));
+        dayCell.classList.add('selected');
+        chosenDateString = standardFormatStr;
+        document.getElementById('selectedDateInput').value = chosenDateString;
+      };
+    }
+    daysGridContainer.appendChild(dayCell);
+  }
+}
+
+document.getElementById('prevMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth() - 1); buildCalendar(); };
+document.getElementById('nextMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth() + 1); buildCalendar(); };
+buildCalendar();
 
 function renderGallery(cat) {
   const grid = document.getElementById('gGrid');
@@ -730,17 +752,16 @@ function renderGallery(cat) {
     wrap.onclick = () => openLB(idx);
     
     const img = document.createElement('img');
-    img.alt = 'NY Lenses modern photography portfolio frame';
+    img.alt = 'NY Lenses photography display element';
     img.decoding = 'async';
     
     img.addEventListener('load', function() {
       this.classList.add('loaded');
-      wrap.style.animation = 'none';
     });
     
-    if (idx < 6) {
+    // Performance Tweak: Only instantly trigger top 4 elements for faster speed metrics
+    if (idx < 4) {
       img.src = BASE + file;
-      img.fetchPriority = idx < 3 ? 'high' : 'auto';
     } else {
       img.dataset.src = BASE + file;
       img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
@@ -799,7 +820,7 @@ function closeLB() {
       lb.style.display = 'none';
       document.getElementById('lb-img').src = '';
     }
-  }, 400);
+  }, 300);
 }
 
 function switchLBImage(newIdx) {
@@ -810,7 +831,7 @@ function switchLBImage(newIdx) {
     lbIndex = newIdx;
     lbImg.src = BASE + activeList[lbIndex];
     lbImg.classList.remove('switching');
-  }, 180);
+  }, 100);
 }
 
 function prevLB() {
