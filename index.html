@@ -193,12 +193,52 @@
   .mobile-nav a { color: var(--ink2); text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.1em; transition: var(--transition); }
   .mobile-nav a:hover { color: var(--warm2); }
 
+  /* Loading Screen */
+  #loader { position: fixed; inset: 0; z-index: 9999; background: #0a0a0a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transition: opacity 0.6s ease, visibility 0.6s ease; }
+  #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  .loader-logo { opacity: 0; transform: scale(0.92); animation: loaderFadeIn 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s forwards; }
+  .loader-logo svg { width: min(340px, 80vw); height: auto; filter: drop-shadow(0 0 40px rgba(226,201,138,0.15)); }
+  .loader-bar-wrap { width: min(200px, 55vw); height: 1px; background: rgba(255,255,255,0.06); overflow: hidden; opacity: 0; animation: loaderFadeIn 0.5s ease 0.6s forwards; }
+  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--warm), var(--warm2)); animation: loaderProgress 1.4s cubic-bezier(0.4,0,0.2,1) 0.7s forwards; }
+  .loader-text { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); opacity: 0; animation: loaderFadeIn 0.5s ease 0.8s forwards; }
+  @keyframes loaderFadeIn { to { opacity: 1; transform: scale(1); } }
+  @keyframes loaderProgress { 0% { width: 0%; } 60% { width: 75%; } 100% { width: 100%; } }
+
   @media (max-width: 1024px) { nav { padding: 1.2rem 2.5rem; } nav.scrolled { padding: 1.1rem 2.5rem; } .sec-wrap { padding: 7.5rem 2.5rem; } .c-grid { grid-template-columns: 1fr; gap: 4rem; } }
   @media (max-width: 768px) { .f-row { grid-template-columns: 1fr; gap: 0; } .nav-links { display: none; } .nav-menu-btn { display: flex; } .g-tabs { gap: 0.5rem; margin-bottom: 2.5rem; } .g-tab { padding: 0.8rem 1.4rem; font-size: 0.68rem; } }
   @media (max-width: 480px) { .g-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); } .sec-wrap { padding: 5.5rem 1.5rem; } .hero-cta { flex-direction: column; gap: 1rem; } .btn { width: 100%; } .lb-arrow { width: 50px; height: 50px; font-size: 1.8rem; } #lb-prev { left: 0.5rem; } #lb-next { right: 0.5rem; } }
 </style>
 </head>
 <body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-logo">
+    <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="loader-oval-clip">
+          <ellipse cx="390" cy="100" rx="372" ry="92"/>
+        </clipPath>
+      </defs>
+      <ellipse cx="390" cy="100" rx="372" ry="92" fill="#e2c98a"/>
+      <ellipse cx="390" cy="100" rx="356" ry="76" fill="#0a0a0a"/>
+      <g clip-path="url(#loader-oval-clip)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
+        <text x="90"  y="103" font-size="54">N</text>
+        <text x="163" y="100" font-size="72">Y</text>
+        <text x="248" y="97"  font-size="90">L</text>
+        <text x="326" y="96"  font-size="100">E</text>
+        <text x="410" y="96"  font-size="100">N</text>
+        <text x="494" y="97"  font-size="90">S</text>
+        <text x="578" y="100" font-size="72">E</text>
+        <text x="652" y="103" font-size="54">S</text>
+      </g>
+      <ellipse cx="390" cy="100" rx="372" ry="92" fill="none" stroke="#e2c98a" stroke-width="7"/>
+      <ellipse cx="390" cy="100" rx="356" ry="76" fill="none" stroke="#e2c98a" stroke-width="2.5"/>
+    </svg>
+  </div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <span class="loader-text">Garland, TX · DFW Area</span>
+</div>
 
 <nav id="siteNav">
   <a href="#" class="nav-logo" aria-label="NY Lenses home" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
@@ -851,6 +891,16 @@ loadWeather();
 
 window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
 formspree('initForm', { formElement: '#booking-form', formId: 'mzdykadb' });
+
+// ─── LOADING SCREEN ───────────────────────────────────────────────────────────
+(function() {
+  const loader = document.getElementById('loader');
+  const hide = () => { loader.classList.add('hidden'); };
+  // Hide after 2.4s (animation completes) — once per session
+  setTimeout(hide, 2400);
+  // Also hide if page fully loads faster
+  window.addEventListener('load', () => setTimeout(hide, 2000));
+})();
 
 // ─── MOBILE NAV ───────────────────────────────────────────────────────────────
 function closeMobileNav() {
