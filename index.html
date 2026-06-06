@@ -44,13 +44,26 @@
   .nav-links a:hover { opacity: 1; color: var(--warm2); }
   .nav-links a:hover::after { width: 100%; }
 
-  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; max-width: 900px; margin: 0 auto; position: relative; }
+  .hero-wrap { position: relative; min-height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.22; filter: grayscale(40%); z-index: 0; pointer-events: none; }
+  .hero-video-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.3) 50%, rgba(10,10,10,0.85) 100%); z-index: 1; }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
   .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm); margin-bottom: 2rem; font-weight: 400; display: flex; align-items: center; gap: 1rem; }
   .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 1.5rem; height: 1px; background: var(--warm); opacity: 0.4; }
   .hero-logo { margin-bottom: 1.5rem; width: 100%; }
   .hero-logo svg { height: auto; width: 100%; max-width: 680px; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6)); }
   .hero-desc { font-size: 0.9rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink2); margin-bottom: 4rem; opacity: 0.85; font-weight: 400; }
   .hero-cta { display: flex; gap: 1.5rem; justify-content: center; width: 100%; flex-wrap: wrap; }
+
+  /* Weather Widget */
+  .weather-bar { position: relative; z-index: 2; background: rgba(10,10,10,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0.7rem 4rem; display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; }
+  .weather-widget { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--ink2); }
+  .weather-icon { font-size: 1.1rem; }
+  .weather-temp { color: var(--warm2); font-weight: 500; }
+  .weather-desc { color: var(--muted); text-transform: capitalize; }
+  .weather-location { color: var(--muted); font-size: 0.65rem; letter-spacing: 0.1em; }
+  .weather-divider { width: 1px; height: 14px; background: var(--border); }
+  @media (max-width: 768px) { .weather-bar { padding: 0.7rem 1.5rem; } }
   
   .btn { display: inline-block; padding: 1.1rem 3rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; transition: var(--transition); cursor: pointer; font-family: 'DM Sans', sans-serif; border-radius: 0; text-align: center; }
   .btn-fill { background: var(--warm); color: #0a0a0a; border: 1px solid var(--warm); font-weight: 600; }
@@ -227,6 +240,12 @@
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
 </div>
 
+<div class="hero-wrap">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
+
 <section class="hero">
   <span class="hero-eyebrow">Garland, TX · DFW Area</span>
   <div class="hero-logo">
@@ -259,6 +278,18 @@
     <a href="#proofing-portal" class="btn btn-outline">Client Portal</a>
   </div>
 </section>
+</div>
+
+<div class="weather-bar" id="weatherBar" style="display:none;">
+  <div class="weather-widget" id="weatherWidget">
+    <span class="weather-icon" id="wIcon">⛅</span>
+    <span class="weather-temp" id="wTemp">--°F</span>
+    <span class="weather-divider"></span>
+    <span class="weather-desc" id="wDesc">Loading...</span>
+    <span class="weather-divider"></span>
+    <span class="weather-location">Garland, TX</span>
+  </div>
+</div>
 
 <section id="pricing">
   <div class="sec-wrap">
@@ -790,6 +821,33 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') prevLB();
   if (e.key === 'ArrowRight') nextLB();
 });
+
+// ─── WEATHER (Garland, TX) ────────────────────────────────────────────────────
+const WEATHER_ICONS = {
+  0:'☀️',1:'☀️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',
+  51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',
+  71:'🌨️',73:'🌨️',75:'❄️',80:'🌦️',81:'🌧️',82:'⛈️',
+  95:'⛈️',96:'⛈️',99:'⛈️'
+};
+const WEATHER_DESCS = {
+  0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',
+  45:'Foggy',48:'Foggy',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',
+  61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',
+  80:'Rain showers',81:'Rain showers',82:'Heavy showers',95:'Thunderstorm',96:'Thunderstorm',99:'Thunderstorm'
+};
+async function loadWeather() {
+  try {
+    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=32.9126&longitude=-96.6389&current_weather=true&temperature_unit=fahrenheit&timezone=America%2FChicago');
+    const data = await res.json();
+    const cw = data.current_weather;
+    const code = cw.weathercode;
+    document.getElementById('wTemp').textContent = Math.round(cw.temperature) + '°F';
+    document.getElementById('wIcon').textContent = WEATHER_ICONS[code] || '🌤️';
+    document.getElementById('wDesc').textContent = WEATHER_DESCS[code] || 'Clear';
+    document.getElementById('weatherBar').style.display = 'flex';
+  } catch(e) { /* silently fail if no connection */ }
+}
+loadWeather();
 
 window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
 formspree('initForm', { formElement: '#booking-form', formId: 'mzdykadb' });
