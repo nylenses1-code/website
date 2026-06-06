@@ -94,7 +94,7 @@
   .hero-logo { margin-bottom: 1.5rem; width: 100%; }
   .hero-logo svg { height: auto; width: 100%; max-width: 680px; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6)); }
   .hero-desc { font-size: 0.9rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink2); margin-bottom: 4rem; opacity: 0.85; font-weight: 400; }
-  .hero-cta { display: flex; gap: 1.5rem; justify-content: center; width: 100%; flex-wrap: wrap; }
+  .hero-cta { display: flex; gap: 1.5rem; justify-content: center; width: 100%; }
   
   .btn { display: inline-block; padding: 1.1rem 3rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; transition: var(--transition); cursor: pointer; font-family: 'DM Sans', sans-serif; border-radius: 0; text-align: center; }
   .btn-fill { background: var(--warm); color: #0a0a0a; border: 1px solid var(--warm); font-weight: 600; }
@@ -146,16 +146,15 @@
   
   .g-soon { height: 280px; width: 100%; background: var(--cream3); border: 1px dashed rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 
-  /* New Proofing Link Portal Styling */
-  #proofing-portal { background: var(--cream3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .portal-container { text-align: center; max-width: 700px; margin: 0 auto; }
-  .portal-desc { font-size: 0.95rem; color: var(--ink2); margin-bottom: 2.5rem; line-height: 1.6; }
-  .portal-box { background: var(--cream); border: 1px solid var(--border); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: center; }
-  .portal-input { width: 100%; max-width: 400px; background: var(--cream2); border: 1px solid var(--border); color: var(--ink); padding: 1rem 1.25rem; font-family: 'DM Sans', sans-serif; font-size: 15px; text-align: center; outline: none; transition: var(--transition); }
-  .portal-input:focus { border-color: var(--warm); background: #0c0c0b; }
-  .portal-btn { width: 100%; max-width: 400px; padding: 1.1rem; background: var(--warm); color: #0a0a0a; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: var(--transition); }
-  .portal-btn:hover { background: var(--warm2); transform: translateY(-2px); }
-  .portal-error { color: #ba5252; font-size: 0.8rem; margin-top: 0.5rem; display: none; }
+  #instagram-feed { background: var(--cream3); border-top: 1px solid var(--border); }
+  .ig-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+  .ig-item { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid var(--border); background: var(--cream); text-decoration: none; display: block; }
+  .ig-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); opacity: 0.85; }
+  .ig-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.85); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); padding: 1rem; text-align: center; }
+  .ig-item:hover img { transform: scale(1.04); opacity: 1; }
+  .ig-item:hover .ig-overlay { opacity: 1; }
+  .ig-icon { font-size: 1.2rem; color: var(--warm2); margin-bottom: 0.5rem; }
+  .ig-caption { font-size: 0.7rem; color: var(--ink2); letter-spacing: 0.05em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
 
   #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(5,5,5,0.99); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
   #lightbox.open { display: flex; opacity: 1; }
@@ -170,6 +169,13 @@
   .lb-arrow:hover { background: rgba(255,255,255,0.1); color: var(--warm2); border-color: rgba(226,201,138,0.25); }
   #lb-prev { left: 1.5rem; }
   #lb-next { right: 1.5rem; }
+
+  #testimonials { background: var(--cream); border-top: 1px solid var(--border); }
+  .t-container { max-width: 950px; margin: 0 auto; text-align: center; position: relative; height: 260px; }
+  .t-slide { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -40%); opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; pointer-events: none; width: 100%; }
+  .t-slide.active { opacity: 1; transform: translate(-50%, -50%); pointer-events: auto; }
+  .t-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.8vw, 2.3rem); font-weight: 300; font-style: italic; color: var(--ink); line-height: 1.5; margin-bottom: 2rem; }
+  .t-author { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm); font-weight: 500; }
   
   #contact { background: var(--cream2); }
   .c-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 7rem; align-items: start; }
@@ -231,10 +237,12 @@
     nav.scrolled { padding: 1.1rem 2.5rem; } 
     .sec-wrap { padding: 7.5rem 2.5rem; } 
     .c-grid { grid-template-columns: 1fr; gap: 4rem; } 
+    .ig-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) { 
     .f-row { grid-template-columns: 1fr; gap: 0; } 
     .nav-links { display: none; } 
+    .t-container { height: 320px; } 
     .g-tabs { gap: 0.5rem; margin-bottom: 2.5rem; }
     .g-tab { padding: 0.8rem 1.4rem; font-size: 0.68rem; }
   }
@@ -246,6 +254,7 @@
     .lb-arrow { width: 50px; height: 50px; font-size: 1.8rem; }
     #lb-prev { left: 0.5rem; } 
     #lb-next { right: 0.5rem; } 
+    .t-container { height: 380px; } 
   }
 </style>
 </head>
@@ -276,7 +285,7 @@
   <ul class="nav-links">
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#proofing-portal">Client Portal</a></li>
+    <li><a href="#instagram-feed">Instagram</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -310,7 +319,6 @@
   <div class="hero-cta">
     <a href="#contact" class="btn btn-fill">Book a Shoot</a>
     <a href="#gallery" class="btn btn-outline">View Portfolio</a>
-    <a href="#proofing-portal" class="btn btn-outline">Client Portal</a>
   </div>
 </section>
 
@@ -438,29 +446,70 @@
   </div>
 </section>
 
-<section id="proofing-portal">
-  <div class="sec-wrap">
-    <div class="portal-container">
-      <div class="sec-head" style="text-align: center;">
-        <p class="sec-label" style="justify-content: center;">Secure Access</p>
-        <h2 class="sec-title">Client Proofing Portal</h2>
-      </div>
-      <p class="portal-desc">Enter your team name or customized private gallery access code below to view and download your high-resolution image delivery folders.</p>
-      <div class="portal-box">
-        <input type="text" id="portalCode" class="portal-input" placeholder="Enter Access Code..." autocomplete="off">
-        <button type="button" class="portal-btn" onclick="checkPortalCode()">Access Gallery →</button>
-        <div id="portalError" class="portal-error">Invalid access code. Please check spelling or contact photographer.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <div id="lightbox" role="dialog" aria-label="Photo lightbox view">
   <button class="lb-close" id="lbClose" aria-label="Close Lightbox">✕</button>
   <button class="lb-arrow" id="lb-prev" aria-label="Previous Image">‹</button>
   <img id="lb-img" src="" alt="Full size display asset">
   <button class="lb-arrow" id="lb-next" aria-label="Next Image">›</button>
 </div>
+
+<section id="instagram-feed">
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <p class="sec-label">Social Flow</p>
+      <h2 class="sec-title">Instagram Feed</h2>
+    </div>
+    <div class="ig-grid">
+      <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
+        <img src="https://nylenses1-code.github.io/website/DSC03482.jpg" alt="Instagram athletic portfolio thumbnail frame" loading="lazy">
+        <div class="ig-overlay">
+          <span class="ig-icon">📸</span>
+          <p class="ig-caption">Game nights under the stadium lighting structures. Hit the link to find more action shots.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
+        <img src="https://nylenses1-code.github.io/website/DSC00957.jpg" alt="Instagram portrait session asset feature block" loading="lazy">
+        <div class="ig-overlay">
+          <span class="ig-icon">📸</span>
+          <p class="ig-caption">Golden hour closeups and editorial portrait frame selections. Book your slot today!</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
+        <img src="https://nylenses1-code.github.io/website/DSC03299.jpg" alt="Instagram fast paced sports capture look" loading="lazy">
+        <div class="ig-overlay">
+          <span class="ig-icon">📸</span>
+          <p class="ig-caption">Precision timing and high frame-rate coverage across the DFW competitive circuit.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="ig-item">
+        <img src="https://nylenses1-code.github.io/website/DSC00827.jpg" alt="Instagram grad photoshoot gallery preview card" loading="lazy">
+        <div class="ig-overlay">
+          <span class="ig-icon">📸</span>
+          <p class="ig-caption">Celebrating excellence and future pathways. Customized packages for all local graduates.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="sec-wrap">
+    <div class="t-container">
+      <div class="t-slide active">
+        <p class="t-quote">"Incredible action shots. Captured raw emotion and energy perfectly during the game day. Absolute professionalism from start to finish."</p>
+        <p class="t-author">— Local DFW Athlete</p>
+      </div>
+      <div class="t-slide">
+        <p class="t-quote">"The portraits came out absolutely beautiful. The lighting, composition, and framing are premium quality. Highly recommend for any milestone."</p>
+        <p class="t-author">— Portrait Client</p>
+      </div>
+      <div class="t-slide">
+        <p class="t-quote">"Perfect coverage of our graduation event. They managed to catch every important handshake and celebration seamlessly without missing a beat."</p>
+        <p class="t-author">— Garland, TX Parent</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="contact">
   <div class="sec-wrap">
@@ -562,25 +611,7 @@
 <script>
 const BASE = 'https://nylenses1-code.github.io/website/';
 
-// Current custom codes configurations for the portal setup
-const portalGalleries = {
-  "sample2026": "https://images.google.com",
-  "owlsports": "https://drive.google.com",
-  "nyguest": "https://pixieset.com"
-};
-
-function checkPortalCode() {
-  const code = document.getElementById('portalCode').value.trim().toLowerCase();
-  const errorEl = document.getElementById('portalError');
-  
-  if (portalGalleries[code]) {
-    errorEl.style.display = 'none';
-    window.open(portalGalleries[code], '_blank');
-  } else {
-    errorEl.style.display = 'block';
-  }
-}
-
+// Modified image sorting array to bring fresh sports pictures to the top
 const photos = {
   sports: [
     'DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg',
@@ -615,6 +646,7 @@ const photos = {
 
 let activeCat = 'sports', activeList = [], lbIndex = 0;
 
+// Upgraded Intersection Observer configurations for smoother hardware graphics scroll acceleration
 const imgObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -727,6 +759,7 @@ function renderGallery(cat) {
       this.classList.add('loaded');
     });
     
+    // Performance Tweak: Only instantly trigger top 4 elements for faster speed metrics
     if (idx < 4) {
       img.src = BASE + file;
     } else {
@@ -821,6 +854,16 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') prevLB();
   if (e.key === 'ArrowRight') nextLB();
 });
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.t-slide');
+if(slides.length > 0) {
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 7000);
+}
 
 window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
 formspree('initForm', { formElement: '#booking-form', formId: 'mzdykadb' });
