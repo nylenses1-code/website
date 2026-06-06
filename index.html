@@ -23,57 +23,13 @@
   }
   
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { 
-    scroll-behavior: smooth; 
-    font-size: 16px; 
-    background: var(--cream);
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
+  html { scroll-behavior: smooth; font-size: 16px; background: var(--cream); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   
-  body { 
-    background: var(--cream); 
-    color: var(--ink); 
-    font-family: 'DM Sans', sans-serif; 
-    font-weight: 300; 
-    line-height: 1.7; 
-    overflow-x: hidden; 
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    position: relative;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    opacity: 0.022;
-    pointer-events: none;
-    z-index: 999;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  }
+  body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; }
+  body::before { content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; opacity: 0.022; pointer-events: none; z-index: 999; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
 
-  nav { 
-    position: fixed; 
-    top: 0; left: 0; right: 0; 
-    z-index: 200; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 1.8rem 4rem; 
-    background: transparent; 
-    border-bottom: 1px solid transparent; 
-    transition: var(--transition);
-    will-change: padding, background;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  nav.scrolled { 
-    padding: 1.1rem 4rem; 
-    background: rgba(10,10,10,0.92); 
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px); 
-    border-bottom: 1px solid var(--border); 
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.8rem 4rem; background: transparent; border-bottom: 1px solid transparent; transition: var(--transition); will-change: padding, background; -webkit-transform: translateZ(0); transform: translateZ(0); }
+  nav.scrolled { padding: 1.1rem 4rem; background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
   
   .nav-logo { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
   .nav-logo-icon { width: 38px; height: 38px; flex-shrink: 0; }
@@ -131,41 +87,33 @@
   .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; min-height: 450px; }
   .g-item { position: relative; overflow: hidden; cursor: pointer; background: var(--cream3); border: 1px solid var(--border); aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
   .g-item:hover { border-color: rgba(226,201,138,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.75); }
-  
   .g-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); filter: sepia(4%) contrast(1.01); will-change: transform; opacity: 0; }
   .g-item img.loaded { opacity: 1; }
   .g-item:hover img { transform: scale(1.03); filter: sepia(0%) contrast(1.04); }
-  
   .g-overlay { position: absolute; inset: 0; background: transparent; display: flex; align-items: center; justify-content: center; transition: var(--transition); pointer-events: none; }
   .g-item:hover .g-overlay { background: rgba(0,0,0,0.4); }
   .g-zoom { color: rgba(245,240,232,0.95); font-size: 1.8rem; opacity: 0; transform: scale(0.8); transition: var(--transition); font-weight: 300; }
   .g-item:hover .g-zoom { opacity: 1; transform: scale(1); }
-  
   .g-watermark { position: absolute; bottom: 14px; right: 16px; font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(226,201,138,0.65); text-shadow: 0 2px 6px rgba(0,0,0,0.8); pointer-events: none; user-select: none; transition: var(--transition); }
   .g-item:hover .g-watermark { color: var(--warm2); }
-  
   .g-soon { height: 280px; width: 100%; background: var(--cream3); border: 1px dashed rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 
-  /* New Proofing Link Portal Styling */
+  /* Client Portal */
   #proofing-portal { background: var(--cream3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .portal-container { text-align: center; max-width: 700px; margin: 0 auto; }
   .portal-desc { font-size: 0.95rem; color: var(--ink2); margin-bottom: 2.5rem; line-height: 1.6; }
   .portal-box { background: var(--cream); border: 1px solid var(--border); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: center; }
-  .portal-input { width: 100%; max-width: 400px; background: var(--cream2); border: 1px solid var(--border); color: var(--ink); padding: 1rem 1.25rem; font-family: 'DM Sans', sans-serif; font-size: 15px; text-align: center; outline: none; transition: var(--transition); }
-  .portal-input:focus { border-color: var(--warm); background: #0c0c0b; }
-  .portal-btn { width: 100%; max-width: 400px; padding: 1.1rem; background: var(--warm); color: #0a0a0a; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: var(--transition); }
+  .portal-btn { width: 100%; max-width: 400px; padding: 1.1rem; background: var(--warm); color: #0a0a0a; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: var(--transition); text-decoration: none; display: block; text-align: center; }
   .portal-btn:hover { background: var(--warm2); transform: translateY(-2px); }
-  .portal-error { color: #ba5252; font-size: 0.8rem; margin-top: 0.5rem; display: none; }
+  .portal-sub { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
 
   #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(5,5,5,0.99); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
   #lightbox.open { display: flex; opacity: 1; }
   #lb-img { max-width: 92vw; max-height: 85vh; aspect-ratio: auto; object-fit: contain; display: block; box-shadow: 0 30px 100px rgba(0,0,0,0.95); transform: scale(0.96); opacity: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease; will-change: transform, opacity; }
   #lightbox.open #lb-img { transform: scale(1); opacity: 1; }
   #lb-img.switching { transform: scale(0.99); opacity: 0.3; }
-
   .lb-close { position: fixed; top: 1.5rem; right: 2rem; background: none; border: none; color: var(--ink); font-size: 2.2rem; cursor: pointer; opacity: 0.4; transition: var(--transition); z-index: 501; font-weight: 300; padding: 0.5rem; }
   .lb-close:hover { opacity: 1; transform: rotate(90deg); }
-  
   .lb-arrow { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: var(--ink); font-size: 2.2rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); z-index: 501; font-weight: 300; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
   .lb-arrow:hover { background: rgba(255,255,255,0.1); color: var(--warm2); border-color: rgba(226,201,138,0.25); }
   #lb-prev { left: 1.5rem; }
@@ -179,7 +127,8 @@
   .c-link:hover { opacity: 1; color: var(--warm2); transform: translateX(4px); }
   .c-icon { width: 2.2rem; height: 2.2rem; background: var(--cream3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; transition: var(--transition); }
   .c-link:hover .c-icon { border-color: var(--warm); background: #1e1e1a; }
-  
+
+  /* Calendar */
   .calendar-box { background: var(--cream); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; }
   .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
   .calendar-month { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm2); }
@@ -188,37 +137,31 @@
   .calendar-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 0.6rem; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
   .calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
   .calendar-day { padding: 0.5rem 0; font-size: 0.75rem; color: var(--ink2); cursor: pointer; transition: var(--transition); border: 1px solid transparent; }
-  .calendar-day:hover:not(.empty):not(.disabled) { border-color: var(--warm); color: var(--warm2); }
+  .calendar-day:hover:not(.empty):not(.disabled):not(.booked) { border-color: var(--warm); color: var(--warm2); }
   .calendar-day.selected { background: var(--warm); color: #0a0a0a !important; font-weight: 600; }
   .calendar-day.disabled { opacity: 0.2; cursor: not-allowed; }
   .calendar-day.empty { cursor: default; }
+  .calendar-day.booked { background: rgba(186,82,82,0.15); color: #ba5252 !important; cursor: not-allowed; border-color: rgba(186,82,82,0.2); position: relative; }
+  .calendar-day.booked::after { content: ''; position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background: #ba5252; border-radius: 50%; }
+
+  /* Time slots */
+  .time-slots-wrap { margin-top: 1rem; }
+  .time-slots-label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; font-weight: 500; display: block; }
+  .time-slots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
+  .time-slot { background: var(--cream); border: 1px solid var(--border); color: var(--ink2); padding: 0.55rem 0.5rem; font-size: 0.72rem; text-align: center; cursor: pointer; transition: var(--transition); font-family: 'DM Sans', sans-serif; letter-spacing: 0.04em; }
+  .time-slot:hover:not(.slot-booked) { border-color: var(--warm); color: var(--warm2); }
+  .time-slot.slot-selected { background: var(--warm); color: #0a0a0a; border-color: var(--warm); font-weight: 600; }
+  .time-slot.slot-booked { background: rgba(186,82,82,0.08); color: rgba(186,82,82,0.5); border-color: rgba(186,82,82,0.15); cursor: not-allowed; text-decoration: line-through; }
 
   .f-group { margin-bottom: 1.5rem; }
   .f-group label { display: block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; font-weight: 500; }
-  
-  .f-group input, .f-group select, .f-group textarea { 
-    width: 100%; 
-    background: var(--cream); 
-    border: 1px solid var(--border); 
-    color: var(--ink); 
-    padding: 1rem 1.25rem; 
-    font-family: 'DM Sans', sans-serif; 
-    font-size: 16px; 
-    font-weight: 300; 
-    outline: none; 
-    transition: var(--transition); 
-    appearance: none; 
-    -webkit-appearance: none; 
-    border-radius: 0; 
-  }
+  .f-group input, .f-group select, .f-group textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); color: var(--ink); padding: 1rem 1.25rem; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300; outline: none; transition: var(--transition); appearance: none; -webkit-appearance: none; border-radius: 0; }
   .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--warm); background: #0c0c0b; box-shadow: 0 0 0 1px rgba(200,169,110,0.15); }
-  
   .f-group select { background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 20px) calc(1.1em + 6px), calc(100% - 15px) calc(1.1em + 6px); background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
   .f-group select:focus { background-image: linear-gradient(45deg, transparent 50%, var(--warm) 50%), linear-gradient(135deg, var(--warm) 50%, transparent 50%); }
   .f-group select option { background: #121210; color: var(--ink); }
   .f-group textarea { min-height: 140px; resize: vertical; }
   .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  
   .f-send { width: 100%; padding: 1.15rem; background: var(--warm); color: #0a0a0a; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: var(--transition); margin-top: 0.5rem; }
   .f-send:hover { background: var(--warm2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,110,0.2); }
 
@@ -226,27 +169,20 @@
   footer a { color: var(--warm); text-decoration: none; transition: var(--transition); }
   footer a:hover { color: var(--warm2); }
 
-  @media (max-width: 1024px) { 
-    nav { padding: 1.2rem 2.5rem; }
-    nav.scrolled { padding: 1.1rem 2.5rem; } 
-    .sec-wrap { padding: 7.5rem 2.5rem; } 
-    .c-grid { grid-template-columns: 1fr; gap: 4rem; } 
-  }
-  @media (max-width: 768px) { 
-    .f-row { grid-template-columns: 1fr; gap: 0; } 
-    .nav-links { display: none; } 
-    .g-tabs { gap: 0.5rem; margin-bottom: 2.5rem; }
-    .g-tab { padding: 0.8rem 1.4rem; font-size: 0.68rem; }
-  }
-  @media (max-width: 480px) { 
-    .g-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); } 
-    .sec-wrap { padding: 5.5rem 1.5rem; } 
-    .hero-cta { flex-direction: column; gap: 1rem; } 
-    .btn { width: 100%; } 
-    .lb-arrow { width: 50px; height: 50px; font-size: 1.8rem; }
-    #lb-prev { left: 0.5rem; } 
-    #lb-next { right: 0.5rem; } 
-  }
+  .nav-menu-btn { display: none; background: none; border: 1px solid var(--border); color: var(--ink); width: 40px; height: 40px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; transition: var(--transition); flex-shrink: 0; }
+  .nav-menu-btn:hover { border-color: var(--warm); }
+  .nav-menu-btn span { display: block; width: 18px; height: 1px; background: var(--ink); transition: var(--transition); }
+  .nav-menu-btn.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-menu-btn.open span:nth-child(2) { opacity: 0; }
+  .nav-menu-btn.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 199; background: rgba(10,10,10,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { color: var(--ink2); text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.1em; transition: var(--transition); }
+  .mobile-nav a:hover { color: var(--warm2); }
+
+  @media (max-width: 1024px) { nav { padding: 1.2rem 2.5rem; } nav.scrolled { padding: 1.1rem 2.5rem; } .sec-wrap { padding: 7.5rem 2.5rem; } .c-grid { grid-template-columns: 1fr; gap: 4rem; } }
+  @media (max-width: 768px) { .f-row { grid-template-columns: 1fr; gap: 0; } .nav-links { display: none; } .nav-menu-btn { display: flex; } .g-tabs { gap: 0.5rem; margin-bottom: 2.5rem; } .g-tab { padding: 0.8rem 1.4rem; font-size: 0.68rem; } }
+  @media (max-width: 480px) { .g-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); } .sec-wrap { padding: 5.5rem 1.5rem; } .hero-cta { flex-direction: column; gap: 1rem; } .btn { width: 100%; } .lb-arrow { width: 50px; height: 50px; font-size: 1.8rem; } #lb-prev { left: 0.5rem; } #lb-next { right: 0.5rem; } }
 </style>
 </head>
 <body>
@@ -279,7 +215,17 @@
     <li><a href="#proofing-portal">Client Portal</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+  <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+  <a href="#proofing-portal" onclick="closeMobileNav()">Client Portal</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
 
 <section class="hero">
   <span class="hero-eyebrow">Garland, TX · DFW Area</span>
@@ -394,6 +340,7 @@
           <div class="p-row"><span>Individual</span><span class="p-amt">$60–$90</span></div>
           <div class="p-row"><span>Duo</span><span class="p-amt">$80–$120</span></div>
           <div class="p-row"><span>Group</span><span class="p-amt">$100–$150</span></div>
+          <p class="p-floor">Final rate based on location &amp; session length</p>
         </div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
@@ -403,7 +350,7 @@
           <p class="p-sub">1–2 hrs · Multi-location · Cap &amp; Gown</p>
           <div class="p-row"><span>Standard Session</span><span class="p-amt">$60–$120</span></div>
           <div class="p-row"><span style="font-size:0.78rem;">Dual Photographer Option</span><span class="p-amt">$100–$200</span></div>
-          <p class="p-floor">Extended hour rates available upon request</p>
+          <p class="p-floor">Final rate based on location, duration &amp; # of locations</p>
         </div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
@@ -413,12 +360,15 @@
           <p class="p-sub">Comprehensive event coverage</p>
           <div class="p-row"><span>Standard Coverage</span><span class="p-amt">$80–$140</span></div>
           <div class="p-row"><span style="font-size:0.78rem;">Dual Photographer Option</span><span class="p-amt">$120–$200</span></div>
-          <p class="p-floor">Extended hour rates available upon request</p>
+          <p class="p-floor">Final rate based on event duration &amp; location</p>
         </div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
     </div>
-    <p style="margin-top:2.5rem; font-size:0.78rem; color:var(--muted); letter-spacing:0.06em; line-height:1.6;">* All pricing benchmarks are baseline estimates and are subject to adjustment depending on assignment distance and scheduling specifics. Connect with me directly for custom quotes.</p>
+    <div style="margin-top:2.5rem; display:flex; flex-direction:column; gap:0.75rem;">
+      <p style="font-size:0.78rem; color:var(--muted); letter-spacing:0.06em; line-height:1.6;">* All pricing shown is a starting baseline. Final rate depends on shoot location, travel distance, and session duration. Reach out directly for a custom quote.</p>
+      <p style="font-size:0.78rem; color:var(--muted); letter-spacing:0.06em; line-height:1.6;">📸 &nbsp;Photo delivery turnaround: <span style="color:var(--warm2); font-weight:500;">1–3 business days</span> depending on the shoot — sports same-week, portraits &amp; events within 3 days.</p>
+    </div>
   </div>
 </section>
 
@@ -438,18 +388,18 @@
   </div>
 </section>
 
+<!-- UPDATED CLIENT PORTAL -->
 <section id="proofing-portal">
   <div class="sec-wrap">
     <div class="portal-container">
       <div class="sec-head" style="text-align: center;">
         <p class="sec-label" style="justify-content: center;">Secure Access</p>
-        <h2 class="sec-title">Client Proofing Portal</h2>
+        <h2 class="sec-title">Client Gallery Portal</h2>
       </div>
-      <p class="portal-desc">Enter your team name or customized private gallery access code below to view and download your high-resolution image delivery folders.</p>
+      <p class="portal-desc">Your photos are ready! Click below to visit the NY Lenses gallery page and find your session. Use the access code provided to you after your shoot.</p>
       <div class="portal-box">
-        <input type="text" id="portalCode" class="portal-input" placeholder="Enter Access Code..." autocomplete="off">
-        <button type="button" class="portal-btn" onclick="checkPortalCode()">Access Gallery →</button>
-        <div id="portalError" class="portal-error">Invalid access code. Please check spelling or contact photographer.</div>
+        <a href="https://nylenses.pixieset.com" target="_blank" rel="noopener" class="portal-btn">View My Photos →</a>
+        <p class="portal-sub">You will be asked for your access code on the gallery page</p>
       </div>
     </div>
   </div>
@@ -501,8 +451,9 @@
           </div>
           
           <div class="f-group">
-            <label>Select Shoot Date *</label>
+            <label>Select Shoot Date &amp; Time *</label>
             <input type="hidden" name="selected_date" id="selectedDateInput" required>
+            <input type="hidden" name="selected_time" id="selectedTimeInput" required>
             <div class="calendar-box">
               <div class="calendar-header">
                 <button type="button" class="calendar-nav-btn" id="prevMonthBtn">‹</button>
@@ -513,6 +464,10 @@
                 <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
               </div>
               <div class="calendar-days" id="calendarDaysGrid"></div>
+            </div>
+            <div class="time-slots-wrap" id="timeSlotsWrap" style="display:none;">
+              <span class="time-slots-label">Available Times</span>
+              <div class="time-slots-grid" id="timeSlotsGrid"></div>
             </div>
           </div>
 
@@ -562,25 +517,37 @@
 <script>
 const BASE = 'https://nylenses1-code.github.io/website/';
 
-// Current custom codes configurations for the portal setup
-const portalGalleries = {
-  "sample2026": "https://images.google.com",
-  "owlsports": "https://drive.google.com",
-  "nyguest": "https://pixieset.com"
-};
-
-function checkPortalCode() {
-  const code = document.getElementById('portalCode').value.trim().toLowerCase();
-  const errorEl = document.getElementById('portalError');
-  
-  if (portalGalleries[code]) {
-    errorEl.style.display = 'none';
-    window.open(portalGalleries[code], '_blank');
-  } else {
-    errorEl.style.display = 'block';
-  }
+// ─── BOOKED SLOTS (stored in localStorage) ───────────────────────────────────
+// Format: { "2026-06-15": ["9:00 AM", "2:00 PM"], ... }
+function getBookedSlots() {
+  try { return JSON.parse(localStorage.getItem('nyl_booked_slots') || '{}'); } 
+  catch(e) { return {}; }
+}
+function saveBookedSlots(data) {
+  localStorage.setItem('nyl_booked_slots', JSON.stringify(data));
+}
+function isDateFullyBooked(dateStr) {
+  const booked = getBookedSlots();
+  return booked[dateStr] && booked[dateStr].length >= ALL_TIMES.length;
+}
+function isSlotBooked(dateStr, time) {
+  const booked = getBookedSlots();
+  return booked[dateStr] && booked[dateStr].includes(time);
+}
+function bookSlot(dateStr, time) {
+  const booked = getBookedSlots();
+  if (!booked[dateStr]) booked[dateStr] = [];
+  if (!booked[dateStr].includes(time)) booked[dateStr].push(time);
+  saveBookedSlots(booked);
 }
 
+const ALL_TIMES = [
+  '8:00 AM','9:00 AM','10:00 AM','11:00 AM',
+  '12:00 PM','1:00 PM','2:00 PM','3:00 PM',
+  '4:00 PM','5:00 PM','6:00 PM'
+];
+
+// ─── GALLERY ──────────────────────────────────────────────────────────────────
 const photos = {
   sports: [
     'DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg',
@@ -619,10 +586,7 @@ const imgObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       const img = e.target;
-      if (img.dataset.src) {
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-      }
+      if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
       obs.unobserve(img);
     }
   });
@@ -633,75 +597,110 @@ window.addEventListener('scroll', () => {
   if (!scrollingTicking) {
     window.requestAnimationFrame(() => {
       const nav = document.getElementById('siteNav');
-      if (window.scrollY > 40) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
+      nav.classList.toggle('scrolled', window.scrollY > 40);
       scrollingTicking = false;
     });
     scrollingTicking = true;
   }
 }, { passive: true });
 
+// ─── CALENDAR ─────────────────────────────────────────────────────────────────
 let calendarDate = new Date();
-let chosenDateString = "";
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let chosenDateString = '';
+let chosenTimeString = '';
+const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 function buildCalendar() {
-  const currentYear = calendarDate.getFullYear();
-  const currentMonth = calendarDate.getMonth();
-  document.getElementById('calendarMonthTitle').textContent = `${monthNames[currentMonth]} ${currentYear}`;
-  
-  const initialDayIndex = new Date(currentYear, currentMonth, 1).getDay();
-  const totalDaysCount = new Date(currentYear, currentMonth + 1, 0).getDate();
-  const daysGridContainer = document.getElementById('calendarDaysGrid');
-  daysGridContainer.innerHTML = '';
-  
-  for (let i = 0; i < initialDayIndex; i++) {
-    const spaceBlock = document.createElement('div');
-    spaceBlock.className = 'calendar-day empty';
-    daysGridContainer.appendChild(spaceBlock);
+  const yr = calendarDate.getFullYear();
+  const mo = calendarDate.getMonth();
+  document.getElementById('calendarMonthTitle').textContent = `${monthNames[mo]} ${yr}`;
+  const startDay = new Date(yr, mo, 1).getDay();
+  const totalDays = new Date(yr, mo + 1, 0).getDate();
+  const grid = document.getElementById('calendarDaysGrid');
+  grid.innerHTML = '';
+
+  for (let i = 0; i < startDay; i++) {
+    const el = document.createElement('div');
+    el.className = 'calendar-day empty';
+    grid.appendChild(el);
   }
-  
-  const realTimeToday = new Date();
-  for (let dayNum = 1; dayNum <= totalDaysCount; dayNum++) {
-    const dayCell = document.createElement('div');
-    dayCell.className = 'calendar-day';
-    dayCell.textContent = dayNum;
-    
-    const evaluationDate = new Date(currentYear, currentMonth, dayNum);
-    evaluationDate.setHours(23,59,59,999);
-    
-    if (evaluationDate < realTimeToday) {
-      dayCell.classList.add('disabled');
+
+  const today = new Date();
+  for (let d = 1; d <= totalDays; d++) {
+    const el = document.createElement('div');
+    el.className = 'calendar-day';
+    el.textContent = d;
+    const dateStr = `${yr}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const dateObj = new Date(yr, mo, d);
+    dateObj.setHours(23,59,59,999);
+
+    if (dateObj < today) {
+      el.classList.add('disabled');
+    } else if (isDateFullyBooked(dateStr)) {
+      el.classList.add('booked');
+      el.title = 'Fully booked';
     } else {
-      const standardFormatStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
-      if (standardFormatStr === chosenDateString) {
-        dayCell.classList.add('selected');
-      }
-      
-      dayCell.onclick = () => {
-        document.querySelectorAll('.calendar-day').forEach(cell => cell.classList.remove('selected'));
-        dayCell.classList.add('selected');
-        chosenDateString = standardFormatStr;
-        document.getElementById('selectedDateInput').value = chosenDateString;
+      if (dateStr === chosenDateString) el.classList.add('selected');
+      el.onclick = () => {
+        document.querySelectorAll('.calendar-day').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+        chosenDateString = dateStr;
+        chosenTimeString = '';
+        document.getElementById('selectedDateInput').value = dateStr;
+        document.getElementById('selectedTimeInput').value = '';
+        renderTimeSlots(dateStr);
       };
     }
-    daysGridContainer.appendChild(dayCell);
+    grid.appendChild(el);
   }
 }
 
-document.getElementById('prevMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth() - 1); buildCalendar(); };
-document.getElementById('nextMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth() + 1); buildCalendar(); };
+function renderTimeSlots(dateStr) {
+  const wrap = document.getElementById('timeSlotsWrap');
+  const grid = document.getElementById('timeSlotsGrid');
+  wrap.style.display = 'block';
+  grid.innerHTML = '';
+
+  ALL_TIMES.forEach(time => {
+    const el = document.createElement('div');
+    el.className = 'time-slot';
+    el.textContent = time;
+    if (isSlotBooked(dateStr, time)) {
+      el.classList.add('slot-booked');
+      el.title = 'Already booked';
+    } else {
+      el.onclick = () => {
+        document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('slot-selected'));
+        el.classList.add('slot-selected');
+        chosenTimeString = time;
+        document.getElementById('selectedTimeInput').value = time;
+      };
+    }
+    grid.appendChild(el);
+  });
+}
+
+document.getElementById('prevMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth()-1); buildCalendar(); };
+document.getElementById('nextMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth()+1); buildCalendar(); };
 buildCalendar();
 
+// ─── FORM SUBMIT — mark slot as booked ────────────────────────────────────────
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+  const date = document.getElementById('selectedDateInput').value;
+  const time = document.getElementById('selectedTimeInput').value;
+  if (date && time) {
+    bookSlot(date, time);
+    buildCalendar();
+  }
+});
+
+// ─── GALLERY RENDER ───────────────────────────────────────────────────────────
 function renderGallery(cat) {
   const grid = document.getElementById('gGrid');
   const frag = document.createDocumentFragment();
   const list = photos[cat] || [];
   activeList = list;
-  
+
   if (list.length === 0) {
     for (let i = 0; i < 3; i++) {
       const d = document.createElement('div');
@@ -718,15 +717,10 @@ function renderGallery(cat) {
     const wrap = document.createElement('div');
     wrap.className = 'g-item';
     wrap.onclick = () => openLB(idx);
-    
     const img = document.createElement('img');
     img.alt = 'NY Lenses photography display element';
     img.decoding = 'async';
-    
-    img.addEventListener('load', function() {
-      this.classList.add('loaded');
-    });
-    
+    img.addEventListener('load', function() { this.classList.add('loaded'); });
     if (idx < 4) {
       img.src = BASE + file;
     } else {
@@ -734,24 +728,20 @@ function renderGallery(cat) {
       img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
       imgObserver.observe(img);
     }
-    
     const ov = document.createElement('div');
     ov.className = 'g-overlay';
     const zoom = document.createElement('span');
     zoom.className = 'g-zoom';
     zoom.textContent = '⊕';
     ov.appendChild(zoom);
-    
     const wm = document.createElement('span');
     wm.className = 'g-watermark';
     wm.textContent = '© NY Lenses';
-    
     wrap.appendChild(img);
     wrap.appendChild(ov);
     wrap.appendChild(wm);
     frag.appendChild(wrap);
   });
-
   grid.innerHTML = '';
   grid.appendChild(frag);
 }
@@ -765,51 +755,30 @@ document.querySelectorAll('.g-tab').forEach(t => {
     renderGallery(activeCat);
   });
 });
-
 renderGallery('sports');
 
+// ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
 function openLB(idx) {
   lbIndex = idx;
-  const lbImg = document.getElementById('lb-img');
-  lbImg.src = BASE + activeList[idx];
+  document.getElementById('lb-img').src = BASE + activeList[idx];
   const lb = document.getElementById('lightbox');
   lb.style.display = 'flex';
   setTimeout(() => lb.classList.add('open'), 10);
   document.body.style.overflow = 'hidden';
 }
-
 function closeLB() {
   const lb = document.getElementById('lightbox');
   lb.classList.remove('open');
   document.body.style.overflow = '';
-  setTimeout(() => {
-    if(!lb.classList.contains('open')) {
-      lb.style.display = 'none';
-      document.getElementById('lb-img').src = '';
-    }
-  }, 300);
+  setTimeout(() => { if (!lb.classList.contains('open')) { lb.style.display='none'; document.getElementById('lb-img').src=''; } }, 300);
 }
-
 function switchLBImage(newIdx) {
   const lbImg = document.getElementById('lb-img');
   lbImg.classList.add('switching');
-  
-  setTimeout(() => {
-    lbIndex = newIdx;
-    lbImg.src = BASE + activeList[lbIndex];
-    lbImg.classList.remove('switching');
-  }, 100);
+  setTimeout(() => { lbIndex = newIdx; lbImg.src = BASE + activeList[lbIndex]; lbImg.classList.remove('switching'); }, 100);
 }
-
-function prevLB() {
-  const newIdx = (lbIndex - 1 + activeList.length) % activeList.length;
-  switchLBImage(newIdx);
-}
-
-function nextLB() {
-  const newIdx = (lbIndex + 1) % activeList.length;
-  switchLBImage(newIdx);
-}
+function prevLB() { switchLBImage((lbIndex - 1 + activeList.length) % activeList.length); }
+function nextLB() { switchLBImage((lbIndex + 1) % activeList.length); }
 
 document.getElementById('lbClose').onclick = closeLB;
 document.getElementById('lb-prev').onclick = prevLB;
@@ -824,8 +793,19 @@ document.addEventListener('keydown', e => {
 
 window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
 formspree('initForm', { formElement: '#booking-form', formId: 'mzdykadb' });
+
+// ─── MOBILE NAV ───────────────────────────────────────────────────────────────
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('menuBtn').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('menuBtn').addEventListener('click', function() {
+  const isOpen = this.classList.toggle('open');
+  document.getElementById('mobileNav').classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
 </body>
 </html>
