@@ -222,7 +222,7 @@
   .f-send { width: 100%; padding: 1.15rem; background: var(--warm); color: #0a0a0a; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: var(--transition); margin-top: 0.5rem; }
   .f-send:hover { background: var(--warm2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,110,0.2); }
 
-  <footer> text-align: center; padding: 4.5rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; background: var(--cream); font-weight: 400; }
+  footer { text-align: center; padding: 4.5rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; background: var(--cream); font-weight: 400; }
   footer a { color: var(--warm); text-decoration: none; transition: var(--transition); }
   footer a:hover { color: var(--warm2); }
 
@@ -489,37 +489,37 @@
             <label>Your Name *</label>
             <input type="text" name="name" placeholder="Full name" data-fs-field required>
           </div>
-          <div class="f-group">
-            <label>Select Date *</label>
-            <div class="calendar-box">
-              <div class="calendar-header">
-                <button type="button" class="calendar-nav-btn" id="prevMonth">‹</button>
-                <div class="calendar-month" id="calendarMonthYear"></div>
-                <button type="button" class="calendar-nav-btn" id="nextMonth">›</button>
-              </div>
-              <div class="calendar-weekdays">
-                <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
-              </div>
-              <div class="calendar-days" id="calendarDays"></div>
-            </div>
-            <input type="hidden" name="selected_date" id="selectedDateInput" required>
-          </div>
-
           <div class="f-row">
             <div class="f-group">
               <label>Email Address</label>
-              <input type="email" name="email" placeholder="your@email.com" data-fs-field>
+              <input type="email" name="email" placeholder="name@domain.com" data-fs-field>
             </div>
             <div class="f-group">
-              <label>Phone Number *</label>
-              <input type="tel" name="phone" placeholder="(555) 000-0000" required>
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000">
             </div>
           </div>
           
           <div class="f-group">
-            <label>Session Framework</label>
+            <label>Select Shoot Date *</label>
+            <input type="hidden" name="selected_date" id="selectedDateInput" required>
+            <div class="calendar-box">
+              <div class="calendar-header">
+                <button type="button" class="calendar-nav-btn" id="prevMonthBtn">‹</button>
+                <div class="calendar-month" id="calendarMonthTitle">June 2026</div>
+                <button type="button" class="calendar-nav-btn" id="nextMonthBtn">›</button>
+              </div>
+              <div class="calendar-weekdays">
+                <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+              </div>
+              <div class="calendar-days" id="calendarDaysGrid"></div>
+            </div>
+          </div>
+
+          <div class="f-group">
+            <label>Session Framework Selection</label>
             <select name="session" data-fs-field>
-              <option value="">Select a preferred target format...</option>
+              <option value="">Select an assignment tier…</option>
               <option>Baseball / Softball — from $15/person</option>
               <option>Football — from $20/person</option>
               <option>Soccer — from $15/person</option>
@@ -533,24 +533,21 @@
               <option>Parties &amp; Events — $80–$140</option>
             </select>
           </div>
-          
           <div class="f-group">
-            <label>Roster / Group Size Scale</label>
+            <label>Estimated Group Size</label>
             <select name="group_size" data-fs-field>
-              <option value="">Select metrics...</option>
-              <option>Individual (1 Person)</option>
-              <option>Small Roster Session (2 People)</option>
-              <option>Medium Group Session (3 People)</option>
-              <option>Full Squad Bundle (4+ Attendees)</option>
+              <option value="">Select size parameters…</option>
+              <option>Individual (1)</option>
+              <option>Duo Session (2)</option>
+              <option>Small Group (3)</option>
+              <option>Large Team Group (4+)</option>
             </select>
           </div>
-          
           <div class="f-group">
-            <label>Project Details</label>
-            <textarea name="message" placeholder="Provide extra background data regarding game times, site addresses, team names, or contextual design targets..." data-fs-field></textarea>
+            <label>Shoot Vision &amp; Consultation Notes</label>
+            <textarea name="message" placeholder="Tell me about your project — dates, preferred location coordinates, or general stylistic notes." data-fs-field></textarea>
           </div>
-          
-          <button type="submit" class="f-send">Submit Booking Order</button>
+          <button type="submit" class="f-send">Send Message</button>
         </form>
       </div>
     </div>
@@ -558,65 +555,70 @@
 </section>
 
 <footer>
-  &copy; 2026 NY Lenses &middot; Garland, TX &middot; All rights reserved &middot; 
-  <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener">@ny_.lenses</a>
+  © 2026 NY Lenses · Garland, TX · All rights reserved ·
+  <a href="https://www.instagram.com/ny_.lenses/" target="_blank">@ny_.lenses</a>
 </footer>
 
 <script>
-// --- CORE PORTFOLIO ASSETS DATABASE ---
 const BASE = 'https://nylenses1-code.github.io/website/';
+
+// Current custom codes configurations for the portal setup
+const portalGalleries = {
+  "sample2026": "https://images.google.com",
+  "owlsports": "https://drive.google.com",
+  "nyguest": "https://pixieset.com"
+};
+
+function checkPortalCode() {
+  const code = document.getElementById('portalCode').value.trim().toLowerCase();
+  const errorEl = document.getElementById('portalError');
+  
+  if (portalGalleries[code]) {
+    errorEl.style.display = 'none';
+    window.open(portalGalleries[code], '_blank');
+  } else {
+    errorEl.style.display = 'block';
+  }
+}
+
 const photos = {
   sports: [
-    'DSC05656.jpg','DSC03482.jpg','DSC03299.jpg','DSC03455.jpg',
-    'DSC03354.jpg','photo.jpg','49-DSC04444.jpg','45-DSC04463.jpg',
-    '76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg',
+    'DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg',
+    'DSC09802 (1).jpg','DSC09873 (1).jpg','DSC05656.jpg','DSC03482.jpg',
+    'DSC03299.jpg','DSC03455.jpg','DSC03354.jpg','photo.jpg','49-DSC04444.jpg',
+    '45-DSC04463.jpg','76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg',
     'DSC05526.jpg','DSC05884.jpg','DSC06048.jpg','DSC06073.jpg','DSC03714.jpg',
     'DSC03600.jpg','DSC06525.jpg','DSC06564-2.jpg','DSC06553.jpg',
-    '4-DSC04170.jpg','DSC07095-2.jpg','Untitled Project.jpg','DSC07424.jpg','DSC08122.jpg',
-    '82737.png','DSC08688.jpg','DSC08743.jpg','DSC08767.jpg','DSC08787.jpg',
-    'DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg',
-    'DSC09802 (1).jpg','DSC09873 (1).jpg','DSC09922.jpg'
+    '4-DSC04170.jpg','DSC07095-2.jpg','Untitled Project.jpg','DSC07424.jpg',
+    'DSC08122.jpg','82737.png','DSC08688.jpg','DSC08743.jpg','DSC08767.jpg','DSC08787.jpg'
   ],
   portraits: [
-    'DSC06961.jpg','DSC06968.jpg','DSC06988.jpg','DSC06995.jpg','DSC07003.jpg','DSC07007.jpg',
-    'DSC09236.jpg','DSC09317.jpg','DSC09342.jpg','DSC09356.jpg','DSC09377.jpg',
-    'DSC09434.jpg','DSC09449.jpg','DSC09455.jpg','DSC09476.jpg','DSC00525.jpg',
-    'DSC00528.jpg','DSC00686.jpg','DSC00745.jpg','DSC00760.jpg','DSC00827.jpg',
-    'DSC00957.jpg','DSC00966.jpg','05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg',
-    '24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg',
-    '55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg',
-    '17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg',
-    'E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg'
+    'DSC00957.jpg','DSC00827.jpg','DSC00760.jpg','DSC00745.jpg',
+    'DSC00686.jpg','DSC00528.jpg','DSC00525.jpg','DSC09476.jpg','DSC09449.jpg',
+    'DSC09434.jpg','DSC09455.jpg','DSC09377.jpg','DSC09356.jpg','DSC09342.jpg',
+    'DSC09317.jpg','DSC09236.jpg','DSC07007.jpg','DSC07003.jpg','DSC06995.jpg',
+    'DSC06988.jpg','DSC06968.jpg','DSC06961.jpg',
+    'FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg',
+    'AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg',
+    '3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg',
+    '25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg',
+    '05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','DSC00966.jpg'
   ],
   graduations: [
     '05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg',
     '25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg',
     '3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg',
-    'AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg',
-    'FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg'
+    'AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg'
   ],
   parties: []
 };
 
-let activeCat = 'sports';
-let activeList = [];
-let lbIndex = 0;
+let activeCat = 'sports', activeList = [], lbIndex = 0;
 
-// --- DYNAMIC NAVIGATION BAR MANIPULATION ---
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('siteNav');
-  if (window.scrollY > 40) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-});
-
-// --- PERFORMANCE OPTIMIZED GALLERY CONTROLLER ---
 const imgObserver = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const img = entry.target;
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const img = e.target;
       if (img.dataset.src) {
         img.src = img.dataset.src;
         img.removeAttribute('data-src');
@@ -624,21 +626,88 @@ const imgObserver = new IntersectionObserver((entries, obs) => {
       obs.unobserve(img);
     }
   });
-}, { rootMargin: '350px' });
+}, { rootMargin: '350px 0px', threshold: 0.01 });
+
+let scrollingTicking = false;
+window.addEventListener('scroll', () => {
+  if (!scrollingTicking) {
+    window.requestAnimationFrame(() => {
+      const nav = document.getElementById('siteNav');
+      if (window.scrollY > 40) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      scrollingTicking = false;
+    });
+    scrollingTicking = true;
+  }
+}, { passive: true });
+
+let calendarDate = new Date();
+let chosenDateString = "";
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function buildCalendar() {
+  const currentYear = calendarDate.getFullYear();
+  const currentMonth = calendarDate.getMonth();
+  document.getElementById('calendarMonthTitle').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+  
+  const initialDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+  const totalDaysCount = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const daysGridContainer = document.getElementById('calendarDaysGrid');
+  daysGridContainer.innerHTML = '';
+  
+  for (let i = 0; i < initialDayIndex; i++) {
+    const spaceBlock = document.createElement('div');
+    spaceBlock.className = 'calendar-day empty';
+    daysGridContainer.appendChild(spaceBlock);
+  }
+  
+  const realTimeToday = new Date();
+  for (let dayNum = 1; dayNum <= totalDaysCount; dayNum++) {
+    const dayCell = document.createElement('div');
+    dayCell.className = 'calendar-day';
+    dayCell.textContent = dayNum;
+    
+    const evaluationDate = new Date(currentYear, currentMonth, dayNum);
+    evaluationDate.setHours(23,59,59,999);
+    
+    if (evaluationDate < realTimeToday) {
+      dayCell.classList.add('disabled');
+    } else {
+      const standardFormatStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+      if (standardFormatStr === chosenDateString) {
+        dayCell.classList.add('selected');
+      }
+      
+      dayCell.onclick = () => {
+        document.querySelectorAll('.calendar-day').forEach(cell => cell.classList.remove('selected'));
+        dayCell.classList.add('selected');
+        chosenDateString = standardFormatStr;
+        document.getElementById('selectedDateInput').value = chosenDateString;
+      };
+    }
+    daysGridContainer.appendChild(dayCell);
+  }
+}
+
+document.getElementById('prevMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth() - 1); buildCalendar(); };
+document.getElementById('nextMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth() + 1); buildCalendar(); };
+buildCalendar();
 
 function renderGallery(cat) {
   const grid = document.getElementById('gGrid');
   const frag = document.createDocumentFragment();
   const list = photos[cat] || [];
   activeList = list;
-  activeCat = cat;
-
+  
   if (list.length === 0) {
     for (let i = 0; i < 3; i++) {
-      const emptyBox = document.createElement('div');
-      emptyBox.className = 'g-soon';
-      emptyBox.textContent = 'Production Directory Coming Soon';
-      frag.appendChild(emptyBox);
+      const d = document.createElement('div');
+      d.className = 'g-soon';
+      d.textContent = 'Coming Soon';
+      frag.appendChild(d);
     }
     grid.innerHTML = '';
     grid.appendChild(frag);
@@ -646,18 +715,18 @@ function renderGallery(cat) {
   }
 
   list.forEach((file, idx) => {
-    const item = document.createElement('div');
-    item.className = 'g-item';
-    item.onclick = () => openLightbox(idx);
-
+    const wrap = document.createElement('div');
+    wrap.className = 'g-item';
+    wrap.onclick = () => openLB(idx);
+    
     const img = document.createElement('img');
-    img.alt = `NY Lenses Showcase Portfolio asset item ${idx + 1}`;
+    img.alt = 'NY Lenses photography display element';
     img.decoding = 'async';
     
     img.addEventListener('load', function() {
       this.classList.add('loaded');
     });
-
+    
     if (idx < 4) {
       img.src = BASE + file;
     } else {
@@ -665,174 +734,98 @@ function renderGallery(cat) {
       img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
       imgObserver.observe(img);
     }
-
-    const overlay = document.createElement('div');
-    overlay.className = 'g-overlay';
+    
+    const ov = document.createElement('div');
+    ov.className = 'g-overlay';
     const zoom = document.createElement('span');
     zoom.className = 'g-zoom';
     zoom.textContent = '⊕';
-    overlay.appendChild(zoom);
-
-    const watermark = document.createElement('span');
-    watermark.className = 'g-watermark';
-    watermark.textContent = '© NY Lenses';
-
-    item.appendChild(img);
-    item.appendChild(overlay);
-    item.appendChild(watermark);
-    frag.appendChild(item);
+    ov.appendChild(zoom);
+    
+    const wm = document.createElement('span');
+    wm.className = 'g-watermark';
+    wm.textContent = '© NY Lenses';
+    
+    wrap.appendChild(img);
+    wrap.appendChild(ov);
+    wrap.appendChild(wm);
+    frag.appendChild(wrap);
   });
 
   grid.innerHTML = '';
   grid.appendChild(frag);
 }
 
-// --- LIGHTBOX CONTROLS ---
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lb-img');
+document.querySelectorAll('.g-tab').forEach(t => {
+  t.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.querySelectorAll('.g-tab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    activeCat = t.dataset.cat;
+    renderGallery(activeCat);
+  });
+});
 
-function openLightbox(index) {
-  lbIndex = index;
-  updateLightboxImage();
-  lightbox.classList.add('open');
+renderGallery('sports');
+
+function openLB(idx) {
+  lbIndex = idx;
+  const lbImg = document.getElementById('lb-img');
+  lbImg.src = BASE + activeList[idx];
+  const lb = document.getElementById('lightbox');
+  lb.style.display = 'flex';
+  setTimeout(() => lb.classList.add('open'), 10);
   document.body.style.overflow = 'hidden';
 }
 
-function closeLightbox() {
-  lightbox.classList.remove('open');
+function closeLB() {
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('open');
   document.body.style.overflow = '';
+  setTimeout(() => {
+    if(!lb.classList.contains('open')) {
+      lb.style.display = 'none';
+      document.getElementById('lb-img').src = '';
+    }
+  }, 300);
 }
 
-function updateLightboxImage() {
+function switchLBImage(newIdx) {
+  const lbImg = document.getElementById('lb-img');
   lbImg.classList.add('switching');
+  
   setTimeout(() => {
+    lbIndex = newIdx;
     lbImg.src = BASE + activeList[lbIndex];
     lbImg.classList.remove('switching');
-  }, 120);
+  }, 100);
 }
 
-function nextLightboxImg() {
-  if (activeList.length === 0) return;
-  lbIndex = (lbIndex + 1) % activeList.length;
-  updateLightboxImage();
+function prevLB() {
+  const newIdx = (lbIndex - 1 + activeList.length) % activeList.length;
+  switchLBImage(newIdx);
 }
 
-function prevLightboxImg() {
-  if (activeList.length === 0) return;
-  lbIndex = (lbIndex - 1 + activeList.length) % activeList.length;
-  updateLightboxImage();
+function nextLB() {
+  const newIdx = (lbIndex + 1) % activeList.length;
+  switchLBImage(newIdx);
 }
 
-document.getElementById('lbClose').onclick = closeLightbox;
-document.getElementById('lb-next').onclick = nextLightboxImg;
-document.getElementById('lb-prev').onclick = prevLightboxImg;
-
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) closeLightbox();
+document.getElementById('lbClose').onclick = closeLB;
+document.getElementById('lb-prev').onclick = prevLB;
+document.getElementById('lb-next').onclick = nextLB;
+document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLB(); });
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowLeft') prevLB();
+  if (e.key === 'ArrowRight') nextLB();
 });
 
-document.addEventListener('keydown', (e) => {
-  if (!lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowRight') nextLightboxImg();
-  if (e.key === 'ArrowLeft') prevLightboxImg();
-});
-
-// --- AUTOMATED NO-MAINTENANCE CLIENT PROOFING ROUTER ---
-function checkPortalCode() {
-  const codeInput = document.getElementById('portalCode').value.trim();
-  if (!codeInput) return;
-
-  // Direct integration mapping directly to your client galleries page 
-  const pixiesetHomepage = 'https://nylenses.pixieset.com/'; 
-  window.open(pixiesetHomepage + '?search=' + encodeURIComponent(codeInput), '_blank');
-}
-
-// Automatically triggers form validation when client presses "Enter" key
-document.getElementById('portalCode').addEventListener('keypress', function(e) {
-  if (e.key === 'Enter') {
-    checkPortalCode();
-  }
-});
-
-// --- CALENDAR MANAGEMENT CORE ---
-let currentCalendarDate = new Date();
-let selectedDate = null;
-
-const monthsList = [
-  "January", "February", "March", "April", "May", "June", 
-  "July", "August", "September", "October", "November", "December"
-];
-
-function generateCalendar() {
-  const year = currentCalendarDate.getFullYear();
-  const month = currentCalendarDate.getMonth();
-  
-  document.getElementById('calendarMonthYear').textContent = `${monthsList[month]} ${year}`;
-  
-  const firstDayIndex = new Date(year, month, 1).getDay();
-  const totalDays = new Date(year, month + 1, 0).getDate();
-  const daysContainer = document.getElementById('calendarDays');
-  daysContainer.innerHTML = '';
-
-  for (let i = 0; i < firstDayIndex; i++) {
-    const emptyCell = document.createElement('div');
-    emptyCell.className = 'calendar-day empty';
-    daysContainer.appendChild(emptyCell);
-  }
-
-  const today = new Date();
-  today.setHours(0,0,0,0);
-
-  for (let day = 1; day <= totalDays; day++) {
-    const cell = document.createElement('div');
-    cell.className = 'calendar-day';
-    cell.textContent = day;
-    
-    const contextDate = new Date(year, month, day);
-    
-    if (contextDate < today) {
-      cell.classList.add('disabled');
-    } else {
-      if (selectedDate && contextDate.getTime() === selectedDate.getTime()) {
-        cell.classList.add('selected');
-      }
-      
-      cell.onclick = () => {
-        selectedDate = contextDate;
-        document.getElementById('selectedDateInput').value = contextDate.toISOString().split('T')[0];
-        document.querySelectorAll('.calendar-day').forEach(el => el.classList.remove('selected'));
-        cell.classList.add('selected');
-      };
-    }
-    daysContainer.appendChild(cell);
-  }
-}
-
-document.getElementById('prevMonth').onclick = () => {
-  currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
-  generateCalendar();
-};
-
-document.getElementById('nextMonth').onclick = () => {
-  currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
-  generateCalendar();
-};
-
-// --- TAB CATEGORY ACTION CONTROLLERS ---
-document.querySelectorAll('.g-tab').forEach(tab => {
-  tab.onclick = function() {
-    document.querySelectorAll('.g-tab').forEach(t => t.classList.remove('active'));
-    this.classList.add('active');
-    renderGallery(this.dataset.cat);
-  };
-});
-
-// --- CONTEXT INITIALIZATION TRIGGER ---
-document.addEventListener('DOMContentLoaded', () => {
-  renderGallery('sports');
-  generateCalendar();
-});
+window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+formspree('initForm', { formElement: '#booking-form', formId: 'mzdykadb' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
 </body>
 </html>
