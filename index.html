@@ -4,9 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NY Lenses | Photography · Garland, TX</title>
+<meta name="description" content="NY Lenses — professional sports, portrait, graduation, and event photography serving Garland, Plano, Frisco, Dallas, and the DFW area. Book your shoot today.">
+<meta name="keywords" content="photography, sports photography, portraits, graduation photos, Garland TX, DFW, Dallas photographer">
+<meta property="og:title" content="NY Lenses | Photography · Garland, TX">
+<meta property="og:description" content="Professional sports, portrait, and event photography in Garland, TX and the DFW area.">
+<meta property="og:url" content="https://nylenses.netlify.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NY Lenses | Photography · Garland, TX">
+<meta name="twitter:description" content="Professional sports, portrait, and event photography in Garland, TX and the DFW area.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16' stroke='%23e2c98a' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='18' cy='18' r='7' stroke='%23e2c98a' stroke-width='1.5' fill='none'/%3E%3Cline x1='18' y1='2' x2='13' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='18' y1='2' x2='23' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='32.8' y1='10' x2='23' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='32.8' y1='10' x2='28' y2='19' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='27' y1='32' x2='28' y2='22' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='27' y1='32' x2='18' y2='27' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='9' y1='32' x2='18' y2='27' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='9' y1='32' x2='8' y2='22' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='3.2' y1='10' x2='8' y2='19' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='3.2' y1='10' x2='13' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3C/svg%3E">
-<link rel="preload" as="image" href="https://nylenses.netlify.app/DSC09014.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://nylenses.netlify.app/DSC09014.jpg">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   @keyframes skelPulse { 0%,100%{opacity:0.5} 50%{opacity:0.8} }
   .g-item::before { content:''; position:absolute; inset:0; background: var(--cream3); animation: skelPulse 1.2s ease-in-out infinite; z-index: 0; transition: opacity 0.3s ease; }
@@ -14,9 +26,6 @@
   .g-overlay { z-index: 2; }
   .g-watermark { z-index: 3; }
   .g-item img { z-index: 1; }
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
   :root {
     --cream:   #0a0a0a;
     --cream2:  #121210;
@@ -73,12 +82,12 @@
   #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: linear-gradient(90deg, var(--warm), var(--warm2)); z-index: 201; transition: width 0.1s linear; pointer-events: none; }
 
   /* ── BACK TO TOP ── */
-  #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--warm); color: #0a0a0a; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; z-index: 300; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); }
+  #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--warm); color: var(--cream); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; z-index: 300; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); }
   #back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
   #back-to-top:hover { background: var(--warm2); transform: translateY(-3px); }
   @media (max-width: 768px) { #back-to-top { bottom: 1.2rem; right: 1.2rem; width: 40px; height: 40px; } }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.8rem 4rem; background: transparent; border-bottom: 1px solid transparent; transition: var(--transition); will-change: padding, background; -webkit-transform: translateZ(0); transform: translateZ(0); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.8rem 4rem; background: transparent; border-bottom: 1px solid transparent; transition: var(--transition); will-change: transform; -webkit-transform: translateZ(0); transform: translateZ(0); }
   nav.scrolled { padding: 1.1rem 4rem; background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
   
   .nav-logo { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
@@ -99,12 +108,12 @@
   .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm); margin-bottom: 2rem; font-weight: 400; display: flex; align-items: center; gap: 1rem; }
   .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 1.5rem; height: 1px; background: var(--warm); opacity: 0.4; }
   .hero-logo { margin-bottom: 1.5rem; width: 100%; }
-  .hero-logo svg { height: auto; width: 100%; max-width: 680px; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6)); }
+  .hero-logo svg { height: auto; width: 100%; max-width: 680px; display: block; margin: 0 auto; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6)); }
   .hero-desc { font-size: 0.9rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink2); margin-bottom: 4rem; opacity: 0.85; font-weight: 400; }
   .hero-cta { display: flex; gap: 1.5rem; justify-content: center; width: 100%; flex-wrap: wrap; }
 
   /* Weather Widget */
-  .weather-bar { position: relative; z-index: 2; background: color-mix(in srgb, var(--cream) 85%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0.7rem 4rem; display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; }
+  .weather-bar { position: relative; z-index: 2; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0.7rem 4rem; display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; }
   .weather-widget { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--ink2); }
   .weather-icon { font-size: 1.1rem; }
   .weather-temp { color: var(--warm2); font-weight: 500; }
@@ -114,7 +123,7 @@
   @media (max-width: 768px) { .weather-bar { padding: 0.7rem 1.5rem; } }
   
   .btn { display: inline-block; padding: 1.1rem 3rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; transition: var(--transition); cursor: pointer; font-family: 'DM Sans', sans-serif; border-radius: 0; text-align: center; }
-  .btn-fill { background: var(--warm); color: #0a0a0a; border: 1px solid var(--warm); font-weight: 600; }
+  .btn-fill { background: var(--warm); color: var(--cream); border: 1px solid var(--warm); font-weight: 600; }
   .btn-fill:hover { background: var(--warm2); border-color: var(--warm2); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(200,169,110,0.25); }
   .btn-outline { border: 1px solid var(--border); color: var(--ink); background: transparent; }
   .btn-outline:hover { border-color: var(--warm); color: var(--warm2); transform: translateY(-3px); background: transparent; box-shadow: 0 10px 25px rgba(255,255,255,0.03); }
@@ -136,7 +145,7 @@
   .p-row:last-of-type { border: none; }
   .p-amt { color: var(--warm2); font-weight: 500; }
   .p-floor { font-size: 0.7rem; color: var(--muted); margin-top: 0.8rem; font-style: italic; letter-spacing: 0.02em; }
-  .p-book { display: block; text-align: center; margin-top: 2.2rem; padding: 0.95rem 1.4rem; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #0a0a0a; background: var(--warm); border: 1px solid var(--warm); text-decoration: none; font-family: 'DM Sans', sans-serif; transition: var(--transition); }
+  .p-book { display: block; text-align: center; margin-top: 2.2rem; padding: 0.95rem 1.4rem; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--cream); background: var(--warm); border: 1px solid var(--warm); text-decoration: none; font-family: 'DM Sans', sans-serif; transition: var(--transition); }
   .p-book:hover { background: transparent; color: var(--warm2); border-color: var(--warm); box-shadow: 0 4px 15px rgba(200,169,110,0.1); }
 
   #gallery { background: var(--cream); }
@@ -169,7 +178,7 @@
   .portal-container { text-align: center; max-width: 700px; margin: 0 auto; }
   .portal-desc { font-size: 0.95rem; color: var(--ink2); margin-bottom: 2.5rem; line-height: 1.6; }
   .portal-box { background: var(--cream); border: 1px solid var(--border); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: center; }
-  .portal-btn { width: 100%; max-width: 400px; padding: 1.1rem; background: var(--warm); color: #0a0a0a; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: var(--transition); text-decoration: none; display: block; text-align: center; }
+  .portal-btn { width: 100%; max-width: 400px; padding: 1.1rem; background: var(--warm); color: var(--cream); border: none; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: var(--transition); text-decoration: none; display: block; text-align: center; }
   .portal-btn:hover { background: var(--warm2); transform: translateY(-2px); }
   .portal-sub { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
 
@@ -204,7 +213,7 @@
   .calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
   .calendar-day { padding: 0.5rem 0; font-size: 0.75rem; color: var(--ink2); cursor: pointer; transition: var(--transition); border: 1px solid transparent; }
   .calendar-day:hover:not(.empty):not(.disabled):not(.booked) { border-color: var(--warm); color: var(--warm2); }
-  .calendar-day.selected { background: var(--warm); color: #0a0a0a !important; font-weight: 600; }
+  .calendar-day.selected { background: var(--warm); color: var(--cream) !important; font-weight: 600; }
   .calendar-day.disabled { opacity: 0.2; cursor: not-allowed; }
   .calendar-day.empty { cursor: default; }
   .calendar-day.booked { background: rgba(186,82,82,0.15); color: #ba5252 !important; cursor: not-allowed; border-color: rgba(186,82,82,0.2); position: relative; }
@@ -216,7 +225,7 @@
   .time-slots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
   .time-slot { background: var(--cream); border: 1px solid var(--border); color: var(--ink2); padding: 0.55rem 0.5rem; font-size: 0.72rem; text-align: center; cursor: pointer; transition: var(--transition); font-family: 'DM Sans', sans-serif; letter-spacing: 0.04em; }
   .time-slot:hover:not(.slot-booked) { border-color: var(--warm); color: var(--warm2); }
-  .time-slot.slot-selected { background: var(--warm); color: #0a0a0a; border-color: var(--warm); font-weight: 600; }
+  .time-slot.slot-selected { background: var(--warm); color: var(--cream); border-color: var(--warm); font-weight: 600; }
   .time-slot.slot-booked { background: rgba(186,82,82,0.08); color: rgba(186,82,82,0.5); border-color: rgba(186,82,82,0.15); cursor: not-allowed; text-decoration: line-through; }
 
   .f-group { margin-bottom: 1.5rem; }
@@ -228,7 +237,7 @@
   .f-group select option { background: var(--cream2); color: var(--ink); }
   .f-group textarea { min-height: 140px; resize: vertical; }
   .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .f-send { width: 100%; padding: 1.15rem; background: var(--warm); color: #0a0a0a; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: var(--transition); margin-top: 0.5rem; }
+  .f-send { width: 100%; padding: 1.15rem; background: var(--warm); color: var(--cream); border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: var(--transition); margin-top: 0.5rem; }
   .f-send:hover { background: var(--warm2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,110,0.2); }
 
   footer { text-align: center; padding: 4.5rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; background: var(--cream); font-weight: 400; }
@@ -240,7 +249,31 @@
   .share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   @media (max-width: 768px) { .share-toast { bottom: 5.5rem; } }
 
-  /* ── SECTION DIVIDERS ── */
+  /* ── FORM VALIDATION ── */
+  .f-error { font-size: 0.7rem; color: #ba5252; margin-top: 0.4rem; display: none; letter-spacing: 0.04em; }
+  .f-error.show { display: block; }
+  .f-group input.invalid, .f-group select.invalid, .f-group textarea.invalid { border-color: #ba5252; box-shadow: 0 0 0 1px rgba(186,82,82,0.2); }
+  .f-group input.valid, .f-group select.valid, .f-group textarea.valid { border-color: #57a357; }
+  .f-date-error { font-size: 0.7rem; color: #ba5252; margin-top: 0.5rem; display: none; letter-spacing: 0.04em; }
+  .f-date-error.show { display: block; }
+  .c-response-info { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.8rem; }
+  .c-response-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
+  .c-response-dot { width: 8px; height: 8px; background: #57a357; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 6px rgba(87,163,87,0.6); animation: pulse-dot 2s ease-in-out infinite; }
+  .c-avail-icon { font-size: 0.9rem; }
+  @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+
+  /* ── BOOKING CONFIRMATION ── */
+  .booking-confirm { padding: 2.5rem; background: rgba(87,163,87,0.04); border: 1px solid rgba(87,163,87,0.15); margin-bottom: 1.5rem; }
+  .confirm-icon { width: 48px; height: 48px; background: rgba(87,163,87,0.1); border: 1px solid rgba(87,163,87,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #57a357; font-size: 1.4rem; margin-bottom: 1.2rem; }
+  .confirm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--ink); margin-bottom: 0.6rem; }
+  .confirm-desc { font-size: 0.85rem; color: var(--ink2); line-height: 1.6; margin-bottom: 1.8rem; }
+  .confirm-steps { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem; }
+  .confirm-step { display: flex; gap: 1rem; align-items: flex-start; }
+  .confirm-step-num { width: 28px; height: 28px; background: var(--warm); color: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 600; flex-shrink: 0; margin-top: 0.1rem; }
+  .confirm-step strong { display: block; font-size: 0.82rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; letter-spacing: 0.04em; }
+  .confirm-step p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+  .confirm-ig { display: inline-block; font-size: 0.72rem; color: var(--warm); letter-spacing: 0.1em; text-decoration: none; transition: var(--transition); }
+  .confirm-ig:hover { color: var(--warm2); }
   .sec-divider { display: flex; align-items: center; gap: 1.5rem; padding: 0 4rem; opacity: 0.35; }
   .sec-divider::before, .sec-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--warm), transparent); }
   .sec-divider-icon { color: var(--warm2); font-size: 1rem; flex-shrink: 0; }
@@ -254,7 +287,7 @@
   .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 299; background: var(--cream2); border-top: 1px solid var(--border); padding: 0.85rem 1.5rem; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
   .sticky-cta-phone { font-size: 0.78rem; color: var(--ink2); letter-spacing: 0.04em; }
   .sticky-cta-phone strong { display: block; color: var(--ink); font-size: 0.9rem; font-weight: 500; }
-  .sticky-cta-btn { background: var(--warm); color: #0a0a0a; border: none; padding: 0.75rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; transition: var(--transition); text-decoration: none; white-space: nowrap; }
+  .sticky-cta-btn { background: var(--warm); color: var(--cream); border: none; padding: 0.75rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; transition: var(--transition); text-decoration: none; white-space: nowrap; }
   .sticky-cta-btn:hover { background: var(--warm2); }
   @media (max-width: 768px) { 
     .sticky-cta { display: flex; }
@@ -265,11 +298,14 @@
   /* ── MICRO-ANIMATIONS ── */
   .anim-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
   .anim-up.in-view { opacity: 1; transform: translateY(0); }
-  .anim-up:nth-child(2) { transition-delay: 0.08s; }
-  .anim-up:nth-child(3) { transition-delay: 0.16s; }
-  .anim-up:nth-child(4) { transition-delay: 0.24s; }
-  .anim-up:nth-child(5) { transition-delay: 0.32s; }
-  .anim-up:nth-child(6) { transition-delay: 0.40s; }
+  .anim-up:nth-child(2) { transition-delay: 0.07s; }
+  .anim-up:nth-child(3) { transition-delay: 0.14s; }
+  .anim-up:nth-child(4) { transition-delay: 0.21s; }
+  .anim-up:nth-child(5) { transition-delay: 0.28s; }
+  .anim-up:nth-child(6) { transition-delay: 0.35s; }
+  .anim-up:nth-child(7) { transition-delay: 0.42s; }
+  .anim-up:nth-child(8) { transition-delay: 0.49s; }
+  .anim-up:nth-child(9) { transition-delay: 0.56s; }
 
   .nav-menu-btn { display: none; background: none; border: 1px solid var(--border); color: var(--ink); width: 40px; height: 40px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; transition: var(--transition); flex-shrink: 0; }
   .nav-menu-btn:hover { border-color: var(--warm); }
@@ -302,11 +338,13 @@
     .nav-menu-btn { display: flex; }
     .sec-wrap { padding: 5rem 1.5rem; }
     .sec-title { font-size: clamp(2rem, 8vw, 2.8rem); }
-    .hero { padding: 7rem 1.5rem 3rem; }
-    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.25em; }
+    .hero { padding: 6rem 1.5rem 3rem; min-height: 100vh; justify-content: center; }
+    .hero-logo { margin-bottom: 2rem; }
+    .hero-logo svg { width: 100%; max-width: 100%; }
+    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.25em; margin-bottom: 1.5rem; }
     .hero-desc { font-size: 0.75rem; letter-spacing: 0.18em; margin-bottom: 2.5rem; }
-    .hero-cta { flex-direction: column; gap: 1rem; }
-    .btn { width: 100%; padding: 1rem 2rem; font-size: 0.7rem; }
+    .hero-cta { flex-direction: column; gap: 0.85rem; width: 100%; }
+    .btn { width: 100%; padding: 1.1rem 2rem; font-size: 0.72rem; }
     .weather-bar { padding: 0.65rem 1.5rem; justify-content: center; }
     .pricing-grid { grid-template-columns: 1fr; gap: 1.2rem; }
     .p-card { padding: 1.8rem 1.5rem; }
@@ -337,10 +375,14 @@
     .nav-logo-main { font-size: 1.3rem; }
     .nav-logo-sub { display: none; }
     .nav-logo-rule { display: none; }
-    .hero { padding: 6rem 1.2rem 2.5rem; }
-    .hero-logo svg { max-width: 100%; }
-    .hero-eyebrow { font-size: 0.6rem; gap: 0.6rem; }
+    .hero { padding: 5.5rem 1.2rem 2.5rem; }
+    .hero-logo { margin-bottom: 1.8rem; width: 100%; }
+    .hero-logo svg { width: 100%; max-width: 100%; display: block; }
+    .hero-eyebrow { font-size: 0.6rem; gap: 0.6rem; margin-bottom: 1.2rem; }
     .hero-eyebrow::before, .hero-eyebrow::after { width: 1rem; }
+    .hero-desc { font-size: 0.7rem; letter-spacing: 0.2em; margin-bottom: 2rem; }
+    .hero-cta { gap: 0.75rem; }
+    .btn { padding: 1rem; font-size: 0.7rem; }
     .sec-wrap { padding: 4rem 1.2rem; }
     .g-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
     .g-item { aspect-ratio: 1 / 1; }
@@ -659,26 +701,67 @@
           <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="c-link"><span class="c-icon">📸</span><span>@ny_.lenses</span></a>
           <a href="sms:2142837683" class="c-link"><span class="c-icon">💬</span><span>Text to book</span></a>
         </div>
+        <div class="c-response-info">
+          <div class="c-response-row">
+            <span class="c-response-dot"></span>
+            <span>Typically responds within 2 hours</span>
+          </div>
+          <div class="c-response-row">
+            <span class="c-avail-icon">🗓</span>
+            <span>Available 7 days · 8AM–9PM</span>
+          </div>
+        </div>
       </div>
       <div>
-        <div data-fs-success style="display:none; margin-bottom:1.5rem; padding:1rem 1.2rem; background:rgba(80,160,80,0.06); color:#57a357; border:1px solid rgba(80,160,80,0.15); font-size:0.88rem; font-weight:400;">
-          ✓ Message successfully transmitted! I will respond shortly.
+        <div data-fs-success style="display:none;">
+          <div class="booking-confirm">
+            <div class="confirm-icon">✓</div>
+            <h3 class="confirm-title">Booking Request Sent!</h3>
+            <p class="confirm-desc">Thanks for reaching out — your request has been received. Here's what happens next:</p>
+            <div class="confirm-steps">
+              <div class="confirm-step">
+                <span class="confirm-step-num">1</span>
+                <div>
+                  <strong>Confirmation</strong>
+                  <p>You'll hear back within 2 hours to confirm your date and time.</p>
+                </div>
+              </div>
+              <div class="confirm-step">
+                <span class="confirm-step-num">2</span>
+                <div>
+                  <strong>Details</strong>
+                  <p>We'll lock in your location, finalize pricing, and go over any specific shots you want.</p>
+                </div>
+              </div>
+              <div class="confirm-step">
+                <span class="confirm-step-num">3</span>
+                <div>
+                  <strong>Shoot Day</strong>
+                  <p>Show up, we shoot, and your photos are delivered within 1–3 business days.</p>
+                </div>
+              </div>
+            </div>
+            <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="confirm-ig">See more work on Instagram →</a>
+          </div>
         </div>
         <div data-fs-error style="display:none; margin-bottom:1.5rem; padding:1rem 1.2rem; background:rgba(180,60,60,0.06); color:#ba5252; border:1px solid rgba(180,60,60,0.15); font-size:0.88rem;"></div>
 
-        <form id="booking-form">
+        <form id="booking-form" novalidate>
           <div class="f-group">
             <label>Your Name *</label>
-            <input type="text" name="name" placeholder="Full name" data-fs-field required>
+            <input type="text" name="name" id="fieldName" placeholder="Full name" data-fs-field>
+            <div class="f-error" id="errName">Please enter your full name.</div>
           </div>
           <div class="f-row">
             <div class="f-group">
-              <label>Email Address</label>
-              <input type="email" name="email" placeholder="name@domain.com" data-fs-field>
+              <label>Email Address *</label>
+              <input type="email" name="email" id="fieldEmail" placeholder="name@domain.com" data-fs-field>
+              <div class="f-error" id="errEmail">Please enter a valid email address.</div>
             </div>
             <div class="f-group">
               <label>Phone Number</label>
-              <input type="tel" name="phone" placeholder="(555) 000-0000">
+              <input type="tel" name="phone" id="fieldPhone" placeholder="(555) 000-0000">
+              <div class="f-error" id="errPhone">Please enter a valid 10-digit phone number.</div>
             </div>
           </div>
           
@@ -701,6 +784,7 @@
               <span class="time-slots-label">Available Times</span>
               <div class="time-slots-grid" id="timeSlotsGrid"></div>
             </div>
+            <div class="f-date-error" id="errDateTime">Please select both a date and a time slot.</div>
           </div>
 
           <div class="f-group">
@@ -954,10 +1038,79 @@ document.getElementById('prevMonthBtn').onclick = () => { calendarDate.setMonth(
 document.getElementById('nextMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth()+1); buildCalendar(); };
 buildCalendar();
 
-// ─── FORM SUBMIT — mark slot as booked ────────────────────────────────────────
+// ─── FORM VALIDATION ──────────────────────────────────────────────────────────
+function showErr(id, show) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('show', show);
+}
+function markField(el, valid) {
+  if (!el) return;
+  el.classList.toggle('invalid', !valid);
+  el.classList.toggle('valid', valid);
+}
+
+// Real-time validation on blur
+document.getElementById('fieldName').addEventListener('blur', function() {
+  const ok = this.value.trim().length >= 2;
+  markField(this, ok);
+  showErr('errName', !ok);
+});
+document.getElementById('fieldEmail').addEventListener('blur', function() {
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim());
+  markField(this, ok);
+  showErr('errEmail', !ok && this.value.trim() !== '');
+});
+document.getElementById('fieldPhone').addEventListener('blur', function() {
+  const digits = this.value.replace(/\D/g, '');
+  const ok = digits.length === 0 || digits.length >= 10;
+  markField(this, ok || digits.length === 0);
+  showErr('errPhone', !ok && digits.length > 0);
+});
+
 document.getElementById('booking-form').addEventListener('submit', function(e) {
+  let valid = true;
+
+  // Name
+  const name = document.getElementById('fieldName');
+  const nameOk = name.value.trim().length >= 2;
+  markField(name, nameOk);
+  showErr('errName', !nameOk);
+  if (!nameOk) valid = false;
+
+  // Email
+  const email = document.getElementById('fieldEmail');
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+  markField(email, emailOk);
+  showErr('errEmail', !emailOk);
+  if (!emailOk) valid = false;
+
+  // Phone (optional but if filled must be valid)
+  const phone = document.getElementById('fieldPhone');
+  if (phone) {
+    const digits = phone.value.replace(/\D/g, '');
+    const phoneOk = digits.length === 0 || digits.length >= 10;
+    markField(phone, phoneOk || digits.length === 0);
+    showErr('errPhone', !phoneOk && digits.length > 0);
+    if (!phoneOk && digits.length > 0) valid = false;
+  }
+
+  // Date + time
   const date = document.getElementById('selectedDateInput').value;
   const time = document.getElementById('selectedTimeInput').value;
+  const dateOk = date && time;
+  showErr('errDateTime', !dateOk);
+  if (!dateOk) valid = false;
+
+  if (!valid) {
+    e.preventDefault();
+    e.stopPropagation();
+    // Scroll to first error
+    const firstErr = document.querySelector('.f-group input.invalid, .f-group select.invalid');
+    if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  }
+
+  // If valid, mark slot as booked
   if (date && time) {
     bookSlot(date, time);
     buildCalendar();
