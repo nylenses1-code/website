@@ -46,8 +46,8 @@
   
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; background: var(--cream); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 70px; }
+  /* REMOVED: grain backdrop body::before */
   body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; }
-  body::before { content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; opacity: 0.022; pointer-events: none; z-index: 100; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
 
   body.light-mode {
     --cream:  #f5f0e8; --cream2: #ede8df; --cream3: #e4ddd2;
@@ -107,7 +107,7 @@
   .weather-location { color: var(--muted); font-size: 0.65rem; letter-spacing: 0.1em; }
   .weather-divider { width: 1px; height: 14px; background: var(--border); }
 
-  /* Time weather info box */
+  /* Time weather info box — hidden until time is selected */
   .time-weather-info { margin-top: 0.8rem; padding: 0.8rem 1rem; background: var(--cream2); border: 1px solid var(--border); font-size: 0.78rem; color: var(--ink2); display: none; align-items: center; gap: 0.6rem; }
   .time-weather-info.show { display: flex; }
   .time-weather-icon { font-size: 1.2rem; }
@@ -528,7 +528,7 @@
           <h3>Football</h3>
           <p class="p-sub">Game Day · Action Shots</p>
           <div class="p-row"><span>1 person</span><span class="p-amt">$30</span></div>
-          <div class="p-row"><span>2 people</span><span class="p-amt">$28 each</span></div>
+          <div class="p-row"><span>2 people</span><span class="p-amt">$25 each</span></div>
           <div class="p-row"><span>3+ people</span><span class="p-amt">$25 each</span></div>
           <p class="p-floor">Floor price: $25/person</p>
         </div>
@@ -539,9 +539,9 @@
           <h3>Soccer</h3>
           <p class="p-sub">Game Day · Action Shots</p>
           <div class="p-row"><span>1 person</span><span class="p-amt">$25</span></div>
-          <div class="p-row"><span>2 people</span><span class="p-amt">$22 each</span></div>
-          <div class="p-row"><span>3+ people</span><span class="p-amt">$18 each</span></div>
-          <p class="p-floor">Floor price: $18/person</p>
+          <div class="p-row"><span>2 people</span><span class="p-amt">$20 each</span></div>
+          <div class="p-row"><span>3+ people</span><span class="p-amt">$20 each</span></div>
+          <p class="p-floor">Floor price: $20/person</p>
         </div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
@@ -562,8 +562,8 @@
           <div class="p-row"><span>1 person</span><span class="p-amt">$30</span></div>
           <div class="p-row"><span>2 people</span><span class="p-amt">$25 each</span></div>
           <div class="p-row"><span>3 people</span><span class="p-amt">$20 each</span></div>
-          <div class="p-row"><span>4+ people</span><span class="p-amt">$18 each</span></div>
-          <p class="p-floor">Floor price: $18/person</p>
+          <div class="p-row"><span>4+ people</span><span class="p-amt">$20 each</span></div>
+          <p class="p-floor">Floor price: $20/person</p>
         </div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
@@ -574,8 +574,8 @@
           <div class="p-row"><span>1 person</span><span class="p-amt">$30</span></div>
           <div class="p-row"><span>2 people</span><span class="p-amt">$25 each</span></div>
           <div class="p-row"><span>3 people</span><span class="p-amt">$20 each</span></div>
-          <div class="p-row"><span>4+ people</span><span class="p-amt">$18 each</span></div>
-          <p class="p-floor">Floor price: $18/person</p>
+          <div class="p-row"><span>4+ people</span><span class="p-amt">$20 each</span></div>
+          <p class="p-floor">Floor price: $20/person</p>
         </div>
         <a href="#contact" class="p-book">Book Now →</a>
       </div>
@@ -741,7 +741,7 @@
             <div class="time-slots-wrap" id="timeSlotsWrap" style="display:none;">
               <span class="time-slots-label">Available Times</span>
               <div class="time-slots-grid" id="timeSlotsGrid"></div>
-              <!-- Weather for selected time shows here -->
+              <!-- Weather for selected time: hidden until a time is picked -->
               <div class="time-weather-info" id="timeWeatherInfo">
                 <span class="time-weather-icon" id="twIcon">🌤️</span>
                 <div class="time-weather-text">
@@ -758,10 +758,10 @@
               <option value="">Select an assignment tier…</option>
               <option>Baseball / Softball — from $20/person</option>
               <option>Football — from $25/person</option>
-              <option>Soccer — from $18/person</option>
+              <option>Soccer — from $20/person</option>
               <option>Track — from $25/person</option>
-              <option>Basketball — from $18/person</option>
-              <option>Other Sport — from $18/person</option>
+              <option>Basketball — from $20/person</option>
+              <option>Other Sport — from $20/person</option>
               <option>Portraits (Individual) — $80–$120</option>
               <option>Portraits (Duo) — $100–$150</option>
               <option>Portraits (Group) — $130–$180</option>
@@ -820,7 +820,7 @@ const ALL_TIMES = ['8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM
 
 const photos = {
   sports: ['DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg','DSC09802 (1).jpg','DSC09873 (1).jpg','DSC05656.jpg','DSC03482.jpg','DSC03299.jpg','DSC03455.jpg','DSC03354.jpg','photo.jpg','49-DSC04444.jpg','45-DSC04463.jpg','76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg','DSC05526.jpg','DSC05884.jpg','DSC06048.jpg','DSC06073.jpg','DSC03714.jpg','DSC03600.jpg','DSC06525.jpg','DSC06564-2.jpg','DSC06553.jpg','4-DSC04170.jpg','DSC07095-2.jpg','Untitled Project.jpg','DSC07424.jpg','DSC08122.jpg','82737.png','DSC08688.jpg','DSC08743.jpg','DSC08767.jpg','DSC08787.jpg'],
-  portraits: ['DSC00957.jpg','DSC00827.jpg','DSC00760.jpg','DSC00745.jpg','DSC00686.jpg','DSC00528.jpg','DSC00525.jpg','DSC09476.jpg','DSC09449.jpg','DSC09434.jpg','DSC09455.jpg','DSC09377.jpg','DSC09356.jpg','DSC09342.jpg','DSC09317.jpg','DSC09236.jpg','DSC07007.jpg','DSC07003.jpg','DSC06995.jpg','DSC06988.jpg','DSC06968.jpg','DSC06961.jpg','FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','DSC00966.jpg'],
+  portraits: ['DSC04102.jpg','DSC04052.jpg','DSC04049.jpg','DSC04298.jpg','DSC04228.jpg','DSC00957.jpg','DSC00827.jpg','DSC00760.jpg','DSC00745.jpg','DSC00686.jpg','DSC00528.jpg','DSC00525.jpg','DSC09476.jpg','DSC09449.jpg','DSC09434.jpg','DSC09455.jpg','DSC09377.jpg','DSC09356.jpg','DSC09342.jpg','DSC09317.jpg','DSC09236.jpg','DSC07007.jpg','DSC07003.jpg','DSC06995.jpg','DSC06988.jpg','DSC06968.jpg','DSC06961.jpg','FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','DSC00966.jpg'],
   graduations: ['05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','DSC01774_compressed.jpg','DSC01799_compressed.jpg','DSC01801_compressed.jpg','DSC01812_compressed.jpg','DSC01832_compressed.jpg'],
   parties: ['DSC01935.jpg','DSC01938.jpg','DSC01951.jpg','DSC01970.jpg','DSC01976.jpg']
 };
@@ -854,13 +854,13 @@ let chosenDateString = '', chosenTimeString = '';
 const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 let forecastCache = {};
 
-// Time-of-day weather approximation
 const HOUR_OFFSETS = {
   '8:00 AM': -4, '9:00 AM': -3, '10:00 AM': -2, '11:00 AM': -1,
   '12:00 PM': 0, '1:00 PM': 1, '2:00 PM': 2, '3:00 PM': 3,
   '4:00 PM': 2, '5:00 PM': 1, '6:00 PM': 0
 };
 
+// Weather info only shows once a time slot is selected
 function showTimeWeather(dateStr, time) {
   const wx = forecastCache[dateStr];
   const box = document.getElementById('timeWeatherInfo');
@@ -913,6 +913,7 @@ function buildCalendar() {
         chosenDateString = dateStr; chosenTimeString = '';
         document.getElementById('selectedDateInput').value = dateStr;
         document.getElementById('selectedTimeInput').value = '';
+        // Hide weather box until a time is picked
         document.getElementById('timeWeatherInfo').classList.remove('show');
         renderTimeSlots(dateStr);
       };
@@ -933,6 +934,7 @@ function renderTimeSlots(dateStr) {
         el.classList.add('slot-selected');
         chosenTimeString = time;
         document.getElementById('selectedTimeInput').value = time;
+        // Show weather only after a time is selected
         showTimeWeather(dateStr, time);
       };
     }
