@@ -3,411 +3,459 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NY Lenses | Photography · Garland, TX</title>
-<meta name="description" content="NY Lenses — professional sports, portrait, graduation, and event photography serving Garland, Plano, Frisco, Dallas, and the DFW area. Book your shoot today.">
-<meta name="keywords" content="photography, sports photography, portraits, graduation photos, Garland TX, DFW, Dallas photographer">
-<meta property="og:title" content="NY Lenses | Photography · Garland, TX">
-<meta property="og:description" content="Professional sports, portrait, and event photography in Garland, TX and the DFW area.">
+<title>NY Lenses | DFW Sports, Portrait & Event Photography · Garland, TX</title>
+<meta name="description" content="NY Lenses — DFW sports photographer based in Garland, TX. Sports coverage, athlete portraits, team photos, senior portraits, business headshots, and event photography across Garland, Rowlett, Richardson, Plano, and Dallas.">
+<meta name="keywords" content="DFW sports photographer, Garland sports photographer, Rowlett photographer, basketball photography DFW, team photos DFW, DFW event photography, DFW senior portraits, DFW headshots, athlete portraits DFW, sports coverage Dallas">
+<meta property="og:title" content="NY Lenses | DFW Sports & Portrait Photography">
+<meta property="og:description" content="Sports coverage, athlete portraits, team photos, senior portraits, and event photography across Garland, Rowlett, and DFW.">
 <meta property="og:url" content="https://nylenses.netlify.app">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NY Lenses | Photography · Garland, TX">
-<meta name="twitter:description" content="Professional sports, portrait, and event photography in Garland, TX and the DFW area.">
 <meta property="og:image" content="https://nylenses.netlify.app/DSC09014.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NY Lenses | DFW Sports & Portrait Photography">
+<meta name="twitter:description" content="Sports coverage, athlete portraits, team photos, senior portraits, and event photography across Garland, Rowlett, and DFW.">
 <meta name="twitter:image" content="https://nylenses.netlify.app/DSC09014.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16' stroke='%23e2c98a' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='18' cy='18' r='7' stroke='%23e2c98a' stroke-width='1.5' fill='none'/%3E%3Cline x1='18' y1='2' x2='13' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='18' y1='2' x2='23' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='32.8' y1='10' x2='23' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='32.8' y1='10' x2='28' y2='19' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='27' y1='32' x2='28' y2='22' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='27' y1='32' x2='18' y2='27' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='9' y1='32' x2='18' y2='27' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='9' y1='32' x2='8' y2='22' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='3.2' y1='10' x2='8' y2='19' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='3.2' y1='10' x2='13' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="https://nylenses.netlify.app/DSC09014.jpg">
-<link rel="preload" as="style" crossorigin href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream:   #0a0a0a;
-    --cream2:  #121210;
-    --cream3:  #181815;
-    --ink:     #f5f0e8;
-    --ink2:    #c8bfb0;
-    --warm:    #c8a96e;
-    --warm2:   #e2c98a;
-    --muted:   #6e6e66;
-    --border:  rgba(255,255,255,0.06);
-    --shadow:  rgba(0,0,0,0.6);
-    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --error: #ba5252;
-    --success: #57a357;
-  }
-  @keyframes skelPulse { 0%,100%{opacity:0.5} 50%{opacity:0.8} }
-  .g-item::before { content:''; position:absolute; inset:0; background: var(--cream3); animation: skelPulse 1.2s ease-in-out infinite; z-index: 0; transition: opacity 0.3s ease; }
-  .g-item.img-loaded::before { opacity: 0; animation: none; pointer-events: none; }
-  .g-overlay { z-index: 2; }
-  .g-watermark { z-index: 3; }
-  .g-item img { z-index: 1; }
-  
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; font-size: 16px; background: var(--cream); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 70px; }
-  /* REMOVED: grain backdrop body::before */
-  body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; }
+:root {
+  --bg:      #0a0a0a;
+  --bg2:     #111110;
+  --bg3:     #181815;
+  --ink:     #f5f0e8;
+  --ink2:    #c8bfb0;
+  --gold:    #c8a96e;
+  --gold2:   #e2c98a;
+  --muted:   #6e6e66;
+  --border:  rgba(255,255,255,0.07);
+  --ease:    cubic-bezier(0.16,1,0.3,1);
+  --trans:   all 0.4s cubic-bezier(0.16,1,0.3,1);
+  --error:   #ba5252;
+  --success: #57a357;
+  --cream:   #0a0a0a;
+  --cream2:  #111110;
+  --cream3:  #181815;
+  --warm:    #c8a96e;
+  --warm2:   #e2c98a;
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:16px; background:var(--bg); -webkit-text-size-adjust:100%; scroll-padding-top:72px; }
+body { background:var(--bg); color:var(--ink); font-family:'DM Sans',sans-serif; font-weight:300; line-height:1.7; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+ 
+/* ── LOADER ── */
+#loader { position:fixed; inset:0; z-index:9999; background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem; transition:opacity 0.5s ease,visibility 0.5s ease; }
+#loader.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+.loader-logo { opacity:0; transform:scale(0.94); animation:ldFade 0.5s var(--ease) 0.1s forwards; }
+.loader-logo svg { width:min(320px,78vw); height:auto; filter:drop-shadow(0 0 40px rgba(226,201,138,0.15)); }
+.loader-bar-wrap { width:min(180px,52vw); height:1px; background:var(--border); overflow:hidden; opacity:0; animation:ldFade 0.3s ease 0.3s forwards; }
+.loader-bar { height:100%; width:0%; background:linear-gradient(90deg,var(--gold),var(--gold2)); animation:ldProg 0.9s ease 0.4s forwards; }
+.loader-sub { font-size:0.6rem; letter-spacing:0.38em; text-transform:uppercase; color:var(--muted); opacity:0; animation:ldFade 0.3s ease 0.5s forwards; }
+@keyframes ldFade { to{opacity:1;transform:scale(1);} }
+@keyframes ldProg { 0%{width:0%} 60%{width:75%} 100%{width:100%} }
+ 
+/* ── NAV ── */
+nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:1.6rem 4rem; background:transparent; border-bottom:1px solid transparent; transition:var(--trans); }
+nav.scrolled { padding:1rem 4rem; background:rgba(10,10,10,0.93); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-bottom:1px solid var(--border); }
+.nav-logo { display:flex; align-items:center; gap:0.85rem; text-decoration:none; }
+.nav-logo-icon { width:36px; height:36px; flex-shrink:0; }
+.nav-logo-text { display:flex; flex-direction:column; line-height:1; }
+.nav-logo-main { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--gold2); letter-spacing:0.14em; text-transform:uppercase; }
+.nav-logo-rule { width:100%; height:1px; background:var(--gold); margin:4px 0; opacity:0.6; }
+.nav-logo-sub { font-size:0.5rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--muted); font-weight:400; }
+.nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
+.nav-links a { color:var(--ink2); text-decoration:none; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:400; opacity:0.7; transition:var(--trans); position:relative; padding:0.2rem 0; }
+.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--gold); transition:var(--trans); }
+.nav-links a:hover { opacity:1; color:var(--gold2); }
+.nav-links a:hover::after { width:100%; }
+.nav-book { background:var(--gold); color:var(--bg) !important; padding:0.55rem 1.4rem !important; opacity:1 !important; font-weight:600 !important; letter-spacing:0.14em !important; transition:var(--trans) !important; }
+.nav-book:hover { background:var(--gold2) !important; }
+.nav-book::after { display:none !important; }
+.nav-menu-btn { display:none; background:none; border:1px solid var(--border); color:var(--ink); width:40px; height:40px; cursor:pointer; flex-direction:column; align-items:center; justify-content:center; gap:5px; transition:var(--trans); flex-shrink:0; }
+.nav-menu-btn span { display:block; width:18px; height:1px; background:var(--ink); transition:var(--trans); }
+.nav-menu-btn.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+.nav-menu-btn.open span:nth-child(2) { opacity:0; }
+.nav-menu-btn.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+.theme-toggle { background:none; border:1px solid var(--border); color:var(--ink2); width:58px; height:36px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; transition:var(--trans); flex-shrink:0; }
+.theme-toggle:hover { border-color:var(--gold); color:var(--gold2); }
+.mobile-nav { display:none; position:fixed; inset:0; z-index:9990; background:rgba(10,10,10,0.97); backdrop-filter:blur(20px); flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; }
+.mobile-nav.open { display:flex; }
+.mobile-nav a { color:var(--ink2); text-decoration:none; font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; letter-spacing:0.1em; transition:var(--trans); }
+.mobile-nav a:hover { color:var(--gold2); }
+.mobile-nav .mob-book { background:var(--gold); color:var(--bg) !important; padding:0.7rem 2.5rem; font-family:'DM Sans',sans-serif; font-size:0.8rem !important; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; }
+ 
+/* ── SCROLL PROGRESS + BACK TO TOP ── */
+#scroll-progress { position:fixed; top:0; left:0; height:2px; width:0%; background:linear-gradient(90deg,var(--gold),var(--gold2)); z-index:201; transition:width 0.1s linear; pointer-events:none; }
+#back-to-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; background:var(--gold); color:var(--bg); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.2rem; z-index:300; opacity:0; visibility:hidden; transform:translateY(10px); transition:var(--trans); }
+#back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+#back-to-top:hover { background:var(--gold2); transform:translateY(-3px); }
+ 
+/* ── HERO ── */
+.hero-wrap { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg); overflow:hidden; }
+.hero { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:9rem 2rem 5rem; max-width:860px; margin:0 auto; position:relative; z-index:2; width:100%; }
+.hero-eyebrow { font-size:0.7rem; letter-spacing:0.42em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem; font-weight:400; display:flex; align-items:center; gap:1rem; }
+.hero-eyebrow::before,.hero-eyebrow::after { content:''; width:1.5rem; height:1px; background:var(--gold); opacity:0.45; }
+.hero-logo { margin-bottom:1.8rem; width:100%; }
+.hero-logo svg { width:100%; max-width:660px; height:auto; display:block; margin:0 auto; filter:drop-shadow(0 12px 32px rgba(0,0,0,0.65)); }
+.hero-tagline { font-family:'Cormorant Garamond',serif; font-size:clamp(1.1rem,2.8vw,1.55rem); font-weight:300; color:var(--ink2); margin-bottom:1rem; letter-spacing:0.04em; font-style:italic; }
+.hero-desc { font-size:0.85rem; color:var(--muted); max-width:580px; line-height:1.8; margin-bottom:3rem; letter-spacing:0.02em; }
+.hero-cta { display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; width:100%; }
+.hero-scroll { position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.5rem; color:var(--muted); font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; opacity:0.5; }
+.hero-scroll-line { width:1px; height:32px; background:linear-gradient(to bottom,var(--gold),transparent); animation:scrollPulse 2s ease-in-out infinite; }
+@keyframes scrollPulse { 0%,100%{opacity:0.4;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(1.1)} }
+ 
+/* ── WEATHER BAR ── */
+.weather-bar { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.65rem 4rem; display:flex; align-items:center; justify-content:flex-end; gap:1.5rem; position:relative; z-index:2; }
+.weather-widget { display:flex; align-items:center; gap:0.55rem; font-size:0.7rem; letter-spacing:0.07em; color:var(--ink2); }
+#twIcon { align-self:flex-start; padding:0.25rem 0.5rem; border:1px solid rgba(200,169,110,0.25); background:rgba(200,169,110,0.06); color:var(--gold2); font-size:0.55rem; line-height:1; letter-spacing:0.12em; font-weight:600; text-transform:uppercase; white-space:nowrap; }
+.weather-temp { color:var(--gold2); font-weight:500; }
+.weather-desc { color:var(--muted); text-transform:capitalize; }
+.weather-divider { width:1px; height:13px; background:var(--border); }
+ 
+/* ── BTNS ── */
+.btn { display:inline-block; padding:1rem 2.8rem; text-decoration:none; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; transition:var(--trans); cursor:pointer; font-family:'DM Sans',sans-serif; border-radius:0; text-align:center; }
+.btn-fill { background:var(--gold); color:var(--bg); border:1px solid var(--gold); }
+.btn-fill:hover { background:var(--gold2); border-color:var(--gold2); transform:translateY(-3px); box-shadow:0 10px 28px rgba(200,169,110,0.28); }
+.btn-outline { border:1px solid rgba(255,255,255,0.18); color:var(--ink); background:transparent; }
+.btn-outline:hover { border-color:var(--gold); color:var(--gold2); transform:translateY(-3px); }
+ 
+/* ── SECTION COMMON ── */
+.sec-wrap { padding:8rem 4rem; max-width:1400px; margin:0 auto; }
+.sec-head { margin-bottom:4.5rem; }
+.sec-label { font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:1rem; margin-bottom:0.85rem; font-weight:400; }
+.sec-label::before { content:''; display:block; width:2.2rem; height:1px; background:var(--gold); opacity:0.55; }
+.sec-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,4vw,3.6rem); font-weight:300; color:var(--ink); line-height:1.12; }
+.sec-sub { font-size:0.9rem; color:var(--muted); margin-top:0.85rem; max-width:560px; line-height:1.75; }
+.sec-divider { display:flex; align-items:center; gap:1.5rem; padding:0 4rem; opacity:0.3; }
+.sec-divider::before,.sec-divider::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+.sec-divider-icon { color:var(--gold2); font-size:0.9rem; }
+ 
+/* ── SERVICES STRIP ── */
+.service-strip { background:var(--bg3); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:1.1rem 2rem; text-align:center; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); line-height:1.9; }
+.service-strip span { color:var(--gold2); font-weight:500; }
+ 
+/* ── SERVICES SECTION ── */
+#services { background:var(--bg2); }
+.srv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.srv-card { background:var(--bg); border:1px solid var(--border); padding:2.2rem 2rem; transition:var(--trans); position:relative; overflow:hidden; }
+.srv-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:0; background:linear-gradient(to bottom,var(--gold),var(--gold2)); transition:height 0.4s var(--ease); }
+.srv-card:hover::before { height:100%; }
+.srv-card:hover { border-color:rgba(200,169,110,0.2); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.6); }
+.srv-icon { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:1rem; display:block; }
+.srv-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--gold2); margin-bottom:0.6rem; letter-spacing:0.02em; }
+.srv-card p { font-size:0.83rem; color:var(--muted); line-height:1.7; }
+.srv-card { cursor:pointer; }
+.srv-pricing { display:none; margin-top:1.4rem; padding-top:1.2rem; border-top:1px solid var(--border); }
+.srv-pricing.open { display:block; }
+.sp-head { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:500; margin:0.8rem 0 0.4rem; }
+.sp-head:first-child { margin-top:0; }
+.sp-row { display:flex; justify-content:space-between; padding:0.42rem 0; border-bottom:1px solid var(--border); font-size:0.84rem; color:var(--ink2); }
+.sp-row:last-of-type { border:none; }
+.sp-amt { color:var(--gold2); font-weight:500; }
+.sp-divider { height:1px; background:var(--border); margin:0.6rem 0; opacity:0.5; }
+.sp-note { font-size:0.68rem; color:var(--muted); margin-top:0.6rem; font-style:italic; }
+.sp-book { display:block; text-align:center; margin-top:1.2rem; padding:0.75rem 1rem; font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:var(--bg); background:var(--gold); border:1px solid var(--gold); text-decoration:none; font-family:'DM Sans',sans-serif; transition:var(--trans); }
+.sp-book:hover { background:transparent; color:var(--gold2); border-color:var(--gold); }
+.srv-card.active { border-color:rgba(200,169,110,0.35); }
+ 
+/* ── NOW BOOKING BANNER ── */
+#booking-banner { background:linear-gradient(135deg,#0e0d0a 0%,#1a1710 50%,#0e0d0a 100%); border-top:1px solid var(--border); border-bottom:1px solid var(--border); position:relative; overflow:hidden; }
+#booking-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 60% 50%,rgba(200,169,110,0.07) 0%,transparent 65%); pointer-events:none; }
+.banner-inner { max-width:1400px; margin:0 auto; padding:6rem 4rem; display:grid; grid-template-columns:1fr auto; align-items:center; gap:4rem; position:relative; z-index:1; }
+.banner-label { font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; font-weight:400; }
+.banner-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:300; color:var(--ink); line-height:1.2; margin-bottom:1.2rem; }
+.banner-title em { color:var(--gold2); font-style:normal; }
+.banner-desc { font-size:0.88rem; color:var(--muted); line-height:1.75; max-width:520px; }
+.banner-cta { display:flex; flex-direction:column; align-items:center; gap:1rem; flex-shrink:0; }
+.banner-avail { font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); text-align:center; }
+ 
+/* ── WHY BOOK ── */
+#why { background:var(--bg); }
+.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.why-item { padding:2rem; border:1px solid var(--border); background:var(--bg2); transition:var(--trans); }
+.why-item:hover { border-color:rgba(200,169,110,0.2); }
+.why-num { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--gold); opacity:0.35; line-height:1; margin-bottom:0.6rem; }
+.why-item h4 { font-size:0.9rem; font-weight:500; color:var(--ink); margin-bottom:0.4rem; letter-spacing:0.02em; }
+.why-item p { font-size:0.8rem; color:var(--muted); line-height:1.65; }
+ 
+/* ── PRICING ── */
+#pricing { background:var(--bg2); }
+.pricing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:1.5rem; }
+.p-card { background:var(--bg); border:1px solid var(--border); padding:2.4rem 2rem; transition:var(--trans); display:flex; flex-direction:column; height:100%; justify-content:space-between; }
+.p-card:hover { border-color:rgba(200,169,110,0.3); transform:translateY(-5px); box-shadow:0 18px 42px rgba(0,0,0,0.65); }
+.p-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:400; color:var(--gold2); margin-bottom:0.3rem; }
+.p-sub { font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:1.6rem; padding-bottom:1.1rem; border-bottom:1px solid var(--border); font-weight:400; }
+.p-details { flex-grow:1; }
+.p-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid var(--border); font-size:0.85rem; color:var(--ink2); }
+.p-row:last-of-type { border:none; }
+.p-amt { color:var(--gold2); font-weight:500; }
+.p-floor { font-size:0.68rem; color:var(--muted); margin-top:0.7rem; font-style:italic; }
+.p-book { display:block; text-align:center; margin-top:2rem; padding:0.9rem 1.2rem; font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; color:var(--bg); background:var(--gold); border:1px solid var(--gold); text-decoration:none; font-family:'DM Sans',sans-serif; transition:var(--trans); }
+.p-book:hover { background:transparent; color:var(--gold2); border-color:var(--gold); }
+ 
+/* ── GALLERY ── */
+#gallery { background:var(--bg); }
+.g-tabs-row { display:flex; align-items:flex-end; justify-content:space-between; border-bottom:1px solid var(--border); margin-bottom:3rem; }
+.g-tabs { display:flex; gap:0.5rem; flex-wrap:wrap; }
+.g-tab { background:none; border:none; cursor:pointer; padding:0.9rem 2rem; font-family:'DM Sans',sans-serif; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:400; color:var(--muted); border-bottom:2px solid transparent; margin-bottom:-1px; transition:var(--trans); }
+.g-tab.active { color:var(--gold2); border-bottom-color:var(--gold); font-weight:500; }
+.g-tab:hover { color:var(--ink); }
+.g-count { font-size:0.56rem; background:var(--bg3); border:1px solid var(--border); color:var(--muted); padding:0.1rem 0.38rem; margin-left:0.3rem; vertical-align:middle; }
+.g-tab.active .g-count { background:rgba(200,169,110,0.1); border-color:rgba(200,169,110,0.25); color:var(--gold); }
+.g-sub-tabs { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+.g-sub-tab { background:none; border:1px solid var(--border); cursor:pointer; padding:0.45rem 1.1rem; font-family:'DM Sans',sans-serif; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:400; color:var(--muted); transition:var(--trans); }
+.g-sub-tab.active { background:var(--gold); color:var(--bg); border-color:var(--gold); font-weight:500; }
+.g-sub-tab:hover:not(.active) { border-color:var(--gold); color:var(--gold2); }
+.g-sub-tabs.hidden { display:none; }
+.g-zoom-btn { background:none; border:1px solid var(--border); color:var(--muted); width:30px; height:30px; cursor:pointer; font-size:0.95rem; display:flex; align-items:center; justify-content:center; transition:var(--trans); }
+.g-zoom-btn.active,.g-zoom-btn:hover { border-color:var(--gold); color:var(--gold2); background:rgba(200,169,110,0.07); }
+.g-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.2rem; min-height:420px; }
+.g-item { position:relative; overflow:hidden; cursor:pointer; background:var(--bg3); border:1px solid var(--border); aspect-ratio:4/5; transition:var(--trans); }
+.g-item::before { content:''; position:absolute; inset:0; background:var(--bg3); animation:skelPulse 1.2s ease-in-out infinite; z-index:0; transition:opacity 0.3s ease; }
+.g-item.img-loaded::before { opacity:0; animation:none; pointer-events:none; }
+.g-item:hover { border-color:rgba(226,201,138,0.2); box-shadow:0 18px 38px rgba(0,0,0,0.75); }
+.g-item img { width:100%; height:100%; display:block; object-fit:cover; transition:transform 0.6s var(--ease),opacity 0.3s ease; opacity:0; z-index:1; position:relative; filter:blur(0.3px) saturate(1.03) contrast(0.99); }
+.g-item img.loaded { opacity:1; }
+.g-item:hover img { transform:scale(1.04); }
+.g-overlay { position:absolute; inset:0; background:transparent; display:flex; align-items:center; justify-content:center; transition:var(--trans); pointer-events:none; z-index:2; }
+.g-item:hover .g-overlay { background:rgba(0,0,0,0.38); }
+.g-zoom-icon { color:rgba(245,240,232,0.9); font-size:1.6rem; opacity:0; transform:scale(0.8); transition:var(--trans); }
+.g-item:hover .g-zoom-icon { opacity:1; transform:scale(1); }
+.g-watermark { position:absolute; bottom:12px; right:14px; font-family:'Cormorant Garamond',serif; font-size:0.68rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold2); opacity:0.6; text-shadow:0 2px 6px rgba(0,0,0,0.9); pointer-events:none; user-select:none; z-index:3; transition:var(--trans); }
+.g-item:hover .g-watermark { opacity:1; }
+.g-soon { height:260px; width:100%; background:var(--bg3); border:1px dashed var(--border); display:flex; align-items:center; justify-content:center; font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); }
+.g-load-more { display:none; margin:2rem auto 0; padding:0.85rem 2.5rem; background:transparent; border:1px solid var(--border); color:var(--ink2); font-family:'DM Sans',sans-serif; font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; cursor:pointer; transition:var(--trans); }
+.g-load-more:hover { border-color:var(--gold); color:var(--gold2); }
+@keyframes skelPulse { 0%,100%{opacity:0.5} 50%{opacity:0.8} }
+ 
+/* ── LIGHTBOX ── */
+#lightbox { display:none; position:fixed; inset:0; z-index:500; background:rgba(4,4,4,0.97); align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease; }
+#lightbox.open { display:flex; opacity:1; }
+#lb-img { max-width:90vw; max-height:84vh; object-fit:contain; display:block; box-shadow:0 28px 90px rgba(0,0,0,0.95); transform:scale(0.96); opacity:0; transition:transform 0.3s var(--ease),opacity 0.2s ease; }
+#lightbox.open #lb-img { transform:scale(1); opacity:1; }
+#lb-img.switching { transform:scale(0.99); opacity:0.3; }
+.lb-close { position:fixed; top:1.5rem; right:2rem; background:none; border:none; color:var(--ink); font-size:2rem; cursor:pointer; opacity:0.4; transition:var(--trans); z-index:501; padding:0.5rem; }
+.lb-close:hover { opacity:1; transform:rotate(90deg); }
+.lb-arrow { position:fixed; top:50%; transform:translateY(-50%); background:var(--bg3); border:1px solid var(--border); color:var(--ink); font-size:2rem; width:56px; height:56px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:var(--trans); z-index:501; }
+.lb-arrow:hover { background:var(--bg2); color:var(--gold2); border-color:rgba(226,201,138,0.3); }
+#lb-prev { left:1.5rem; }
+#lb-next { right:1.5rem; }
+ 
+/* ── CONTACT ── */
+#contact { background:var(--bg2); }
+.c-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:6rem; align-items:start; }
+.c-intro { font-size:0.92rem; color:var(--muted); line-height:1.75; margin-bottom:2rem; }
+.c-info h3 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; margin-bottom:0.5rem; color:var(--gold2); }
+.c-links { display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem; }
+.c-link { display:flex; align-items:center; gap:1rem; text-decoration:none; color:var(--ink2); font-size:0.88rem; opacity:0.75; transition:var(--trans); }
+.c-link:hover { opacity:1; color:var(--gold2); transform:translateX(4px); }
+.c-icon { width:2.4rem; height:2rem; background:var(--bg3); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:0.58rem; letter-spacing:0.08em; font-weight:600; color:var(--gold); flex-shrink:0; }
+.c-link:hover .c-icon { border-color:var(--gold); }
+.c-response-info { margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:0.7rem; }
+.c-response-row { display:flex; align-items:center; gap:0.7rem; font-size:0.78rem; color:var(--muted); }
+.c-response-dot { width:7px; height:7px; background:var(--success); border-radius:50%; flex-shrink:0; box-shadow:0 0 6px rgba(87,163,87,0.5); animation:pulseDot 2s ease-in-out infinite; }
+.c-response-label { font-size:0.58rem; letter-spacing:0.12em; color:var(--gold); font-weight:600; width:1.8rem; display:inline-block; }
+@keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+ 
+/* ── CALENDAR ── */
+.calendar-box { background:var(--bg); border:1px solid var(--border); padding:1.4rem; margin-bottom:1.2rem; }
+.calendar-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+.calendar-month { font-size:0.82rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold2); }
+.calendar-nav-btn { background:none; border:none; color:var(--ink); font-size:1.1rem; cursor:pointer; padding:0.2rem 0.6rem; transition:var(--trans); }
+.calendar-nav-btn:hover { color:var(--gold); }
+.calendar-weekdays { display:grid; grid-template-columns:repeat(7,1fr); text-align:center; font-size:0.58rem; color:var(--muted); text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em; }
+.calendar-days { display:grid; grid-template-columns:repeat(7,1fr); gap:3px; text-align:center; }
+.calendar-day { padding:0.38rem 0; font-size:0.73rem; color:var(--ink2); cursor:pointer; transition:var(--trans); border:1px solid transparent; display:flex; flex-direction:column; align-items:center; gap:1px; min-height:42px; justify-content:center; }
+.calendar-day:hover:not(.empty):not(.disabled):not(.booked) { border-color:var(--gold); color:var(--gold2); }
+.calendar-day.selected { background:var(--gold); color:var(--bg) !important; font-weight:600; }
+.calendar-day.disabled { opacity:0.2; cursor:not-allowed; }
+.calendar-day.empty { cursor:default; }
+.calendar-day.booked { background:rgba(186,82,82,0.12); color:#ba5252 !important; cursor:not-allowed; border-color:rgba(186,82,82,0.18); position:relative; }
+.calendar-day.booked::after { content:''; position:absolute; bottom:3px; left:50%; transform:translateX(-50%); width:3px; height:3px; background:#ba5252; border-radius:50%; }
+.time-slots-wrap { margin-top:1rem; }
+.time-slots-label { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:0.7rem; font-weight:500; display:block; }
+.time-slots-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(86px,1fr)); gap:0.45rem; }
+.time-slot { background:var(--bg); border:1px solid var(--border); color:var(--ink2); padding:0.5rem 0.4rem; font-size:0.7rem; text-align:center; cursor:pointer; transition:var(--trans); font-family:'DM Sans',sans-serif; }
+.time-slot:hover:not(.slot-booked) { border-color:var(--gold); color:var(--gold2); }
+.time-slot.slot-selected { background:var(--gold); color:var(--bg); border-color:var(--gold); font-weight:600; }
+.time-slot.slot-booked { background:rgba(186,82,82,0.06); color:rgba(186,82,82,0.5); border-color:rgba(186,82,82,0.13); cursor:not-allowed; text-decoration:line-through; }
+.time-weather-info { margin-top:0.85rem; padding:0.9rem 1rem; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-left:2px solid rgba(200,169,110,0.5); font-size:0.76rem; color:var(--ink2); display:none; align-items:flex-start; gap:0.75rem; }
+.time-weather-info.show { display:flex; }
+.time-weather-info.watch { border-left-color:var(--gold); background:rgba(200,169,110,0.045); }
+.time-weather-info.alert { border-left-color:var(--error); background:rgba(186,82,82,0.055); }
+.time-weather-main { color:var(--ink); font-weight:500; font-size:0.78rem; line-height:1.45; }
+.time-weather-sub { font-size:0.67rem; color:var(--muted); line-height:1.5; }
+ 
+/* ── FORM ── */
+.f-lead { font-size:0.9rem; color:var(--ink2); margin-bottom:2rem; line-height:1.7; padding-bottom:1.5rem; border-bottom:1px solid var(--border); }
+.f-group { margin-bottom:1.4rem; }
+.f-group label { display:block; font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:0.55rem; font-weight:500; }
+.f-group input,.f-group select,.f-group textarea { width:100%; background:var(--bg); border:1px solid var(--border); color:var(--ink); padding:0.95rem 1.1rem; font-family:'DM Sans',sans-serif; font-size:16px; font-weight:300; outline:none; transition:var(--trans); appearance:none; -webkit-appearance:none; border-radius:0; }
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus { border-color:var(--gold); background:var(--bg3); box-shadow:0 0 0 1px rgba(200,169,110,0.12); }
+.f-group select { background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%); background-position:calc(100% - 18px) calc(1em + 6px),calc(100% - 13px) calc(1em + 6px); background-size:5px 5px,5px 5px; background-repeat:no-repeat; }
+.f-group select option { background:var(--bg2); color:var(--ink); }
+.f-group textarea { min-height:130px; resize:vertical; }
+.f-row { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+.f-send { width:100%; padding:1.1rem; background:var(--gold); color:var(--bg); border:none; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; transition:var(--trans); margin-top:0.4rem; }
+.f-send:hover { background:var(--gold2); transform:translateY(-2px); box-shadow:0 6px 20px rgba(200,169,110,0.22); }
+.f-error { font-size:0.68rem; color:var(--error); margin-top:0.35rem; display:none; }
+.f-error.show { display:block; }
+.f-group input.invalid,.f-group select.invalid,.f-group textarea.invalid { border-color:var(--error); }
+.f-group input.valid,.f-group select.valid,.f-group textarea.valid { border-color:var(--success); }
+.f-date-error { font-size:0.68rem; color:var(--error); margin-top:0.45rem; display:none; }
+.f-date-error.show { display:block; }
+.booking-confirm { padding:2.2rem; background:rgba(87,163,87,0.04); border:1px solid rgba(87,163,87,0.14); margin-bottom:1.5rem; }
+.confirm-icon { width:46px; height:46px; background:rgba(87,163,87,0.1); border:1px solid rgba(87,163,87,0.22); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--success); font-size:1.3rem; margin-bottom:1.1rem; }
+.confirm-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--ink); margin-bottom:0.5rem; }
+.confirm-desc { font-size:0.83rem; color:var(--ink2); line-height:1.6; margin-bottom:1.6rem; }
+.confirm-steps { display:flex; flex-direction:column; gap:1rem; margin-bottom:1.8rem; }
+.confirm-step { display:flex; gap:0.9rem; align-items:flex-start; }
+.confirm-step-num { width:26px; height:26px; background:var(--gold); color:var(--bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:600; flex-shrink:0; margin-top:0.1rem; }
+.confirm-step strong { display:block; font-size:0.8rem; font-weight:500; color:var(--ink); margin-bottom:0.15rem; }
+.confirm-step p { font-size:0.78rem; color:var(--muted); line-height:1.5; }
+.confirm-ig { display:inline-block; font-size:0.7rem; color:var(--gold); letter-spacing:0.1em; text-decoration:none; transition:var(--trans); }
+.confirm-ig:hover { color:var(--gold2); }
+ 
+/* ── FOOTER ── */
+footer { background:var(--bg3); border-top:1px solid var(--border); padding:4rem; }
+.footer-inner { max-width:1400px; margin:0 auto; display:grid; grid-template-columns:1fr auto; align-items:start; gap:3rem; }
+.footer-brand { display:flex; flex-direction:column; gap:0.6rem; }
+.footer-brand-name { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:var(--gold2); letter-spacing:0.12em; text-transform:uppercase; }
+.footer-brand-tag { font-size:0.7rem; color:var(--muted); letter-spacing:0.12em; }
+.footer-brand-loc { font-size:0.65rem; color:var(--muted); letter-spacing:0.08em; margin-top:0.2rem; }
+.footer-links { display:flex; gap:2rem; align-items:center; flex-wrap:wrap; }
+.footer-links a { color:var(--muted); text-decoration:none; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; transition:var(--trans); }
+.footer-links a:hover { color:var(--gold2); }
+.footer-bottom { max-width:1400px; margin:0 auto; padding-top:1.5rem; border-top:1px solid var(--border); margin-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+.footer-copy { font-size:0.68rem; color:var(--muted); letter-spacing:0.08em; }
+.share-btn { background:none; border:none; color:var(--gold); font-family:'DM Sans',sans-serif; font-size:0.68rem; letter-spacing:0.1em; cursor:pointer; transition:var(--trans); padding:0; }
+.share-btn:hover { color:var(--gold2); }
+.share-toast { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(20px); background:var(--bg2); border:1px solid var(--border); color:var(--ink2); padding:0.7rem 1.4rem; font-size:0.7rem; letter-spacing:0.1em; z-index:400; opacity:0; transition:all 0.3s ease; pointer-events:none; white-space:nowrap; }
+.share-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+ 
+/* ── STICKY CTA ── */
+.sticky-cta { display:none; position:fixed; bottom:0; left:0; right:0; z-index:299; background:var(--bg2); border-top:1px solid var(--border); padding:0.8rem 1.5rem; flex-direction:row; align-items:center; justify-content:space-between; gap:1rem; backdrop-filter:blur(12px); }
+.sticky-cta-text strong { display:block; color:var(--ink); font-size:0.88rem; font-weight:500; }
+.sticky-cta-text span { font-size:0.7rem; color:var(--muted); }
+.sticky-cta-btn { background:var(--gold); color:var(--bg); border:none; padding:0.7rem 1.4rem; font-family:'DM Sans',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; cursor:pointer; transition:var(--trans); text-decoration:none; white-space:nowrap; }
+.sticky-cta-btn:hover { background:var(--gold2); }
+ 
+/* ── ANIM ── */
+.anim-up { opacity:0; transform:translateY(22px); transition:opacity 0.55s ease,transform 0.55s var(--ease); }
+.anim-up.in-view { opacity:1; transform:translateY(0); }
+.anim-up:nth-child(2){transition-delay:0.07s}
+.anim-up:nth-child(3){transition-delay:0.14s}
+.anim-up:nth-child(4){transition-delay:0.21s}
+.anim-up:nth-child(5){transition-delay:0.28s}
+.anim-up:nth-child(6){transition-delay:0.35s}
+ 
 
-  body.light-mode {
-    --cream:  #f5f0e8; --cream2: #ede8df; --cream3: #e4ddd2;
-    --ink:    #1a1814; --ink2:   #4a4540; --warm:   #a07840;
-    --warm2:  #b8903a; --muted:  #8a8070; --border: rgba(0,0,0,0.1); --shadow: rgba(0,0,0,0.15);
-  }
-  body.light-mode nav.scrolled { background: rgba(245,240,232,0.94); }
-  body.light-mode .weather-bar { background: rgba(245,240,232,0.85); border-bottom-color: rgba(0,0,0,0.08); }
-  body.light-mode .mobile-nav { background: rgba(245,240,232,0.98); }
-  body.light-mode #loader { background: var(--cream); }
-  body.light-mode .g-item { background: var(--cream2); }
-  body.light-mode #lightbox { background: rgba(250,248,244,0.99); }
-  body.light-mode .g-soon { border-color: rgba(0,0,0,0.1); }
-  body.light-mode .p-card:hover { box-shadow: 0 20px 45px rgba(0,0,0,0.15); }
-  body.light-mode .g-item:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-  body.light-mode .lb-close, body.light-mode .lb-arrow { color: var(--ink); background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); }
-  body.light-mode .hero-logo svg { filter: invert(1) hue-rotate(180deg) drop-shadow(0 15px 35px rgba(0,0,0,0.15)); }
-  body.light-mode .nav-logo-icon { filter: invert(1) hue-rotate(180deg); }
-  body.light-mode .loader-logo svg { filter: invert(1) hue-rotate(180deg); }
 
-  .theme-toggle { background: none; border: 1px solid var(--border); color: var(--ink2); width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: var(--transition); border-radius: 0; flex-shrink: 0; }
-  .theme-toggle:hover { border-color: var(--warm); color: var(--warm2); }
-  #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: linear-gradient(90deg, var(--warm), var(--warm2)); z-index: 201; transition: width 0.1s linear; pointer-events: none; }
-  #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--warm); color: var(--cream); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; z-index: 300; opacity: 0; visibility: hidden; transform: translateY(10px); transition: var(--transition); }
-  #back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-  #back-to-top:hover { background: var(--warm2); transform: translateY(-3px); }
-  @media (max-width: 768px) { #back-to-top { bottom: 1.2rem; right: 1.2rem; width: 40px; height: 40px; } }
+/* ── GALLERY / BOOKING CTA DETAILS ── */
+.gallery-cta { margin-top:2.2rem; padding:1.4rem 1.6rem; border:1px solid var(--border); background:var(--bg2); display:flex; align-items:center; justify-content:space-between; gap:1.5rem; }
+.gallery-cta p { color:var(--muted); font-size:0.82rem; line-height:1.65; }
+.gallery-cta strong { display:block; color:var(--gold2); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.25rem; }
+.gallery-cta a { color:var(--bg); background:var(--gold); border:1px solid var(--gold); padding:0.75rem 1.4rem; text-decoration:none; font-size:0.68rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; white-space:nowrap; transition:var(--trans); }
+.gallery-cta a:hover { background:transparent; color:var(--gold2); border-color:var(--gold); }
+.booking-quick-info { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:2.6rem; }
+.booking-info-card { background:var(--bg); border:1px solid var(--border); padding:1.35rem 1.25rem; }
+.booking-info-card strong { display:block; color:var(--gold2); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:0.45rem; font-weight:600; }
+.booking-info-card p { color:var(--muted); font-size:0.78rem; line-height:1.65; }
+.booking-policy { margin-top:1.6rem; padding:1.2rem 1.25rem; border:1px solid rgba(200,169,110,0.16); background:rgba(200,169,110,0.035); }
+.booking-policy h4 { color:var(--gold2); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:0.45rem; font-weight:600; }
+.booking-policy p { color:var(--muted); font-size:0.77rem; line-height:1.65; }
+.calendar-helper { font-size:0.72rem; color:var(--muted); line-height:1.6; margin:-0.15rem 0 0.75rem; }
+.form-policy-note { margin-top:1rem; font-size:0.72rem; line-height:1.6; color:var(--muted); }
+.form-policy-note span { color:var(--gold2); font-weight:500; }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.8rem 4rem; background: transparent; border-bottom: 1px solid transparent; transition: var(--transition); will-change: transform; }
-  nav.scrolled { padding: 1.1rem 4rem; background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-  .nav-logo { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
-  .nav-logo-icon { width: 38px; height: 38px; flex-shrink: 0; }
-  .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
-  .nav-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--warm2); letter-spacing: 0.14em; text-transform: uppercase; }
-  .nav-logo-rule { width: 100%; height: 1px; background: var(--warm); margin: 4px 0; opacity: 0.7; }
-  .nav-logo-sub { font-size: 0.52rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
-  .nav-links { display: flex; gap: 3rem; list-style: none; align-items: center; }
-  .nav-links a { color: var(--ink); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 400; opacity: 0.65; transition: var(--transition); position: relative; padding: 0.2rem 0; }
-  .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--warm); transition: var(--transition); }
-  .nav-links a:hover { opacity: 1; color: var(--warm2); }
-  .nav-links a:hover::after { width: 100%; }
+/* ── LIGHT MODE ── */
+body.light-mode { --bg:#f5f0e8; --bg2:#ede8df; --bg3:#e4ddd2; --ink:#1a1814; --ink2:#4a4540; --gold:#a07840; --gold2:#b8903a; --muted:#8a8070; --border:rgba(0,0,0,0.1); --cream:#f5f0e8; --cream2:#ede8df; --cream3:#e4ddd2; --warm:#a07840; --warm2:#b8903a; }
+body.light-mode nav.scrolled { background:rgba(245,240,232,0.94); }
+body.light-mode .hero-logo svg { filter:invert(1) hue-rotate(180deg) drop-shadow(0 12px 30px rgba(0,0,0,0.15)); }
+body.light-mode #lightbox { background:rgba(250,248,244,0.99); }
+ 
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  nav{padding:1.2rem 2.5rem;} nav.scrolled{padding:1rem 2.5rem;}
+  .sec-wrap{padding:6rem 2.5rem;}
+  .c-grid{grid-template-columns:1fr;gap:3.5rem;}
+  .srv-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .banner-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .banner-cta{align-items:flex-start;}
+  .footer-inner{grid-template-columns:1fr;}
+  .footer-links{margin-top:0.5rem;}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;} nav.scrolled{padding:1rem 1.5rem;}
+  .nav-links{display:none;} .nav-menu-btn{display:flex;}
+  .sec-wrap{padding:4rem 1.5rem;}
+  .sec-title{font-size:clamp(2rem,8vw,2.6rem);}
+  .hero{padding:6.5rem 1.5rem 4rem;}
+  .hero-logo svg{max-width:100%;}
+  .hero-cta{flex-direction:column;gap:0.8rem;}
+  .btn{width:100%;padding:1.05rem 2rem;font-size:0.7rem;}
+  .weather-bar{padding:0.6rem 1.5rem;justify-content:center;flex-wrap:wrap;gap:0.5rem;}
+  .weather-desc{display:none;}
+  .srv-grid{grid-template-columns:1fr;gap:1rem;}
+  .why-grid{grid-template-columns:1fr;gap:1rem;}
+  .pricing-grid{grid-template-columns:1fr;gap:1rem;}
+  .g-grid{grid-template-columns:repeat(2,1fr);gap:0.5rem;}
+  .g-item{aspect-ratio:1/1;}
+  .g-zoom-toggle{display:flex;}
+  .g-tabs-row{margin-bottom:1.5rem;}
+  .g-load-more{display:block;width:100%;}
+  .g-tab{padding:0.65rem 0.85rem;font-size:0.6rem;}
+  .f-row{grid-template-columns:1fr;gap:0;}
+  .f-group input,.f-group select,.f-group textarea{font-size:16px;padding:0.85rem 1rem;}
+  .time-slots-grid{grid-template-columns:repeat(3,1fr);}
+  footer{padding:2.5rem 1.5rem;}
+  .footer-inner{gap:1.8rem;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+  .sticky-cta{display:flex;}
+  footer{padding-bottom:6rem;}
+  #back-to-top{bottom:5.5rem;right:1.2rem;}
+  .banner-title{font-size:1.8rem;}
+  .sec-head{margin-bottom:2.8rem;}
+  .lb-arrow{width:44px;height:44px;font-size:1.5rem;}
+  #lb-prev{left:0.4rem;} #lb-next{right:0.4rem;}
+  .share-toast{bottom:5.5rem;}
+  .gallery-cta{flex-direction:column;align-items:flex-start;}
+  .gallery-cta a{width:100%;text-align:center;}
+  .booking-quick-info{grid-template-columns:1fr;margin-bottom:2rem;}
+  .hero-scroll{display:none;}
+}
+@media(max-width:480px){
+  nav{padding:0.9rem 1rem;}
+  .nav-logo-main{font-size:1.22rem;}
+  .nav-logo-sub,.nav-logo-rule{display:none;}
+  .hero{padding:5.5rem 1rem 3rem;}
+  .sec-wrap{padding:3.5rem 1rem;}
+  .g-grid{gap:0.35rem;}
+  .g-tab{padding:0.55rem 0.65rem;font-size:0.58rem;}
+  .g-count{display:none;}
+  footer{padding:2rem 1rem;}
+  .banner-inner{padding:4rem 1.5rem;}
+  .time-slot{padding:0.6rem 0.2rem;font-size:0.65rem;}
+}
 
-  .hero-wrap { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--cream); }
-  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
-  .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm); margin-bottom: 2rem; font-weight: 400; display: flex; align-items: center; gap: 1rem; }
-  .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 1.5rem; height: 1px; background: var(--warm); opacity: 0.4; }
-  .hero-logo { margin-bottom: 1.5rem; width: 100%; }
-  .hero-logo svg { height: auto; width: 100%; max-width: 680px; display: block; margin: 0 auto; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6)); }
-  .hero-desc { font-size: 0.9rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink2); margin-bottom: 4rem; opacity: 0.85; font-weight: 400; }
-  .hero-cta { display: flex; gap: 1.5rem; justify-content: center; width: 100%; flex-wrap: wrap; }
-
-  .weather-bar { position: relative; z-index: 2; background: var(--cream2); border-bottom: 1px solid var(--border); padding: 0.7rem 4rem; display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; }
-  .weather-widget { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--ink2); }
-  .weather-icon { font-size: 1.1rem; }
-  .weather-temp { color: var(--warm2); font-weight: 500; }
-  .weather-desc { color: var(--muted); text-transform: capitalize; }
-  .weather-location { color: var(--muted); font-size: 0.65rem; letter-spacing: 0.1em; }
-  .weather-divider { width: 1px; height: 14px; background: var(--border); }
-
-  /* Time weather info box — hidden until time is selected */
-  .time-weather-info { margin-top: 0.8rem; padding: 0.8rem 1rem; background: var(--cream2); border: 1px solid var(--border); font-size: 0.78rem; color: var(--ink2); display: none; align-items: center; gap: 0.6rem; }
-  .time-weather-info.show { display: flex; }
-  .time-weather-icon { font-size: 1.2rem; }
-  .time-weather-text { display: flex; flex-direction: column; gap: 0.1rem; }
-  .time-weather-main { color: var(--ink); font-weight: 500; }
-  .time-weather-sub { font-size: 0.7rem; color: var(--muted); }
-
-  .btn { display: inline-block; padding: 1.1rem 3rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; transition: var(--transition); cursor: pointer; font-family: 'DM Sans', sans-serif; border-radius: 0; text-align: center; }
-  .btn-fill { background: var(--warm); color: var(--cream); border: 1px solid var(--warm); font-weight: 600; }
-  .btn-fill:hover { background: var(--warm2); border-color: var(--warm2); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(200,169,110,0.25); }
-  .btn-outline { border: 1px solid var(--border); color: var(--ink); background: transparent; }
-  .btn-outline:hover { border-color: var(--warm); color: var(--warm2); transform: translateY(-3px); }
-
-  .sec-wrap { padding: 9.5rem 4rem; max-width: 1440px; margin: 0 auto; }
-  .sec-head { margin-bottom: 5.5rem; text-align: left; }
-  .sec-label { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm); display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-weight: 400; }
-  .sec-label::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--warm); opacity: 0.6; }
-  .sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.15; letter-spacing: -0.01em; }
-
-  #pricing { background: var(--cream2); }
-  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
-  .p-card { background: var(--cream); border: 1px solid var(--border); padding: 2.6rem 2.2rem; transition: var(--transition); display: flex; flex-direction: column; height: 100%; justify-content: space-between; }
-  .p-card:hover { border-color: rgba(200,169,110,0.35); transform: translateY(-6px); box-shadow: 0 20px 45px rgba(0,0,0,0.65); }
-  .p-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; color: var(--warm2); margin-bottom: 0.3rem; letter-spacing: 0.02em; }
-  .p-sub { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); font-weight: 400; }
-  .p-details { flex-grow: 1; }
-  .p-row { display: flex; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: var(--ink2); }
-  .p-row:last-of-type { border: none; }
-  .p-amt { color: var(--warm2); font-weight: 500; }
-  .p-floor { font-size: 0.7rem; color: var(--muted); margin-top: 0.8rem; font-style: italic; letter-spacing: 0.02em; }
-  .p-book { display: block; text-align: center; margin-top: 2.2rem; padding: 0.95rem 1.4rem; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--cream); background: var(--warm); border: 1px solid var(--warm); text-decoration: none; font-family: 'DM Sans', sans-serif; transition: var(--transition); }
-  .p-book:hover { background: transparent; color: var(--warm2); border-color: var(--warm); }
-
-  .g-tabs-row { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 1px solid var(--border); margin-bottom: 3.5rem; }
-  .g-tabs { display: flex; gap: 1rem; flex-wrap: wrap; border-bottom: none; margin-bottom: 0; }
-  .g-zoom-toggle { display: none; gap: 0.4rem; padding-bottom: 0.5rem; flex-shrink: 0; }
-  .g-zoom-btn { background: none; border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-  .g-zoom-btn.active { border-color: var(--warm); color: var(--warm2); background: rgba(200,169,110,0.08); }
-  .g-zoom-btn:hover { border-color: var(--warm); color: var(--warm2); }
-  @media (max-width: 768px) { .g-zoom-toggle { display: flex; } .g-tabs-row { margin-bottom: 2rem; } }
-  .g-tab { background: none; border: none; cursor: pointer; padding: 1rem 2.2rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 400; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: var(--transition); z-index: 10; }
-  .g-tab.active { color: var(--warm2); border-bottom-color: var(--warm); font-weight: 500; }
-  .g-tab:hover { color: var(--ink); }
-  .g-count { font-size: 0.58rem; background: var(--cream3); border: 1px solid var(--border); color: var(--muted); padding: 0.1rem 0.4rem; margin-left: 0.3rem; letter-spacing: 0.05em; vertical-align: middle; }
-  .g-tab.active .g-count { background: rgba(200,169,110,0.12); border-color: rgba(200,169,110,0.25); color: var(--warm); }
-  .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; min-height: 450px; }
-  .g-item { position: relative; overflow: hidden; cursor: pointer; background: var(--cream3); border: 1px solid var(--border); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-  .g-item:hover { border-color: rgba(226,201,138,0.25); box-shadow: 0 20px 40px rgba(0,0,0,0.75); }
-  .g-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease; opacity: 0; filter: blur(0.4px) saturate(1.04) contrast(0.98); }
-  .g-item img.loaded { opacity: 1; }
-  .g-item:hover img { transform: scale(1.03); }
-  .g-overlay { position: absolute; inset: 0; background: transparent; display: flex; align-items: center; justify-content: center; transition: var(--transition); pointer-events: none; }
-  .g-item:hover .g-overlay { background: rgba(0,0,0,0.4); }
-  .g-zoom { color: rgba(245,240,232,0.95); font-size: 1.8rem; opacity: 0; transform: scale(0.8); transition: var(--transition); font-weight: 300; }
-  .g-item:hover .g-zoom { opacity: 1; transform: scale(1); }
-  .g-watermark { position: absolute; bottom: 14px; right: 16px; font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warm2); opacity: 0.65; text-shadow: 0 2px 6px rgba(0,0,0,0.8); pointer-events: none; user-select: none; transition: var(--transition); }
-  .g-item:hover .g-watermark { opacity: 1; }
-  .g-soon { height: 280px; width: 100%; background: var(--cream3); border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-  .g-load-more { display: none; margin: 2rem auto 0; padding: 0.9rem 2.5rem; background: transparent; border: 1px solid var(--border); color: var(--ink2); font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: var(--transition); }
-  .g-load-more:hover { border-color: var(--warm); color: var(--warm2); }
-  @media (max-width: 768px) { .g-load-more { display: block; } }
-
-  #lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(5,5,5,0.97); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
-  #lightbox.open { display: flex; opacity: 1; }
-  #lb-img { max-width: 92vw; max-height: 85vh; aspect-ratio: auto; object-fit: contain; display: block; box-shadow: 0 30px 100px rgba(0,0,0,0.95); transform: scale(0.96); opacity: 0; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease; }
-  #lightbox.open #lb-img { transform: scale(1); opacity: 1; }
-  #lb-img.switching { transform: scale(0.99); opacity: 0.3; }
-  .lb-close { position: fixed; top: 1.5rem; right: 2rem; background: none; border: none; color: var(--ink); font-size: 2.2rem; cursor: pointer; opacity: 0.4; transition: var(--transition); z-index: 501; font-weight: 300; padding: 0.5rem; }
-  .lb-close:hover { opacity: 1; transform: rotate(90deg); }
-  .lb-arrow { position: fixed; top: 50%; transform: translateY(-50%); background: var(--cream3); border: 1px solid var(--border); color: var(--ink); font-size: 2.2rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); z-index: 501; font-weight: 300; }
-  .lb-arrow:hover { background: var(--cream2); color: var(--warm2); border-color: rgba(226,201,138,0.35); }
-  #lb-prev { left: 1.5rem; }
-  #lb-next { right: 1.5rem; }
-
-  #contact { background: var(--cream2); }
-  .c-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 7rem; align-items: start; }
-  .c-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; margin-bottom: 1.8rem; color: var(--warm2); letter-spacing: 0.01em; }
-  .c-links { display: flex; flex-direction: column; gap: 1.2rem; }
-  .c-link { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--ink2); font-size: 0.92rem; opacity: 0.75; transition: var(--transition); }
-  .c-link:hover { opacity: 1; color: var(--warm2); transform: translateX(4px); }
-  .c-icon { width: 2.2rem; height: 2.2rem; background: var(--cream3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
-  .c-link:hover .c-icon { border-color: var(--warm); background: var(--cream2); }
-
-  .calendar-box { background: var(--cream); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; }
-  .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-  .calendar-month { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm2); }
-  .calendar-nav-btn { background: none; border: none; color: var(--ink); font-size: 1.1rem; cursor: pointer; padding: 0.2rem 0.6rem; transition: var(--transition); }
-  .calendar-nav-btn:hover { color: var(--warm); }
-  .calendar-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 0.6rem; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
-  .calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
-  .calendar-day { padding: 0.4rem 0 0.3rem; font-size: 0.75rem; color: var(--ink2); cursor: pointer; transition: var(--transition); border: 1px solid transparent; display: flex; flex-direction: column; align-items: center; gap: 1px; min-height: 44px; justify-content: center; }
-  .cal-wx { font-size: 0.65rem; line-height: 1; }
-  .cal-temp { font-size: 0.55rem; color: var(--muted); }
-  .calendar-day.wx-bad { background: rgba(186,82,82,0.06); }
-  .calendar-day.wx-bad:not(.disabled):not(.booked) { border-color: rgba(186,82,82,0.12); }
-  .calendar-day:hover:not(.empty):not(.disabled):not(.booked) { border-color: var(--warm); color: var(--warm2); }
-  .calendar-day.selected { background: var(--warm); color: var(--cream) !important; font-weight: 600; }
-  .calendar-day.selected .cal-temp { color: rgba(10,10,10,0.6); }
-  .calendar-day.disabled { opacity: 0.2; cursor: not-allowed; }
-  .calendar-day.empty { cursor: default; }
-  .calendar-day.booked { background: rgba(186,82,82,0.15); color: #ba5252 !important; cursor: not-allowed; border-color: rgba(186,82,82,0.2); position: relative; }
-  .calendar-day.booked::after { content: ''; position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background: #ba5252; border-radius: 50%; }
-
-  .time-slots-wrap { margin-top: 1rem; }
-  .time-slots-label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; font-weight: 500; display: block; }
-  .time-slots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
-  .time-slot { background: var(--cream); border: 1px solid var(--border); color: var(--ink2); padding: 0.55rem 0.5rem; font-size: 0.72rem; text-align: center; cursor: pointer; transition: var(--transition); font-family: 'DM Sans', sans-serif; letter-spacing: 0.04em; }
-  .time-slot:hover:not(.slot-booked) { border-color: var(--warm); color: var(--warm2); }
-  .time-slot.slot-selected { background: var(--warm); color: var(--cream); border-color: var(--warm); font-weight: 600; }
-  .time-slot.slot-booked { background: rgba(186,82,82,0.08); color: rgba(186,82,82,0.5); border-color: rgba(186,82,82,0.15); cursor: not-allowed; text-decoration: line-through; }
-
-  .f-group { margin-bottom: 1.5rem; }
-  .f-group label { display: block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; font-weight: 500; }
-  .f-group input, .f-group select, .f-group textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); color: var(--ink); padding: 1rem 1.25rem; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300; outline: none; transition: var(--transition); appearance: none; -webkit-appearance: none; border-radius: 0; }
-  .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--warm); background: var(--cream2); box-shadow: 0 0 0 1px rgba(200,169,110,0.15); }
-  .f-group select { background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 20px) calc(1.1em + 6px), calc(100% - 15px) calc(1.1em + 6px); background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
-  .f-group select:focus { background-image: linear-gradient(45deg, transparent 50%, var(--warm) 50%), linear-gradient(135deg, var(--warm) 50%, transparent 50%); }
-  .f-group select option { background: var(--cream2); color: var(--ink); }
-  .f-group textarea { min-height: 140px; resize: vertical; }
-  .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .f-send { width: 100%; padding: 1.15rem; background: var(--warm); color: var(--cream); border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; transition: var(--transition); margin-top: 0.5rem; }
-  .f-send:hover { background: var(--warm2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,110,0.2); }
-
-  footer { text-align: center; padding: 4.5rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.12em; background: var(--cream); font-weight: 400; }
-  footer a { color: var(--warm); text-decoration: none; transition: var(--transition); }
-  footer a:hover { color: var(--warm2); }
-  .share-btn { background: none; border: none; color: var(--warm); font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; cursor: pointer; transition: var(--transition); padding: 0; }
-  .share-btn:hover { color: var(--warm2); }
-  .share-toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--cream2); border: 1px solid var(--border); color: var(--ink2); padding: 0.75rem 1.5rem; font-size: 0.72rem; letter-spacing: 0.1em; z-index: 400; opacity: 0; transition: all 0.3s ease; pointer-events: none; white-space: nowrap; }
-  .share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  @media (max-width: 768px) { .share-toast { bottom: 5.5rem; } }
-
-  .f-error { font-size: 0.7rem; color: var(--error); margin-top: 0.4rem; display: none; letter-spacing: 0.04em; }
-  .f-error.show { display: block; }
-  .f-group input.invalid, .f-group select.invalid, .f-group textarea.invalid { border-color: var(--error); box-shadow: 0 0 0 1px rgba(186,82,82,0.2); }
-  .f-group input.valid, .f-group select.valid, .f-group textarea.valid { border-color: var(--success); }
-  .f-date-error { font-size: 0.7rem; color: var(--error); margin-top: 0.5rem; display: none; letter-spacing: 0.04em; }
-  .f-date-error.show { display: block; }
-
-  .c-response-info { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.8rem; }
-  .c-response-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
-  .c-response-dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 6px rgba(87,163,87,0.5); animation: pulse-dot 2s ease-in-out infinite; }
-  @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
-
-  .booking-confirm { padding: 2.5rem; background: rgba(87,163,87,0.04); border: 1px solid rgba(87,163,87,0.15); margin-bottom: 1.5rem; }
-  .confirm-icon { width: 48px; height: 48px; background: rgba(87,163,87,0.1); border: 1px solid rgba(87,163,87,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--success); font-size: 1.4rem; margin-bottom: 1.2rem; }
-  .confirm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--ink); margin-bottom: 0.6rem; }
-  .confirm-desc { font-size: 0.85rem; color: var(--ink2); line-height: 1.6; margin-bottom: 1.8rem; }
-  .confirm-steps { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem; }
-  .confirm-step { display: flex; gap: 1rem; align-items: flex-start; }
-  .confirm-step-num { width: 28px; height: 28px; background: var(--warm); color: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 600; flex-shrink: 0; margin-top: 0.1rem; }
-  .confirm-step strong { display: block; font-size: 0.82rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
-  .confirm-step p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-  .confirm-ig { display: inline-block; font-size: 0.72rem; color: var(--warm); letter-spacing: 0.1em; text-decoration: none; transition: var(--transition); }
-  .confirm-ig:hover { color: var(--warm2); }
-
-  .sec-divider { display: flex; align-items: center; gap: 1.5rem; padding: 0 4rem; opacity: 0.35; }
-  .sec-divider::before, .sec-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--warm), transparent); }
-  .sec-divider-icon { color: var(--warm2); font-size: 1rem; flex-shrink: 0; }
-  @media (max-width: 768px) { .sec-divider { padding: 0 1.5rem; } }
-
-  .service-strip { background: var(--cream3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.2rem 2rem; text-align: center; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); line-height: 1.8; }
-  .service-strip span { color: var(--warm2); font-weight: 500; }
-
-  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 299; background: var(--cream2); border-top: 1px solid var(--border); padding: 0.85rem 1.5rem; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; backdrop-filter: blur(12px); }
-  .sticky-cta-phone { font-size: 0.78rem; color: var(--ink2); }
-  .sticky-cta-phone strong { display: block; color: var(--ink); font-size: 0.9rem; font-weight: 500; }
-  .sticky-cta-btn { background: var(--warm); color: var(--cream); border: none; padding: 0.75rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; transition: var(--transition); text-decoration: none; white-space: nowrap; }
-  .sticky-cta-btn:hover { background: var(--warm2); }
-  @media (max-width: 768px) { .sticky-cta { display: flex; } footer { padding-bottom: 6rem; } #back-to-top { bottom: 5.5rem; } }
-
-  .anim-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
-  .anim-up.in-view { opacity: 1; transform: translateY(0); }
-  .anim-up:nth-child(2) { transition-delay: 0.07s; }
-  .anim-up:nth-child(3) { transition-delay: 0.14s; }
-  .anim-up:nth-child(4) { transition-delay: 0.21s; }
-  .anim-up:nth-child(5) { transition-delay: 0.28s; }
-  .anim-up:nth-child(6) { transition-delay: 0.35s; }
-  .anim-up:nth-child(7) { transition-delay: 0.42s; }
-  .anim-up:nth-child(8) { transition-delay: 0.49s; }
-  .anim-up:nth-child(9) { transition-delay: 0.56s; }
-
-  .nav-menu-btn { display: none; background: none; border: 1px solid var(--border); color: var(--ink); width: 40px; height: 40px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; transition: var(--transition); flex-shrink: 0; }
-  .nav-menu-btn:hover { border-color: var(--warm); }
-  .nav-menu-btn span { display: block; width: 18px; height: 1px; background: var(--ink); transition: var(--transition); }
-  .nav-menu-btn.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  .nav-menu-btn.open span:nth-child(2) { opacity: 0; }
-  .nav-menu-btn.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-  .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9990; background: rgba(10,10,10,0.97); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
-  .mobile-nav.open { display: flex; }
-  .mobile-nav a { color: var(--ink2); text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.1em; transition: var(--transition); }
-  .mobile-nav a:hover { color: var(--warm2); }
-
-  #loader { position: fixed; inset: 0; z-index: 9999; background: #0a0a0a; background: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transition: opacity 0.4s ease, visibility 0.4s ease; }
-  #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-  .loader-logo { opacity: 0; transform: scale(0.94); animation: loaderFadeIn 0.5s cubic-bezier(0.16,1,0.3,1) 0.1s forwards; }
-  .loader-logo svg { width: min(340px, 80vw); height: auto; filter: drop-shadow(0 0 40px rgba(226,201,138,0.15)); }
-  .loader-bar-wrap { width: min(200px, 55vw); height: 1px; background: var(--border); overflow: hidden; opacity: 0; animation: loaderFadeIn 0.3s ease 0.3s forwards; }
-  .loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--warm), var(--warm2)); animation: loaderProgress 0.9s cubic-bezier(0.4,0,0.2,1) 0.4s forwards; }
-  .loader-text { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); opacity: 0; animation: loaderFadeIn 0.3s ease 0.5s forwards; }
-  @keyframes loaderFadeIn { to { opacity: 1; transform: scale(1); } }
-  @keyframes loaderProgress { 0% { width: 0%; } 60% { width: 75%; } 100% { width: 100%; } }
-
-  @media (max-width: 1024px) { nav { padding: 1.2rem 2.5rem; } nav.scrolled { padding: 1.1rem 2.5rem; } .sec-wrap { padding: 7.5rem 2.5rem; } .c-grid { grid-template-columns: 1fr; gap: 4rem; } }
-
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; } nav.scrolled { padding: 1rem 1.5rem; }
-    .nav-links { display: none; } .nav-menu-btn { display: flex; }
-    .sec-wrap { padding: 4.5rem 1.5rem; } .sec-title { font-size: clamp(2rem, 8vw, 2.8rem); }
-    .hero { padding: 6rem 1.5rem 3rem; min-height: 100vh; justify-content: center; }
-    .hero-logo { margin-bottom: 2rem; width: 100%; }
-    .hero-logo svg { width: min(520px, 92vw); max-width: 100%; height: auto; margin: 0 auto; display: block; }
-    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.25em; margin-bottom: 1.5rem; }
-    .hero-desc { font-size: 0.75rem; letter-spacing: 0.15em; margin-bottom: 2rem; }
-    .hero-cta { flex-direction: column; gap: 0.85rem; width: 100%; }
-    .btn { width: 100%; padding: 1.1rem 2rem; font-size: 0.72rem; }
-    .weather-bar { padding: 0.65rem 1.5rem; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
-    .weather-desc { display: none; }
-    .pricing-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .p-card { padding: 1.6rem 1.4rem; }
-    .p-card h3 { font-size: 1.35rem; }
-    .g-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; min-height: unset; }
-    .g-item { aspect-ratio: 1/1; } .g-watermark { font-size: 0.55rem; bottom: 6px; right: 8px; }
-    .g-tabs { gap: 0.3rem; } .g-tab { padding: 0.7rem 0.9rem; font-size: 0.62rem; letter-spacing: 0.1em; }
-    .g-tabs-row { margin-bottom: 1.5rem; }
-    .g-load-more { display: block; width: 100%; }
-    .f-row { grid-template-columns: 1fr; gap: 0; }
-    .f-group { margin-bottom: 1.2rem; }
-    .f-group input, .f-group select, .f-group textarea { font-size: 16px; padding: 0.9rem 1rem; }
-    .f-group textarea { min-height: 110px; }
-    .calendar-box { padding: 1rem; }
-    .calendar-days { gap: 3px; }
-    .calendar-day { padding: 0.35rem 0; font-size: 0.75rem; min-height: 46px; }
-    .cal-wx { font-size: 0.58rem; } .cal-temp { font-size: 0.48rem; }
-    .calendar-nav-btn { padding: 0.3rem 0.8rem; font-size: 1.2rem; }
-    .time-slots-grid { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
-    .time-slot { padding: 0.7rem 0.3rem; font-size: 0.68rem; }
-    .time-weather-info { font-size: 0.75rem; }
-    .c-grid { grid-template-columns: 1fr; gap: 2.5rem; } .c-info h3 { font-size: 1.4rem; }
-    .c-icon { width: 2rem; height: 2rem; }
-    .c-link { font-size: 0.88rem; }
-    .c-response-info { margin-top: 1.5rem; padding-top: 1.2rem; }
-    .booking-confirm { padding: 1.8rem 1.4rem; }
-    .confirm-title { font-size: 1.4rem; }
-    .f-send { padding: 1.1rem; font-size: 0.72rem; }
-    footer { padding: 2.5rem 1.5rem; font-size: 0.7rem; }
-    .lb-arrow { width: 44px; height: 44px; font-size: 1.6rem; }
-    #lb-prev { left: 0.4rem; } #lb-next { right: 0.4rem; }
-    .sec-head { margin-bottom: 2.5rem; }
-    .sec-label { font-size: 0.62rem; }
-    .service-strip { font-size: 0.6rem; letter-spacing: 0.15em; padding: 1rem 1.5rem; }
-    .sticky-cta { padding: 0.75rem 1.2rem; }
-    .sticky-cta-phone { font-size: 0.72rem; }
-    .sticky-cta-phone strong { font-size: 0.82rem; }
-    .sticky-cta-btn { padding: 0.65rem 1.2rem; font-size: 0.65rem; }
-  }
-
-  @media (max-width: 480px) {
-    nav { padding: 0.9rem 1rem; } .nav-logo-main { font-size: 1.25rem; }
-    .nav-logo-sub { display: none; } .nav-logo-rule { display: none; }
-    .hero { padding: 5.5rem 1rem 2.5rem; }
-    .hero-logo { margin-bottom: 1.5rem; width: 100%; }
-    .hero-logo svg { width: min(420px, 96vw); height: auto; display: block; margin: 0 auto; }
-    .hero-eyebrow { font-size: 0.58rem; gap: 0.5rem; margin-bottom: 1rem; }
-    .hero-eyebrow::before, .hero-eyebrow::after { width: 0.8rem; }
-    .hero-desc { font-size: 0.68rem; letter-spacing: 0.15em; margin-bottom: 1.8rem; }
-    .hero-cta { gap: 0.65rem; } .btn { padding: 1rem; font-size: 0.68rem; }
-    .sec-wrap { padding: 3.5rem 1rem; }
-    .g-grid { grid-template-columns: repeat(2, 1fr); gap: 0.4rem; }
-    .g-item { aspect-ratio: 1/1; }
-    .g-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
-    .g-count { display: none; }
-    .pricing-grid { grid-template-columns: 1fr; gap: 0.9rem; }
-    .p-card { padding: 1.4rem 1.2rem; }
-    .calendar-box { padding: 0.9rem 0.8rem; }
-    .calendar-day { min-height: 42px; font-size: 0.72rem; }
-    .cal-wx { font-size: 0.55rem; } .cal-temp { display: none; }
-    .time-slots-grid { grid-template-columns: repeat(3, 1fr); gap: 0.35rem; }
-    .time-slot { padding: 0.65rem 0.2rem; font-size: 0.65rem; }
-    footer { padding: 2rem 1rem; }
-    .lb-arrow { width: 38px; height: 38px; font-size: 1.3rem; }
-    #lb-prev { left: 0.1rem; } #lb-next { right: 0.1rem; }
-    .mobile-nav a { font-size: 1.5rem; }
-    .theme-toggle { width: 32px; height: 32px; font-size: 0.82rem; }
-    .nav-menu-btn { width: 32px; height: 32px; }
-    .sec-divider { padding: 0 1rem; }
-    .confirm-steps { gap: 1rem; }
-    .confirm-step p { font-size: 0.75rem; }
-  }
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:0.01ms!important;}
+}
 </style>
 </head>
 <body>
-
+ 
+<!-- LOADER -->
 <div id="loader">
   <div class="loader-logo">
     <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg">
-      <defs><clipPath id="loader-oval-clip"><ellipse cx="390" cy="100" rx="372" ry="92"/></clipPath></defs>
+      <defs><clipPath id="lc"><ellipse cx="390" cy="100" rx="372" ry="92"/></clipPath></defs>
       <ellipse cx="390" cy="100" rx="372" ry="92" fill="#e2c98a"/>
       <ellipse cx="390" cy="100" rx="356" ry="76" fill="#0a0a0a"/>
-      <g clip-path="url(#loader-oval-clip)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
+      <g clip-path="url(#lc)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
         <text x="90" y="103" font-size="54">N</text><text x="163" y="100" font-size="72">Y</text>
         <text x="248" y="97" font-size="90">L</text><text x="326" y="96" font-size="100">E</text>
         <text x="410" y="96" font-size="100">N</text><text x="494" y="97" font-size="90">S</text>
@@ -418,17 +466,12 @@
     </svg>
   </div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-  <span class="loader-text">Garland, TX · DFW Area</span>
+  <span class="loader-sub">Garland · Rowlett · DFW</span>
 </div>
-<script>
-  setTimeout(function() {
-    var l = document.getElementById('loader');
-    if (l) { l.classList.add('hidden'); setTimeout(function(){ l.style.display='none'; }, 500); }
-  }, 3000);
-</script>
-
+ 
+<!-- NAV -->
 <nav id="siteNav">
-  <a href="#" class="nav-logo" aria-label="NY Lenses home" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+  <a href="#" class="nav-logo" aria-label="NY Lenses" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
     <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="18" cy="18" r="16" stroke="#e2c98a" stroke-width="1.5"/>
       <circle cx="18" cy="18" r="7" stroke="#e2c98a" stroke-width="1.5"/>
@@ -446,74 +489,257 @@
     <div class="nav-logo-text">
       <span class="nav-logo-main">NY Lenses</span>
       <div class="nav-logo-rule"></div>
-      <span class="nav-logo-sub">Garland, TX &nbsp;·&nbsp; DFW Area</span>
+      <span class="nav-logo-sub">Garland · Rowlett · DFW</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-book">Book a Shoot</a></li>
   </ul>
-  <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">☀️</button>
+  <div style="display:flex;gap:0.6rem;align-items:center;">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">MODE</button>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
-
+ 
 <div id="scroll-progress"></div>
 <button id="back-to-top" aria-label="Back to top">↑</button>
-
+ 
+<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
   <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
-  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+  <a href="#contact" class="mob-book" onclick="closeMobileNav()">Book a Shoot</a>
 </div>
-
+ 
+<!-- HERO -->
 <div class="hero-wrap">
-<section class="hero">
-  <span class="hero-eyebrow">Garland, TX · DFW Area</span>
-  <div class="hero-logo">
-    <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg" aria-label="NY Lenses Logo" preserveAspectRatio="xMidYMid meet">
-      <defs><clipPath id="hero-oval-clip"><ellipse cx="390" cy="100" rx="372" ry="92"/></clipPath></defs>
-      <ellipse cx="390" cy="100" rx="372" ry="92" fill="#e2c98a"/>
-      <ellipse cx="390" cy="100" rx="356" ry="76" fill="#0a0a0a"/>
-      <g clip-path="url(#hero-oval-clip)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
-        <text x="90" y="103" font-size="54">N</text><text x="163" y="100" font-size="72">Y</text>
-        <text x="248" y="97" font-size="90">L</text><text x="326" y="96" font-size="100">E</text>
-        <text x="410" y="96" font-size="100">N</text><text x="494" y="97" font-size="90">S</text>
-        <text x="578" y="100" font-size="72">E</text><text x="652" y="103" font-size="54">S</text>
-      </g>
-      <ellipse cx="390" cy="100" rx="372" ry="92" fill="none" stroke="#e2c98a" stroke-width="7"/>
-      <ellipse cx="390" cy="100" rx="356" ry="76" fill="none" stroke="#e2c98a" stroke-width="2.5"/>
-    </svg>
-  </div>
-  <p class="hero-desc">Sports &nbsp;·&nbsp; Portraits &nbsp;·&nbsp; Graduations &nbsp;·&nbsp; Parties</p>
-  <div class="hero-cta">
-    <a href="#contact" class="btn btn-fill">Book a Shoot</a>
-    <a href="#gallery" class="btn btn-outline">View Portfolio</a>
+  <section class="hero">
+    <span class="hero-eyebrow">Garland · Rowlett · DFW</span>
+    <div class="hero-logo">
+      <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg" aria-label="NY Lenses Logo" preserveAspectRatio="xMidYMid meet">
+        <defs><clipPath id="hc"><ellipse cx="390" cy="100" rx="372" ry="92"/></clipPath></defs>
+        <ellipse cx="390" cy="100" rx="372" ry="92" fill="#e2c98a"/>
+        <ellipse cx="390" cy="100" rx="356" ry="76" fill="#0a0a0a"/>
+        <g clip-path="url(#hc)" font-family="'Arial Black','Impact',sans-serif" font-weight="900" fill="#e2c98a" text-anchor="middle" dominant-baseline="central">
+          <text x="90" y="103" font-size="54">N</text><text x="163" y="100" font-size="72">Y</text>
+          <text x="248" y="97" font-size="90">L</text><text x="326" y="96" font-size="100">E</text>
+          <text x="410" y="96" font-size="100">N</text><text x="494" y="97" font-size="90">S</text>
+          <text x="578" y="100" font-size="72">E</text><text x="652" y="103" font-size="54">S</text>
+        </g>
+        <ellipse cx="390" cy="100" rx="372" ry="92" fill="none" stroke="#e2c98a" stroke-width="7"/>
+        <ellipse cx="390" cy="100" rx="356" ry="76" fill="none" stroke="#e2c98a" stroke-width="2.5"/>
+      </svg>
+    </div>
+    <p class="hero-tagline">DFW Sports, Portrait &amp; Event Photography</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-fill">Book a Shoot</a>
+      <a href="#gallery" class="btn btn-outline">View Gallery</a>
+    </div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
+  </section>
+</div>
+ 
+<!-- Weather appears only after a shoot time is selected. -->
+ 
+<!-- SERVICE STRIP -->
+<div class="service-strip">
+  Serving &nbsp;<span>Garland</span>&nbsp;·&nbsp;<span>Rowlett</span>&nbsp;·&nbsp;<span>Richardson</span>&nbsp;·&nbsp;<span>Plano</span>&nbsp;·&nbsp;<span>Dallas</span>&nbsp;·&nbsp;<span>Frisco</span>&nbsp;·&nbsp;<span>McKinney</span>&nbsp;·&nbsp;<span>Fort Worth</span>&nbsp; and all DFW communities
+</div>
+ 
+<!-- SERVICES + PRICING -->
+<section id="services">
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <p class="sec-label">What I offer</p>
+      <h2 class="sec-title">Coverage &amp; Services</h2>
+      <p class="sec-sub">Click any service to see pricing.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card anim-up" onclick="togglePricing('sports-coverage')">
+        <span class="srv-icon">— Sports</span>
+        <h3>Sports Coverage</h3>
+        <p>Games, tournaments, camps, practices, and event coverage with edited galleries. Basketball, football, baseball, soccer, track, and more.</p>
+        <div class="srv-pricing" id="sports-coverage">
+          <div class="sp-head">Baseball &amp; Softball</div>
+          <div class="sp-row"><span>1 person</span><span class="sp-amt">$25</span></div>
+          <div class="sp-row"><span>2+ people</span><span class="sp-amt">$20 each</span></div>
+          <div class="sp-divider"></div>
+          <div class="sp-head">Football</div>
+          <div class="sp-row"><span>1 person</span><span class="sp-amt">$30</span></div>
+          <div class="sp-row"><span>2+ people</span><span class="sp-amt">$25 each</span></div>
+          <div class="sp-divider"></div>
+          <div class="sp-head">Soccer</div>
+          <div class="sp-row"><span>1 person</span><span class="sp-amt">$25</span></div>
+          <div class="sp-row"><span>2+ people</span><span class="sp-amt">$20 each</span></div>
+          <div class="sp-divider"></div>
+          <div class="sp-head">Basketball</div>
+          <div class="sp-row"><span>1 person</span><span class="sp-amt">$30</span></div>
+          <div class="sp-row"><span>2 people</span><span class="sp-amt">$25 each</span></div>
+          <div class="sp-row"><span>3+ people</span><span class="sp-amt">$20 each</span></div>
+          <div class="sp-divider"></div>
+          <div class="sp-head">Track</div>
+          <div class="sp-row"><span>1 person</span><span class="sp-amt">$30</span></div>
+          <div class="sp-row"><span>2+ people</span><span class="sp-amt">$25 each</span></div>
+          <div class="sp-divider"></div>
+          <div class="sp-head">Other Sports</div>
+          <div class="sp-row"><span>1 person</span><span class="sp-amt">$30</span></div>
+          <div class="sp-row"><span>2 people</span><span class="sp-amt">$25 each</span></div>
+          <div class="sp-row"><span>3+ people</span><span class="sp-amt">$20 each</span></div>
+          <a href="#contact" class="sp-book" onclick="event.stopPropagation()">Book a Shoot →</a>
+        </div>
+      </div>
+      <div class="srv-card anim-up" onclick="togglePricing('portraits-pricing')">
+        <span class="srv-icon">— Portraits</span>
+        <h3>Portraits</h3>
+        <p>Individual, duo, and group portrait sessions. 30–45 min, high-res edits included. Multi-location available.</p>
+        <div class="srv-pricing" id="portraits-pricing">
+          <div class="sp-row"><span>Individual</span><span class="sp-amt">$80–$120</span></div>
+          <div class="sp-row"><span>Duo</span><span class="sp-amt">$100–$150</span></div>
+          <div class="sp-row"><span>Group</span><span class="sp-amt">$130–$180</span></div>
+          <p class="sp-note">Final rate based on location &amp; session length</p>
+          <a href="#contact" class="sp-book" onclick="event.stopPropagation()">Book a Shoot →</a>
+        </div>
+      </div>
+      <div class="srv-card anim-up" onclick="togglePricing('senior-pricing')">
+        <span class="srv-icon">— Senior Portraits</span>
+        <h3>Senior Portraits</h3>
+        <p>1–2 hr sessions, multi-location, cap &amp; gown. Modern senior portraits delivered fast and ready to share.</p>
+        <div class="srv-pricing" id="senior-pricing">
+          <div class="sp-row"><span>Standard Session</span><span class="sp-amt">$80–$150</span></div>
+          <p class="sp-note">Final rate based on location, duration &amp; # of locations</p>
+          <a href="#contact" class="sp-book" onclick="event.stopPropagation()">Book a Shoot →</a>
+        </div>
+      </div>
+      <div class="srv-card anim-up" onclick="togglePricing('graduation-pricing')">
+        <span class="srv-icon">— Graduations</span>
+        <h3>Graduations</h3>
+        <p>Graduation ceremony and portrait coverage. Multi-location, cap &amp; gown, family shots included.</p>
+        <div class="srv-pricing" id="graduation-pricing">
+          <div class="sp-row"><span>Standard Session</span><span class="sp-amt">$80–$150</span></div>
+          <p class="sp-note">Final rate based on location, duration &amp; # of locations</p>
+          <a href="#contact" class="sp-book" onclick="event.stopPropagation()">Book a Shoot →</a>
+        </div>
+      </div>
+      <div class="srv-card anim-up" onclick="togglePricing('headshots-pricing')">
+        <span class="srv-icon">— Headshots</span>
+        <h3>Business Headshots</h3>
+        <p>Professional headshots and branding photos for businesses, realtors, staff, and local organizations.</p>
+        <div class="srv-pricing" id="headshots-pricing">
+          <div class="sp-row"><span>Individual</span><span class="sp-amt">$80–$120</span></div>
+          <div class="sp-row"><span>Group / Staff</span><span class="sp-amt">$130–$180</span></div>
+          <p class="sp-note">Final rate based on location &amp; session length</p>
+          <a href="#contact" class="sp-book" onclick="event.stopPropagation()">Book a Shoot →</a>
+        </div>
+      </div>
+      <div class="srv-card anim-up" onclick="togglePricing('events-pricing')">
+        <span class="srv-icon">— Events</span>
+        <h3>Parties &amp; Events</h3>
+        <p>Community events, performances, business events, celebrations, and promotional coverage with fast delivery.</p>
+        <div class="srv-pricing" id="events-pricing">
+          <div class="sp-row"><span>Standard Coverage</span><span class="sp-amt">$100–$175</span></div>
+          <p class="sp-note">Final rate based on event duration &amp; location</p>
+          <a href="#contact" class="sp-book" onclick="event.stopPropagation()">Book a Shoot →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-</div>
-
-<div class="weather-bar" id="weatherBar">
-  <div class="weather-widget">
-    <span class="weather-icon" id="wIcon">🌤️</span>
-    <span class="weather-temp" id="wTemp">--°F</span>
-    <span class="weather-divider"></span>
-    <span class="weather-desc" id="wDesc">Loading...</span>
-    <span class="weather-divider"></span>
-    <span class="weather-location">Garland, TX</span>
+ 
+<div class="sec-divider"><span class="sec-divider-icon">◈</span></div>
+ 
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <p class="sec-label">The work</p>
+      <h2 class="sec-title">Gallery</h2>
+      <p class="sec-sub">A curated look at sports, portraits, and graduation work.</p>
+    </div>
+    <div class="g-tabs-row">
+      <div class="g-tabs" id="gMainTabs">
+        <button class="g-tab active" data-cat="all-sports">Sports <span class="g-count" id="count-sports"></span></button>
+        <button class="g-tab" data-cat="portraits">Portraits <span class="g-count" id="count-portraits"></span></button>
+        <button class="g-tab" data-cat="graduations">Graduations <span class="g-count" id="count-graduations"></span></button>
+      </div>
+      <div class="g-zoom-toggle" id="gZoomToggle">
+        <button class="g-zoom-btn active" id="zoom2" onclick="setGalleryZoom(2)">⊞</button>
+        <button class="g-zoom-btn" id="zoom3" onclick="setGalleryZoom(3)">⊟</button>
+      </div>
+    </div>
+    <div class="g-sub-tabs" id="gSubTabs">
+      <button class="g-sub-tab active" data-sport="all-sports">All Sports</button>
+      <button class="g-sub-tab" data-sport="basketball">Basketball</button>
+      <button class="g-sub-tab" data-sport="baseball">Baseball</button>
+      <button class="g-sub-tab" data-sport="track">Track</button>
+      <button class="g-sub-tab" data-sport="football">Football</button>
+    </div>
+    <div class="g-grid" id="gGrid"></div>
+    <button class="g-load-more" id="gLoadMore" onclick="loadMoreGallery()">Load More →</button>
+    <div class="gallery-cta anim-up">
+      <p><strong>More recent work</strong> For newer shoots, full previews, and recent sports/event coverage, view NY Lenses on Instagram.</p>
+      <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener">View Instagram</a>
+    </div>
   </div>
-</div>
-
+</section>
+ 
+<!-- WHY BOOK -->
+<section id="why">
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <p class="sec-label">Why NY Lenses</p>
+      <h2 class="sec-title">What You Get</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item anim-up">
+        <div class="why-num">01</div>
+        <h4>Fast Edited Galleries</h4>
+        <p>Most edited galleries are delivered within 1–3 business days. Larger events may take slightly longer depending on image count.</p>
+      </div>
+      <div class="why-item anim-up">
+        <div class="why-num">02</div>
+        <h4>Social Media Ready</h4>
+        <p>Every image is clean, edited, and optimized for sharing on Instagram, Twitter, and recruiting profiles.</p>
+      </div>
+      <div class="why-item anim-up">
+        <div class="why-num">03</div>
+        <h4>Local DFW Photographer</h4>
+        <p>Based in Garland — available across Rowlett, Richardson, Plano, Dallas, and the full DFW area.</p>
+      </div>
+      <div class="why-item anim-up">
+        <div class="why-num">04</div>
+        <h4>Full Range of Coverage</h4>
+        <p>Sports, portraits, senior sessions, business headshots, team photos, and events — all in one place.</p>
+      </div>
+      <div class="why-item anim-up">
+        <div class="why-num">05</div>
+        <h4>Simple Calendar Request</h4>
+        <p>Choose your preferred date and time in the calendar. I’ll confirm availability, location, and final pricing before anything is locked in.</p>
+      </div>
+      <div class="why-item anim-up">
+        <div class="why-num">06</div>
+        <h4>Clean Professional Edits</h4>
+        <p>Consistent, professional editing on every shoot. No heavy filters — just clean, sharp, high-quality images.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<div class="sec-divider"><span class="sec-divider-icon">◈</span></div>
+ 
+<!-- PRICING -->
 <section id="pricing">
   <div class="sec-wrap">
     <div class="sec-head">
       <p class="sec-label">Investment</p>
       <h2 class="sec-title">Pricing Packages</h2>
+      <p class="sec-sub">Transparent starting rates. Final rate depends on location, travel, and session length.</p>
     </div>
     <div class="pricing-grid">
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
           <h3>Baseball &amp; Softball</h3>
           <p class="p-sub">Action · Team · Individual</p>
@@ -521,9 +747,9 @@
           <div class="p-row"><span>2+ people</span><span class="p-amt">$20 each</span></div>
           <p class="p-floor">Floor price: $20/person</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
           <h3>Football</h3>
           <p class="p-sub">Game Day · Action Shots</p>
@@ -532,9 +758,9 @@
           <div class="p-row"><span>3+ people</span><span class="p-amt">$25 each</span></div>
           <p class="p-floor">Floor price: $25/person</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
           <h3>Soccer</h3>
           <p class="p-sub">Game Day · Action Shots</p>
@@ -543,9 +769,9 @@
           <div class="p-row"><span>3+ people</span><span class="p-amt">$20 each</span></div>
           <p class="p-floor">Floor price: $20/person</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
           <h3>Track</h3>
           <p class="p-sub">Meet Day · Action Shots</p>
@@ -553,9 +779,9 @@
           <div class="p-row"><span>2+ people</span><span class="p-amt">$25 each</span></div>
           <p class="p-floor">Floor price: $25/person</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
           <h3>Basketball</h3>
           <p class="p-sub">Game Day · Action Shots</p>
@@ -565,9 +791,9 @@
           <div class="p-row"><span>4+ people</span><span class="p-amt">$20 each</span></div>
           <p class="p-floor">Floor price: $20/person</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
           <h3>Other Sports</h3>
           <p class="p-sub">Wrestling · Volleyball · Swimming</p>
@@ -577,154 +803,154 @@
           <div class="p-row"><span>4+ people</span><span class="p-amt">$20 each</span></div>
           <p class="p-floor">Floor price: $20/person</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
-          <h3>Portraits</h3>
+          <h3>Portraits &amp; Headshots</h3>
           <p class="p-sub">30–45 min · High-res Edits Included</p>
           <div class="p-row"><span>Individual</span><span class="p-amt">$80–$120</span></div>
           <div class="p-row"><span>Duo</span><span class="p-amt">$100–$150</span></div>
           <div class="p-row"><span>Group</span><span class="p-amt">$130–$180</span></div>
           <p class="p-floor">Final rate based on location &amp; session length</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
-          <h3>Graduations</h3>
+          <h3>Senior Portraits</h3>
           <p class="p-sub">1–2 hrs · Multi-location · Cap &amp; Gown</p>
           <div class="p-row"><span>Standard Session</span><span class="p-amt">$80–$150</span></div>
           <p class="p-floor">Final rate based on location, duration &amp; # of locations</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
-      <div class="p-card">
+      <div class="p-card anim-up">
         <div class="p-details">
-          <h3>Parties &amp; Events</h3>
+          <h3>Events &amp; Parties</h3>
           <p class="p-sub">Comprehensive event coverage</p>
           <div class="p-row"><span>Standard Coverage</span><span class="p-amt">$100–$175</span></div>
           <p class="p-floor">Final rate based on event duration &amp; location</p>
         </div>
-        <a href="#contact" class="p-book">Book Now →</a>
+        <a href="#contact" class="p-book">Book a Shoot →</a>
       </div>
     </div>
-    <div style="margin-top:2.5rem; display:flex; flex-direction:column; gap:0.75rem;">
-      <p style="font-size:0.78rem; color:var(--muted); letter-spacing:0.06em; line-height:1.6;">* All pricing shown is a starting baseline. Final rate depends on shoot location, travel distance, and session duration. Reach out directly for a custom quote.</p>
-      <p style="font-size:0.78rem; color:var(--muted); letter-spacing:0.06em; line-height:1.6;">📸 &nbsp;Photo delivery turnaround: <span style="color:var(--warm2); font-weight:500;">1–3 business days</span> depending on the shoot — sports same-week, portraits &amp; events within 3 days.</p>
+    <div style="margin-top:2rem;display:flex;flex-direction:column;gap:0.65rem;">
+      <p style="font-size:0.76rem;color:var(--muted);letter-spacing:0.05em;line-height:1.65;">* All pricing shown is a starting baseline. Final rate depends on shoot location, travel distance, group size, and session duration. Reach out directly for a custom quote.</p>
+      <p style="font-size:0.76rem;color:var(--muted);letter-spacing:0.05em;line-height:1.65;">Turnaround time: <span style="color:var(--gold2);font-weight:500;">most edited galleries are delivered within 1–3 business days</span>. Large tournaments or full events may take longer depending on final image count.</p>
+      <p style="font-size:0.76rem;color:var(--muted);letter-spacing:0.05em;line-height:1.65;">Booking policy: submitting the form sends a request only. A shoot is confirmed after date, time, location, coverage type, and final pricing are approved.</p>
     </div>
   </div>
 </section>
-
-<div class="sec-divider"><span class="sec-divider-icon">◈</span></div>
-
-<section id="gallery">
-  <div class="sec-wrap">
-    <div class="sec-head">
-      <p class="sec-label">The work</p>
-      <h2 class="sec-title">Creative Portfolio</h2>
-    </div>
-    <div class="g-tabs-row">
-      <div class="g-tabs">
-        <button class="g-tab active" data-cat="sports">Sports <span class="g-count" id="count-sports"></span></button>
-        <button class="g-tab" data-cat="portraits">Portraits <span class="g-count" id="count-portraits"></span></button>
-        <button class="g-tab" data-cat="graduations">Graduations <span class="g-count" id="count-graduations"></span></button>
-        <button class="g-tab" data-cat="parties">Parties <span class="g-count" id="count-parties"></span></button>
-      </div>
-      <div class="g-zoom-toggle" id="gZoomToggle">
-        <button class="g-zoom-btn active" id="zoom2" onclick="setGalleryZoom(2)" title="2 columns">⊞</button>
-        <button class="g-zoom-btn" id="zoom3" onclick="setGalleryZoom(3)" title="3 columns">⊟</button>
-      </div>
-    </div>
-    <div class="g-grid" id="gGrid"></div>
-    <button class="g-load-more" id="gLoadMore" onclick="loadMoreGallery()">Load More →</button>
-  </div>
-</section>
-
-<div class="service-strip">
-  Serving &nbsp;<span>Garland</span>&nbsp; · &nbsp;<span>Plano</span>&nbsp; · &nbsp;<span>Frisco</span>&nbsp; · &nbsp;<span>Dallas</span>&nbsp; · &nbsp;<span>Fort Worth</span>&nbsp; · &nbsp;<span>Richardson</span>&nbsp; · &nbsp;<span>McKinney</span>&nbsp; · &nbsp;and all surrounding DFW communities
+ 
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-label="Photo lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-arrow" id="lb-prev" aria-label="Previous">‹</button>
+  <img id="lb-img" src="" alt="NY Lenses gallery photo">
+  <button class="lb-arrow" id="lb-next" aria-label="Next">›</button>
 </div>
-
-<div class="sec-divider"><span class="sec-divider-icon">◈</span></div>
-
-<div id="lightbox" role="dialog" aria-label="Photo lightbox view">
-  <button class="lb-close" id="lbClose" aria-label="Close Lightbox">✕</button>
-  <button class="lb-arrow" id="lb-prev" aria-label="Previous Image">‹</button>
-  <img id="lb-img" src="" alt="Full size display asset">
-  <button class="lb-arrow" id="lb-next" aria-label="Next Image">›</button>
-</div>
-
+ 
+<!-- CONTACT -->
 <section id="contact">
   <div class="sec-wrap">
     <div class="sec-head">
       <p class="sec-label">Let's work together</p>
-      <h2 class="sec-title">Book A Shoot</h2>
+      <h2 class="sec-title">Book a Shoot</h2>
+    </div>
+    <div class="booking-quick-info anim-up">
+      <div class="booking-info-card"><strong>Turnaround</strong><p>Most edited galleries are delivered within 1–3 business days after the shoot.</p></div>
+      <div class="booking-info-card"><strong>Calendar</strong><p>Pick your preferred date and time. I’ll confirm availability before the shoot is official.</p></div>
+      <div class="booking-info-card"><strong>Instagram</strong><p>Recent work and updates are posted at <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" style="color:var(--gold2);text-decoration:none;">@ny_.lenses</a>.</p></div>
     </div>
     <div class="c-grid">
       <div class="c-info">
         <h3>Get in Touch</h3>
+        <p class="c-intro">Tell me what type of coverage you need, and I'll send over simple coverage options.</p>
         <div class="c-links">
-          <a href="tel:2142837683" class="c-link"><span class="c-icon">📱</span><span>(214) 283-7683</span></a>
-          <a href="mailto:ny.lenses1@gmail.com" class="c-link"><span class="c-icon">✉️</span><span>ny.lenses1@gmail.com</span></a>
-          <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="c-link"><span class="c-icon">📸</span><span>@ny_.lenses</span></a>
-          <a href="sms:2142837683" class="c-link"><span class="c-icon">💬</span><span>Text to book</span></a>
+          <a href="tel:2142837683" class="c-link"><span class="c-icon">TEL</span><span>(214) 283-7683</span></a>
+          <a href="mailto:ny.lenses1@gmail.com" class="c-link"><span class="c-icon">MAIL</span><span>ny.lenses1@gmail.com</span></a>
+          <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="c-link"><span class="c-icon">IG</span><span>@ny_.lenses</span></a>
+          <a href="sms:2142837683" class="c-link"><span class="c-icon">SMS</span><span>Text to book</span></a>
         </div>
         <div class="c-response-info">
-          <div class="c-response-row">
-            <span class="c-response-dot"></span>
-            <span>Typically responds within 2 hours</span>
-          </div>
-          <div class="c-response-row">
-            <span style="font-size:0.9rem;">🗓</span>
-            <span>Available 7 days · 8AM–9PM</span>
-          </div>
+          <div class="c-response-row"><span class="c-response-dot"></span><span>Typically responds within 2 hours</span></div>
+          <div class="c-response-row"><span class="c-response-label">CAL</span><span>Available 7 days · 8AM–9PM</span></div>
+        </div>
+        <div class="booking-policy">
+          <h4>Booking Policy</h4>
+          <p>Submitting the form does not automatically reserve the date. Your shoot is confirmed after date, time, location, coverage type, and final pricing are approved. Final pricing may change based on travel, event length, and group size.</p>
         </div>
       </div>
       <div>
         <div data-fs-success style="display:none;">
           <div class="booking-confirm">
             <div class="confirm-icon">✓</div>
-            <h3 class="confirm-title">Booking Request Sent!</h3>
-            <p class="confirm-desc">Thanks for reaching out — your request has been received. Here's what happens next:</p>
+            <h3 class="confirm-title">Request Sent!</h3>
+            <p class="confirm-desc">Your coverage request has been received. Here's what happens next:</p>
             <div class="confirm-steps">
-              <div class="confirm-step">
-                <span class="confirm-step-num">1</span>
-                <div><strong>Confirmation</strong><p>You'll hear back within 2 hours to confirm your date and time.</p></div>
-              </div>
-              <div class="confirm-step">
-                <span class="confirm-step-num">2</span>
-                <div><strong>Details</strong><p>We'll lock in your location, finalize pricing, and go over any specific shots you want.</p></div>
-              </div>
-              <div class="confirm-step">
-                <span class="confirm-step-num">3</span>
-                <div><strong>Shoot Day</strong><p>Show up, we shoot, and your photos are delivered within 1–3 business days.</p></div>
-              </div>
+              <div class="confirm-step"><span class="confirm-step-num">1</span><div><strong>Confirmation</strong><p>You'll hear back within 2 hours to confirm your date and time.</p></div></div>
+              <div class="confirm-step"><span class="confirm-step-num">2</span><div><strong>Coverage Details</strong><p>We'll lock in location, finalize pricing, and go over specific shots you want.</p></div></div>
+              <div class="confirm-step"><span class="confirm-step-num">3</span><div><strong>Shoot Day</strong><p>Show up, we shoot, and photos are delivered within 1–3 business days.</p></div></div>
             </div>
             <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener" class="confirm-ig">See more work on Instagram →</a>
           </div>
         </div>
-        <div data-fs-error style="display:none; margin-bottom:1.5rem; padding:1rem 1.2rem; background:rgba(180,60,60,0.06); color:#ba5252; border:1px solid rgba(180,60,60,0.15); font-size:0.88rem;"></div>
-
+        <div data-fs-error style="display:none;margin-bottom:1.5rem;padding:1rem 1.1rem;background:rgba(180,60,60,0.06);color:#ba5252;border:1px solid rgba(180,60,60,0.14);font-size:0.85rem;"></div>
+ 
+        <p class="f-lead">Not sure what to book? Send the details and I’ll help you choose the right option. Pick a preferred date and time below, then I’ll confirm availability before anything is locked in.</p>
         <form id="booking-form" novalidate>
-          <div class="f-group">
-            <label>Your Name *</label>
-            <input type="text" name="name" id="fieldName" placeholder="Full name" data-fs-field>
-            <div class="f-error" id="errName">Please enter your full name.</div>
-          </div>
           <div class="f-row">
+            <div class="f-group">
+              <label>Your Name *</label>
+              <input type="text" name="name" id="fieldName" placeholder="Full name" data-fs-field>
+              <div class="f-error" id="errName">Please enter your full name.</div>
+            </div>
             <div class="f-group">
               <label>Email Address *</label>
               <input type="email" name="email" id="fieldEmail" placeholder="name@domain.com" data-fs-field>
-              <div class="f-error" id="errEmail">Please enter a valid email address.</div>
+              <div class="f-error" id="errEmail">Please enter a valid email.</div>
             </div>
+          </div>
+          <div class="f-row">
             <div class="f-group">
               <label>Phone Number</label>
               <input type="tel" name="phone" id="fieldPhone" placeholder="(555) 000-0000">
-              <div class="f-error" id="errPhone">Please enter a valid 10-digit phone number.</div>
+              <div class="f-error" id="errPhone">Please enter a valid 10-digit number.</div>
+            </div>
+            <div class="f-group">
+              <label>Organization / Team</label>
+              <input type="text" name="organization" placeholder="Team, school, or business name">
+            </div>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label>Event Location</label>
+              <input type="text" name="location" placeholder="City or venue">
+            </div>
+            <div class="f-group">
+              <label>Type of Coverage *</label>
+              <select name="session" data-fs-field>
+                <option value="">Select session type…</option>
+                <option>Baseball / Softball — from $20/person</option>
+                <option>Football — from $25/person</option>
+                <option>Soccer — from $20/person</option>
+                <option>Track — from $25/person</option>
+                <option>Basketball — from $20/person</option>
+                <option>Other Sport — from $20/person</option>
+                <option>Portraits (Individual) — $80–$120</option>
+                <option>Portraits (Duo) — $100–$150</option>
+                <option>Portraits (Group) — $130–$180</option>
+                <option>Senior Portraits — $80–$150</option>
+                <option>Business Headshots — $80–$180</option>
+                <option>Graduations — $80–$150</option>
+                <option>Parties &amp; Events — $100–$175</option>
+              </select>
             </div>
           </div>
           <div class="f-group">
             <label>Select Shoot Date &amp; Time *</label>
+            <p class="calendar-helper">This calendar is for your preferred shoot time. The booking is official only after I confirm the details and final price with you.</p>
             <input type="hidden" name="selected_date" id="selectedDateInput">
             <input type="hidden" name="selected_time" id="selectedTimeInput">
             <div class="calendar-box">
@@ -733,18 +959,15 @@
                 <div class="calendar-month" id="calendarMonthTitle"></div>
                 <button type="button" class="calendar-nav-btn" id="nextMonthBtn">›</button>
               </div>
-              <div class="calendar-weekdays">
-                <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
-              </div>
+              <div class="calendar-weekdays"><div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div></div>
               <div class="calendar-days" id="calendarDaysGrid"></div>
             </div>
             <div class="time-slots-wrap" id="timeSlotsWrap" style="display:none;">
               <span class="time-slots-label">Available Times</span>
               <div class="time-slots-grid" id="timeSlotsGrid"></div>
-              <!-- Weather for selected time: hidden until a time is picked -->
               <div class="time-weather-info" id="timeWeatherInfo">
-                <span class="time-weather-icon" id="twIcon">🌤️</span>
-                <div class="time-weather-text">
+                <span id="twIcon">Weather</span>
+                <div style="display:flex;flex-direction:column;gap:0.1rem;">
                   <span class="time-weather-main" id="twMain"></span>
                   <span class="time-weather-sub" id="twSub"></span>
                 </div>
@@ -753,167 +976,207 @@
             <div class="f-date-error" id="errDateTime">Please select both a date and a time slot.</div>
           </div>
           <div class="f-group">
-            <label>Session Type</label>
-            <select name="session" data-fs-field>
-              <option value="">Select an assignment tier…</option>
-              <option>Baseball / Softball — from $20/person</option>
-              <option>Football — from $25/person</option>
-              <option>Soccer — from $20/person</option>
-              <option>Track — from $25/person</option>
-              <option>Basketball — from $20/person</option>
-              <option>Other Sport — from $20/person</option>
-              <option>Portraits (Individual) — $80–$120</option>
-              <option>Portraits (Duo) — $100–$150</option>
-              <option>Portraits (Group) — $130–$180</option>
-              <option>Graduations — $80–$150</option>
-              <option>Parties &amp; Events — $100–$175</option>
-            </select>
-          </div>
-          <div class="f-group">
             <label>Estimated Group Size</label>
             <select name="group_size" data-fs-field>
-              <option value="">Select size parameters…</option>
+              <option value="">Select size…</option>
               <option>Individual (1)</option>
-              <option>Duo Session (2)</option>
+              <option>Duo (2)</option>
               <option>Small Group (3)</option>
-              <option>Large Team Group (4+)</option>
+              <option>Team / Large Group (4+)</option>
             </select>
           </div>
           <div class="f-group">
-            <label>Shoot Vision &amp; Notes</label>
-            <textarea name="message" placeholder="Tell me about your project — dates, preferred location, or general notes." data-fs-field></textarea>
+            <label>Message &amp; Notes</label>
+            <textarea name="message" placeholder="Tell me about your coverage needs — event type, dates, location, specific shots you want, or any other details." data-fs-field></textarea>
           </div>
-          <button type="submit" class="f-send">Send Message</button>
+          <p class="form-policy-note"><span>Booking policy:</span> this form is a request, not an automatic reservation. I’ll confirm your date, time, location, coverage type, and final price before the shoot is locked in.</p>
+          <button type="submit" class="f-send">Send Booking Request</button>
         </form>
       </div>
     </div>
   </div>
 </section>
-
+ 
+<!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <div class="sticky-cta-phone">
+  <div class="sticky-cta-text">
     <strong>NY Lenses</strong>
-    Garland, TX · DFW Area
+    <span>Garland · Rowlett · DFW</span>
   </div>
-  <a href="#contact" class="sticky-cta-btn">Book Now →</a>
+  <a href="#contact" class="sticky-cta-btn">Book a Shoot →</a>
 </div>
-
+ 
+<!-- FOOTER -->
 <footer>
-  © 2026 NY Lenses · Garland, TX · All rights reserved ·
-  <a href="https://www.instagram.com/ny_.lenses/" target="_blank">@ny_.lenses</a>
-  &nbsp;·&nbsp;
-  <button class="share-btn" id="shareBtn" onclick="sharesite()">Share This Site</button>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-brand-name">NY Lenses</span>
+      <span class="footer-brand-tag">DFW Sports, Portrait &amp; Event Photography</span>
+      <span class="footer-brand-loc">Garland · Rowlett · DFW &nbsp;·&nbsp; Available across the Dallas–Fort Worth area</span>
+    </div>
+    <div class="footer-links">
+      <a href="#gallery">Gallery</a>
+      <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#contact">Contact</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 NY Lenses · All rights reserved · <a href="https://www.instagram.com/ny_.lenses/" target="_blank" style="color:var(--gold);text-decoration:none;">@ny_.lenses</a></span>
+    <button class="share-btn" onclick="sharesite()">Share This Site</button>
+  </div>
 </footer>
-
-<div class="share-toast" id="shareToast">✓ Link copied to clipboard</div>
-
+ 
+<div class="share-toast" id="shareToast">Link copied to clipboard</div>
+ 
 <script>
 const BASE = 'https://nylenses.netlify.app/';
+ 
+// ── BOOKED SLOTS ──
+function getBookedSlots(){try{return JSON.parse(localStorage.getItem('nyl_booked_slots')||'{}')}catch(e){return{}}}
+function saveBookedSlots(d){localStorage.setItem('nyl_booked_slots',JSON.stringify(d))}
+function isDateFullyBooked(ds){const b=getBookedSlots();return b[ds]&&b[ds].length>=ALL_TIMES.length}
+function isSlotBooked(ds,t){const b=getBookedSlots();return b[ds]&&b[ds].includes(t)}
+function bookSlot(ds,t){const b=getBookedSlots();if(!b[ds])b[ds]=[];if(!b[ds].includes(t))b[ds].push(t);saveBookedSlots(b)}
+ 
+const ALL_TIMES=['8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM'];
+ 
+// ── PHOTOS ──
+const allSports = [
+  'DSC09014.jpg', 'DSC03455.jpg', '45-DSC04463.jpg', 'DSC03411_compressed.jpg',
+  'DSC09005.jpg', 'DSC03354.jpg', '38-DSC04524.jpg', 'DSC03444-Edit_compressed.jpg',
+  'DSC09873 (1).jpg', 'DSC06525.jpg', '49-DSC04444.jpg', 'DSC03520_compressed.jpg',
+  'DSC09610.jpg', 'DSC07424.jpg', 'DSC05526.jpg', 'DSC03655_compressed.jpg',
+  'DSC09674.jpg', 'photo.jpg', 'DSC05884.jpg', 'DSC03608_compressed.jpg',
+  'DSC09802 (1).jpg', 'DSC08122.jpg', 'DSC06048.jpg', 'DSC03696-Edit_compressed.jpg',
+  'DSC05656.jpg', '82737.png', 'DSC08688.jpg', 'DSC08743.jpg',
+  'DSC08767.jpg', 'DSC08787.jpg', 'DSC08982.jpg', 'DSC03482.jpg',
+  'DSC03299.jpg', 'DSC03714.jpg', 'DSC03600.jpg', 'DSC06564-2.jpg',
+  'DSC06553.jpg', '4-DSC04170.jpg', 'DSC07095-2.jpg', 'Untitled Project.jpg',
+  '76-DSC04243.jpg', '27-DSC04666.jpg', 'DSC06073.jpg', 'DSC03588-Edit_compressed.png',
+  'DSC03681_compressed.jpg', 'DSC03719_compressed.jpg', 'DSC03747_compressed.jpg', 'DSC03764_compressed.jpg',
+  'DSC03886_compressed.jpg', 'DSC03913_compressed.jpg', 'DSC03951_compressed.jpg', 'DSC01018_compressed.jpeg',
+  'DSC01076_compressed.jpeg', 'DSC01080_compressed.jpeg', 'DSC01154_compressed.jpeg', 'DSC01211_compressed.jpeg',
+  'DSC01376_compressed.jpeg', 'DSC01471_compressed.jpeg', 'DSC01523_compressed.jpeg', 'DSC01537_compressed.jpeg',
+  'DSC01598_compressed.jpeg', 'DSC02373_compressed.jpeg', 'DSC02491_compressed.jpeg', 'DSC02590_compressed.jpeg',
+  'DSC02643_compressed.jpeg', 'DSC02721_compressed.jpeg', 'DSC02790_compressed.jpeg', 'DSC02808_compressed.jpeg',
+  'DSC02854_compressed.jpeg', 'DSC03022_compressed.jpeg', 'DSC03150_compressed.jpeg', 'DSC03266_compressed.jpeg',
+  'DSC03345_compressed.jpeg', 'DSC09046.jpg'
+];
 
-function getBookedSlots() { try { return JSON.parse(localStorage.getItem('nyl_booked_slots') || '{}'); } catch(e) { return {}; } }
-function saveBookedSlots(data) { localStorage.setItem('nyl_booked_slots', JSON.stringify(data)); }
-function isDateFullyBooked(dateStr) { const b = getBookedSlots(); return b[dateStr] && b[dateStr].length >= ALL_TIMES.length; }
-function isSlotBooked(dateStr, time) { const b = getBookedSlots(); return b[dateStr] && b[dateStr].includes(time); }
-function bookSlot(dateStr, time) { const b = getBookedSlots(); if (!b[dateStr]) b[dateStr] = []; if (!b[dateStr].includes(time)) b[dateStr].push(time); saveBookedSlots(b); }
-
-const ALL_TIMES = ['8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM'];
+const SPORT_GROUPS = {
+  basketball: new Set([
+    'DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg',
+    'DSC09674.jpg','DSC09802 (1).jpg','DSC09873 (1).jpg','DSC05656.jpg',
+    '82737.png','DSC08688.jpg','DSC08743.jpg','DSC08767.jpg',
+    'DSC08787.jpg','DSC08982.jpg','DSC02373_compressed.jpeg','DSC02491_compressed.jpeg',
+    'DSC02590_compressed.jpeg','DSC02643_compressed.jpeg','DSC02721_compressed.jpeg','DSC02790_compressed.jpeg',
+    'DSC02808_compressed.jpeg','DSC02854_compressed.jpeg','DSC03022_compressed.jpeg','DSC03150_compressed.jpeg',
+    'DSC03266_compressed.jpeg','DSC03345_compressed.jpeg'
+  ]),
+  baseball: new Set([
+    'DSC03482.jpg','DSC03299.jpg','DSC03455.jpg','DSC03354.jpg',
+    'photo.jpg','DSC03714.jpg','DSC03600.jpg','DSC06525.jpg',
+    'DSC06564-2.jpg','DSC06553.jpg','4-DSC04170.jpg','DSC07095-2.jpg',
+    'Untitled Project.jpg','DSC07424.jpg','DSC08122.jpg'
+  ]),
+  track: new Set([
+    '49-DSC04444.jpg','45-DSC04463.jpg','76-DSC04243.jpg','38-DSC04524.jpg',
+    '27-DSC04666.jpg','DSC05526.jpg','DSC05884.jpg','DSC06048.jpg','DSC06073.jpg'
+  ]),
+  football: new Set([
+    'DSC03411_compressed.jpg','DSC03444-Edit_compressed.jpg','DSC03520_compressed.jpg','DSC03588-Edit_compressed.png',
+    'DSC03608_compressed.jpg','DSC03655_compressed.jpg','DSC03681_compressed.jpg','DSC03696-Edit_compressed.jpg',
+    'DSC03719_compressed.jpg','DSC03747_compressed.jpg','DSC03764_compressed.jpg','DSC03886_compressed.jpg',
+    'DSC03913_compressed.jpg','DSC03951_compressed.jpg','DSC01018_compressed.jpeg','DSC01076_compressed.jpeg',
+    'DSC01080_compressed.jpeg','DSC01154_compressed.jpeg','DSC01211_compressed.jpeg','DSC01376_compressed.jpeg',
+    'DSC01471_compressed.jpeg','DSC01523_compressed.jpeg','DSC01537_compressed.jpeg','DSC01598_compressed.jpeg'
+  ])
+};
 
 const photos = {
-  sports: ['DSC09014.jpg','DSC09005.jpg','DSC09046.jpg','DSC09610.jpg','DSC09674.jpg','DSC09802 (1).jpg','DSC09873 (1).jpg','DSC05656.jpg','DSC03482.jpg','DSC03299.jpg','DSC03455.jpg','DSC03354.jpg','photo.jpg','49-DSC04444.jpg','45-DSC04463.jpg','76-DSC04243.jpg','38-DSC04524.jpg','27-DSC04666.jpg','DSC05526.jpg','DSC05884.jpg','DSC06048.jpg','DSC06073.jpg','DSC03714.jpg','DSC03600.jpg','DSC06525.jpg','DSC06564-2.jpg','DSC06553.jpg','4-DSC04170.jpg','DSC07095-2.jpg','Untitled Project.jpg','DSC07424.jpg','DSC08122.jpg','82737.png','DSC08688.jpg','DSC08743.jpg','DSC08767.jpg','DSC08787.jpg','DSC03411_compressed.jpg','DSC03444-Edit_compressed.jpg','DSC03520_compressed.jpg','DSC03588-Edit_compressed.png','DSC03608_compressed.jpg','DSC03655_compressed.jpg','DSC03681_compressed.jpg','DSC03696-Edit_compressed.jpg','DSC03719_compressed.jpg','DSC03747_compressed.jpg','DSC03764_compressed.jpg','DSC03886_compressed.jpg','DSC03913_compressed.jpg','DSC03951_compressed.jpg','DSC01018_compressed.jpeg','DSC01076_compressed.jpeg','DSC01080_compressed.jpeg','DSC01154_compressed.jpeg','DSC01211_compressed.jpeg','DSC01376_compressed.jpeg','DSC01471_compressed.jpeg','DSC01523_compressed.jpeg','DSC01537_compressed.jpeg','DSC01598_compressed.jpeg','DSC02373_compressed.jpeg','DSC02491_compressed.jpeg','DSC02590_compressed.jpeg','DSC02643_compressed.jpeg','DSC02721_compressed.jpeg','DSC02790_compressed.jpeg','DSC02808_compressed.jpeg','DSC02854_compressed.jpeg','DSC03022_compressed.jpeg','DSC03150_compressed.jpeg','DSC03266_compressed.jpeg','DSC03345_compressed.jpeg'],
+  // Each sport tab filters the master All Sports order, so no tab gets random ordering.
+  basketball: allSports.filter(file => SPORT_GROUPS.basketball.has(file)),
+  baseball: allSports.filter(file => SPORT_GROUPS.baseball.has(file)),
+  track: allSports.filter(file => SPORT_GROUPS.track.has(file)),
+  football: allSports.filter(file => SPORT_GROUPS.football.has(file)),
   portraits: ['DSC00957.jpg','DSC00827.jpg','DSC00760.jpg','DSC00745.jpg','DSC00686.jpg','DSC00528.jpg','DSC00525.jpg','DSC09476.jpg','DSC04102.jpg','DSC04052.jpg','DSC04049.jpg','DSC09449.jpg','DSC09434.jpg','DSC09455.jpg','DSC09377.jpg','DSC09356.jpg','DSC09342.jpg','DSC09317.jpg','DSC09236.jpg','DSC07007.jpg','DSC07003.jpg','DSC06995.jpg','DSC06988.jpg','DSC06968.jpg','DSC06961.jpg','FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','DSC00966.jpg'],
-  graduations: ['05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','DSC01774_compressed.jpg','DSC01799_compressed.jpg','DSC01801_compressed.jpg','DSC01812_compressed.jpg','DSC01832_compressed.jpg'],
-  parties: ['DSC01935.jpg','DSC01938.jpg','DSC01951.jpg','DSC01970.jpg','DSC01976.jpg']
+  graduations: ['05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','DSC01774_compressed.jpg','DSC01799_compressed.jpg','DSC01801_compressed.jpg','DSC01812_compressed.jpg','DSC01832_compressed.jpg']
 };
-
-let activeCat = 'sports', activeList = [], lbIndex = 0;
-
-const imgObserver = new IntersectionObserver((entries, obs) => {
-  entries.forEach(e => { if (e.isIntersecting) { const img = e.target; if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); } obs.unobserve(img); } });
-}, { rootMargin: '120px 0px', threshold: 0.01 });
-
-function prefetchImg(url) { const l = document.createElement('link'); l.rel = 'prefetch'; l.as = 'image'; l.href = url; document.head.appendChild(l); }
-
-let scrollingTicking = false;
-window.addEventListener('scroll', () => {
-  if (!scrollingTicking) {
-    window.requestAnimationFrame(() => {
-      document.getElementById('siteNav').classList.toggle('scrolled', window.scrollY > 40);
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      document.getElementById('scroll-progress').style.width = (docH > 0 ? (window.scrollY / docH) * 100 : 0) + '%';
-      document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 400);
-      scrollingTicking = false;
-    });
-    scrollingTicking = true;
+ 
+let activeCat='all-sports', activeSport='all-sports', activeList=[], lbIndex=0;
+ 
+// ── LAZY LOAD ──
+const imgObserver=new IntersectionObserver((entries,obs)=>{
+  entries.forEach(e=>{if(e.isIntersecting){const img=e.target;if(img.dataset.src){img.src=img.dataset.src;img.removeAttribute('data-src')}obs.unobserve(img)}});
+},{rootMargin:'120px 0px',threshold:0.01});
+function prefetchImg(url){const l=document.createElement('link');l.rel='prefetch';l.as='image';l.href=url;document.head.appendChild(l)}
+ 
+// ── SCROLL ──
+let sTick=false;
+window.addEventListener('scroll',()=>{
+  if(!sTick){requestAnimationFrame(()=>{
+    document.getElementById('siteNav').classList.toggle('scrolled',window.scrollY>40);
+    const dH=document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('scroll-progress').style.width=(dH>0?(window.scrollY/dH)*100:0)+'%';
+    document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>400);
+    sTick=false;
+  });sTick=true;}
+},{passive:true});
+document.getElementById('back-to-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ 
+// ── CALENDAR ──
+let calendarDate=new Date(),chosenDateString='',chosenTimeString='';
+const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+let forecastCache={};
+ 
+function showTimeWeather(ds,time){
+  const box=document.getElementById('timeWeatherInfo');
+  if(!box||!ds||!time){return}
+  const wx=forecastCache[ds]?.[time];
+  box.classList.remove('show','watch','alert');
+  if(!wx){
+    document.getElementById('twMain').textContent=`Weather estimate unavailable for ${time}.`;
+    document.getElementById('twSub').textContent='I’ll confirm conditions closer to the shoot.';
+    box.classList.add('show');
+    return;
   }
-}, { passive: true });
-document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-// ─── CALENDAR ─────────────────────────────────────────────────────────────────
-let calendarDate = new Date();
-let chosenDateString = '', chosenTimeString = '';
-const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-let forecastCache = {};
-
-const HOUR_OFFSETS = {
-  '8:00 AM': -4, '9:00 AM': -3, '10:00 AM': -2, '11:00 AM': -1,
-  '12:00 PM': 0, '1:00 PM': 1, '2:00 PM': 2, '3:00 PM': 3,
-  '4:00 PM': 2, '5:00 PM': 1, '6:00 PM': 0
-};
-
-// Weather info only shows once a time slot is selected
-function showTimeWeather(dateStr, time) {
-  const wx = forecastCache[dateStr];
-  const box = document.getElementById('timeWeatherInfo');
-  if (!wx || !time) { box.classList.remove('show'); return; }
-  const offset = HOUR_OFFSETS[time] || 0;
-  const maxTemp = parseInt(wx.temp);
-  const approxTemp = Math.round(maxTemp + offset * 2.5);
-  const isEvening = time === '5:00 PM' || time === '6:00 PM';
-  const isMorning = time === '8:00 AM' || time === '9:00 AM';
-  let note = '';
-  if (wx.bad) note = '⚠️ Rain expected — consider rescheduling';
-  else if (approxTemp > 95) note = 'Very hot — plan for shade breaks';
-  else if (approxTemp < 45) note = 'Cold morning — dress in layers';
-  else if (isEvening) note = 'Great golden hour lighting';
-  else if (isMorning) note = 'Good morning light for action shots';
-  else note = 'Good conditions for shooting';
-  document.getElementById('twIcon').textContent = wx.icon;
-  document.getElementById('twMain').textContent = `~${approxTemp}°F at ${time} · ${wx.bad ? 'Rain likely' : 'Clear conditions'}`;
-  document.getElementById('twSub').textContent = note;
+  const temp=Math.round(wx.temp);
+  let note='Looks workable for photos.';
+  if(wx.status==='alert') note='Weather may affect the shoot, so I’ll confirm conditions closer to the date.';
+  else if(wx.status==='watch') note='Conditions should still be workable, but we may need to adjust if it changes.';
+  else if(temp>=98) note='Hot conditions — shade, water, and short breaks are recommended.';
+  else if(temp<=45) note='Cool conditions — dress warm and plan for quick breaks.';
+  else if(time==='5:00 PM'||time==='6:00 PM') note='Good late-day light for photos.';
+  else if(time==='8:00 AM'||time==='9:00 AM') note='Good morning light and usually cleaner conditions.';
+  document.getElementById('twMain').textContent=`${temp}°F at ${time} · ${wx.label}`;
+  document.getElementById('twSub').textContent=note;
+  if(wx.status==='alert') box.classList.add('alert');
+  else if(wx.status==='watch') box.classList.add('watch');
   box.classList.add('show');
 }
-
-function buildCalendar() {
-  const yr = calendarDate.getFullYear(), mo = calendarDate.getMonth();
-  document.getElementById('calendarMonthTitle').textContent = `${monthNames[mo]} ${yr}`;
-  const startDay = new Date(yr, mo, 1).getDay();
-  const totalDays = new Date(yr, mo + 1, 0).getDate();
-  const grid = document.getElementById('calendarDaysGrid');
-  grid.innerHTML = '';
-  for (let i = 0; i < startDay; i++) { const el = document.createElement('div'); el.className = 'calendar-day empty'; grid.appendChild(el); }
-  const today = new Date();
-  for (let d = 1; d <= totalDays; d++) {
-    const el = document.createElement('div'); el.className = 'calendar-day';
-    const dateStr = `${yr}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const dateObj = new Date(yr, mo, d); dateObj.setHours(23,59,59,999);
-    const numSpan = document.createElement('span'); numSpan.textContent = d; el.appendChild(numSpan);
-    const wx = forecastCache[dateStr];
-    if (wx && dateObj >= today) {
-      const wxSpan = document.createElement('span'); wxSpan.className = 'cal-wx'; wxSpan.textContent = wx.icon; el.appendChild(wxSpan);
-      const tempSpan = document.createElement('span'); tempSpan.className = 'cal-temp'; tempSpan.textContent = wx.temp; el.appendChild(tempSpan);
-      if (wx.bad) el.classList.add('wx-bad');
-    }
-    if (dateObj < today) { el.classList.add('disabled'); }
-    else if (isDateFullyBooked(dateStr)) { el.classList.add('booked'); el.title = 'Fully booked'; }
-    else {
-      if (dateStr === chosenDateString) el.classList.add('selected');
-      el.onclick = () => {
-        document.querySelectorAll('.calendar-day').forEach(c => c.classList.remove('selected'));
-        el.classList.add('selected');
-        chosenDateString = dateStr; chosenTimeString = '';
-        document.getElementById('selectedDateInput').value = dateStr;
-        document.getElementById('selectedTimeInput').value = '';
-        // Hide weather box until a time is picked
+ 
+function buildCalendar(){
+  const yr=calendarDate.getFullYear(),mo=calendarDate.getMonth();
+  document.getElementById('calendarMonthTitle').textContent=`${MONTHS[mo]} ${yr}`;
+  const startDay=new Date(yr,mo,1).getDay(),totalDays=new Date(yr,mo+1,0).getDate();
+  const grid=document.getElementById('calendarDaysGrid');grid.innerHTML='';
+  for(let i=0;i<startDay;i++){const el=document.createElement('div');el.className='calendar-day empty';grid.appendChild(el)}
+  const today=new Date();
+  for(let d=1;d<=totalDays;d++){
+    const el=document.createElement('div');el.className='calendar-day';
+    const dateStr=`${yr}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const dateObj=new Date(yr,mo,d);dateObj.setHours(23,59,59,999);
+    const numSpan=document.createElement('span');numSpan.textContent=d;el.appendChild(numSpan);
+    if(dateObj<today){el.classList.add('disabled')}
+    else if(isDateFullyBooked(dateStr)){el.classList.add('booked');el.title='Fully booked'}
+    else{
+      if(dateStr===chosenDateString)el.classList.add('selected');
+      el.onclick=()=>{
+        document.querySelectorAll('.calendar-day').forEach(c=>c.classList.remove('selected'));
+        el.classList.add('selected');chosenDateString=dateStr;chosenTimeString='';
+        document.getElementById('selectedDateInput').value=dateStr;
+        document.getElementById('selectedTimeInput').value='';
         document.getElementById('timeWeatherInfo').classList.remove('show');
         renderTimeSlots(dateStr);
       };
@@ -921,174 +1184,210 @@ function buildCalendar() {
     grid.appendChild(el);
   }
 }
-
-function renderTimeSlots(dateStr) {
-  const wrap = document.getElementById('timeSlotsWrap'), grid = document.getElementById('timeSlotsGrid');
-  wrap.style.display = 'block'; grid.innerHTML = '';
-  ALL_TIMES.forEach(time => {
-    const el = document.createElement('div'); el.className = 'time-slot'; el.textContent = time;
-    if (isSlotBooked(dateStr, time)) { el.classList.add('slot-booked'); el.title = 'Already booked'; }
-    else {
-      el.onclick = () => {
-        document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('slot-selected'));
-        el.classList.add('slot-selected');
-        chosenTimeString = time;
-        document.getElementById('selectedTimeInput').value = time;
-        // Show weather only after a time is selected
-        showTimeWeather(dateStr, time);
-      };
-    }
+ 
+function renderTimeSlots(dateStr){
+  const wrap=document.getElementById('timeSlotsWrap'),grid=document.getElementById('timeSlotsGrid');
+  wrap.style.display='block';grid.innerHTML='';
+  ALL_TIMES.forEach(time=>{
+    const el=document.createElement('div');el.className='time-slot';el.textContent=time;
+    if(isSlotBooked(dateStr,time)){el.classList.add('slot-booked')}
+    else{el.onclick=()=>{
+      document.querySelectorAll('.time-slot').forEach(s=>s.classList.remove('slot-selected'));
+      el.classList.add('slot-selected');chosenTimeString=time;
+      document.getElementById('selectedTimeInput').value=time;
+      showTimeWeather(dateStr,time);
+    }}
     grid.appendChild(el);
   });
 }
-
-document.getElementById('prevMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth()-1); buildCalendar(); };
-document.getElementById('nextMonthBtn').onclick = () => { calendarDate.setMonth(calendarDate.getMonth()+1); buildCalendar(); };
+ 
+document.getElementById('prevMonthBtn').onclick=()=>{calendarDate.setMonth(calendarDate.getMonth()-1);buildCalendar()};
+document.getElementById('nextMonthBtn').onclick=()=>{calendarDate.setMonth(calendarDate.getMonth()+1);buildCalendar()};
 buildCalendar();
-
-// ─── FORM VALIDATION ──────────────────────────────────────────────────────────
-function showErr(id, show) { const el = document.getElementById(id); if (el) el.classList.toggle('show', show); }
-function markField(el, valid) { if (!el) return; el.classList.toggle('invalid', !valid); el.classList.toggle('valid', valid); }
-
-document.getElementById('fieldName').addEventListener('blur', function() { const ok = this.value.trim().length >= 2; markField(this, ok); showErr('errName', !ok); });
-document.getElementById('fieldEmail').addEventListener('blur', function() { const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim()); markField(this, ok); showErr('errEmail', !ok && this.value.trim() !== ''); });
-document.getElementById('fieldPhone').addEventListener('blur', function() { const d = this.value.replace(/\D/g,''); const ok = d.length === 0 || d.length >= 10; markField(this, ok || d.length === 0); showErr('errPhone', !ok && d.length > 0); });
-
-document.getElementById('booking-form').addEventListener('submit', function(e) {
-  let valid = true;
-  const name = document.getElementById('fieldName'), nameOk = name.value.trim().length >= 2;
-  markField(name, nameOk); showErr('errName', !nameOk); if (!nameOk) valid = false;
-  const email = document.getElementById('fieldEmail'), emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-  markField(email, emailOk); showErr('errEmail', !emailOk); if (!emailOk) valid = false;
-  const phone = document.getElementById('fieldPhone');
-  if (phone) { const d = phone.value.replace(/\D/g,''); const ok = d.length === 0 || d.length >= 10; markField(phone, ok || d.length === 0); showErr('errPhone', !ok && d.length > 0); if (!ok && d.length > 0) valid = false; }
-  const date = document.getElementById('selectedDateInput').value, time = document.getElementById('selectedTimeInput').value;
-  showErr('errDateTime', !(date && time)); if (!(date && time)) valid = false;
-  if (!valid) { e.preventDefault(); e.stopPropagation(); const firstErr = document.querySelector('.f-group input.invalid'); if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' }); return false; }
-  if (date && time) { bookSlot(date, time); buildCalendar(); }
+ 
+// ── FORM VALIDATION ──
+function showErr(id,show){const el=document.getElementById(id);if(el)el.classList.toggle('show',show)}
+function markField(el,valid){if(!el)return;el.classList.toggle('invalid',!valid);el.classList.toggle('valid',valid)}
+document.getElementById('fieldName').addEventListener('blur',function(){const ok=this.value.trim().length>=2;markField(this,ok);showErr('errName',!ok)});
+document.getElementById('fieldEmail').addEventListener('blur',function(){const ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim());markField(this,ok);showErr('errEmail',!ok&&this.value.trim()!=='')});
+document.getElementById('fieldPhone').addEventListener('blur',function(){const d=this.value.replace(/\D/g,'');const ok=d.length===0||d.length>=10;markField(this,ok||d.length===0);showErr('errPhone',!ok&&d.length>0)});
+document.getElementById('booking-form').addEventListener('submit',function(e){
+  let valid=true;
+  const name=document.getElementById('fieldName'),nameOk=name.value.trim().length>=2;
+  markField(name,nameOk);showErr('errName',!nameOk);if(!nameOk)valid=false;
+  const email=document.getElementById('fieldEmail'),emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+  markField(email,emailOk);showErr('errEmail',!emailOk);if(!emailOk)valid=false;
+  const phone=document.getElementById('fieldPhone');
+  if(phone){const d=phone.value.replace(/\D/g,'');const ok=d.length===0||d.length>=10;markField(phone,ok||d.length===0);showErr('errPhone',!ok&&d.length>0);if(!ok&&d.length>0)valid=false}
+  const date=document.getElementById('selectedDateInput').value,time=document.getElementById('selectedTimeInput').value;
+  showErr('errDateTime',!(date&&time));if(!(date&&time))valid=false;
+  if(!valid){e.preventDefault();e.stopPropagation();const firstErr=document.querySelector('.f-group input.invalid');if(firstErr)firstErr.scrollIntoView({behavior:'smooth',block:'center'});return false}
+  if(date&&time){bookSlot(date,time);buildCalendar()}
 });
-
-// ─── GALLERY ──────────────────────────────────────────────────────────────────
-const MOBILE_INITIAL = 9;
-let mobileShowing = MOBILE_INITIAL;
-function isMobile() { return window.innerWidth <= 768; }
-
-function renderGallery(cat, appendFrom) {
-  const grid = document.getElementById('gGrid'), loadMoreBtn = document.getElementById('gLoadMore');
-  const list = photos[cat] || []; activeList = list;
-  if (list.length === 0) { grid.innerHTML = ''; loadMoreBtn.style.display = 'none'; for (let i = 0; i < 3; i++) { const d = document.createElement('div'); d.className = 'g-soon'; d.textContent = 'Coming Soon'; grid.appendChild(d); } return; }
-  const mobile = isMobile(), limit = mobile ? mobileShowing : list.length, start = appendFrom || 0, eagerCount = mobile ? 2 : 4;
-  if (!appendFrom) grid.innerHTML = '';
-  const frag = document.createDocumentFragment();
-  for (let idx = start; idx < Math.min(limit, list.length); idx++) {
-    const file = list[idx], wrap = document.createElement('div'); wrap.className = 'g-item'; wrap.onclick = () => openLB(idx);
-    const img = document.createElement('img'); img.alt = 'NY Lenses photography'; img.decoding = 'async'; img.loading = idx < eagerCount ? 'eager' : 'lazy'; img.width = 800; img.height = 1000;
-    img.addEventListener('load', function() { this.classList.add('loaded'); this.closest('.g-item').classList.add('img-loaded'); });
-    if (idx < eagerCount) { img.src = BASE + file; if (idx === eagerCount - 1) { for (let p = eagerCount; p < Math.min(eagerCount + 2, list.length); p++) prefetchImg(BASE + list[p]); } }
-    else { img.dataset.src = BASE + file; img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; imgObserver.observe(img); }
-    const ov = document.createElement('div'); ov.className = 'g-overlay';
-    const z = document.createElement('span'); z.className = 'g-zoom'; z.textContent = '⊕'; ov.appendChild(z);
-    const wm = document.createElement('span'); wm.className = 'g-watermark'; wm.textContent = '© NY Lenses';
-    wrap.appendChild(img); wrap.appendChild(ov); wrap.appendChild(wm); frag.appendChild(wrap);
+ 
+// ── GALLERY ──
+const MOBILE_INITIAL=9;let mobileShowing=MOBILE_INITIAL;
+function isMobile(){return window.innerWidth<=768}
+ 
+function getPhotoList(cat, sport) {
+  if(cat==='portraits') return photos.portraits;
+  if(cat==='graduations') return photos.graduations;
+  if(sport && sport!=='all-sports') return photos[sport]||[];
+  return allSports;
+}
+ 
+function renderGallery(cat, sport, appendFrom){
+  const grid=document.getElementById('gGrid'),loadBtn=document.getElementById('gLoadMore');
+  const list=getPhotoList(cat, sport); activeList=list;
+  if(!list.length){grid.innerHTML='';loadBtn.style.display='none';for(let i=0;i<3;i++){const d=document.createElement('div');d.className='g-soon';d.textContent='Coming Soon';grid.appendChild(d)}return}
+  const mobile=isMobile(),limit=mobile?mobileShowing:list.length,start=appendFrom||0,eagerCount=mobile?2:4;
+  if(!appendFrom)grid.innerHTML='';
+  const frag=document.createDocumentFragment();
+  for(let idx=start;idx<Math.min(limit,list.length);idx++){
+    const file=list[idx],wrap=document.createElement('div');wrap.className='g-item';wrap.onclick=()=>openLB(idx);
+    const img=document.createElement('img');img.alt='NY Lenses photography';img.decoding='async';img.loading=idx<eagerCount?'eager':'lazy';img.width=800;img.height=1000;
+    img.addEventListener('load',function(){this.classList.add('loaded');this.closest('.g-item').classList.add('img-loaded')});
+    if(idx<eagerCount){img.src=BASE+file;if(idx===eagerCount-1){for(let p=eagerCount;p<Math.min(eagerCount+2,list.length);p++)prefetchImg(BASE+list[p])}}
+    else{img.dataset.src=BASE+file;img.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';imgObserver.observe(img)}
+    const ov=document.createElement('div');ov.className='g-overlay';
+    const z=document.createElement('span');z.className='g-zoom-icon';z.textContent='⊕';ov.appendChild(z);
+    const wm=document.createElement('span');wm.className='g-watermark';wm.textContent='© NY Lenses';
+    wrap.appendChild(img);wrap.appendChild(ov);wrap.appendChild(wm);frag.appendChild(wrap);
   }
   grid.appendChild(frag);
-  if (mobile && mobileShowing < list.length) { loadMoreBtn.style.display = 'block'; loadMoreBtn.textContent = `Load More (${list.length - mobileShowing} remaining) →`; }
-  else { loadMoreBtn.style.display = 'none'; }
+  if(mobile&&mobileShowing<list.length){loadBtn.style.display='block';loadBtn.textContent=`Load More (${list.length-mobileShowing} remaining) →`}
+  else{loadBtn.style.display='none'}
 }
-
-function loadMoreGallery() { const prev = mobileShowing; mobileShowing = Math.min(mobileShowing + 9, activeList.length); renderGallery(activeCat, prev); }
-
-document.querySelectorAll('.g-tab').forEach(t => {
-  t.addEventListener('click', (e) => {
+function loadMoreGallery(){const prev=mobileShowing;mobileShowing=Math.min(mobileShowing+9,activeList.length);renderGallery(activeCat,activeSport,prev)}
+ 
+// Main tabs
+document.querySelectorAll('.g-tab').forEach(t=>{
+  t.addEventListener('click',e=>{
     e.stopPropagation();
-    document.querySelectorAll('.g-tab').forEach(x => x.classList.remove('active'));
-    t.classList.add('active'); activeCat = t.dataset.cat; mobileShowing = MOBILE_INITIAL; renderGallery(activeCat);
+    document.querySelectorAll('.g-tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    activeCat=t.dataset.cat; activeSport='all-sports'; mobileShowing=MOBILE_INITIAL;
+    const subTabs=document.getElementById('gSubTabs');
+    if(activeCat==='all-sports'){subTabs.classList.remove('hidden')}
+    else{subTabs.classList.add('hidden')}
+    document.querySelectorAll('.g-sub-tab').forEach(s=>s.classList.remove('active'));
+    document.querySelector('.g-sub-tab[data-sport="all-sports"]').classList.add('active');
+    renderGallery(activeCat,activeSport);
   });
 });
-renderGallery('sports');
-
-// ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
-function openLB(idx) { lbIndex = idx; document.getElementById('lb-img').src = BASE + activeList[idx]; const lb = document.getElementById('lightbox'); lb.style.display = 'flex'; setTimeout(() => lb.classList.add('open'), 10); document.body.style.overflow = 'hidden'; prefetchImg(BASE + activeList[(idx-1+activeList.length)%activeList.length]); prefetchImg(BASE + activeList[(idx+1)%activeList.length]); }
-function closeLB() { const lb = document.getElementById('lightbox'); lb.classList.remove('open'); document.body.style.overflow = ''; setTimeout(() => { if (!lb.classList.contains('open')) { lb.style.display='none'; document.getElementById('lb-img').src=''; } }, 300); }
-function switchLBImage(newIdx) { const lbImg = document.getElementById('lb-img'); lbImg.classList.add('switching'); setTimeout(() => { lbIndex = newIdx; lbImg.src = BASE + activeList[lbIndex]; lbImg.classList.remove('switching'); }, 100); }
-function prevLB() { switchLBImage((lbIndex-1+activeList.length)%activeList.length); }
-function nextLB() { switchLBImage((lbIndex+1)%activeList.length); }
-document.getElementById('lbClose').onclick = closeLB;
-document.getElementById('lb-prev').onclick = prevLB;
-document.getElementById('lb-next').onclick = nextLB;
-document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLB(); });
-document.addEventListener('keydown', e => { if (!document.getElementById('lightbox').classList.contains('open')) return; if (e.key==='Escape') closeLB(); if (e.key==='ArrowLeft') prevLB(); if (e.key==='ArrowRight') nextLB(); });
-(function() {
-  let tx=0,ty=0; const lb=document.getElementById('lightbox');
-  lb.addEventListener('touchstart', e => { tx=e.touches[0].clientX; ty=e.touches[0].clientY; }, {passive:true});
-  lb.addEventListener('touchend', e => { const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty; if (Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50) { dx<0?nextLB():prevLB(); } else if (dy>80&&Math.abs(dx)<40) closeLB(); }, {passive:true});
+ 
+// Sport sub-tabs
+document.querySelectorAll('.g-sub-tab').forEach(t=>{
+  t.addEventListener('click',e=>{
+    e.stopPropagation();
+    document.querySelectorAll('.g-sub-tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    activeSport=t.dataset.sport; mobileShowing=MOBILE_INITIAL;
+    renderGallery(activeCat,activeSport);
+  });
+});
+ 
+// Update sport count badge
+const sportTotal = allSports.length;
+const el = document.getElementById('count-sports');
+if(el) el.textContent = sportTotal;
+const elP = document.getElementById('count-portraits');
+if(elP) elP.textContent = photos.portraits.length;
+const elG = document.getElementById('count-graduations');
+if(elG) elG.textContent = photos.graduations.length;
+ 
+renderGallery('all-sports','all-sports');
+ 
+// ── LIGHTBOX ──
+function openLB(idx){lbIndex=idx;document.getElementById('lb-img').src=BASE+activeList[idx];const lb=document.getElementById('lightbox');lb.style.display='flex';setTimeout(()=>lb.classList.add('open'),10);document.body.style.overflow='hidden';prefetchImg(BASE+activeList[(idx-1+activeList.length)%activeList.length]);prefetchImg(BASE+activeList[(idx+1)%activeList.length])}
+function closeLB(){const lb=document.getElementById('lightbox');lb.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{if(!lb.classList.contains('open')){lb.style.display='none';document.getElementById('lb-img').src=''}},300)}
+function switchLB(newIdx){const img=document.getElementById('lb-img');img.classList.add('switching');setTimeout(()=>{lbIndex=newIdx;img.src=BASE+activeList[lbIndex];img.classList.remove('switching')},100)}
+function prevLB(){switchLB((lbIndex-1+activeList.length)%activeList.length)}
+function nextLB(){switchLB((lbIndex+1)%activeList.length)}
+document.getElementById('lbClose').onclick=closeLB;
+document.getElementById('lb-prev').onclick=prevLB;
+document.getElementById('lb-next').onclick=nextLB;
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeLB()});
+document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')prevLB();if(e.key==='ArrowRight')nextLB()});
+(function(){let tx=0,ty=0;const lb=document.getElementById('lightbox');lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){dx<0?nextLB():prevLB()}else if(dy>80&&Math.abs(dx)<40)closeLB()},{passive:true})})();
+ 
+// ── THEME ──
+(function(){
+  const btn=document.getElementById('themeToggle'),saved=localStorage.getItem('nyl_theme');
+  if(saved==='light'){document.body.classList.add('light-mode');btn.textContent='DARK'}
+  btn.addEventListener('click',()=>{const isLight=document.body.classList.toggle('light-mode');btn.textContent=isLight?'DARK':'MODE';localStorage.setItem('nyl_theme',isLight?'light':'dark')});
 })();
-
-// ─── THEME TOGGLE ─────────────────────────────────────────────────────────────
-(function() {
-  const btn = document.getElementById('themeToggle'), saved = localStorage.getItem('nyl_theme');
-  if (saved === 'light') { document.body.classList.add('light-mode'); btn.textContent = '🌙'; }
-  btn.addEventListener('click', () => { const isLight = document.body.classList.toggle('light-mode'); btn.textContent = isLight ? '🌙' : '☀️'; localStorage.setItem('nyl_theme', isLight ? 'light' : 'dark'); });
-})();
-
-// ─── WEATHER ──────────────────────────────────────────────────────────────────
-const WEATHER_ICONS = {0:'☀️',1:'☀️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',71:'🌨️',73:'🌨️',75:'❄️',80:'🌦️',81:'🌧️',82:'⛈️',95:'⛈️',96:'⛈️',99:'⛈️'};
-const WEATHER_DESCS = {0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Foggy',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',80:'Rain showers',81:'Rain showers',82:'Heavy showers',95:'Thunderstorm',96:'Thunderstorm',99:'Thunderstorm'};
-const BAD_WEATHER_CODES = new Set([51,53,55,61,63,65,71,73,75,80,81,82,95,96,99]);
-
-async function loadWeather() {
-  try {
-    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=32.9126&longitude=-96.6389&current_weather=true&daily=weathercode,temperature_2m_max&temperature_unit=fahrenheit&timezone=America%2FChicago&forecast_days=16');
-    if (!res.ok) throw new Error('fail');
-    const data = await res.json();
-    const cw = data.current_weather;
-    document.getElementById('wTemp').textContent = Math.round(cw.temperature) + '°F';
-    document.getElementById('wIcon').textContent = WEATHER_ICONS[cw.weathercode] || '🌤️';
-    document.getElementById('wDesc').textContent = WEATHER_DESCS[cw.weathercode] || 'Clear';
-    if (data.daily) {
-      data.daily.time.forEach((date, i) => {
-        const code = data.daily.weathercode[i], temp = Math.round(data.daily.temperature_2m_max[i]);
-        forecastCache[date] = { icon: WEATHER_ICONS[code] || '🌤️', temp: temp + '°', bad: BAD_WEATHER_CODES.has(code) };
-      });
-      buildCalendar();
-    }
-  } catch(e) {
-    document.getElementById('wTemp').textContent = '--°F';
-    document.getElementById('wIcon').textContent = '🌤️';
-    document.getElementById('wDesc').textContent = 'Garland, TX';
-  }
+ 
+// ── WEATHER ──
+const WEATHER_META={
+  0:{label:'Clear',status:'good'},1:{label:'Mostly clear',status:'good'},2:{label:'Partly cloudy',status:'good'},3:{label:'Cloudy',status:'good'},
+  45:{label:'Fog',status:'watch'},48:{label:'Fog',status:'watch'},
+  51:{label:'Light drizzle',status:'watch'},53:{label:'Drizzle',status:'watch'},55:{label:'Steady drizzle',status:'watch'},
+  61:{label:'Light rain',status:'watch'},63:{label:'Rain',status:'alert'},65:{label:'Heavy rain',status:'alert'},
+  71:{label:'Snow',status:'alert'},73:{label:'Snow',status:'alert'},75:{label:'Snow',status:'alert'},
+  80:{label:'Rain showers',status:'watch'},81:{label:'Rain showers',status:'alert'},82:{label:'Heavy showers',status:'alert'},
+  95:{label:'Thunderstorms',status:'alert'},96:{label:'Thunderstorms',status:'alert'},99:{label:'Thunderstorms',status:'alert'}
+};
+const HOUR_TO_TIME={'08':'8:00 AM','09':'9:00 AM','10':'10:00 AM','11':'11:00 AM','12':'12:00 PM','13':'1:00 PM','14':'2:00 PM','15':'3:00 PM','16':'4:00 PM','17':'5:00 PM','18':'6:00 PM'};
+async function loadWeather(){
+  try{
+    const res=await fetch('https://api.open-meteo.com/v1/forecast?latitude=32.9126&longitude=-96.6389&hourly=temperature_2m,weathercode&temperature_unit=fahrenheit&timezone=America%2FChicago&forecast_days=16');
+    if(!res.ok)throw new Error('weather unavailable');
+    const data=await res.json();
+    const times=data.hourly?.time||[],temps=data.hourly?.temperature_2m||[],codes=data.hourly?.weathercode||[];
+    times.forEach((stamp,i)=>{
+      const [date,hourPart]=stamp.split('T');
+      const hour=hourPart?.slice(0,2),labelTime=HOUR_TO_TIME[hour];
+      if(!labelTime)return;
+      const meta=WEATHER_META[codes[i]]||{label:'Weather available',status:'good'};
+      forecastCache[date]=forecastCache[date]||{};
+      forecastCache[date][labelTime]={temp:temps[i],label:meta.label,status:meta.status};
+    });
+  }catch(e){forecastCache={};}
 }
 loadWeather();
-
-window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-formspree('initForm', { formElement: '#booking-form', formId: 'mzdykadb' });
-
-async function sharesite() {
-  const url = 'https://nylenses.netlify.app/';
-  try {
-    if (navigator.share && navigator.canShare && navigator.canShare({url})) { await navigator.share({title:'NY Lenses Photography',text:'Check out NY Lenses — sports & portrait photography in Garland, TX',url}); }
-    else { await navigator.clipboard.writeText(url); const t=document.getElementById('shareToast'); t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2500); }
-  } catch(e) { const t=document.getElementById('shareToast'); t.textContent='nylenses.netlify.app'; t.classList.add('show'); setTimeout(()=>{t.classList.remove('show');t.textContent='✓ Link copied to clipboard';},3000); }
+ 
+// ── FORMSPREE ──
+window.formspree=window.formspree||function(){(formspree.q=formspree.q||[]).push(arguments)};
+formspree('initForm',{formElement:'#booking-form',formId:'mzdykadb'});
+ 
+// ── SHARE ──
+async function sharesite(){
+  const url='https://nylenses.netlify.app/';
+  try{if(navigator.share&&navigator.canShare&&navigator.canShare({url})){await navigator.share({title:'NY Lenses Photography',text:'DFW sports and portrait photography — NY Lenses',url})}
+  else{await navigator.clipboard.writeText(url);const t=document.getElementById('shareToast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}}
+  catch(e){const t=document.getElementById('shareToast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
 }
-
-(function() {
-  const loader = document.getElementById('loader'); if (!loader) return;
-  const hide = () => { loader.classList.add('hidden'); setTimeout(()=>{loader.style.display='none';},500); };
-  setTimeout(hide, 1600); window.addEventListener('load', ()=>setTimeout(hide,1200)); setTimeout(hide, 4000);
+ 
+// ── LOADER ──
+(function(){
+  const loader=document.getElementById('loader');if(!loader)return;
+  const hide=()=>{loader.classList.add('hidden');setTimeout(()=>{loader.style.display='none'},500)};
+  setTimeout(hide,1600);window.addEventListener('load',()=>setTimeout(hide,1200));setTimeout(hide,4000);
 })();
-
-function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.getElementById('menuBtn').classList.remove('open'); document.body.style.overflow = ''; }
-document.getElementById('menuBtn').addEventListener('click', function() { const isOpen = this.classList.toggle('open'); document.getElementById('mobileNav').classList.toggle('open', isOpen); document.body.style.overflow = isOpen ? 'hidden' : ''; });
-
-let galleryZoom = 2;
-function setGalleryZoom(cols) { galleryZoom = cols; document.getElementById('gGrid').style.gridTemplateColumns = `repeat(${cols}, 1fr)`; document.getElementById('zoom2').classList.toggle('active', cols===2); document.getElementById('zoom3').classList.toggle('active', cols===3); }
-
-Object.keys(photos).forEach(cat => { const el = document.getElementById('count-'+cat); if (el) el.textContent = photos[cat].length > 0 ? photos[cat].length : ''; });
-
-(function() {
-  document.querySelectorAll('.p-card, .sec-head, .c-info').forEach(el => el.classList.add('anim-up'));
-  const animObs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); animObs.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.anim-up').forEach(el => { const rect = el.getBoundingClientRect(); if (rect.top < window.innerHeight * 0.9) { el.classList.add('in-view'); } else { animObs.observe(el); } });
+ 
+// ── MOBILE NAV ──
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('menuBtn').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('menuBtn').addEventListener('click',function(){const isOpen=this.classList.toggle('open');document.getElementById('mobileNav').classList.toggle('open',isOpen);document.body.style.overflow=isOpen?'hidden':''});
+ 
+// ── GALLERY ZOOM ──
+let galleryZoom=2;
+function setGalleryZoom(cols){galleryZoom=cols;document.getElementById('gGrid').style.gridTemplateColumns=`repeat(${cols},1fr)`;document.getElementById('zoom2').classList.toggle('active',cols===2);document.getElementById('zoom3').classList.toggle('active',cols===3)}
+ 
+// ── SERVICE PRICING TOGGLE ──
+function togglePricing(id) {
+  const pricing = document.getElementById(id);
+  const card = pricing.closest('.srv-card');
+  const isOpen = pricing.classList.contains('open');
+  document.querySelectorAll('.srv-pricing').forEach(p => p.classList.remove('open'));
+  document.querySelectorAll('.srv-card').forEach(c => c.classList.remove('active'));
+  if (!isOpen) { pricing.classList.add('open'); card.classList.add('active'); }
+}
+ 
+// ── SCROLL ANIMS ──
+(function(){
+  const animObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');animObs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.anim-up').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*0.9)el.classList.add('in-view');else animObs.observe(el)});
 })();
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
