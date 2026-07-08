@@ -18,6 +18,8 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16' stroke='%23e2c98a' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='18' cy='18' r='7' stroke='%23e2c98a' stroke-width='1.5' fill='none'/%3E%3Cline x1='18' y1='2' x2='13' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='18' y1='2' x2='23' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='32.8' y1='10' x2='23' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='32.8' y1='10' x2='28' y2='19' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='27' y1='32' x2='28' y2='22' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='27' y1='32' x2='18' y2='27' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='9' y1='32' x2='18' y2='27' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='9' y1='32' x2='8' y2='22' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='3.2' y1='10' x2='8' y2='19' stroke='%23e2c98a' stroke-width='1.2'/%3E%3Cline x1='3.2' y1='10' x2='13' y2='11' stroke='%23e2c98a' stroke-width='1.2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://nylenses.netlify.app" crossorigin>
+<link rel="dns-prefetch" href="//nylenses.netlify.app">
 <link rel="preload" as="image" href="https://nylenses.netlify.app/DSC09014.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -216,7 +218,7 @@ nav.scrolled { padding:1rem 4rem; background:rgba(10,10,10,0.93); backdrop-filte
 .g-item::before { content:''; position:absolute; inset:0; background:var(--bg3); animation:skelPulse 1.2s ease-in-out infinite; z-index:0; transition:opacity 0.3s ease; }
 .g-item.img-loaded::before { opacity:0; animation:none; pointer-events:none; }
 .g-item:hover { border-color:rgba(226,201,138,0.2); box-shadow:0 18px 38px rgba(0,0,0,0.75); }
-.g-item img { width:100%; height:100%; display:block; object-fit:cover; transition:transform 0.6s var(--ease),opacity 0.3s ease; opacity:0; z-index:1; position:relative; filter:blur(0.3px) saturate(1.03) contrast(0.99); }
+.g-item img { width:100%; height:100%; display:block; object-fit:cover; transition:transform 0.6s var(--ease),opacity 0.3s ease; opacity:0; z-index:1; position:relative; filter:none; image-rendering:auto; backface-visibility:hidden; transform:translateZ(0); }
 .g-item img.loaded { opacity:1; }
 .g-item:hover img { transform:scale(1.04); }
 .g-overlay { position:absolute; inset:0; background:transparent; display:flex; align-items:center; justify-content:center; transition:var(--trans); pointer-events:none; z-index:2; }
@@ -229,6 +231,31 @@ nav.scrolled { padding:1rem 4rem; background:rgba(10,10,10,0.93); backdrop-filte
 .g-load-more { display:none; margin:2rem auto 0; padding:0.85rem 2.5rem; background:transparent; border:1px solid var(--border); color:var(--ink2); font-family:'DM Sans',sans-serif; font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; cursor:pointer; transition:var(--trans); }
 .g-load-more:hover { border-color:var(--gold); color:var(--gold2); }
 @keyframes skelPulse { 0%,100%{opacity:0.5} 50%{opacity:0.8} }
+
+/* Performance improvements */
+#services, #pricing, #booking, #why, #contact { content-visibility:auto; contain-intrinsic-size:900px; }
+.g-item { contain:layout paint style; }
+.g-item.img-error::after {
+  content:'Image loading issue';
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  color:var(--muted);
+  font-size:.65rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  text-align:center;
+  background:var(--bg3);
+  z-index:2;
+}
+.g-item.img-error img { display:none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
  
 /* ── LIGHTBOX ── */
 #lightbox { display:none; position:fixed; inset:0; z-index:500; background:rgba(4,4,4,0.97); align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s ease; }
@@ -657,7 +684,7 @@ body.light-mode #lightbox { background:rgba(250,248,244,0.99); }
     <div class="sec-head">
       <p class="sec-label">The work</p>
       <h2 class="sec-title">Gallery</h2>
-      <p class="sec-sub">A curated look at sports, portraits, and graduation work.</p>
+      <p class="sec-sub">A cleaner look at recent sports, portraits, and graduation work. Pick a section below to view the strongest images by category.</p>
     </div>
     <div class="g-tabs-row">
       <div class="g-tabs" id="gMainTabs">
@@ -680,8 +707,8 @@ body.light-mode #lightbox { background:rgba(250,248,244,0.99); }
     <div class="g-grid" id="gGrid"></div>
     <button class="g-load-more" id="gLoadMore" onclick="loadMoreGallery()">Load More →</button>
     <div class="gallery-cta anim-up">
-      <p><strong>More recent work</strong> For newer shoots, full previews, and recent sports/event coverage, view NY Lenses on Instagram.</p>
-      <a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener">View Instagram</a>
+      <p><strong>Ready to book?</strong> Send the date, location, and type of coverage you need. I can put together a simple package for sports, portraits, graduations, events, or social content.</p>
+      <a href="#contact">Book a Shoot</a>
     </div>
   </div>
 </section>
@@ -1031,6 +1058,14 @@ body.light-mode #lightbox { background:rgba(250,248,244,0.99); }
  
 <script>
 const BASE = 'https://nylenses.netlify.app/';
+
+const LOCAL_SITE_IMAGES = new Set(['DSC04298_optimized.webp','DSC04295_optimized.webp','DSC04298.jpeg','DSC04295.jpeg']);
+const LOCAL_FALLBACKS = {
+  'DSC04298_optimized.webp':'DSC04298.jpeg',
+  'DSC04295_optimized.webp':'DSC04295.jpeg'
+};
+function photoURL(file){ return LOCAL_SITE_IMAGES.has(file) ? file : BASE + file; }
+
  
 // ── BOOKED SLOTS ──
 function getBookedSlots(){try{return JSON.parse(localStorage.getItem('nyl_booked_slots')||'{}')}catch(e){return{}}}
@@ -1100,7 +1135,7 @@ const photos = {
   baseball: allSports.filter(file => SPORT_GROUPS.baseball.has(file)),
   track: allSports.filter(file => SPORT_GROUPS.track.has(file)),
   football: allSports.filter(file => SPORT_GROUPS.football.has(file)),
-  portraits: ['DSC00957.jpg','DSC00827.jpg','DSC00760.jpg','DSC00745.jpg','DSC00686.jpg','DSC00528.jpg','DSC00525.jpg','DSC09476.jpg','DSC04102.jpg','DSC04052.jpg','DSC04049.jpg','DSC09449.jpg','DSC09434.jpg','DSC09455.jpg','DSC09377.jpg','DSC09356.jpg','DSC09342.jpg','DSC09317.jpg','DSC09236.jpg','DSC07007.jpg','DSC07003.jpg','DSC06995.jpg','DSC06988.jpg','DSC06968.jpg','DSC06961.jpg','FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','DSC00966.jpg'],
+  portraits: ['DSC00686.jpg', 'DSC00528.jpg', 'DSC00525.jpg', 'DSC04102.jpg', 'DSC04052.jpg', 'DSC04049.jpg', 'DSC09455.jpg', 'DSC09377.jpg', 'DSC09356.jpg', 'DSC09342.jpg', 'DSC09317.jpg', 'DSC04298_optimized.webp', 'DSC04295_optimized.webp', 'DSC07007.jpg', 'DSC07003.jpg', 'DSC06995.jpg', 'DSC06988.jpg', 'DSC06968.jpg', 'DSC06961.jpg', 'FABDE3D0-6C5C-4756-B9B8-156DD4B0E2EA_1_105_c.jpg', 'E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg', 'AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg', '17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg', '3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg', '55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg', '25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg', '24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg', '05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg', 'DSC00966.jpg'],
   graduations: ['05E1AEEE-3289-411B-AE7B-741A1D899835_1_105_c (1).jpg','24DB449F-69AD-46F6-8E25-EA5A1E9B5626_1_105_c.jpg','25837AE5-0BEF-487D-A826-1C8225BBBD31_1_105_c (1).jpg','55024EB9-4F29-4686-AFF7-9014DEA800E7 (1).jpg','3423376F-B18A-47EB-A1A4-DA915BB49C6B_1_105_c (1).jpg','17948193-9B0F-47B9-9DA8-C89EADD12A45_1_105_c.jpg','AA5721B9-E6DB-4A3C-A1CA-E9C8298DE51B_1_105_c.jpg','E1DD153C-C44D-4327-BBA2-742F68A30FDC_1_105_c (1).jpg','DSC01774_compressed.jpg','DSC01799_compressed.jpg','DSC01801_compressed.jpg','DSC01812_compressed.jpg','DSC01832_compressed.jpg']
 };
  
@@ -1108,9 +1143,25 @@ let activeCat='all-sports', activeSport='all-sports', activeList=[], lbIndex=0;
  
 // ── LAZY LOAD ──
 const imgObserver=new IntersectionObserver((entries,obs)=>{
-  entries.forEach(e=>{if(e.isIntersecting){const img=e.target;if(img.dataset.src){img.src=img.dataset.src;img.removeAttribute('data-src')}obs.unobserve(img)}});
-},{rootMargin:'120px 0px',threshold:0.01});
-function prefetchImg(url){const l=document.createElement('link');l.rel='prefetch';l.as='image';l.href=url;document.head.appendChild(l)}
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const img=e.target;
+      if(img.dataset.src){ img.src=img.dataset.src; img.removeAttribute('data-src'); }
+      obs.unobserve(img);
+    }
+  });
+},{rootMargin:'260px 0px',threshold:0.01});
+
+const prefetchedImages=new Set();
+function prefetchImg(url){
+  if(!url || prefetchedImages.has(url)) return;
+  prefetchedImages.add(url);
+  const l=document.createElement('link');
+  l.rel='prefetch';
+  l.as='image';
+  l.href=url;
+  document.head.appendChild(l);
+}
  
 // ── SCROLL ──
 let sTick=false;
@@ -1226,47 +1277,112 @@ document.getElementById('booking-form').addEventListener('submit',function(e){
 });
  
 // ── GALLERY ──
-const MOBILE_INITIAL=9;let mobileShowing=MOBILE_INITIAL;
 function isMobile(){return window.innerWidth<=768}
- 
+const GALLERY_INITIAL_MOBILE=9;
+const GALLERY_STEP_MOBILE=9;
+const GALLERY_INITIAL_DESKTOP=18;
+const GALLERY_STEP_DESKTOP=12;
+function galleryInitial(){return isMobile()?GALLERY_INITIAL_MOBILE:GALLERY_INITIAL_DESKTOP}
+function galleryStep(){return isMobile()?GALLERY_STEP_MOBILE:GALLERY_STEP_DESKTOP}
+let galleryShowing=galleryInitial();
+function resetGalleryCount(){galleryShowing=galleryInitial()}
+
 function getPhotoList(cat, sport) {
   if(cat==='portraits') return photos.portraits;
   if(cat==='graduations') return photos.graduations;
   if(sport && sport!=='all-sports') return photos[sport]||[];
   return allSports;
 }
- 
+
+function handleImgError(img,file){
+  const fallback=LOCAL_FALLBACKS && LOCAL_FALLBACKS[file];
+  if(fallback && !img.dataset.usedFallback){
+    img.dataset.usedFallback='1';
+    img.src=fallback;
+    return;
+  }
+  const item=img.closest('.g-item');
+  if(item) item.classList.add('img-error');
+}
+
 function renderGallery(cat, sport, appendFrom){
   const grid=document.getElementById('gGrid'),loadBtn=document.getElementById('gLoadMore');
   const list=getPhotoList(cat, sport); activeList=list;
-  if(!list.length){grid.innerHTML='';loadBtn.style.display='none';for(let i=0;i<3;i++){const d=document.createElement('div');d.className='g-soon';d.textContent='Coming Soon';grid.appendChild(d)}return}
-  const mobile=isMobile(),limit=mobile?mobileShowing:list.length,start=appendFrom||0,eagerCount=mobile?2:4;
-  if(!appendFrom)grid.innerHTML='';
+  if(!list.length){
+    grid.innerHTML='';loadBtn.style.display='none';
+    for(let i=0;i<3;i++){const d=document.createElement('div');d.className='g-soon';d.textContent='Coming Soon';grid.appendChild(d)}
+    return;
+  }
+
+  const start=appendFrom||0;
+  const limit=Math.min(galleryShowing,list.length);
+  const eagerCount=start>0?0:(isMobile()?2:3);
+  if(!appendFrom) grid.innerHTML='';
+
   const frag=document.createDocumentFragment();
-  for(let idx=start;idx<Math.min(limit,list.length);idx++){
-    const file=list[idx],wrap=document.createElement('div');wrap.className='g-item';wrap.onclick=()=>openLB(idx);
-    const img=document.createElement('img');img.alt='NY Lenses photography';img.decoding='async';img.loading=idx<eagerCount?'eager':'lazy';img.width=800;img.height=1000;
-    img.addEventListener('load',function(){this.classList.add('loaded');this.closest('.g-item').classList.add('img-loaded')});
-    if(idx<eagerCount){img.src=BASE+file;if(idx===eagerCount-1){for(let p=eagerCount;p<Math.min(eagerCount+2,list.length);p++)prefetchImg(BASE+list[p])}}
-    else{img.dataset.src=BASE+file;img.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';imgObserver.observe(img)}
+  for(let idx=start;idx<limit;idx++){
+    const file=list[idx],wrap=document.createElement('div');
+    wrap.className='g-item';
+    wrap.onclick=()=>openLB(idx);
+
+    const img=document.createElement('img');
+    img.alt='NY Lenses photography';
+    img.decoding='async';
+    img.loading=idx<eagerCount?'eager':'lazy';
+    img.width=800;
+    img.height=1000;
+    img.setAttribute('sizes','(max-width:768px) 50vw, 33vw');
+    if(idx===0 && start===0) img.setAttribute('fetchpriority','high');
+
+    img.addEventListener('load',function(){
+      this.classList.add('loaded');
+      const item=this.closest('.g-item');
+      if(item) item.classList.add('img-loaded');
+    },{once:true});
+
+    img.addEventListener('error',function(){handleImgError(this,file)});
+
+    if(idx<eagerCount){
+      img.src=photoURL(file);
+      if(idx===eagerCount-1){
+        for(let p=eagerCount;p<Math.min(eagerCount+2,list.length);p++) prefetchImg(photoURL(list[p]));
+      }
+    } else {
+      img.dataset.src=photoURL(file);
+      img.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+      imgObserver.observe(img);
+    }
+
     const ov=document.createElement('div');ov.className='g-overlay';
     const z=document.createElement('span');z.className='g-zoom-icon';z.textContent='⊕';ov.appendChild(z);
     const wm=document.createElement('span');wm.className='g-watermark';wm.textContent='© NY Lenses';
+
     wrap.appendChild(img);wrap.appendChild(ov);wrap.appendChild(wm);frag.appendChild(wrap);
   }
+
   grid.appendChild(frag);
-  if(mobile&&mobileShowing<list.length){loadBtn.style.display='block';loadBtn.textContent=`Load More (${list.length-mobileShowing} remaining) →`}
-  else{loadBtn.style.display='none'}
+
+  if(galleryShowing<list.length){
+    loadBtn.style.display='block';
+    loadBtn.textContent=`Load More (${list.length-galleryShowing} remaining) →`;
+  } else {
+    loadBtn.style.display='none';
+  }
 }
-function loadMoreGallery(){const prev=mobileShowing;mobileShowing=Math.min(mobileShowing+9,activeList.length);renderGallery(activeCat,activeSport,prev)}
- 
+
+function loadMoreGallery(){
+  const prev=galleryShowing;
+  galleryShowing=Math.min(galleryShowing+galleryStep(),activeList.length);
+  renderGallery(activeCat,activeSport,prev);
+}
+
 // Main tabs
 document.querySelectorAll('.g-tab').forEach(t=>{
   t.addEventListener('click',e=>{
     e.stopPropagation();
     document.querySelectorAll('.g-tab').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
-    activeCat=t.dataset.cat; activeSport='all-sports'; mobileShowing=MOBILE_INITIAL;
+    activeCat=t.dataset.cat; activeSport='all-sports'; resetGalleryCount();
     const subTabs=document.getElementById('gSubTabs');
     if(activeCat==='all-sports'){subTabs.classList.remove('hidden')}
     else{subTabs.classList.add('hidden')}
@@ -1282,7 +1398,7 @@ document.querySelectorAll('.g-sub-tab').forEach(t=>{
     e.stopPropagation();
     document.querySelectorAll('.g-sub-tab').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
-    activeSport=t.dataset.sport; mobileShowing=MOBILE_INITIAL;
+    activeSport=t.dataset.sport; resetGalleryCount();
     renderGallery(activeCat,activeSport);
   });
 });
@@ -1299,9 +1415,9 @@ if(elG) elG.textContent = photos.graduations.length;
 renderGallery('all-sports','all-sports');
  
 // ── LIGHTBOX ──
-function openLB(idx){lbIndex=idx;document.getElementById('lb-img').src=BASE+activeList[idx];const lb=document.getElementById('lightbox');lb.style.display='flex';setTimeout(()=>lb.classList.add('open'),10);document.body.style.overflow='hidden';prefetchImg(BASE+activeList[(idx-1+activeList.length)%activeList.length]);prefetchImg(BASE+activeList[(idx+1)%activeList.length])}
+function openLB(idx){lbIndex=idx;document.getElementById('lb-img').src=photoURL(activeList[idx]);const lb=document.getElementById('lightbox');lb.style.display='flex';setTimeout(()=>lb.classList.add('open'),10);document.body.style.overflow='hidden';prefetchImg(photoURL(activeList[(idx-1+activeList.length)%activeList.length]));prefetchImg(photoURL(activeList[(idx+1)%activeList.length]))}
 function closeLB(){const lb=document.getElementById('lightbox');lb.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{if(!lb.classList.contains('open')){lb.style.display='none';document.getElementById('lb-img').src=''}},300)}
-function switchLB(newIdx){const img=document.getElementById('lb-img');img.classList.add('switching');setTimeout(()=>{lbIndex=newIdx;img.src=BASE+activeList[lbIndex];img.classList.remove('switching')},100)}
+function switchLB(newIdx){const img=document.getElementById('lb-img');img.classList.add('switching');setTimeout(()=>{lbIndex=newIdx;img.src=photoURL(activeList[lbIndex]);img.classList.remove('switching')},100)}
 function prevLB(){switchLB((lbIndex-1+activeList.length)%activeList.length)}
 function nextLB(){switchLB((lbIndex+1)%activeList.length)}
 document.getElementById('lbClose').onclick=closeLB;
@@ -1363,7 +1479,7 @@ async function sharesite(){
 (function(){
   const loader=document.getElementById('loader');if(!loader)return;
   const hide=()=>{loader.classList.add('hidden');setTimeout(()=>{loader.style.display='none'},500)};
-  setTimeout(hide,1600);window.addEventListener('load',()=>setTimeout(hide,1200));setTimeout(hide,4000);
+  setTimeout(hide,700);window.addEventListener('load',()=>setTimeout(hide,300));setTimeout(hide,2200);
 })();
  
 // ── MOBILE NAV ──
