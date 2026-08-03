@@ -8,6 +8,10 @@ window.DUTCH_FC_CONFIG = Object.freeze({
   galleryUrl: "", // REQUIRED: paste the published Pixieset gallery URL here.
 
   contact: Object.freeze({
+    phoneDisplay: "(469) 319-2644",
+    phoneDigits: "4693192644",
+    preferredMethod: "text",
+    helpMessage: "Texting is preferred. Please include the player’s name, team, game date, and what you need help with.",
     email: "nylenses1@gmail.com",
     instagramHandle: "@ny_.lenses",
     instagramUrl: "https://www.instagram.com/ny_.lenses/"
@@ -30,3 +34,44 @@ window.DUTCH_FC_CONFIG = Object.freeze({
    */
   featuredPhotos: Object.freeze([])
 });
+
+/*
+ * Contact enhancement for the static Dutch FC page.
+ * The page loads this file after its HTML, so these links can be added
+ * without introducing another dependency or changing the portfolio pages.
+ */
+(function addPhoneContact() {
+  const config = window.DUTCH_FC_CONFIG;
+  const contact = config && config.contact;
+  if (!contact || !contact.phoneDigits || !contact.phoneDisplay) return;
+
+  const panel = document.querySelector('#contact .contact-panel');
+  const links = document.querySelector('#contact .contact-links');
+  const intro = panel && panel.querySelector('div:first-child p');
+  if (!panel || !links) return;
+
+  if (intro && contact.helpMessage) {
+    intro.textContent = contact.helpMessage;
+  }
+
+  const textLink = document.createElement('a');
+  textLink.href = 'sms:' + contact.phoneDigits;
+  textLink.textContent = 'Text NY Lenses: ' + contact.phoneDisplay + ' (Preferred)';
+  textLink.setAttribute('aria-label', 'Text NY Lenses at ' + contact.phoneDisplay + ', preferred contact method');
+  links.prepend(textLink);
+
+  const callLink = document.createElement('a');
+  callLink.href = 'tel:' + contact.phoneDigits;
+  callLink.textContent = 'Call NY Lenses: ' + contact.phoneDisplay;
+  callLink.setAttribute('aria-label', 'Call NY Lenses at ' + contact.phoneDisplay);
+  textLink.insertAdjacentElement('afterend', callLink);
+
+  const footerLinks = document.querySelector('footer .footer-links');
+  if (footerLinks) {
+    const footerText = document.createElement('a');
+    footerText.href = 'sms:' + contact.phoneDigits;
+    footerText.textContent = 'Text';
+    footerText.setAttribute('aria-label', 'Text NY Lenses at ' + contact.phoneDisplay);
+    footerLinks.prepend(footerText);
+  }
+})();
