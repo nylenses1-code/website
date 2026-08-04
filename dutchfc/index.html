@@ -182,7 +182,11 @@
     .step { position: relative; padding: 24px 18px; border-radius: var(--radius); background: rgba(255,255,255,.065); border: 1px solid rgba(255,255,255,.12); }
     .step-num { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); font-weight: 900; margin-bottom: 18px; }
     .step h3 { font-size: 1.06rem; }
-    .step p { color: rgba(255,255,255,.72); font-size: .9rem; margin-bottom: 0; }\n    .order-cta { margin-top: 24px; padding: 24px; border-radius: var(--radius); background: var(--white); color: var(--blue-2); display: flex; align-items: center; justify-content: space-between; gap: 20px; }\n    .order-cta strong { display: block; font: 900 1.35rem/1.1 "Lato",sans-serif; }\n    .order-cta span { display: block; color: #5B6376; font-size: .86rem; margin-top: 6px; }\n    .order-cta .btn { flex: 0 0 auto; background: var(--orange); color: var(--white); }
+    .step p { color: rgba(255,255,255,.72); font-size: .9rem; margin-bottom: 0; }
+    .order-cta { margin-top: 24px; padding: 24px; border-radius: var(--radius); background: var(--white); color: var(--blue-2); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .order-cta strong { display: block; font: 900 1.35rem/1.1 "Lato",sans-serif; }
+    .order-cta span { display: block; color: #5B6376; font-size: .86rem; margin-top: 6px; }
+    .order-cta .btn { flex: 0 0 auto; background: var(--orange); color: var(--white); }
 
     .benefits-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; }
     .benefit { padding: 22px; border-radius: var(--radius); background: var(--gray-1); border: 1px solid #E5E8EF; }
@@ -222,7 +226,8 @@
       .gallery-card, .gallery-card:nth-child(1), .gallery-card:nth-child(2) { grid-column: span 6; min-height: 260px; }
       .pricing-grid { grid-template-columns: repeat(2,1fr); }
       .price-card.featured { transform: none; }
-      .steps, .benefits-grid { grid-template-columns: repeat(2,1fr); }\n      .order-cta { align-items: stretch; flex-direction: column; }
+      .steps, .benefits-grid { grid-template-columns: repeat(2,1fr); }
+      .order-cta { align-items: stretch; flex-direction: column; }
       .contact-panel { grid-template-columns: 1fr; padding: 30px 24px; }
     }
     @media (max-width: 560px) {
@@ -358,7 +363,12 @@
           <article class="step"><span class="step-num">2</span><h3>Tap the hearts</h3><p>Tap the heart on each photo. Then tap the heart at the top, open your list, tap Share, and copy the link.</p></article>
           <article class="step"><span class="step-num">3</span><h3>Text your order</h3><p>Tap the button below and paste your Favorites link. Fill in the player, team, and package.</p></article>
           <article class="step"><span class="step-num">4</span><h3>Pay and receive</h3><p>NY Lenses confirms the total. After payment, your high-resolution photos are sent to you.</p></article>
-        </div>\n        <div class="order-cta"><div><strong>Finished picking your photos?</strong><span>Tap below, fill in the blanks, and paste your Favorites link.</span></div><a class="btn" id="textOrderButton" href="sms:4693192644">Text My Order</a></div>\n      </div>\n    </section>\n\n    <section class="section" aria-labelledby="benefits-title">
+        </div>
+        <div class="order-cta"><div><strong>Finished picking your photos?</strong><span>Tap below, fill in the blanks, and paste your Favorites link.</span></div><a class="btn" id="textOrderButton" href="sms:4693192644">Text My Order</a></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="benefits-title">
       <div class="shell">
         <div class="section-head">
           <span class="eyebrow">What families receive</span>
@@ -464,7 +474,14 @@
         emailLink.textContent = 'Email: ' + contact.email;
       }
 
-      const orderButton = document.getElementById('textOrderButton');\n      if (orderButton && contact.phoneDigits) {\n        const orderMessage = 'Hi NY Lenses! I want to order Dutch FC photos.\\n\\nPlayer name: \\nTeam: \\nPackage: \\nFavorites link: ';\n        const bodySeparator = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';\n        orderButton.href = 'sms:' + contact.phoneDigits + bodySeparator + 'body=' + encodeURIComponent(orderMessage);\n      }\n\n      document.getElementById('year').textContent = new Date().getFullYear();
+      const orderButton = document.getElementById('textOrderButton');
+      if (orderButton && contact.phoneDigits) {
+        const orderMessage = 'Hi NY Lenses! I want to order Dutch FC photos.\n\nPlayer name: \nTeam: \nPackage: \nFavorites link: ';
+        const bodySeparator = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
+        orderButton.href = 'sms:' + contact.phoneDigits + bodySeparator + 'body=' + encodeURIComponent(orderMessage);
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
 
       const menuButton = document.getElementById('menuButton');
       const mobileMenu = document.getElementById('mobileMenu');
