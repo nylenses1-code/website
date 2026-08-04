@@ -11,7 +11,7 @@ window.DUTCH_FC_CONFIG = Object.freeze({
     phoneDisplay: "(469) 319-2644",
     phoneDigits: "4693192644",
     preferredMethod: "text",
-    helpMessage: "Texting is preferred. Please include the player’s name, team, game date, and what you need help with.",
+    helpMessage: "To order, text your name, the player’s name and team, your package, and the shared Pixieset Favorites link. NY Lenses will confirm the photos and total before payment.",
     email: "nylenses1@gmail.com",
     instagramHandle: "@ny_.lenses",
     instagramUrl: "https://www.instagram.com/ny_.lenses/"
