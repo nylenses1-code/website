@@ -178,7 +178,7 @@
     .process { background: var(--blue-3); color: var(--white); }
     .process h2 { color: var(--white); }
     .process .section-head p { color: rgba(255,255,255,.7); }
-    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .step { position: relative; padding: 24px 18px; border-radius: var(--radius); background: rgba(255,255,255,.065); border: 1px solid rgba(255,255,255,.12); }
     .step-num { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); font-weight: 900; margin-bottom: 18px; }
     .step h3 { font-size: 1.06rem; }
@@ -300,7 +300,7 @@
           <p class="kicker">Dutch FC × NY Lenses</p>
           <h1 id="page-title">Dutch FC <span>Match Photos</span></h1>
           <p class="hero-sub">Professional game-day photography by NY Lenses.</p>
-          <p class="hero-body">Parents and players can browse professionally edited action photographs, select favorites, and purchase high-resolution digital images through the linked online gallery.</p>
+          <p class="hero-body">Browse the match gallery, tap the heart on the photos you want, then message NY Lenses with your Favorites list. After your total and payment are confirmed, your purchased high-resolution images will be sent directly to you.</p>
           <div class="actions">
             <a class="btn btn-primary js-gallery-link" href="#gallery">View Latest Match Gallery</a>
             <a class="btn btn-secondary" href="#how-it-works">How It Works</a>
@@ -314,7 +314,7 @@
             <path d="M50 27 65 38 59 56H41L35 38 50 27Z" stroke="white" stroke-width="3"/>
             <path d="M50 4V27M65 38 88 30M59 56 72 78M41 56 28 78M35 38 12 30M28 78 50 96M72 78 50 96M88 30 96 52M12 30 4 52" stroke="white" stroke-width="3"/>
           </svg>
-          <div class="hero-card-copy"><small>Match-day coverage</small><strong>Browse. Select. Download.</strong></div>
+          <div class="hero-card-copy"><small>Match-day coverage</small><strong>Browse. Favorite. Text.</strong></div>
         </aside>
       </div>
     </section>
@@ -329,7 +329,7 @@
         <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
         <div class="gallery-actions">
           <a class="btn btn-primary js-gallery-link" href="#gallery">Open Pixieset Gallery</a>
-          <span class="note">Gallery availability depends on the latest completed match coverage.</span>
+          <span class="note"><strong>To select photos:</strong> Tap the heart on each photo you want, open your Favorites list, tap Share, and text the shared list to NY Lenses.</span>
         </div>
       </div>
     </section>
@@ -339,7 +339,7 @@
         <div class="section-head">
           <span class="eyebrow">Digital downloads</span>
           <h2 id="pricing-title">Photo Packages</h2>
-          <p>Choose a package inside the configured gallery. No checkout is hosted directly on this page.</p>
+          <p>Choose your package below, select your photos with Pixieset Favorites, and message NY Lenses before paying. Payments and photo delivery are handled directly by NY Lenses.</p>
         </div>
         <div class="pricing-grid" id="pricingGrid"></div>
         <p class="note">Availability may depend on the match and the number of photographs captured. The Full Player Gallery includes only available edited photographs of that player from the covered match.</p>
@@ -351,14 +351,15 @@
         <div class="section-head">
           <span class="eyebrow">Simple process</span>
           <h2 id="process-title">How It Works</h2>
-          <p>The linked gallery keeps viewing, selecting, purchasing, and downloading in one clear flow.</p>
+          <p>Pixieset is used to browse and select photos. Orders, payment confirmation, and final delivery are handled directly with NY Lenses.</p>
         </div>
         <div class="steps">
-          <article class="step"><span class="step-num">1</span><h3>Game photographed</h3><p>NY Lenses captures available match-day action and moments.</p></article>
-          <article class="step"><span class="step-num">2</span><h3>Browse the gallery</h3><p>Open the latest online gallery from this page or the QR code.</p></article>
-          <article class="step"><span class="step-num">3</span><h3>Select favorites</h3><p>Choose the photographs and package that fit your needs.</p></article>
-          <article class="step"><span class="step-num">4</span><h3>Purchase securely</h3><p>Complete the purchase through the configured gallery provider.</p></article>
-          <article class="step"><span class="step-num">5</span><h3>Download images</h3><p>Receive the finished high-resolution digital photographs.</p></article>
+          <article class="step"><span class="step-num">1</span><h3>Browse the gallery</h3><p>Open the latest Pixieset match gallery from this page or the QR code.</p></article>
+          <article class="step"><span class="step-num">2</span><h3>Favorite your photos</h3><p>Tap the heart on every photo you want and save them to one Favorites list.</p></article>
+          <article class="step"><span class="step-num">3</span><h3>Share your list</h3><p>Open the Favorites list, tap Share, and copy its link. Screenshots or filenames also work as a backup.</p></article>
+          <article class="step"><span class="step-num">4</span><h3>Message NY Lenses</h3><p>Text your name, player name, team, package, and shared Favorites link to (469) 319-2644.</p></article>
+          <article class="step"><span class="step-num">5</span><h3>Confirm and pay</h3><p>NY Lenses will confirm the selected photos, total, and available payment method before you send payment.</p></article>
+          <article class="step"><span class="step-num">6</span><h3>Receive your photos</h3><p>After payment is confirmed, the purchased high-resolution images will be sent directly to you.</p></article>
         </div>
       </div>
     </section>
@@ -374,7 +375,7 @@
           <article class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v14H4Z"/><path d="m4 16 5-5 4 4 3-3 4 4"/></svg><h3>High-resolution edited images</h3><p>Finished digital files prepared for viewing and download.</p></article>
           <article class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v9l4 2"/><circle cx="12" cy="12" r="9"/></svg><h3>Fast digital delivery</h3><p>Online delivery avoids print pickup and keeps access convenient.</p></article>
           <article class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v12H4Z"/><path d="M8 10h8M8 14h5"/></svg><h3>Easy online gallery</h3><p>A mobile-friendly place to browse available match photographs.</p></article>
-          <article class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><h3>Secure downloads</h3><p>Purchases and file access are completed through the linked gallery.</p></article>
+          <article class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><h3>Direct photo delivery</h3><p>Purchased high-resolution files are sent after your payment is confirmed.</p></article>
         </div>
       </div>
     </section>
@@ -400,7 +401,7 @@
     <div class="shell footer-grid">
       <div><div class="footer-title">Proudly covering Dutch FC</div><div>Photography by NY Lenses</div></div>
       <div class="footer-links"><a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener">Instagram</a><a href="mailto:nylenses1@gmail.com">Email</a><a href="/">Main Portfolio</a></div>
-      <p class="footer-note">© <span id="year"></span> NY Lenses. NY Lenses is the photography provider. Purchases are completed through the linked external gallery.</p>
+      <p class="footer-note">© <span id="year"></span> NY Lenses. Pixieset is used to browse and select photos. Orders, payments, and final photo delivery are handled directly by NY Lenses.</p>
     </div>
   </footer>
 
