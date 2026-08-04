@@ -5,7 +5,7 @@
  * social links, or featured photographs change.
  */
 window.DUTCH_FC_CONFIG = Object.freeze({
-  galleryUrl: "", // REQUIRED: paste the published Pixieset gallery URL here.
+  galleryUrl: "https://nylenses.pixieset.com/dutchfcmatchphotos/",
 
   contact: Object.freeze({
     phoneDisplay: "(469) 319-2644",
