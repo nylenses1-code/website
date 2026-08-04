@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <title>Elite Leagues &amp; Sports Photo Program | Proposal by NY Lenses</title>
+  <meta name="description" content="A proposed no-upfront-cost, parent-pay youth sports photography pilot for Elite Leagues & Sports, prepared by NY Lenses.">
+  <meta property="og:title" content="Elite Leagues &amp; Sports Photo Program Proposal">
+  <meta property="og:description" content="A proposed parent-pay photography pilot prepared by NY Lenses. Photography has no upfront organizational fee; optional video coverage is quoted separately.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nylenses.netlify.app/elite-leagues/">
+  <style>
+    :root {
+      --ink: #090b10;
+      --ink-2: #11151d;
+      --paper: #f5f4ef;
+      --white: #fff;
+      --lime: #c8ff2e;
+      --gold: #e2c98a;
+      --muted: #aeb5c0;
+      --line: rgba(255,255,255,.14);
+      --max: 1160px;
+      --radius: 22px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;background:var(--ink);color:var(--white);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    :focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+    .shell{width:min(var(--max),calc(100% - 34px));margin:auto}
+    .skip{position:fixed;left:12px;top:12px;z-index:999;padding:10px 14px;background:var(--lime);color:var(--ink);font-weight:800;transform:translateY(-160%);border-radius:8px}
+    .skip:focus{transform:none}
+    .nav{position:fixed;inset:0 0 auto;z-index:100;background:rgba(9,11,16,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{text-decoration:none;display:flex;align-items:center;gap:12px}
+    .mark{width:39px;height:39px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:.74rem;letter-spacing:.08em}
+    .brand-copy{display:grid;line-height:1}.brand-copy strong{color:var(--gold);letter-spacing:.14em;font-size:.9rem}.brand-copy small{color:var(--muted);font-size:.58rem;letter-spacing:.16em;margin-top:6px;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:24px}.nav-links a{text-decoration:none;font-size:.82rem;font-weight:800;color:#d8dce3}.nav-links .cta{background:var(--lime);color:var(--ink);padding:11px 16px;border-radius:999px}
+    .hero{position:relative;min-height:760px;display:grid;align-items:center;padding:128px 0 74px;isolation:isolate;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-3;background:radial-gradient(circle at 76% 24%,rgba(200,255,46,.18),transparent 27%),linear-gradient(135deg,#090b10 0%,#11151d 54%,#080a0d 100%)}
+    .hero::after{content:"";position:absolute;z-index:-2;width:680px;height:680px;right:-250px;top:70px;border:120px solid rgba(255,255,255,.035);border-radius:50%}
+    .grid-lines{position:absolute;inset:0;z-index:-1;opacity:.2;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:70px 70px;transform:perspective(700px) rotateX(56deg) scale(1.55) translateY(20%);transform-origin:bottom}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+    .tag{display:inline-flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid rgba(200,255,46,.38);border-radius:999px;color:var(--lime);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:.69rem;background:rgba(200,255,46,.06)}
+    h1,h2,h3,p{margin-top:0}h1,h2,h3{line-height:1.04}h1{font-size:clamp(3.5rem,9vw,7.7rem);letter-spacing:-.065em;margin:24px 0 20px;max-width:900px;text-transform:uppercase}h1 span{display:block;color:var(--lime)}
+    .lead{max-width:700px;color:#c2c8d1;font-size:clamp(1rem,2vw,1.18rem);line-height:1.7}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{min-height:51px;padding:0 21px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:900;border:2px solid transparent;transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--lime);color:var(--ink)}.btn-secondary{border-color:rgba(255,255,255,.3);color:var(--white);background:rgba(255,255,255,.05)}
+    .pilot-card{position:relative;padding:28px;border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.055);box-shadow:0 28px 75px rgba(0,0,0,.35);backdrop-filter:blur(12px)}
+    .pilot-card::before{content:"PROPOSED PILOT";position:absolute;right:18px;top:18px;color:var(--lime);font-size:.62rem;font-weight:900;letter-spacing:.16em}
+    .cost{font-size:clamp(4.5rem,9vw,7.6rem);font-weight:900;letter-spacing:-.08em;color:var(--white);margin:35px 0 0}.cost sup{font-size:.25em;color:var(--lime);letter-spacing:.04em;vertical-align:top;margin-left:8px}.pilot-card h2{font-size:1.42rem;margin-bottom:12px}.pilot-card p{color:#bac1cc;line-height:1.65}.mini-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:11px}.mini-list li{padding-top:11px;border-top:1px solid var(--line);display:flex;gap:10px;color:#e8ebef;font-size:.9rem}.mini-list li::before{content:"✓";color:var(--lime);font-weight:900}
+    .section{padding:94px 0}.light{background:var(--paper);color:var(--ink)}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#617500;font-size:.69rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.eyebrow::before{content:"";width:28px;height:3px;background:var(--lime);box-shadow:0 0 0 1px #6d8200}.section h2{font-size:clamp(2.45rem,6vw,4.6rem);letter-spacing:-.045em;margin:14px 0 18px}.section-head{max-width:790px;margin-bottom:42px}.section-head p{line-height:1.7;color:#5a616d}.dark-head p{color:#b7bec8}
+    .deal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.deal{padding:29px;border:1px solid #dcded7;border-radius:var(--radius);background:var(--white);box-shadow:0 16px 44px rgba(15,18,25,.07)}.num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:900;margin-bottom:24px}.deal h3{font-size:1.25rem}.deal p{color:#636a75;line-height:1.63;font-size:.91rem;margin-bottom:0}
+    .responsibility{margin-top:22px;padding:25px 28px;border-radius:var(--radius);background:var(--ink);color:var(--white);display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:center}.responsibility strong{font-size:1.35rem}.responsibility ul{margin:0;padding-left:20px;color:#c4cad3;line-height:1.8}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{padding:25px 20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--ink-2)}.step b{display:block;color:var(--lime);font-size:2rem;margin-bottom:18px}.step h3{font-size:1.08rem}.step p{color:#aeb5c0;line-height:1.6;font-size:.88rem;margin-bottom:0}
+    .prices{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.price-card{position:relative;padding:26px 18px;border:1px solid #d8dbd4;border-radius:18px;background:#fff;display:flex;flex-direction:column}.price-card.featured{border:3px solid #8aa900;transform:translateY(-7px)}.popular{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);padding:6px 10px;border-radius:999px;background:var(--ink);color:var(--lime);font-size:.61rem;font-weight:900;letter-spacing:.08em;white-space:nowrap}.price-card h3{font-size:1rem}.price{font-size:2.55rem;font-weight:900;letter-spacing:-.05em;margin:17px 0 10px}.price-card p{color:#656c77;font-size:.84rem;line-height:1.55;margin-bottom:0}.fine{margin-top:22px;color:#676d76;font-size:.82rem;line-height:1.6}
+    .video{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}.video-panel{padding:38px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,#171c25,#0b0e13)}.video-panel h3{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:-.04em}.video-panel p{color:#b6bdc8;line-height:1.7}.video-list{display:grid;gap:12px;margin-top:25px}.video-list div{padding:15px 16px;border-radius:13px;background:rgba(255,255,255,.055);border:1px solid var(--line);font-weight:800}.quote-card{padding:38px;border-radius:28px;background:var(--lime);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between}.quote-card small{font-weight:900;letter-spacing:.15em;text-transform:uppercase}.quote-card strong{display:block;font-size:clamp(3.5rem,8vw,6rem);letter-spacing:-.07em;margin:22px 0 12px}.quote-card p{line-height:1.65}.quote-card .btn{background:var(--ink);color:var(--white);align-self:flex-start}
+    .terms{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.term{padding:24px;border:1px solid #dcded7;border-radius:18px;background:#fff}.term h3{font-size:1.06rem}.term p{color:#646b75;line-height:1.6;font-size:.88rem;margin-bottom:0}
+    .contact{padding:90px 0;background:linear-gradient(120deg,#11151d,#080a0d)}.contact-box{padding:42px;border:1px solid var(--line);border-radius:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;background:rgba(255,255,255,.045)}.contact h2{font-size:clamp(2.4rem,6vw,4.5rem);letter-spacing:-.05em;margin-bottom:14px}.contact p{color:#b6bdc7;line-height:1.7}.contact-links{display:grid;gap:11px}.contact-links a{padding:15px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.055);text-decoration:none;font-weight:800}.contact-links a:hover{background:rgba(255,255,255,.1)}
+    footer{padding:34px 0;color:#9ca4af;border-top:1px solid var(--line);font-size:.78rem}.footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.footer-grid strong{color:var(--gold)}
+    @media(max-width:920px){.hero-grid,.video,.contact-box,.responsibility{grid-template-columns:1fr}.deal-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.prices{grid-template-columns:repeat(2,1fr)}.price-card:last-child{grid-column:1/-1}.pilot-card{max-width:590px}.nav-links a:not(.cta){display:none}}
+    @media(max-width:560px){.hero{min-height:auto;padding-top:116px}.hero-grid{gap:34px}.section{padding:70px 0}.steps,.prices,.terms{grid-template-columns:1fr}.price-card:last-child{grid-column:auto}.price-card.featured{transform:none}.cost{font-size:5.4rem}.contact-box,.video-panel,.quote-card{padding:27px}.footer-grid{display:grid}.btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to proposal</a>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="/" aria-label="NY Lenses home">
+        <span class="mark" aria-hidden="true">NY</span>
+        <span class="brand-copy"><strong>NY LENSES</strong><small>Sports media</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#program">Program</a><a href="#pricing">Parent pricing</a><a href="#video">Video</a><a class="cta" href="#contact">Discuss the pilot</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero">
+      <div class="grid-lines" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div>
+          <span class="tag">Proposal • Pending approval</span>
+          <h1>Elite Game-Day <span>Photo Program</span></h1>
+          <p class="lead">A proposed one-event parent-pay photography pilot for Elite Leagues &amp; Sports. NY Lenses covers the action, families choose whether to purchase, and Elite pays no upfront photography fee.</p>
+          <div class="actions"><a class="btn btn-primary" href="#program">See the pilot</a><a class="btn btn-secondary" href="#video">Optional video coverage</a></div>
+        </div>
+        <aside class="pilot-card" aria-label="Pilot offer summary">
+          <div class="cost">$0<sup>UPFRONT</sup></div>
+          <h2>Photography pilot</h2>
+          <p>One event to test participation, parent interest, communication, and delivery before discussing a larger schedule.</p>
+          <ul class="mini-list"><li>Parent-purchase photo gallery</li><li>Ten club-use highlight images included</li><li>Video available as a paid add-on</li></ul>
+        </aside>
+      </div>
+    </header>
+
+    <section class="section light" id="program">
+      <div class="shell">
+        <div class="section-head"><span class="eyebrow">The proposed tradeoff</span><h2>Lower organizational cost. Simple access for families.</h2><p>Instead of Elite paying the standard event photography rate, NY Lenses would photograph one approved pilot event and offer optional digital photo packages directly to participating families.</p></div>
+        <div class="deal-grid">
+          <article class="deal"><div class="num">01</div><h3>NY Lenses photographs</h3><p>Approved games or event activity are photographed with a focus on usable player action, team moments, and event atmosphere.</p></article>
+          <article class="deal"><div class="num">02</div><h3>Parents choose</h3><p>Edited, watermarked previews are posted in an online gallery. Buying is completely optional, and families select only the photos they want.</p></article>
+          <article class="deal"><div class="num">03</div><h3>Elite receives highlights</h3><p>Elite receives ten edited images from the pilot for its own website, social media, registration, and league promotion under a non-exclusive license.</p></article>
+        </div>
+        <div class="responsibility"><strong>What Elite provides</strong><ul><li>Event approval, schedule, venue access, and applicable youth-photo requirements</li><li>Promotion of the QR/gallery to participating families before and after the event</li><li>A point of contact for event-day coordination</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+      <div class="shell"><div class="section-head dark-head"><span class="tag">Parent experience</span><h2 id="steps-title">Four straightforward steps</h2><p>The ordering process is designed for phones and requires no purchase from Elite Leagues &amp; Sports.</p></div>
+        <div class="steps"><article class="step"><b>01</b><h3>Scan</h3><p>Families open the event page from the shared QR code.</p></article><article class="step"><b>02</b><h3>Browse</h3><p>Parents find their athlete in the watermarked online gallery.</p></article><article class="step"><b>03</b><h3>Select</h3><p>They heart their favorite images and share the photo numbers.</p></article><article class="step"><b>04</b><h3>Receive</h3><p>After payment is confirmed, clean high-resolution files are delivered digitally.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section light" id="pricing">
+      <div class="shell"><div class="section-head"><span class="eyebrow">Optional parent purchases</span><h2>Digital photo packages</h2><p>These prices are paid only by families who choose to order. Package availability depends on the event and the number of usable photographs captured.</p></div>
+        <div class="prices">
+          <article class="price-card"><h3>Single Photo</h3><div class="price">$10</div><p>One edited, high-resolution digital photograph.</p></article>
+          <article class="price-card featured"><span class="popular">Most popular</span><h3>5 Photo Pack</h3><div class="price">$35</div><p>Five selected edited digital photographs.</p></article>
+          <article class="price-card"><h3>10 Photo Pack</h3><div class="price">$55</div><p>Ten selected edited digital photographs.</p></article>
+          <article class="price-card"><h3>20 Photo Pack</h3><div class="price">$85</div><p>Twenty selected edited digital photographs.</p></article>
+          <article class="price-card"><h3>Full Player Gallery</h3><div class="price">$100</div><p>All available edited images of one player from the covered event.</p></article>
+        </div>
+        <p class="fine">Parents are never required to purchase. Preview galleries remain watermarked; purchased images are delivered without the proof watermark.</p>
+      </div>
+    </section>
+
+    <section class="section" id="video">
+      <div class="shell video">
+        <div class="video-panel"><span class="tag">Optional paid add-on</span><h3>Video stays separate.</h3><p>The parent-pay pilot covers still photography only. Elite may add video coverage when it needs a promotional deliverable.</p><div class="video-list"><div>30–60 second social highlight reel</div><div>1–2 minute event recap</div><div>Team, sponsor, or registration promo</div></div></div>
+        <aside class="quote-card"><div><small>Video pricing</small><strong>Custom</strong><p>Quoted separately based on event length, locations, filming needs, and the requested final deliverable.</p></div><a class="btn" href="mailto:nylenses1@gmail.com?subject=Elite%20Leagues%20video%20coverage">Request a video quote</a></aside>
+      </div>
+    </section>
+
+    <section class="section light" aria-labelledby="terms-title">
+      <div class="shell"><div class="section-head"><span class="eyebrow">Pilot terms</span><h2 id="terms-title">Clear before the first event</h2></div><div class="terms">
+        <article class="term"><h3>Approval and youth-photo policies</h3><p>Coverage begins only after Elite confirms the event, venue access, and any consent, credential, privacy, or youth-photography requirements.</p></article>
+        <article class="term"><h3>Copyright and club use</h3><p>NY Lenses retains copyright. Elite receives a non-exclusive promotional-use license for the ten delivered pilot highlight images.</p></article>
+        <article class="term"><h3>No guaranteed sales</h3><p>Parent purchases are optional, and no sales volume or revenue result is promised.</p></article>
+        <article class="term"><h3>Future coverage</h3><p>After the pilot, both sides can review participation and decide whether to schedule additional event, tournament, or season coverage.</p></article>
+      </div></div>
+    </section>
+
+    <section class="contact" id="contact"><div class="shell contact-box"><div><span class="tag">Prepared by NY Lenses</span><h2>Interested in testing one event?</h2><p>Send the date, location, sport, expected number of teams, and the best event-day contact. NY Lenses will confirm whether the event is a fit before anything is announced to families.</p></div><div class="contact-links"><a href="sms:4693192644">Text: (469) 319-2644</a><a href="mailto:nylenses1@gmail.com?subject=Elite%20Leagues%20parent-pay%20pilot">Email: nylenses1@gmail.com</a><a href="https://www.instagram.com/ny_.lenses/" target="_blank" rel="noopener">Instagram: @ny_.lenses</a></div></div></section>
+  </main>
+
+  <footer><div class="shell footer-grid"><div><strong>NY LENSES</strong><br>Sports photography and media • Garland / DFW</div><div>This page is a proposal prepared for discussion. It does not state or imply that Elite Leagues &amp; Sports has accepted, endorsed, or partnered with NY Lenses.</div><div>© <span id="year"></span> NY Lenses</div></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
