@@ -6,6 +6,7 @@
  */
 window.DUTCH_FC_CONFIG = Object.freeze({
   galleryUrl: "https://nylenses.pixieset.com/dutchfcmatchphotos/",
+  galleryStatus: "Photos from each covered match are added after editing. If the gallery is not ready yet, please check back soon.",
 
   contact: Object.freeze({
     phoneDisplay: "(469) 319-2644",
@@ -74,4 +75,20 @@ window.DUTCH_FC_CONFIG = Object.freeze({
     footerText.setAttribute('aria-label', 'Text NY Lenses at ' + contact.phoneDisplay);
     footerLinks.prepend(footerText);
   }
+})();
+
+/* Keep early visitors informed before a covered match gallery is published. */
+(function addGalleryStatus() {
+  const config = window.DUTCH_FC_CONFIG;
+  if (!config || !config.galleryStatus) return;
+
+  const galleryActions = document.querySelector('#gallery .gallery-actions');
+  if (!galleryActions) return;
+
+  const status = document.createElement('p');
+  status.className = 'gallery-status';
+  status.setAttribute('role', 'status');
+  status.textContent = config.galleryStatus;
+  status.style.cssText = 'flex-basis:100%;margin:4px 0 0;padding:14px 16px;border-left:4px solid #EF5604;border-radius:10px;background:#FFFFFF;color:#172E7A;font-weight:700;line-height:1.55;box-shadow:0 10px 26px rgba(23,46,122,.08)';
+  galleryActions.appendChild(status);
 })();
