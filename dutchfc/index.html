@@ -135,7 +135,7 @@
       display: flex; flex-direction: column; justify-content: space-between;
     }
     .hero-card::before { content: ""; position: absolute; inset: 18px; border: 2px solid rgba(255,255,255,.16); border-radius: 22px; }
-    .ball-mark { width: 112px; height: 112px; align-self: flex-end; opacity: .82; }
+    .dutchfc-logo { width: 142px; height: auto; align-self: flex-end; position: relative; z-index: 1; }
     .hero-card-copy { position: relative; z-index: 1; }
     .hero-card-copy small { color: var(--orange-2); text-transform: uppercase; letter-spacing: .15em; font-weight: 800; }
     .hero-card-copy strong { display: block; font: 900 clamp(2rem,4vw,3.4rem)/1 "Lato",sans-serif; margin-top: 10px; }
@@ -314,11 +314,7 @@
         </div>
 
         <aside class="hero-card" aria-label="Dutch FC match photography graphic">
-          <svg class="ball-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-            <circle cx="50" cy="50" r="46" stroke="white" stroke-width="3"/>
-            <path d="M50 27 65 38 59 56H41L35 38 50 27Z" stroke="white" stroke-width="3"/>
-            <path d="M50 4V27M65 38 88 30M59 56 72 78M41 56 28 78M35 38 12 30M28 78 50 96M72 78 50 96M88 30 96 52M12 30 4 52" stroke="white" stroke-width="3"/>
-          </svg>
+          <img class="dutchfc-logo" src="./assets/dutch-fc-logo.png" alt="Dutch Football Club official logo" width="1382" height="1598">
           <div class="hero-card-copy"><small>Match-day coverage</small><strong>Browse. Favorite. Text.</strong></div>
         </aside>
       </div>
