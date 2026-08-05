@@ -9,8 +9,8 @@ window.DUTCH_FC_CONFIG = Object.freeze({
   galleryStatus: "Photos from each covered match are added after editing. If the gallery is not ready yet, please check back soon.",
 
   contact: Object.freeze({
-    phoneDisplay: "(469) 319-2644",
-    phoneDigits: "4693192644",
+    phoneDisplay: "(214) 283-7683",
+    phoneDigits: "2142837683",
     preferredMethod: "text",
     helpMessage: "Ready to order? Heart your photos in Pixieset, share the Favorites list, then tap Text My Order. NY Lenses confirms your photos and total before payment.",
     email: "nylenses1@gmail.com",
